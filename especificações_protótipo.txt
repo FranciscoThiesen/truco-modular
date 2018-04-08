@@ -11,6 +11,7 @@ Mão:
     A mão consiste em 3 rodadas.
     A cada rodada o jogador escolhe uma carta de sua mão para jogá-la ( Essa carta deixa de pertencer a ele, quando ele a usa )
     O jogador que jogar a carta de maior valor na rodada, ganha a rodada para sua dupla.
+    Caso não haja empates durante a mão , a dupla que ganhar a maioria das rodadas em uma mão ganha a pontuação referente a essa mão.
     Cada mão vale 1 ponto, mas pode valer (1, 3, 6, 9, 12) pontos, dependendo de pedidos de truco a serem aceitos.
     O pedido de truco é feito por um jogador, necessariamente em sua vez. A equipe adversária pode aceitar ou recusar o pedido de truco.
     Se a equipe adversária recusar o truco, a equipe que propôs o truco ganha a quantidade de pontos que a partida vale antes do último pedido de truco. (3->1, 6->3, 9->6, 12->9 /// (pedido -> bonificacao em caso de recusa da equipe adversaria)
