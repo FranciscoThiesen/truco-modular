@@ -29,7 +29,7 @@ Rodada:
                Caso o empate seja na segunda rodada, a dupla que ganhou a primeira rodada vence a Mão;
                Caso o empate seja na primeira e segunda rodada, a dupla que ganhar a terceira rodada vence a Mão;
                Caso o empate seja na terceira rodada, a dupla que ganhou a primeira rodada vence a Mão;
-               Se todas as três rodadas empatarem, ninguém ganha ponto (Talvez possamos fazer um sorteio com as cartas ).
+               Se todas as três rodadas empatarem,todas as duplas irão tirar uma carta do baralho , e a dupla que tiver a carta de maior ranking na hierarquia(levando em conta a manilha e os naipes) ganhará a Mão.
 
 Jogador:
     Ator da partida
