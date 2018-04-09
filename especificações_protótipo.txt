@@ -26,7 +26,7 @@ Rodada:
     A ordem dos jogadores que jogarão suas cartas escolhidas na mesa será numa sequência anti-horária na mesa de jogo, começando a partir do primeiro jogador após a pessoa que embaralhou as cartas.
     Um determinado jogador pode optar por jogar sua carta de cabeça para baixo ( exceto na primeira rodada de cada mão ) 
     Nem toda rodada tem um vencedor, existe a possibilidade de empate.
-    Temos que definiar as condições de EMPATE. Quem ganhar a mão seguinte leva? ( Se se empatar de novo) 
+    Temos que definir as condições de EMPATE. Quem ganhar a mão seguinte leva? ( Se se empatar de novo) 
     Empates  - Em uma mão , caso todas as duplas tenham empate na primeira rodada , a dupla que ganhar na segunda rodada vence a Mão.
                Caso o empate seja na segunda rodada, a dupla que ganhou a primeira rodada vence a Mão;
                Caso o empate seja na primeira e segunda rodada, a dupla que ganhar a terceira rodada vence a Mão;
