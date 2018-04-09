@@ -21,6 +21,7 @@ Mão:
   
 Rodada:
     Em cada rodada, ganha o jogador que utilizar a carta mais forte da mesa. A hierarquia das cartas é estática, exceto com respeito a manilha. ( Temos que verificar na verdade se a manilha altera toda a ordem das cartas, ou se apenas a manilha se torna uma carta acima de todas as outras.)
+    A ordem dos jogadores que jogarão suas cartas escolhidas na mesa será numa sequência anti-horária na mesa de jogo, começando a partir do primeiro jogador após a pessoa que embaralhou as cartas.
     Um determinado jogador pode optar por jogar sua carta de cabeça para baixo ( exceto na primeira rodada de cada mão ) -> TALVEZ VALHA A PENA ENTENDER POR QUE CARALHOS ALGUEM FARIA ISSO?
     Nem toda rodada tem um vencedor, existe a possibilidade de empate.
     Temos que definiar as condições de EMPATE. Quem ganhar a mão seguinte leva? ( Se se empatar de novo) 
@@ -40,5 +41,5 @@ Jogador:
 Regras Especiais:
 //Pensar em um caso especial que envolva 3 duplas com 11 pontos cada.
 
-    Mão de Ferro-
+    Mão de Ferro- No caso de um jogo de 2 duplas no qual ambas as duplas tenham 11 pontos em uma Mão,as cartas usadas pelos jogadores nas rodadas de tal Mão serão sempre viradas pra baixo.
     Mão de Onze - No caso de uma dupla chegar a 11 pontos na partida, os seus membros terão a opção de olhar as cartas uns dos outros . Caso a dupla aceite, a Mão atual valerá 3 pontos ao invés de 1.
