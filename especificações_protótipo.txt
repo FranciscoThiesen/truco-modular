@@ -1,4 +1,4 @@
-Funcionalidades:
+Requisitos Funcionais :
 
 Partida
     É composta sempre por duas equipes com o mesmo número de jogadores. (1, 2 ou 3 jogadores por equipe)
@@ -44,3 +44,6 @@ Regras Especiais:
 
     Mão de Ferro- No caso de um jogo de 2 duplas no qual ambas as duplas tenham 11 pontos em uma Mão,as cartas usadas pelos jogadores nas rodadas de tal Mão serão sempre viradas pra baixo, não podendo os jogadores saberem os valores de suas cartas.
     Mão de Onze - No caso de uma dupla chegar a 11 pontos na partida, os seus membros terão a opção de olhar as cartas uns dos outros . Caso a dupla aceite, a Mão atual valerá 3 pontos ao invés de 1.
+    
+Requisitos não-funcionais:
+    
