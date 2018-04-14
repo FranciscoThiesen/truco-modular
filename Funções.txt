@@ -2,6 +2,7 @@ Nos arquivos .h só são listadas as funções que vão ser requisitadas pelos o
 Nos arquivos .c só são listadas as funções locais dos arquivos.
 
 Partida.h:
+CriaPartida() 
 ChecaPlacar()
 
 Partida.c:
