@@ -28,6 +28,7 @@ Lista.c:
 
 Jogador.h:
 CriaJogadores()
+DefineEscolha()
 ChecaTruco()
 ChecaOnze()
 ChecaFerro()
