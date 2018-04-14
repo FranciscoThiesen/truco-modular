@@ -3,15 +3,21 @@ Nos arquivos .c só são listadas as funções locais dos arquivos.
 
 Partida.h:
 CriaPartida() 
+CriarMao()
 ChecaPlacar()
+ResolveMao()
+AtualizaPartida()
+ChecaVtoria()
+
 
 Partida.c:
-CriaPlacar() 
+CriaPlacar()
 
 
 
 Rodada.h:
 CriaRodada()
+ResolverRodada()
 
 Rodada.c
 
@@ -28,7 +34,7 @@ Lista.c:
 
 Jogador.h:
 CriaJogadores()
-DefineEscolha()
+Jogada()
 ChecaTruco()
 ChecaOnze()
 ChecaFerro()
@@ -39,6 +45,8 @@ Jogador.c:
 Baralho.h:
 CriaBaralho()
 Embaralha()
+DefineVira()
+DefineManilha()
 
 Baralho.c:
 
