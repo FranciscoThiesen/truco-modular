@@ -5,7 +5,7 @@ Partida.h:
 ChecaPlacar()
 
 Partida.c:
-CriaPlacar()
+CriaPlacar() 
 
 
 
