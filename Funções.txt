@@ -37,6 +37,11 @@ Jogada()
 ChecaTruco()
 ChecaOnze()
 ChecaFerro()
+PedeTruco()
+EscolheCarta()
+JogaCartaVirada()
+JogaCarta()
+
 
 Jogador.c:
 
