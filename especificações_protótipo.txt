@@ -35,15 +35,14 @@ Rodada:
 
 Jogador:
     Ator da partida
-    Se a partida tiver 4 jogadores ( duas duplas ) ou 6 jogadores ( 3 duplas)  , cada dupla terá seus membros sentados em lados opostos na mesa , de maneira que qualquer membro de um dupla veja o outro membro da mesma dupla a frente dele.
+    Se a partida tiver 4 jogadores ( duas duplas ) ou 6 jogadores ( 2 trios)  , cada equipe terá seus membros sentados em lados opostos na mesa , de maneira que qualquer membro de um dupla veja o outro membro da mesma dupla a frente dele.
     As duplas serão formadas por ordem de chegada dos jogadores , por exemplo os dois primeiros jogadores formarão uma dupla.
-// São especificidades de alguns casos muito específicos. (As duas equipes tem 11 pontos, ou algo do tipo)
-// Pode permitir com que você possa ver a mão da sua dupla ou coisa assim ( Tem que ver se vale a pena imeplementar, se tem que implementar ... ) 
+
 
 Regras Especiais:
 
-    Mão de Ferro- No caso de um jogo de 2 duplas no qual ambas as duplas tenham 11 pontos em uma Mão,as cartas usadas pelos jogadores nas rodadas de tal Mão serão sempre viradas pra baixo, não podendo os jogadores saberem os valores de suas cartas.
-    Mão de Onze - No caso de uma dupla chegar a 11 pontos na partida, os seus membros terão a opção de olhar as cartas uns dos outros . Caso a dupla aceite, a Mão atual valerá 3 pontos ao invés de 1.
+    Mão de Ferro- No caso de um jogo de 2 equipes no qual ambas as equipes tenham 11 pontos em uma Mão,as cartas usadas pelos jogadores nas rodadas de tal Mão serão sempre viradas pra baixo, não podendo os jogadores saberem os valores de suas cartas.
+    Mão de Onze - No caso de uma equipe chegar a 11 pontos na partida, os seus membros terão a opção de olhar as cartas uns dos outros . Caso a dupla aceite, a Mão atual valerá 3 pontos ao invés de 1.
     
 Requisitos não-funcionais:
     
