@@ -1,11 +1,12 @@
-﻿Build started 06/05/2018 12:47:57.
+﻿Build started 06/05/2018 16:31:12.
      1>Project "C:\Users\VTEX\truco-modular\BARALHO\BARALHO.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
-         Creating "Release\BARALHO.unsuccessfulbuild" because "AlwaysCreate" was specified.
+         Touching "Release\BARALHO.unsuccessfulbuild".
        ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TC /analyze- /errorReport:prompt BARALHO.c
          BARALHO.c
-     1>BARALHO.c(101): warning C4244: 'function' : conversion from 'time_t' to 'unsigned int', possible loss of data
+     1>BARALHO.c(61): warning C4018: '<' : signed/unsigned mismatch
+     1>BARALHO.c(103): warning C4244: 'function' : conversion from 'time_t' to 'unsigned int', possible loss of data
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\VTEX\truco-modular\Release\BARALHO.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Release\BARALHO.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\VTEX\truco-modular\Release\BARALHO.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\VTEX\truco-modular\Release\BARALHO.lib" /MACHINE:X86 Release\BARALHO.obj
          Release\LISTA.obj
@@ -21,4 +22,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.81
+Time Elapsed 00:00:01.04
