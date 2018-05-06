@@ -17,7 +17,7 @@ typedef struct carta
 	int valor;
 } BRL_carta;
 
-//typedef struct carta * BAR_tppCarta;
+typedef struct carta * BAR_tppCarta;
 
 
 
@@ -118,7 +118,7 @@ typedef struct carta
 *
 ***********************************************************************/
 
-   BRL_carta BAR_PegaCartaDoTopo(LIS_tppLista baralho);
+   BAR_tpCondRet BAR_PegaCartaDoTopo(LIS_tppLista baralho,BAR_tppCarta carta );
 
 /***********************************************************************
 *
@@ -142,7 +142,7 @@ typedef struct carta
 *     Não será dada mais informação quanto ao problema ocorrido.
 *
 ***********************************************************************/
-   BAR_DestruirBaralho(LIS_tppLista baralho);
+   void BAR_DestruirBaralho(LIS_tppLista baralho);
 
    #undef BARALHO_EXT
 
