@@ -1,0 +1,31 @@
+﻿Build started 05/05/2018 20:21:34.
+     1>Project "C:\Users\VTEX\truco-modular\BARALHO\BARALHO.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "Debug\BARALHO.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TC /analyze- /errorReport:prompt BARALHO.c LISTA.C
+         LISTA.C
+         BARALHO.c
+     1>c:\users\vtex\truco-modular\baralho\baralho.c(79): error C2057: expected constant expression
+     1>c:\users\vtex\truco-modular\baralho\baralho.c(79): error C2466: cannot allocate an array of constant size 0
+     1>c:\users\vtex\truco-modular\baralho\baralho.c(79): error C2133: 'inseridoNoBaralho' : unknown size
+     1>c:\users\vtex\truco-modular\baralho\baralho.c(81): warning C4244: 'function' : conversion from 'time_t' to 'unsigned int', possible loss of data
+     1>c:\users\vtex\truco-modular\baralho\baralho.c(83): warning C4034: sizeof returns 0
+     1>c:\users\vtex\truco-modular\baralho\baralho.c(93): error C2143: syntax error : missing ';' before 'type'
+     1>c:\users\vtex\truco-modular\baralho\baralho.c(93): error C2143: syntax error : missing ';' before 'type'
+     1>c:\users\vtex\truco-modular\baralho\baralho.c(93): error C2143: syntax error : missing ')' before 'type'
+     1>c:\users\vtex\truco-modular\baralho\baralho.c(93): error C2143: syntax error : missing ';' before 'type'
+     1>c:\users\vtex\truco-modular\baralho\baralho.c(93): warning C4552: '<' : operator has no effect; expected operator with side-effect
+     1>c:\users\vtex\truco-modular\baralho\baralho.c(93): error C2059: syntax error : ')'
+     1>c:\users\vtex\truco-modular\baralho\baralho.c(94): error C2143: syntax error : missing ';' before '{'
+     1>c:\users\vtex\truco-modular\baralho\baralho.c(121): error C2275: 'LIS_tppLista' : illegal use of this type as an expression
+                 c:\users\vtex\truco-modular\baralho\lista.h(64) : see declaration of 'LIS_tppLista'
+     1>c:\users\vtex\truco-modular\baralho\baralho.c(121): error C2146: syntax error : missing ';' before identifier 'novoBaralho'
+     1>c:\users\vtex\truco-modular\baralho\baralho.c(121): error C2065: 'novoBaralho' : undeclared identifier
+     1>c:\users\vtex\truco-modular\baralho\baralho.c(121): warning C4047: '=' : 'int' differs in levels of indirection from 'LIS_tppLista'
+         Generating Code...
+     1>Done Building Project "C:\Users\VTEX\truco-modular\BARALHO\BARALHO.vcxproj" (build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:01.31
