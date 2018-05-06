@@ -7,9 +7,17 @@
    #define BARALHO_EXT extern
 #endif
 
+
+
 /***** Declarações exportadas pelo módulo *****/
 
+typedef struct carta 
+{
+	int naipe;
+	int valor;
+} BRL_carta;
 
+//typedef struct carta * BAR_tppCarta;
 
 
 
@@ -30,10 +38,7 @@
          BAR_CondRetBaralhoVazio ,
                /* A lista não contém elementos */
 
-         LIS_CondRetFimLista ,
-               /* Foi atingido o fim de lista */
-
-         BAR_CondRetNaoAchouCarta ,
+         BAR_CondRetNaoObteveCarta ,
                /* Não encontrou o valor procurado */
 
          BAR_CondRetFaltouMemoria
@@ -65,9 +70,79 @@
 ***********************************************************************/
    LIS_tppLista BAR_CriarBaralho();
 
+   /***********************************************************************
+*
+*  $FC Função: BAR  &Criar baralho
+*
+*  $ED Descrição da função
+*     Cria uma lista genérica duplamente encadeada.
+*     Os possíveis tipos são desconhecidos a priori.
+*     A tipagem é implicita.
+*     Não existe identificador de tipo associado à lista.
+*
+*  $EP Parâmetros
+*     Nenhum.
+*
+*  $FV Valor retornado
+*     Se executou corretamente retorna o ponteiro para o baralho.
+*     Este ponteiro será utilizado pelas funções do BARALHO.c que lidam com manipulação de cartas.
+*
+*     Se ocorreu algum erro, por exemplo falta de memória ou dados errados,
+*     a função retornará NULL.
+*     Não será dada mais informação quanto ao problema ocorrido.
+*
+***********************************************************************/
+
    LIS_tppLista BAR_NovoBaralhoEmbaralhado();
 
+   /***********************************************************************
+*
+*  $FC Função: BAR  &Criar baralho
+*
+*  $ED Descrição da função
+*     Cria uma lista genérica duplamente encadeada.
+*     Os possíveis tipos são desconhecidos a priori.
+*     A tipagem é implicita.
+*     Não existe identificador de tipo associado à lista.
+*
+*  $EP Parâmetros
+*     Nenhum.
+*
+*  $FV Valor retornado
+*     Se executou corretamente retorna o ponteiro para o baralho.
+*     Este ponteiro será utilizado pelas funções do BARALHO.c que lidam com manipulação de cartas.
+*
+*     Se ocorreu algum erro, por exemplo falta de memória ou dados errados,
+*     a função retornará NULL.
+*     Não será dada mais informação quanto ao problema ocorrido.
+*
+***********************************************************************/
+
    BRL_carta BAR_PegaCartaDoTopo(LIS_tppLista baralho);
+
+/***********************************************************************
+*
+*  $FC Função: BAR  &Criar baralho
+*
+*  $ED Descrição da função
+*     Cria uma lista genérica duplamente encadeada.
+*     Os possíveis tipos são desconhecidos a priori.
+*     A tipagem é implicita.
+*     Não existe identificador de tipo associado à lista.
+*
+*  $EP Parâmetros
+*     Nenhum.
+*
+*  $FV Valor retornado
+*     Se executou corretamente retorna o ponteiro para o baralho.
+*     Este ponteiro será utilizado pelas funções do BARALHO.c que lidam com manipulação de cartas.
+*
+*     Se ocorreu algum erro, por exemplo falta de memória ou dados errados,
+*     a função retornará NULL.
+*     Não será dada mais informação quanto ao problema ocorrido.
+*
+***********************************************************************/
+   DestruirBaralho(LIS_tppLista baralho);
 
    #undef BARALHO_EXT
 
