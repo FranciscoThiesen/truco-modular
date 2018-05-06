@@ -14,36 +14,36 @@ typedef struct carta
 	int valor;
 } BRL_carta;
 
-typedef struct tagElemLista {
-
-        void * pValor ;
-            /* Ponteiro para o valor contido no elemento */
-
-        struct tagElemLista * pAnt ;
-            /* Ponteiro para o elemento predecessor */
-
-        struct tagElemLista * pProx ;
-            /* Ponteiro para o elemento sucessor */
-
-} tpElemLista ; 
- typedef struct LIS_tagLista {
-
-         tpElemLista * pOrigemLista ;
-               /* Ponteiro para a origem da lista */
-
-         tpElemLista * pFimLista ;
-               /* Ponteiro para o final da lista */
-
-         tpElemLista * pElemCorr ;
-               /* Ponteiro para o elemento corrente da lista */
-
-         int numElem ;
-               /* Número de elementos da lista */
-
-         void ( * ExcluirValor ) ( void * pValor ) ;
-               /* Ponteiro para a função de destruição do valor contido em um elemento */
-
-   } LIS_tpLista ;
+//typedef struct tagElemLista {
+//
+//        void * pValor ;
+//            /* Ponteiro para o valor contido no elemento */
+//
+//        struct tagElemLista * pAnt ;
+//            /* Ponteiro para o elemento predecessor */
+//
+//        struct tagElemLista * pProx ;
+//            /* Ponteiro para o elemento sucessor */
+//
+//} tpElemLista ; 
+// typedef struct LIS_tagLista {
+//
+//         tpElemLista * pOrigemLista ;
+//               /* Ponteiro para a origem da lista */
+//
+//         tpElemLista * pFimLista ;
+//               /* Ponteiro para o final da lista */
+//
+//         tpElemLista * pElemCorr ;
+//               /* Ponteiro para o elemento corrente da lista */
+//
+//         int numElem ;
+//               /* Número de elementos da lista */
+//
+//         void ( * ExcluirValor ) ( void * pValor ) ;
+//               /* Ponteiro para a função de destruição do valor contido em um elemento */
+//
+//   } LIS_tpLista ;
 
 //static LIS_tppLista PreencheBaralho(LIS_tppLista baralho);
 
