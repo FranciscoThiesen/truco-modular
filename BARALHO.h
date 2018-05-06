@@ -142,7 +142,7 @@ typedef struct carta
 *     Não será dada mais informação quanto ao problema ocorrido.
 *
 ***********************************************************************/
-   DestruirBaralho(LIS_tppLista baralho);
+   BAR_DestruirBaralho(LIS_tppLista baralho);
 
    #undef BARALHO_EXT
 
