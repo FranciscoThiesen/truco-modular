@@ -47,7 +47,7 @@ typedef struct tagElemLista {
 
 //static LIS_tppLista PreencheBaralho(LIS_tppLista baralho);
 
-void Destruir(void * var )
+static void Destruir(void * var )
 {
 	free(var) ;
 }
@@ -68,25 +68,25 @@ LIS_tppLista CriarBaralho()
 	return baralho ;
 }
 
-static void imprimeLista(LIS_tppLista aiMeuBaralho)
+static void imprimeBaralho(LIS_tppLista baralho)
 { 
 	BRL_carta * var;
 	int i = 0;
-	IrInicioLista(aiMeuBaralho);
+	IrInicioLista(baralho);
 
 	while(i < 40) 
 	{ 
-		var = (BRL_carta*) LIS_ObterValor(aiMeuBaralho);
+		var = (BRL_carta*) LIS_ObterValor(baralho);
 		printf("%d  %d %d \n", var->naipe, var->valor, i);
 
-		LIS_AvancarElementoCorrente( aiMeuBaralho, 1);
+		LIS_AvancarElementoCorrente( baralho, 1);
 		i++;
 	}
 	
-	IrInicioLista(aiMeuBaralho); // restaurando o curElem para o inicio da lista
+	IrInicioLista(baralho); // restaurando o curElem para o inicio da lista
 }
 
-LIS_tppLista NovoBaralhoEmbaralhado()
+LIS_tppLista BAR_NovoBaralhoEmbaralhado()
 {
 	LIS_tppLista baralho;
 
@@ -138,13 +138,49 @@ LIS_tppLista NovoBaralhoEmbaralhado()
 	return baralho;
 }
 
+BRL_carta BAR_PegaCartaDoTopo(LIS_tppLista baralho)
+{
+
+	BRL_carta* ptrCarta = (BRL_carta*) malloc(sizeof(BRL_carta) ); 
+	BRL_carta carta;
+
+	IrInicioLista(baralho);
+
+	ptrCarta = (BRL_carta*) LIS_ObterValor(baralho);
+	if(ptrCarta == NULL)
+	{
+		printf("Erro na chamada de LIS_ObterValor dentro de BAR_PegaValorDoTopo\n");
+		exit(1);
+	}
+
+	carta.valor = ptrCarta->valor;
+	carta.naipe = ptrCarta->naipe;
+
+	LIS_ExcluirElemento( baralho );
+
+	return carta;
+}
+
+static void esvaziaBaralhoUmaCartaPorVez(LIS_tppLista baralho)
+{
+	int i = 0;
+	BRL_carta x;
+	for(i = 0; i < 40; ++i)
+	{
+		x = BAR_PegaCartaDoTopo(baralho);
+		printf("%d %d\n", x.naipe, x.valor);
+	}
+	LIS_EsvaziarLista(baralho);
+}
 
 int main(void)
 { 
 	LIS_tppLista baralho;
 	CriarBaralho();
-	baralho=NovoBaralhoEmbaralhado();
-	imprimeLista(baralho);
+	baralho = BAR_NovoBaralhoEmbaralhado();
+	imprimeBaralho(baralho);
+	printf("\n\n");
+	esvaziaBaralhoUmaCartaPorVez(baralho);
 	system("pause") ;
 	return ;
 }
