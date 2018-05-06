@@ -26,5 +26,8 @@
     <ClInclude Include="LISTA.H">
       <Filter>Resource Files</Filter>
     </ClInclude>
+    <ClInclude Include="BARALHO.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

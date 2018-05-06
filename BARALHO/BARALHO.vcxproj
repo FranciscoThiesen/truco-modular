@@ -78,6 +78,7 @@
     <ClCompile Include="LISTA.C" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BARALHO.h" />
     <ClInclude Include="LISTA.H" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

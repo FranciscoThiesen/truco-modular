@@ -6,14 +6,13 @@
 #include <stdlib.h>
 #include <time.h>
 #include "LISTA.h"
+#include "BARALHO.h"
 
-const int tamanhoDoBaralho = 40;
-
-typedef struct carta 
+/*typedef struct carta 
 {
 	int naipe;
 	int valor;
-} BRL_carta;
+} BRL_carta;*/
 
 //typedef struct tagElemLista {
 //
@@ -48,56 +47,54 @@ typedef struct carta
 
 //static LIS_tppLista PreencheBaralho(LIS_tppLista baralho);
 
-static void Destruir(void * var )
+static void Destruir( void * var )
 {
-	free(var) ;
+	free( var ) ;
 }
 
-LIS_tppLista CriarBaralho()
-{ 
-	unsigned int i=0; LIS_tppLista baralho; BRL_carta  carta ;
-    BRL_carta* card;
-	baralho = LIS_CriarLista( Destruir ) ;
-	for(i = 0; i < tamanhoDoBaralho; i++)
-	{
-		carta.naipe = i/10 ;
-		carta.valor = i%10 ;
-		LIS_InserirElementoApos( baralho, &carta) ;
-		card = (BRL_carta*) LIS_ObterValor(baralho) ;
-		printf("%d,  %d\n", card->naipe, card->valor) ;
-	}
-	return baralho ;
+void BAR_DestruirBaralho( LIS_tppLista baralho )
+{
+	LIS_DestruirLista( baralho );
 }
 
-static void imprimeBaralho(LIS_tppLista baralho)
+static void imprimeBaralho( LIS_tppLista baralho )
 { 
-	BRL_carta * var;
+	BRL_carta* var;
 	int i = 0;
-	IrInicioLista(baralho);
+	IrInicioLista( baralho );
 
-	while(i < tamanhoDoBaralho) 
+	while(i < 40) 
 	{ 
-		var = (BRL_carta*) LIS_ObterValor(baralho);
+		var = ( BRL_carta* ) LIS_ObterValor( baralho );
 		printf("%d  %d %d \n", var->naipe, var->valor, i);
 
-		LIS_AvancarElementoCorrente( baralho, 1);
+		LIS_AvancarElementoCorrente( baralho, 1 );
 		i++;
 	}
 	
 	IrInicioLista(baralho); // restaurando o curElem para o inicio da lista
 }
 
+BAR_tpCondRet BAR_InsereCartaNoBaralho( BRL_carta* carta, LIS_tppLista baralho )
+{
+	if(carta == NULL) return BAR_CartaNula;
+	if(baralho == NULL) return BAR_CondRetBaralhoVazio;
+
+	LIS_InserirElementoApos( baralho, carta );
+
+	return BAR_CondRetOK;
+}
+
 LIS_tppLista BAR_NovoBaralhoEmbaralhado()
 {
 	LIS_tppLista baralho;
+
+	BRL_carta* cartas[40]; // temos que lembrar de dar free nos enderecos que demos malloc, talvez destroiLista resolva isso...
 	
-	BRL_carta** cartas; // temos que lembrar de dar free nos enderecos que demos malloc, talvez destroiLista resolva isso...
+	int inseridoNoBaralho[40], totalCartasInseridas = 0, index, j;
 
-	int inseridoNoBaralho[40], totalCartasInseridas = 0, index;
+	unsigned int i;
 
-	unsigned int i, j;
-
-	cartas = (BRL_carta**) malloc(sizeof(BRL_carta) * 40);
 	for(j = 0; j < 40; ++j) cartas[j] = (BRL_carta*)  malloc(sizeof (BRL_carta) ); 
 
 	srand( time(NULL) ); // colocando o tempo atual na seed
@@ -123,7 +120,7 @@ LIS_tppLista BAR_NovoBaralhoEmbaralhado()
 					cartas[totalCartasInseridas]->naipe = i / 10;
 					cartas[totalCartasInseridas]->valor = i % 10;
 
-					LIS_InserirElementoApos( baralho, cartas[totalCartasInseridas]) ;
+					BAR_InsereCartaNoBaralho( cartas[totalCartasInseridas], baralho );
 					
 					printf("Carta inserida na lista( naipe = %d, valor = %d i = %d\n", cartas[totalCartasInseridas]->naipe, cartas[totalCartasInseridas]->valor, i);
 					
@@ -140,56 +137,82 @@ LIS_tppLista BAR_NovoBaralhoEmbaralhado()
 	return baralho;
 }
 
-BRL_carta* BAR_PegaCartaDoTopo(LIS_tppLista baralho)
+BAR_tpCondRet BAR_PegaCartaDoTopo(LIS_tppLista baralho, BRL_carta * carta )
 {
-
 	BRL_carta* ptrCarta = (BRL_carta*) malloc(sizeof(BRL_carta) ); 
-	BRL_carta* ptrCartaRet = (BRL_carta*) malloc(sizeof(BRL_carta) );
-
-	if(ptrCarta == NULL || ptrCartaRet == NULL) 
-	{
-		printf("Problema com a alocacao de memoria\n");
-		return NULL;
-	}
 	
+	if(ptrCarta == NULL)
+	{
+		printf("Erro na chamada de LIS_ObterValor dentro de BAR_PegaValorDoTopo\n");
+		return BAR_CondRetFaltouMemoria;
+	}
+
+	if(baralho == NULL)
+	{
+		return BAR_CondRetBaralhoVazio;
+	}
+
 	IrInicioLista(baralho);
 
 	ptrCarta = (BRL_carta*) LIS_ObterValor(baralho);
-	
-	if(ptrCarta == NULL) 
+
+	if(ptrCarta == NULL)
 	{
-		printf("Problema ao retirar uma carta do topo da pilha\n");
-		return NULL;
+		free(ptrCarta);
+		return BAR_CondRetNaoObteveCarta;
 	}
-	
-	ptrCartaRet->valor = ptrCarta->valor;
-	ptrCartaRet->naipe = ptrCarta->naipe;
+
+	carta->valor = ptrCarta->valor;
+	carta->naipe = ptrCarta->naipe;
 
 	LIS_ExcluirElemento( baralho );
+	//free(ptrCarta);
 
-	return ptrCartaRet;
+	return BAR_CondRetOK;
 }
 
 static void esvaziaBaralhoUmaCartaPorVez(LIS_tppLista baralho)
-{
-	int i = 0;
-	BRL_carta* x;
-	for(i = 0; i < 40; ++i)
+{  
+	if(baralho != NULL)
 	{
-		x = BAR_PegaCartaDoTopo(baralho);
-		printf("%d %d\n", x->naipe, x->valor);
+		int i = 0;
+		BRL_carta* x = (BRL_carta *) malloc(sizeof(BRL_carta));
+		if(x == NULL)
+		{
+			printf("Problema ao alocar um ponteiro para o tipo carta\n");
+			return;
+		}
+		while(BAR_PegaCartaDoTopo(baralho, x) == BAR_CondRetOK )
+		{
+			printf("%d %d\n", x->naipe, x->valor);
+		}
+		LIS_EsvaziarLista(baralho);
 	}
-	LIS_EsvaziarLista(baralho);
 }
 
 int main(void)
-{ 
+{   
+	BAR_tppCarta carta = (BRL_carta *) malloc(sizeof(BRL_carta) );
+	
 	LIS_tppLista baralho;
-	CriarBaralho();
+	
+	//CriarBaralho();
+	
 	baralho = BAR_NovoBaralhoEmbaralhado();
-	imprimeBaralho(baralho);
+	//imprimeBaralho(baralho); // imprime, mas nao remove nenhuma carta do baralho
+
 	printf("\n\n");
-	esvaziaBaralhoUmaCartaPorVez(baralho);
+
+	printf("%d\n", BAR_PegaCartaDoTopo(baralho,carta)); // tira uma carta do topo do baralho ( deveria retornar 0 )
+
+	esvaziaBaralhoUmaCartaPorVez(baralho); // esvazia todo o baralho
+
+	printf("\n\n");
+
+	printf("%d \n",BAR_PegaCartaDoTopo(baralho,carta));
+	
+	free(carta);
+
 	system("pause") ;
 	return ;
 }
