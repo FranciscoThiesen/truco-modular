@@ -83,27 +83,43 @@ TST_tpCondRet TST_EfetuarComando( char * ComandoTeste )
 	
 	else if ( strcmp( ComandoTeste , DESTRUIR_BARALHO_CMD ) == 0 )
 	{
-	
-	}
-	/* Testar Embaralhar */
+		numLidos = LER_LerParametros( "i" ,
+                               &inxLista ) ;
+
+            if ( ( numLidos != 1 )
+              || ( ! ValidarInxLista( inxLista , NAO_VAZIO )))
+            {
+               return TST_CondRetParm ;
+            } /* if */
+
+            LIS_DestruirLista( vtListas[ inxLista ] ) ;
+            vtListas[ inxLista ] = NULL ;
+
+            return TST_CondRetOK ;
+
+    } /* fim ativa: Testar Destruir lista */
 	else if ( strcmp( ComandoTeste , EMBARALHAR_CMD ) == 0 )
 	{
+		numLidos = LER_LerParametros( "i" ,
+                       &inxLista ) ;
+					   
+	    if ( ( numLidos != 1 )
+              || ( ! ValidarInxLista( inxLista , VAZIO )))
+            {
+               return TST_CondRetParm ;
+            } /* if */
+		vtListas[ inxLista ] =
+                 BAR_NovoBaralhoEmbaralhado() ;
+
+            return TST_CompararPonteiroNulo( 1 , vtListas[ inxLista ] ,
+               "Erro em ponteiro de nova lista."  ) ;
 	
-	}
-	/* Testar achar carta */
-	else if ( strcmp( ComandoTeste , ACHAR_CARTA_CMD ) == 0 )
-	{
+	}/* fim ativa: Testar CriarLista */
 	
-	}
 	/* Testar remover carta */
 	else if ( strcmp( ComandoTeste , REMOVER_CARTA_CMD ) == 0 )
 	{
-	
-	}
-	/* Testar tirar vira */
-	else if ( strcmp( ComandoTeste , TIRAR_VIRA_CMD ) == 0 )
-	{
-	
+		
 	}
 
 /***********************************************************************
