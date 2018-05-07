@@ -12,7 +12,6 @@
 static const char ESVAZIA_BARALHO_CMD         [ ] = "=esvaziarbaralho"     ;
 static const char DESTRUIR_BARALHO_CMD         [ ] = "=destruirbaralho"     ;
 static const char EMBARALHAR_CMD         [ ] = "=embaralhar"     ;
-static const char ACHAR_CARTA_CMD         [ ] = "=acharcarta"     ;
 static const char INSERIR_CARTA_CMD         [ ] = "=inserecarta"     ;
 
 
@@ -29,7 +28,7 @@ static const char INSERIR_CARTA_CMD         [ ] = "=inserecarta"     ;
 
 static void DestruirValor( void * pValor ) ;
 
-static int ValidarInxLista( int inxLista , int Modo ) ;
+static int ValidarInxBaralho( int inxBaralho , int Modo ) ;
 
 /*****  Código das funções exportadas pelo módulo  *****/
 
@@ -38,16 +37,14 @@ static int ValidarInxLista( int inxLista , int Modo ) ;
 *  $FC Função: TLIS &Testar lista
 *
 *  $ED Descrição da função
-*     Podem ser criadas até 10 listas, identificadas pelos índices 0 a 10
+*     Podem ser criadas até 10 baralhos, identificadas pelos índices 0 a 10
 *
 *     Comandos disponíveis:
 *
 *     =resetteste
 *           - anula o vetor de listas. Provoca vazamento de memória
 *     =embaralhar                   inxLista
-*     =destruirbaralho                inxLista
-*     =esvaziarbaralho                inxLista
-*     =acharcarta                 inxLista  string  CondRetEsp
+*     =destruirbaralho              inxLista
 *     =inselemapos                  inxLista  string  CondRetEsp
 *     =obtervalorelem               inxLista  string  CondretPonteiro
 *     =excluirelem                  inxLista  CondRetEsp
@@ -76,12 +73,9 @@ TST_tpCondRet TST_EfetuarComando( char * ComandoTeste )
         StringDado[ 0 ] = 0 ;
 
 	
-	else if ( strcmp( ComandoTeste , ESVAZIA_BARALHO_CMD ) == 0 )
-	{
+
 	
-	}
-	
-	else if ( strcmp( ComandoTeste , DESTRUIR_BARALHO_CMD ) == 0 )
+	if ( strcmp( ComandoTeste , DESTRUIR_BARALHO_CMD ) == 0 )
 	{
 		numLidos = LER_LerParametros( "i" ,
                                &inxLista ) ;
