@@ -168,7 +168,7 @@
    {
 
       tpElemLista * pElem ;
-
+	  z
       #ifdef _DEBUG
          assert( pLista != NULL ) ;
       #endif

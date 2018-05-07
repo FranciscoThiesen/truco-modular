@@ -120,7 +120,7 @@ typedef struct carta * BAR_tppCarta;
 *
 ***********************************************************************/
 
-   BAR_tpCondRet BAR_PegaCartaDoTopo( LIS_tppLista baralho,BAR_tppCarta carta );
+   BAR_tpCondRet BAR_PegaCartaDoTopo( LIS_tppLista baralho, BAR_tppCarta carta );
 
 /***********************************************************************
 *
