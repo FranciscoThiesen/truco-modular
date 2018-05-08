@@ -1,4 +1,4 @@
-﻿// BARALHO2.cpp : Defines the entry point for the console application.
+// BARALHO2.cpp : Defines the entry point for the console application.
 //
 #include <stdio.h>
 #include <malloc.h>
@@ -16,38 +16,7 @@ typedef struct carta
 	int valor;
 } BAR_tpCarta;
 
-//typedef struct tagElemLista {
-//
-//        void * pValor ;
-//            /* Ponteiro para o valor contido no elemento */
-//
-//        struct tagElemLista * pAnt ;
-//            /* Ponteiro para o elemento predecessor */
-//
-//        struct tagElemLista * pProx ;
-//            /* Ponteiro para o elemento sucessor */
-//
-//} tpElemLista ; 
-// typedef struct LIS_tagLista {
-//
-//         tpElemLista * pOrigemLista ;
-//               /* Ponteiro para a origem da lista */
-//
-//         tpElemLista * pFimLista ;
-//               /* Ponteiro para o final da lista */
-//
-//         tpElemLista * pElemCorr ;
-//               /* Ponteiro para o elemento corrente da lista */
-//
-//         int numElem ;
-//               /* N�mero de elementos da lista */
-//
-//         void ( * ExcluirValor ) ( void * pValor ) ;
-//               /* Ponteiro para a fun��o de destrui��o do valor contido em um elemento */
-//
-//   } LIS_tpLista ;
 
-//static LIS_tppLista PreencheBaralho(LIS_tppLista baralho);
 
 static void Destruir(void * var )
 {
@@ -76,6 +45,11 @@ static void imprimeBaralho(LIS_tppLista baralho)
 BAR_tppCarta BAR_CriaCarta( int valor, int naipe )
 {
 	BAR_tppCarta carta = (BAR_tppCarta) malloc( sizeof( BAR_tpCarta) );
+
+	if(carta == NULL )
+	{
+		return NULL;
+	}
 	
 	carta->valor = valor;
 	carta->naipe = naipe;
@@ -85,11 +59,21 @@ BAR_tppCarta BAR_CriaCarta( int valor, int naipe )
 
 int BAR_ObtemNaipe(BAR_tppCarta carta)
 {
+	if(carta == NULL)
+	{
+		return -1;
+	}
+
 	return carta->naipe;
 }
 
 int BAR_ObtemValor(BAR_tppCarta carta)
 {
+	if(carta == NULL)
+	{
+		return -1;
+	}
+
 	return carta->valor;
 }
 
@@ -173,6 +157,11 @@ BAR_tpCondRet BAR_DestroiBaralho(LIS_tppLista baralho)
 		return BAR_CondRetBaralhoVazio;
 	}
 
+	if(x == NULL)
+	{
+		return BAR_CondRetFaltouMemoria;
+	}
+
 	for(i = 0; i < TAMANHO_MAX; ++i)
 	{
 		x = BAR_PegaCartaDoTopo(baralho);
@@ -187,10 +176,10 @@ BAR_tpCondRet BAR_DestroiBaralho(LIS_tppLista baralho)
 int main(void)
 { 
 	//LIS_tppLista baralho;
-	//baralho = BAR_CriarNovoBaralhoEmbaralhado();
+	//baralho = BAR_CriaNovoBaralhoEmbaralhado();
 	//imprimeBaralho(baralho);
 	//printf("\n\n");
-	//BAR_DestruirBaralho(baralho);
+	//BAR_DestroiBaralho(baralho);
 	//system("pause") ;
 	return ;
 }
