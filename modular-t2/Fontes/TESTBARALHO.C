@@ -22,18 +22,12 @@
 
 #include    "Baralho.h"
 
-
-static const char CRIAR_CARTA_CMD         [ ] = "=criarcarta";
-static const char OBTER_NAIPE_CMD         [ ] = "=obternaipe";
-static const char OBTER_NUM_CMD           [ ] = "=obternum";
-static const char EMBARALHAR_CMD          [ ] = "=embaralhar";
-static const char RECEBE_VALORES_CMD      [ ] = "=recebevalores";
-static const char CRIAR_BARALHO_CMD       [ ] = "=criarbaralho"   ;
-static const char OBTER_VALOR_CMD         [ ] = "=obtervalorelem" ;
-static const char IR_INICIO_CMD           [ ] = "=irinicio"       ;
-static const char IR_FIM_CMD              [ ] = "=irfinal"        ;
-static const char AVANCAR_ELEM_CMD        [ ] = "=avancarelem"    ;
-
+static const char CRIAR_CARTA_CMD                     [ ] = "=criarcarta";
+static const char OBTER_NAIPE_CMD                     [ ] = "=obternaipe";
+static const char OBTER_VALOR_CMD                     [ ] = "=obtervalor";
+static const char CRIAR_BARALHO_EMBARALHADO_CMD       [ ] = "=criarbaralhoembaralhado";
+static const char DESTRUIR_BARALHO_CMD                [ ] = "=destruirbaralho";
+static const char RETIRAR_TOPO_BARALHO_CMD            [ ] = "=retirartopobaralho";
 
 #define TRUE  1
 #define FALSE 0
@@ -67,7 +61,7 @@ typedef struct BAR_tagCarta
 {
 	int num;
 	int naipe;
-}BAR_tpCarta;
+} BAR_tpCarta;
 
 /***********************************************************************
 *
@@ -80,14 +74,10 @@ typedef struct BAR_tagCarta
 *
 *     =criarcarta                  <inxCarta>   <naipe>        <número>
 *     =obternaipe                  <inxCarta>   <naipeEsp>
-*     =obternum                    <inxCarta>   <numeroEsp>
-*	  =embaralhar                  <inxBaralho> <condRetEsp>
-*     =recebevalores               <inxCarta>   <inxCarta2>
-*     =criarbaralho                <inxCarta>   <numeroEsp>
-*     =obtervalorelem              <inxLista>   <inxCarta>     <CondretPonteiro>
-*     =irinicio                    <inxLista>
-*     =irfinal                     <inxLista>
-*     =avancarelem                 <inxLista>   <numElem>      <CondRetEsp>
+*     =obtervalor                  <inxCarta>   <valorEsp>
+*	  =criarbaralhoembaralhado     <inxBaralho> <condRetEsp>
+*     =destruirbaralho             <inxBaralho> <condRetEsp>
+*     =retirartopobaralho          <inxBaralho> <cartaEsp>
 *
 ***********************************************************************/
 
@@ -147,69 +137,7 @@ TST_tpCondRet TST_EfetuarComando(char * ComandoTeste)
                       BAR_ObterNaipe( vtCartas[ inxCarta ] ) ,
                      "Naipe retornado está errado."   ) ;
 
-	} /* fim ativa: Testar ObterNaipe */
-
-	/* Testar Obter Número */
-
-	else if(strcmp(ComandoTeste, OBTER_NUM_CMD) == 0)
-	{
-		numLidos = LER_LerParametros("ii",
-			&inxCarta, &ValEsp);
-
-		if ((numLidos != 2)
-			|| (!ValidarInxCarta(inxCarta, NAO_VAZIO)))
-		{
-			return TST_CondRetParm;
-		} /* if */
-
-		return TST_CompararInt( ValEsp ,
-                      BAR_ObterNumero( vtCartas[ inxCarta ] ) ,
-                     "Número retornado está errado."   ) ;
-
-	} /* fim ativa: Testar ObterNumero */
-
-	/* Testar Embaralhar */
-
-	else if(strcmp(ComandoTeste, EMBARALHAR_CMD) == 0)
-	{
-		numLidos = LER_LerParametros("ii",
-			&inxBaralho, &CondRetEsp);
-
-		if ((numLidos != 2)
-			|| (!ValidarInxLista(inxBaralho, NAO_VAZIO)))
-		{
-			return TST_CondRetParm;
-		} /* if */
-
-		CondRet = BAR_Embaralhar(vtListas[inxBaralho]);
-
-		return TST_CompararInt( CondRetEsp , CondRet ,
-                     "Cond retornado está errado."   ) ;
-
-	} /* fim ativa: Testar Embaralhar*/
-
-	/* Testar Recebe Valores */
-
-	else if(strcmp(ComandoTeste, RECEBE_VALORES_CMD) == 0)
-	{
-		numLidos = LER_LerParametros("ii",
-			&inxCarta, &inxCarta2);
-
-		if ((numLidos != 2)
-			|| (!ValidarInxCarta(inxCarta, NAO_VAZIO))
-			|| (!ValidarInxCarta(inxCarta2, NAO_VAZIO)))
-		{
-			return TST_CondRetParm;
-		} /* if */
-
-		RecebeValores(vtCartas[inxCarta], vtCartas[inxCarta2]);
-
-		return TST_CompararInt( BAR_ObterNumero( vtCartas[ inxCarta ] ) ,
-                      BAR_ObterNumero( vtCartas[ inxCarta2 ] ) ,
-                     "Valor das cartas é diferente."   ) ;
-
-	} /* fim ativa: Testar Recebe Valores */
-
+	} /* fim ativa: Testar ObterNaipe */	
 
 	/* Testar Criar Baralho */
 
@@ -270,69 +198,6 @@ TST_tpCondRet TST_EfetuarComando(char * ComandoTeste)
                      "Número das cartas não estão iguais");
 
 	} /* fim ativa: Testar obter valor do elemento corrente */
-
-
-	/* Testar ir para o elemento inicial */
-
-	else if ( strcmp( ComandoTeste , IR_INICIO_CMD ) == 0 )
-	{
-
-		numLidos = LER_LerParametros( "i" , &inxLista ) ;
-
-		if ( ( numLidos != 1 )
-		  || ( ! ValidarInxLista( inxLista , NAO_VAZIO )) )
-		{
-		   return TST_CondRetParm ;
-		} /* if */
-
-		LIS_IrInicioLista( vtListas[ inxLista ] ) ;
-
-		return TST_CondRetOK ;
-
-	} /* fim ativa: Testar ir para o elemento inicial */
-
-      /* LIS  &Ir para o elemento final */
-
-	else if ( strcmp( ComandoTeste , IR_FIM_CMD ) == 0 )
-	{
-
-		numLidos = LER_LerParametros( "i" , &inxLista ) ;
-
-		if ( ( numLidos != 1 )
-		  || ( ! ValidarInxLista( inxLista , NAO_VAZIO )) )
-		{
-		   return TST_CondRetParm ;
-		} /* if */
-
-		LIS_IrFinalLista( vtListas[ inxLista ] ) ;
-
-		return TST_CondRetOK ;
-
-	} /* fim ativa: LIS  &Ir para o elemento final */
-
-      /* LIS  &Avançar elemento */
-
-	else if ( strcmp( ComandoTeste , AVANCAR_ELEM_CMD ) == 0 )
-	{
-
-		numLidos = LER_LerParametros( "iii" , &inxLista , &numElem ,
-		                    &CondRetEsp ) ;
-
-		if ( ( numLidos != 3 )
-		  || ( ! ValidarInxLista( inxLista , NAO_VAZIO )) )
-		{
-		   return TST_CondRetParm ;
-		} /* if */
-
-		return TST_CompararInt( CondRetEsp ,
-		          LIS_AvancarElementoCorrente( vtListas[ inxLista ] , numElem ) ,
-		          "Condicao de retorno errada ao avancar" ) ;
-
-	} /* fim ativa: LIS  &Avançar elemento */
-
-	return TST_CondRetNaoConhec;
-
-} /* Fim função: TBAR &Testar baralho */
 
 
   /*****  Código das funções encapsuladas no módulo  *****/

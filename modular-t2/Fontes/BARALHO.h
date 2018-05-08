@@ -138,6 +138,80 @@ typedef struct carta * BAR_tppCarta;
 ***********************************************************************/
    BAR_tpCondRet BAR_DestruirBaralho( LIS_tppLista baralho );
 
+/***********************************************************************
+*
+*  $FC Fun��o: BAR  &Criar baralho
+*
+*  $ED Descri��o da fun��o
+*     Cria uma lista gen�rica duplamente encadeada.
+*     Os poss�veis tipos s�o desconhecidos a priori.
+*     A tipagem � implicita.
+*     N�o existe identificador de tipo associado � lista.
+*
+*  $EP Par�metros
+*     Nenhum.
+*
+*  $FV Valor retornado
+*     Se executou corretamente retorna o ponteiro para o baralho.
+*     Este ponteiro ser� utilizado pelas fun��es do BARALHO.c que lidam com manipula��o de cartas.
+*
+*     Se ocorreu algum erro, por exemplo falta de mem�ria ou dados errados,
+*     a fun��o retornar� NULL.
+*     N�o ser� dada mais informa��o quanto ao problema ocorrido.
+*
+***********************************************************************/
+
+   BAR_tppCarta BAR_CriaCarta(int valor, int naipe);
+
+/***********************************************************************
+*
+*  $FC Fun��o: BAR  &Criar baralho
+*
+*  $ED Descri��o da fun��o
+*     Cria uma lista gen�rica duplamente encadeada.
+*     Os poss�veis tipos s�o desconhecidos a priori.
+*     A tipagem � implicita.
+*     N�o existe identificador de tipo associado � lista.
+*
+*  $EP Par�metros
+*     Nenhum.
+*
+*  $FV Valor retornado
+*     Se executou corretamente retorna o ponteiro para o baralho.
+*     Este ponteiro ser� utilizado pelas fun��es do BARALHO.c que lidam com manipula��o de cartas.
+*
+*     Se ocorreu algum erro, por exemplo falta de mem�ria ou dados errados,
+*     a fun��o retornar� NULL.
+*     N�o ser� dada mais informa��o quanto ao problema ocorrido.
+*
+***********************************************************************/
+
+   int BAR_ObtemNaipe(BAR_tppCarta carta);
+
+/***********************************************************************
+*
+*  $FC Fun��o: BAR  &Criar baralho
+*
+*  $ED Descri��o da fun��o
+*     Cria uma lista gen�rica duplamente encadeada.
+*     Os poss�veis tipos s�o desconhecidos a priori.
+*     A tipagem � implicita.
+*     N�o existe identificador de tipo associado � lista.
+*
+*  $EP Par�metros
+*     Nenhum.
+*
+*  $FV Valor retornado
+*     Se executou corretamente retorna o ponteiro para o baralho.
+*     Este ponteiro ser� utilizado pelas fun��es do BARALHO.c que lidam com manipula��o de cartas.
+*
+*     Se ocorreu algum erro, por exemplo falta de mem�ria ou dados errados,
+*     a fun��o retornar� NULL.
+*     N�o ser� dada mais informa��o quanto ao problema ocorrido.
+*
+***********************************************************************/
+
+   int ObtemValor(BAR_tppCarta carta);
    #undef BARALHO_EXT
 
    #else

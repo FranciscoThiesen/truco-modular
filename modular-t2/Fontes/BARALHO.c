@@ -8,6 +8,7 @@
 #include "LISTA.h"
 #include "BARALHO.h"
 
+#define TAMANHO_MAX 40
 
 typedef struct carta
 {
@@ -59,7 +60,7 @@ static void imprimeBaralho(LIS_tppLista baralho)
 	int i = 0;
 	IrInicioLista(baralho);
 
-	while(i < 40) 
+	while(i < TAMANHO_MAX) 
 	{ 
 		var = (BAR_tpCarta*) LIS_ObterValor(baralho);
 		printf("%d  %d %d \n", var->naipe, var->valor, i);
@@ -71,47 +72,65 @@ static void imprimeBaralho(LIS_tppLista baralho)
 	IrInicioLista(baralho); // restaurando o curElem para o inicio da lista
 }
 
+
+BAR_tppCarta BAR_CriaCarta( int valor, int naipe )
+{
+	BAR_tppCarta carta = (BAR_tppCarta) malloc( sizeof( BAR_tpCarta) );
+	
+	carta->valor = valor;
+	carta->naipe = naipe;
+
+	return carta;
+}
+
+int BAR_ObtemNaipe(BAR_tppCarta carta)
+{
+	return carta->naipe;
+}
+
+int BAR_ObtemValor(BAR_tppCarta carta)
+{
+	return carta->valor;
+}
+
 LIS_tppLista BAR_CriarNovoBaralhoEmbaralhado()
 {
 	LIS_tppLista baralho;
 
-	BAR_tpCarta* cartas[40]; // temos que lembrar de dar free nos enderecos que demos malloc, talvez destroiLista resolva isso...
+	BAR_tpCarta* cartas[TAMANHO_MAX];
 	
-	int inseridoNoBaralho[40], totalCartasInseridas = 0, j;
+	int inseridoNoBaralho[TAMANHO_MAX], totalCartasInseridas = 0, j;
 
 	unsigned int i, index;
 
-	for(j = 0; j < 40; ++j) cartas[j] = (BAR_tpCarta*)  malloc(sizeof (BAR_tpCarta) ); 
+	for(j = 0; j < TAMANHO_MAX; ++j) cartas[j] = (BAR_tpCarta*)  malloc(sizeof (BAR_tpCarta) ); 
 
-	srand( time( NULL) ); // colocando o tempo atual na seed
+	srand( time( NULL) );
 	
-	memset(inseridoNoBaralho, 0, sizeof inseridoNoBaralho); // aqui digo que nenhuma carta foi inserida
+	memset(inseridoNoBaralho, 0, sizeof inseridoNoBaralho);
 	
 	baralho = LIS_CriarLista( Destruir );
 
-	//IrInicioLista(baralho);
-
-	while(totalCartasInseridas < 40 )
+	while(totalCartasInseridas < TAMANHO_MAX )
 	{
-		unsigned int indiceSorteado = rand() % (40 - totalCartasInseridas);
-		// entre todas as cartas ativas, vamos inserir a i-esima delas
+		unsigned int indiceSorteado = rand() % (TAMANHO_MAX - totalCartasInseridas);
+
 		index = 0;
 
-		for(i = 0; i < 40; ++i)
+		for(i = 0; i < TAMANHO_MAX; ++i)
 		{
-			if(inseridoNoBaralho[i] == 0) // carta i ainda nao foi inserida
+			if(inseridoNoBaralho[i] == 0)
 			{
-				if(index == indiceSorteado) // chegamos na posicao desejada
+				if(index == indiceSorteado)
 				{
-					cartas[totalCartasInseridas]->naipe = i / 10;
-					cartas[totalCartasInseridas]->valor = i % 10;
-
+					cartas[totalCartasInseridas] = BAR_CriaCarta( i / 10, i % 10);
+					
 					LIS_InserirElementoApos( baralho, cartas[totalCartasInseridas]) ;
-					
-					printf("Carta inserida na lista( naipe = %d, valor = %d i = %d\n", cartas[totalCartasInseridas]->naipe, cartas[totalCartasInseridas]->valor, i);
-					
+										
 					inseridoNoBaralho[i] = 1;
+					
 					totalCartasInseridas++;
+					
 					break;
 				}
 				else index++;
@@ -119,7 +138,6 @@ LIS_tppLista BAR_CriarNovoBaralhoEmbaralhado()
 		}
 	}
 
-	printf("Total de cartas inseridas = %d\n", totalCartasInseridas);
 	return baralho;
 }
 
@@ -155,7 +173,7 @@ BAR_tpCondRet BAR_DestruirBaralho(LIS_tppLista baralho)
 		return BAR_CondRetBaralhoVazio;
 	}
 
-	for(i = 0; i < 40; ++i)
+	for(i = 0; i < TAMANHO_MAX; ++i)
 	{
 		x = BAR_PegaCartaDoTopo(baralho);
 		if(x == NULL) break;
@@ -168,11 +186,11 @@ BAR_tpCondRet BAR_DestruirBaralho(LIS_tppLista baralho)
 
 int main(void)
 { 
-	LIS_tppLista baralho;
-	baralho = BAR_CriarNovoBaralhoEmbaralhado();
-	imprimeBaralho(baralho);
-	printf("\n\n");
-	BAR_DestruirBaralho(baralho);
-	system("pause") ;
+	//LIS_tppLista baralho;
+	//baralho = BAR_CriarNovoBaralhoEmbaralhado();
+	//imprimeBaralho(baralho);
+	//printf("\n\n");
+	//BAR_DestruirBaralho(baralho);
+	//system("pause") ;
 	return ;
 }

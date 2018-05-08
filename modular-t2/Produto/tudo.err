@@ -1,0 +1,28 @@
+
+
+#################### Compilacao do construto: TesteBaralho
+
+lista.c
+baralho.c
+..\Fontes\baralho.c(108) : warning C4244: 'function' : conversion from 'time_t' to 'unsigned int', possible loss of data
+..\Fontes\baralho.c(145) : warning C4029: declared formal parameter list different from definition
+testbaralho.c
+..\Fontes\testbaralho.c(116) : warning C4013: 'BAR_CriarCarta' undefined; assuming extern returning int
+..\Fontes\testbaralho.c(116) : warning C4047: '=' : 'BAR_tppCarta' differs in levels of indirection from 'int'
+..\Fontes\testbaralho.c(137) : warning C4013: 'BAR_ObterNaipe' undefined; assuming extern returning int
+..\Fontes\testbaralho.c(144) : error C2065: 'CRIAR_BARALHO_CMD' : undeclared identifier
+..\Fontes\testbaralho.c(144) : warning C4047: 'function' : 'const unsigned char *' differs in levels of indirection from 'int'
+..\Fontes\testbaralho.c(144) : warning C4024: 'strcmp' : different types for formal and actual parameter 2
+..\Fontes\testbaralho.c(155) : warning C4013: 'BAR_CriarBaralho' undefined; assuming extern returning int
+..\Fontes\testbaralho.c(155) : warning C4047: '=' : 'LIS_tppLista' differs in levels of indirection from 'int'
+..\Fontes\testbaralho.c(197) : warning C4013: 'BAR_ObterNumero' undefined; assuming extern returning int
+..\Fontes\testbaralho.c(211) : error C2143: syntax error : missing ';' before 'type'
+..\Fontes\testbaralho.c(220) : error C2059: syntax error : 'if'
+..\Fontes\testbaralho.c(227) : error C2059: syntax error : 'else'
+..\Fontes\testbaralho.c(235) : error C2059: syntax error : 'return'
+..\Fontes\testbaralho.c(237) : error C2059: syntax error : '}'
+..\Fontes\testbaralho.c(281) : error C2037: left of 'num' specifies undefined struct/union 'carta'
+..\Fontes\testbaralho.c(281) : error C2037: left of 'num' specifies undefined struct/union 'carta'
+..\Fontes\testbaralho.c(282) : error C2037: left of 'naipe' specifies undefined struct/union 'carta'
+..\Fontes\testbaralho.c(282) : error C2037: left of 'naipe' specifies undefined struct/union 'carta'
+

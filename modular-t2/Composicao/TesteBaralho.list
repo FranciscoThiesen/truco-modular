@@ -1,0 +1,153 @@
+GERADOR DE SCRIPT DE DIRETIVAS PARA MAKE
+   LES / Informática / PUC-Rio    Versão 6.00 (c) 2005
+
+Composição do construto: TesteBaralho.comp
+
+   Nome do Construto:           TesteBaralho
+   Diretório base:              C:\Users\VTEX\truco-modular\modular-t2\composicao
+
+   Arquivo composição:          TesteBaralho.comp
+   Arquivo plataforma:          gmake.parm
+
+   Arquivo diretivas MAKE:      TesteBaralho.make
+   Arquivo diretivas LINK:      TesteBaralho.build
+   Arquivo listagem:            TesteBaralho.list
+
+Módulos do construto: TesteBaralho.comp
+
+   lista.c
+   baralho.c
+   testbaralho.c
+
+Estatísticas do construto
+
+   Estatísticas do arquivo: baralho.c
+      Total linhas:             196
+      Linhas de código:         114
+      Linhas de comentário:      29
+      Linhas em branco:          43
+   Arquivos de inclusão de que necessita
+      baralho.h
+      lista.h
+
+   Estatísticas do arquivo: baralho.h
+      Total linhas:             218
+      Linhas de código:          26
+      Linhas de comentário:     168
+      Linhas em branco:          24
+   Arquivos de inclusão de que necessita
+      lista.h
+   Arquivos em que é incluído
+      baralho.c
+      testbaralho.c
+
+   Estatísticas do arquivo: generico.h
+      Total linhas:             588
+      Linhas de código:          54
+      Linhas de comentário:     470
+      Linhas em branco:          64
+   Arquivos de inclusão de que necessita
+      tst_espc.h
+   Arquivos em que é incluído
+      testbaralho.c
+
+   Estatísticas do arquivo: lerparm.h
+      Total linhas:             463
+      Linhas de código:          36
+      Linhas de comentário:     362
+      Linhas em branco:          65
+   Arquivos em que é incluído
+      testbaralho.c
+
+   Estatísticas do arquivo: lista.c
+      Total linhas:             560
+      Linhas de código:         288
+      Linhas de comentário:     136
+      Linhas em branco:         154
+   Arquivos de inclusão de que necessita
+      lista.h
+
+   Estatísticas do arquivo: lista.h
+      Total linhas:             346
+      Linhas de código:          35
+      Linhas de comentário:     262
+      Linhas em branco:          49
+   Arquivos em que é incluído
+      baralho.c
+      baralho.h
+      lista.c
+      testbaralho.c
+
+   Estatísticas do arquivo: testbaralho.c
+      Total linhas:             286
+      Linhas de código:         163
+      Linhas de comentário:      62
+      Linhas em branco:          68
+   Arquivos de inclusão de que necessita
+      baralho.h
+      generico.h
+      lerparm.h
+      lista.h
+      tst_espc.h
+
+   Estatísticas do arquivo: tst_espc.h
+      Total linhas:             320
+      Linhas de código:          23
+      Linhas de comentário:     277
+      Linhas em branco:          20
+   Arquivos em que é incluído
+      generico.h
+      testbaralho.c
+
+Totais por tipo de arquivo
+
+  Tipo: def      Path: ..\Tabelas
+         Total linhas do tipo:         0
+         Linhas de código:             0
+         Linhas de comentário:         0
+         Linhas em branco:             0
+         Arquivos deste tipo:          0
+
+  Tipo: h        Path: ..\Fontes
+         Total linhas do tipo:      1935
+         Linhas de código:           174
+         Linhas de comentário:      1539
+         Linhas em branco:           222
+         Arquivos deste tipo:          5
+
+  Tipo: obj      Path: ..\Objetos
+         Total linhas do tipo:         0
+         Linhas de código:             0
+         Linhas de comentário:         0
+         Linhas em branco:             0
+         Arquivos deste tipo:          0
+
+  Tipo: err      Path: ..\Produto
+         Total linhas do tipo:         0
+         Linhas de código:             0
+         Linhas de comentário:         0
+         Linhas em branco:             0
+         Arquivos deste tipo:          0
+
+  Tipo: DEFAULT  Path: ..\Fontes
+         Total linhas do tipo:         0
+         Linhas de código:             0
+         Linhas de comentário:         0
+         Linhas em branco:             0
+         Arquivos deste tipo:          0
+
+  Tipo: c        Path: ..\Fontes
+         Total linhas do tipo:      1042
+         Linhas de código:           565
+         Linhas de comentário:       227
+         Linhas em branco:           265
+         Arquivos deste tipo:          3
+
+Totais para todo o construto TesteBaralho
+
+   Total linhas:              2977
+   Linhas de código:           739
+   Linhas de comentário:      1766
+   Linhas em branco:           487
+   Arquivos processados:         8
+
