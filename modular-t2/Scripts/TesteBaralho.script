@@ -1,0 +1,72 @@
+// Script:    TesteBaralho.script
+// Autor:     Miguel Corti, Lucas Pavanelli
+// Data:      04/mai/2017
+// Propósito: Testar o módulo baralho
+
+== Inicializar valores
+=declararparm   lista0  int 0
+=declararparm   lista1  int 1
+=declararparm   lista2  int 2
+
+=declararparm   carta0  int 0
+=declararparm   carta1  int 1
+=declararparm   carta2  int 2
+=declararparm   carta3  int 3
+=declararparm   carta4  int 4
+
+=declararparm   AS       int  1
+=declararparm   DOIS     int  2
+=declararparm   VALETE   int  11
+=declararparm   DAMA     int  12
+=declararparm   REI      int  13
+
+=declararparm   COPAS    int  0
+=declararparm   OUROS    int  1
+=declararparm   PAUS     int  2
+=declararparm   ESPADAS  int  3
+
+=declararparm   OK             int  0
+=declararparm   ListaVazia     int  1
+=declararparm   FimLista       int  2
+=declararparm   NaoAchou       int  3
+=declararparm   FaltouMemoria  int  4
+
+=declararparm   pNULL          int  0
+=declararparm   pNaoNULL       int  1
+
+== Criar a carta0
+=criarcarta      carta0   COPAS   AS
+
+== Obter naipe da carta0
+=obternaipe   carta0   COPAS
+
+== Obter número da carta0
+=obternum   carta0   AS
+
+== Criar baralho e armazenar em lista0
+=criarbaralho  lista0
+
+== Checar se o baralho criado está corretamente ordenado verificando as duas primeiras e as duas últimas cartas
+=criarcarta      carta1   COPAS    DOIS
+=criarcarta      carta2   ESPADAS  REI
+=criarcarta      carta3   ESPADAS  DAMA
+=irinicio        lista0
+=obtervalorelem  lista0   carta0   pNaoNULL
+=avancarelem     lista0   1        OK
+=obtervalorelem  lista0   carta1   pNaoNULL
+=irfinal         lista0
+=obtervalorelem  lista0   carta2   pNaoNULL
+=avancarelem     lista0   -1       OK
+=obtervalorelem  lista0   carta3   pNaoNULL
+
+== Carta0 receber valores de carta2
+=recebevalores   carta0   carta2
+=obternum        carta0   REI
+=obternum        carta2   REI
+=obternaipe      carta0   ESPADAS
+=obternaipe      carta2   ESPADAS
+
+== Embaralhar lista0
+=embaralhar         lista0     OK    
+
+// fim

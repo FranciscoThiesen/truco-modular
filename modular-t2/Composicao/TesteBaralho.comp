@@ -1,0 +1,26 @@
+# Teste do módulo baralho usando a biblioteca contendo o arcabouço
+
+[Diretorios]
+
+Nome        =  TesteBaralho
+PathDefault =  ..\Fontes
+err         =  ..\Produto
+obj         =  ..\Objetos
+c           =  ..\Fontes
+h           =  ..\Fontes
+def         =  ..\Tabelas
+
+[Modulos]
+Lista
+Baralho
+TestBaralho
+
+[BuildInicio]
+/OUT:..\produto\TesteBaralho.exe
+/INCREMENTAL:NO
+/MACHINE:IX86
+
+[BuildFim]
+ArcaboucoTeste.lib
+
+[Fim]
