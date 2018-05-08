@@ -35,6 +35,16 @@
 =declararparm   pNaoNULL       int  1
 
 == Criar a carta0
-=criarcarta      carta0   COPAS   AS
+=criacarta      carta0   COPAS   AS
+== Criar a carta0
+=criacarta      carta0   COPAS   AS
+== Criar a carta0
+=criacarta      carta0   COPAS   AS
+
+== Criar a carta0
+=criacarta      carta0   COPAS   AS
+
+== Obter naipe da carta0
+=obtemnaipe   carta0   COPAS
 
 // fim

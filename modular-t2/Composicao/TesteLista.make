@@ -1,7 +1,7 @@
 ##################################################
 ###
-### Diretivas de MAKE para o construto: TesteBaralho
-### Gerado a partir de: TesteBaralho.comp
+### Diretivas de MAKE para o construto: TesteLista
+### Gerado a partir de: TesteLista.comp
 ###
 ### ----- Arquivo gerado, NÃO EDITE!!! -----
 ###
@@ -9,7 +9,7 @@
 
 ### Nomes globais
 
-NOME            = TesteBaralho
+NOME            = TesteLista
 
 
 ### Nomes de paths
@@ -49,7 +49,7 @@ INCLUDE = $(INCLUDE);$(PDEFAULT)
 ### Regras de geração
 
 all : limpa \
-   $(Fobj)\lista.obj   $(Fobj)\baralho.obj   $(Fobj)\testbar.obj \
+   $(Fobj)\lista.obj   $(Fobj)\testlis.obj \
    Construto
 
 ### Limpar arquivos
@@ -64,26 +64,22 @@ $(Fobj)\lista.obj :  {$(Pc)}\lista.c \
     {$(Ph)}lista.h             
    cl $(O) $(OPT) /Fo$(Fobj)\ $(Fc)\$(@B).c >> $(Ferr)\$(NOME).err
 
-$(Fobj)\baralho.obj :  {$(Pc)}\baralho.c \
-    {$(Ph)}baralho.h            {$(Ph)}lista.h             
-   cl $(O) $(OPT) /Fo$(Fobj)\ $(Fc)\$(@B).c >> $(Ferr)\$(NOME).err
-
-$(Fobj)\testbar.obj :  {$(Pc)}\testbar.c \
-    {$(Ph)}baralho.h            {$(Ph)}generico.h           {$(Ph)}lerparm.h            \
-    {$(Ph)}lista.h              {$(Ph)}tst_espc.h          
+$(Fobj)\testlis.obj :  {$(Pc)}\testlis.c \
+    {$(Ph)}generico.h           {$(Ph)}lerparm.h            {$(Ph)}lista.h              \
+    {$(Ph)}tst_espc.h          
    cl $(O) $(OPT) /Fo$(Fobj)\ $(Fc)\$(@B).c >> $(Ferr)\$(NOME).err
 
 
 ### Terminação
 
 Construto : \
-   $(Fobj)\lista.obj   $(Fobj)\baralho.obj   $(Fobj)\testbar.obj
+   $(Fobj)\lista.obj   $(Fobj)\testlis.obj
     cd $(Fobj)
     LINK $(L) @$(NOME).build >> $(Ferr)\$(NOME).err
 
 ##################################################
 ###
-### Fim de diretivas MAKE para o construto: TesteBaralho
+### Fim de diretivas MAKE para o construto: TesteLista
 ###
 ##################################################
 

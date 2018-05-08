@@ -1,45 +1,24 @@
 GERADOR DE SCRIPT DE DIRETIVAS PARA MAKE
    LES / Informática / PUC-Rio    Versão 6.00 (c) 2005
 
-Composição do construto: TesteBaralho.comp
+Composição do construto: TesteLista.comp
 
-   Nome do Construto:           TesteBaralho
+   Nome do Construto:           TesteLista
    Diretório base:              C:\Users\VTEX\truco-modular\modular-t2\composicao
 
-   Arquivo composição:          TesteBaralho.comp
+   Arquivo composição:          TesteLista.comp
    Arquivo plataforma:          gmake.parm
 
-   Arquivo diretivas MAKE:      TesteBaralho.make
-   Arquivo diretivas LINK:      TesteBaralho.build
-   Arquivo listagem:            TesteBaralho.list
+   Arquivo diretivas MAKE:      TesteLista.make
+   Arquivo diretivas LINK:      TesteLista.build
+   Arquivo listagem:            TesteLista.list
 
-Módulos do construto: TesteBaralho.comp
+Módulos do construto: TesteLista.comp
 
    lista.c
-   baralho.c
-   testbar.c
+   testlis.c
 
 Estatísticas do construto
-
-   Estatísticas do arquivo: baralho.c
-      Total linhas:             196
-      Linhas de código:         114
-      Linhas de comentário:      29
-      Linhas em branco:          43
-   Arquivos de inclusão de que necessita
-      baralho.h
-      lista.h
-
-   Estatísticas do arquivo: baralho.h
-      Total linhas:             219
-      Linhas de código:          26
-      Linhas de comentário:     168
-      Linhas em branco:          25
-   Arquivos de inclusão de que necessita
-      lista.h
-   Arquivos em que é incluído
-      baralho.c
-      testbar.c
 
    Estatísticas do arquivo: generico.h
       Total linhas:             588
@@ -49,7 +28,7 @@ Estatísticas do construto
    Arquivos de inclusão de que necessita
       tst_espc.h
    Arquivos em que é incluído
-      testbar.c
+      testlis.c
 
    Estatísticas do arquivo: lerparm.h
       Total linhas:             463
@@ -57,7 +36,7 @@ Estatísticas do construto
       Linhas de comentário:     362
       Linhas em branco:          65
    Arquivos em que é incluído
-      testbar.c
+      testlis.c
 
    Estatísticas do arquivo: lista.c
       Total linhas:             560
@@ -73,18 +52,15 @@ Estatísticas do construto
       Linhas de comentário:     262
       Linhas em branco:          49
    Arquivos em que é incluído
-      baralho.c
-      baralho.h
       lista.c
-      testbar.c
+      testlis.c
 
-   Estatísticas do arquivo: testbar.c
-      Total linhas:             231
-      Linhas de código:         130
-      Linhas de comentário:      54
-      Linhas em branco:          52
+   Estatísticas do arquivo: testlis.c
+      Total linhas:             469
+      Linhas de código:         255
+      Linhas de comentário:      88
+      Linhas em branco:         141
    Arquivos de inclusão de que necessita
-      baralho.h
       generico.h
       lerparm.h
       lista.h
@@ -97,7 +73,7 @@ Estatísticas do construto
       Linhas em branco:          20
    Arquivos em que é incluído
       generico.h
-      testbar.c
+      testlis.c
 
 Totais por tipo de arquivo
 
@@ -109,11 +85,11 @@ Totais por tipo de arquivo
          Arquivos deste tipo:          0
 
   Tipo: h        Path: ..\Fontes
-         Total linhas do tipo:      1936
-         Linhas de código:           174
-         Linhas de comentário:      1539
-         Linhas em branco:           223
-         Arquivos deste tipo:          5
+         Total linhas do tipo:      1717
+         Linhas de código:           148
+         Linhas de comentário:      1371
+         Linhas em branco:           198
+         Arquivos deste tipo:          4
 
   Tipo: obj      Path: ..\Objetos
          Total linhas do tipo:         0
@@ -137,17 +113,17 @@ Totais por tipo de arquivo
          Arquivos deste tipo:          0
 
   Tipo: c        Path: ..\Fontes
-         Total linhas do tipo:       987
-         Linhas de código:           532
-         Linhas de comentário:       219
-         Linhas em branco:           249
-         Arquivos deste tipo:          3
+         Total linhas do tipo:      1029
+         Linhas de código:           543
+         Linhas de comentário:       224
+         Linhas em branco:           295
+         Arquivos deste tipo:          2
 
-Totais para todo o construto TesteBaralho
+Totais para todo o construto TesteLista
 
-   Total linhas:              2923
-   Linhas de código:           706
-   Linhas de comentário:      1758
-   Linhas em branco:           472
-   Arquivos processados:         8
+   Total linhas:              2746
+   Linhas de código:           691
+   Linhas de comentário:      1595
+   Linhas em branco:           493
+   Arquivos processados:         6
 

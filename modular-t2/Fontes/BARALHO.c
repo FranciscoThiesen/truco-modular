@@ -93,7 +93,7 @@ int BAR_ObtemValor(BAR_tppCarta carta)
 	return carta->valor;
 }
 
-LIS_tppLista BAR_CriarNovoBaralhoEmbaralhado()
+LIS_tppLista BAR_CriaNovoBaralhoEmbaralhado()
 {
 	LIS_tppLista baralho;
 
@@ -164,7 +164,7 @@ BAR_tppCarta BAR_PegaCartaDoTopo(LIS_tppLista baralho)
 	return carta;
 }
 
-BAR_tpCondRet BAR_DestruirBaralho(LIS_tppLista baralho)
+BAR_tpCondRet BAR_DestroiBaralho(LIS_tppLista baralho)
 {
 	int i = 0;
 	BAR_tppCarta x = (BAR_tppCarta) malloc( sizeof ( BAR_tpCarta) );

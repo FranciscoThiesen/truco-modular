@@ -1,6 +1,6 @@
 /OUT:..\produto\TesteBaralho.exe
 /INCREMENTAL:NO
 /MACHINE:IX86
-lista.obj  baralho.obj  testbaralho.obj  
+lista.obj  baralho.obj  testbar.obj  
 ArcaboucoTeste.lib
 

@@ -1,8 +1,8 @@
-# Teste do mÃ³dulo baralho usando a biblioteca contendo o arcabouÃ§o
+# Teste do módulo árvore usando a biblioteca contendo o arcabouço
 
 [Diretorios]
 
-Nome        =  TesteBaralho
+Nome        =  TesteArvoreProd
 PathDefault =  ..\Fontes
 err         =  ..\Produto
 obj         =  ..\Objetos
@@ -11,12 +11,11 @@ h           =  ..\Fontes
 def         =  ..\Tabelas
 
 [Modulos]
-Lista
-Baralho
-TestBar
+Arvore
+TestArv
 
 [BuildInicio]
-/OUT:..\produto\TesteBaralho.exe
+/OUT:..\produto\TesteArvoreProd.exe
 /INCREMENTAL:NO
 /MACHINE:IX86
 

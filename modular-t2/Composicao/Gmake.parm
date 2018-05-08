@@ -12,15 +12,14 @@ L       =
 LD      = /DEBUG /DEBUGTYPE:CV
 
 !IFDEF PRD
-O       = /Ox  /D_CRT_SECURE_NO_DEPRECATE
+O       = /Ox /D_CRT_SECURE_NO_DEPRECATE
 !ENDIF
 
 OPT     = /c /J /W4 /nologo
 INCLUDE = $(INCLUDE);$(PDEFAULT)
 
 [Limpa]
-   ..\..\Ferramnt\CompileBanner /c$(NOME)
-   ..\..\Ferramnt\CompileBanner /c$(NOME) >$(Ferr)\$(NOME).err
+   if exist $(Ferr)\$(NOME).err  del $(Ferr)\$(NOME).err
 
 [DefaultLink]
     cd $(Fobj)

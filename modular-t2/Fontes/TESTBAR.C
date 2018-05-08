@@ -7,8 +7,8 @@
 *  Nome da base de software:    Arcabouço para a automação de testes de programas redigidos em C
 *  Arquivo da base de software: D:\AUTOTEST\PROJETOS\LISTA.BSW
 *
-*  Projeto: INF 1301 / FreeCell
-*  Autores: Miguel e Lucas
+*  Projeto: INF 1301
+*  Autores: Francisco, Gabriel e Roberto
 ***************************************************************************/
 
 #include    <string.h>
@@ -22,12 +22,12 @@
 
 #include    "Baralho.h"
 
-static const char CRIAR_CARTA_CMD                     [ ] = "=criarcarta";
-static const char OBTER_NAIPE_CMD                     [ ] = "=obternaipe";
-static const char OBTER_VALOR_CMD                     [ ] = "=obtervalor";
-static const char CRIAR_BARALHO_EMBARALHADO_CMD       [ ] = "=criarbaralhoembaralhado";
-static const char DESTRUIR_BARALHO_CMD                [ ] = "=destruirbaralho";
-static const char RETIRAR_TOPO_BARALHO_CMD            [ ] = "=retirartopobaralho";
+static const char CRIA_CARTA_CMD                     [ ] = "=criacarta";
+static const char OBTEM_NAIPE_CMD                    [ ] = "=obtemnaipe";
+static const char OBTEM_VALOR_CMD                    [ ] = "=obtemvalor";
+static const char CRIA_BARALHO_EMBARALHADO_CMD       [ ] = "=criabaralhoembaralhado";
+static const char DESTROI_BARALHO_CMD                [ ] = "=destroibaralho";
+static const char RETIRA_TOPO_BARALHO_CMD            [ ] = "=retiratopobaralho";
 
 #define TRUE  1
 #define FALSE 0
@@ -49,9 +49,6 @@ static int ValidarInxLista(int inxLista, int Modo);
 
 static int ValidarInxCarta(int inxCarta, int Modo);
 
-static void RecebeValores( BAR_tppCarta cartaDestino, BAR_tppCarta cartaRemetente );
-
-
 /*****  Código das funções exportadas pelo módulo  *****/
 
 /***********************************************************************
@@ -72,12 +69,12 @@ typedef struct BAR_tagCarta
 *
 *     Comandos disponíveis:
 *
-*     =criarcarta                  <inxCarta>   <naipe>        <número>
-*     =obternaipe                  <inxCarta>   <naipeEsp>
-*     =obtervalor                  <inxCarta>   <valorEsp>
-*	  =criarbaralhoembaralhado     <inxBaralho> <condRetEsp>
-*     =destruirbaralho             <inxBaralho> <condRetEsp>
-*     =retirartopobaralho          <inxBaralho> <cartaEsp>
+*     =criacarta                  <inxCarta>   <naipe>        <número>
+*     =obtemnaipe                 <inxCarta>   <naipeEsp>
+*     =obtemvalor                 <inxCarta>   <valorEsp>
+*	  =criabaralhoembaralhado     <inxBaralho> <condRetEsp>
+*     =destroibaralho             <inxBaralho> <condRetEsp>
+*     =retiratopobaralho          <inxBaralho> <cartaEsp>
 *
 ***********************************************************************/
 
@@ -99,7 +96,7 @@ TST_tpCondRet TST_EfetuarComando(char * ComandoTeste)
 
 	/* Testar CriarCarta */
 	
-	if (strcmp(ComandoTeste, CRIAR_CARTA_CMD) == 0)
+	if (strcmp(ComandoTeste, CRIA_CARTA_CMD) == 0)
 	{
 		int naipe, num;
 
@@ -113,16 +110,16 @@ TST_tpCondRet TST_EfetuarComando(char * ComandoTeste)
 		} /* if */
 
 		vtCartas[inxCarta] =
-			BAR_CriarCarta(naipe, num);
+			BAR_CriaCarta(naipe, num);
 
 		return TST_CompararPonteiroNulo(1, vtCartas[inxCarta],
 			"Erro em ponteiro de nova lista.");
 
-	} /* fim ativa: Testar CriarCarta */
+	} /* fim ativa: Testar CriaCarta */
 
 	/* Testar Obter Naipe */
 
-	else if(strcmp(ComandoTeste, OBTER_NAIPE_CMD) == 0)
+	else if(strcmp(ComandoTeste, OBTEM_NAIPE_CMD) == 0)
 	{
 		numLidos = LER_LerParametros("ii",
 			&inxCarta, &ValEsp);
@@ -134,72 +131,32 @@ TST_tpCondRet TST_EfetuarComando(char * ComandoTeste)
 		} /* if */
 
 		return TST_CompararInt( ValEsp ,
-                      BAR_ObterNaipe( vtCartas[ inxCarta ] ) ,
+                      BAR_ObtemNaipe( vtCartas[ inxCarta ] ) ,
                      "Naipe retornado está errado."   ) ;
 
-	} /* fim ativa: Testar ObterNaipe */	
+	} /* fim ativa: Testar ObtemNaipe */	
 
-	/* Testar Criar Baralho */
-
-	else if(strcmp(ComandoTeste, CRIAR_BARALHO_CMD) == 0)
+	/* Testar Obter Valor */
+	else if(strcmp(ComandoTeste, OBTEM_VALOR_CMD) == 0)
 	{
-		numLidos = LER_LerParametros("i",
-			&inxLista);
+		numLidos = LER_LerParametros("ii",
+			&inxCarta, &ValEsp);
 
-		if ((numLidos != 1)
-			|| (!ValidarInxLista(inxLista, VAZIO)))
+		if ((numLidos != 2)
+			|| (!ValidarInxCarta(inxCarta, NAO_VAZIO)))
 		{
 			return TST_CondRetParm;
 		} /* if */
 
-		vtListas[ inxLista ] = BAR_CriarBaralho();
-
-		return TST_CompararPonteiroNulo( 1 , vtListas[ inxLista ] ,
-                         "Dado tipo um deveria existir." ) ;
+		return TST_CompararInt( ValEsp ,
+                      BAR_ObtemValor( vtCartas[ inxCarta ] ) ,
+                     "Número retornado está errado."   ) ;
 
 	} /* fim ativa: Testar ObterValor */
 
-	/* Testar Obter Valor */
-		
-	else if ( strcmp( ComandoTeste , OBTER_VALOR_CMD ) == 0 )
-	{
+	return TST_CondRetNaoConhec;
 
-		numLidos = LER_LerParametros( "iii" ,
-		           &inxLista , &inxCarta , &ValEsp ) ;
-		
-		if ( ( numLidos != 3 )
-		  || ( ! ValidarInxLista( inxLista , NAO_VAZIO )) 
-		  || ( ! ValidarInxCarta( inxCarta , NAO_VAZIO )))
-		{
-		   return TST_CondRetParm ;
-		} /* if */
-		
-		pCarta = ( BAR_tppCarta ) LIS_ObterValor( vtListas[ inxLista ] ) ;
-		
-		if ( ValEsp == 0 )
-		{
-		   return TST_CompararPonteiroNulo( 0 , pCarta ,
-		             "Valor não deveria existir." ) ;
-		} /* if */
-		
-		if ( pCarta == NULL )
-		{
-		   return TST_CompararPonteiroNulo( 1 , pCarta ,
-		             "Dado tipo um deveria existir." ) ;
-		} /* if */
-		
-		if( TST_CompararInt( BAR_ObterNaipe( pCarta ) , BAR_ObterNaipe(vtCartas[ inxCarta ]) ,
-                     "Naipe das cartas não estão iguais") == TST_CondRetErro)
-		{
-			return TST_CondRetErro;
-		}
-
-		return TST_CompararInt( BAR_ObterNumero( pCarta )  , BAR_ObterNumero(vtCartas[ inxCarta ]) ,
-                     "Número das cartas não estão iguais");
-
-	} /* fim ativa: Testar obter valor do elemento corrente */
-
-
+}
   /*****  Código das funções encapsuladas no módulo  *****/
 
   /***********************************************************************
@@ -270,17 +227,5 @@ int ValidarInxCarta(int inxCarta, int Modo)
 
 } /* Fim função: TBAR -Validar indice de carta */
 
-  /***********************************************************************
-  *
-  *  $FC Função: TBAR -Receber Valores
-  *
-  ***********************************************************************/
-
-void RecebeValores( BAR_tppCarta cartaDestino, BAR_tppCarta cartaRemetente )
-{
-	cartaDestino->num = cartaRemetente->num;
-	cartaDestino->naipe = cartaRemetente->naipe;
-} /* Fim função: TBAR -Receber Valores */
-
-  /********** Fim do módulo de implementação: TBAR Teste baralho de cartas **********/
+/********** Fim do módulo de implementação: TBAR Teste baralho de cartas **********/
 

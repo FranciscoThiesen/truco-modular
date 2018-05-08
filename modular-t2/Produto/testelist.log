@@ -1,0 +1,48 @@
+
+!!! Inicio dos testes
+!!!      Construto sob teste: ..\produto\TesteLista
+!!!      Script de teste:     ..\scripts\TesteLista.script
+
+!!!    0  Linha:     1  // Script:    TesteLista.script 
+!!!    0  Linha:     2  // Autor:     Arndt von Staa 
+!!!    0  Linha:     3  // Data:      02/abr/2008 
+!!!    0  Linha:     4  // Propósito: Testar superficialmente o módulo lista genérica duplamente encadeada 
+!!!    0  Linha:     5  // 
+    7  == Inicializar valores
+   26  == Criar a lista 0
+   30  == Verificar ObterValor relativo a lista vazia
+   33  ==Inserir elemento em lista vazia com inselemapos //alterado
+   40  == Inserir elemento antes em lista vazia
+   44  == Inserir elemento após primeiro
+   49  == Inserir elemento antes do último e verificar sua posicao
+   55  == Excluir elemento do meio
+   59  == Excluir elemento do início
+   63  == Excluir elemento final, único
+   67  == Excluir elemento de lista vazia, verificar retornos //alterado
+   71  == Ver se a lista ficou vazia
+   74  == Destruir a lista
+   77  == Criar uma lista com dois elementos
+   84  == Esvaziar a lista e ver se ficou vazia
+   88  == Destruir a lista
+   91  == Criar uma lista com quatro elementos
+   98  == Verificar a lista de trás para diante
+  108  == Verificar a lista de frente para trás
+  118  == Verificar a lista andando demais de trás para diante
+  122  == Verificar a lista andando demais de frente para trás
+  126  == Destruir a lista
+  129  == Navegar inicio,  final 			//alterado
+  139  == Resete de teste   //alterado
+!!!    0  Linha:   140  //=criarlista      lista1 
+!!!    0  Linha:   142  //=destruirlista   lista0 
+!!!    0  Linha:   143  //=obtervalorelem  lista0   str0   NaoAchou 
+!!!    0  Linha:   148  // fim 
+
+!!! Número de linhas lidas:         148
+!!! Número de casos de teste:        24
+!!! Número comandos corretos:        79
+!!! Número de falhas encontradas:     0
+
+!!! Não foram encontrados problemas
+
+
+!!! Numero de espacos ainda alocados: 0

@@ -1,7 +1,7 @@
 ##################################################
 ###
-### Diretivas de MAKE para o construto: TesteBaralho
-### Gerado a partir de: TesteBaralho.comp
+### Diretivas de MAKE para o construto: TesteArvoreDebug
+### Gerado a partir de: TesteArvoreDebug.comp
 ###
 ### ----- Arquivo gerado, NÃO EDITE!!! -----
 ###
@@ -9,7 +9,7 @@
 
 ### Nomes globais
 
-NOME            = TesteBaralho
+NOME            = TesteArvoreDebug
 
 
 ### Nomes de paths
@@ -49,7 +49,7 @@ INCLUDE = $(INCLUDE);$(PDEFAULT)
 ### Regras de geração
 
 all : limpa \
-   $(Fobj)\lista.obj   $(Fobj)\baralho.obj   $(Fobj)\testbar.obj \
+   $(Fobj)\arvore.obj   $(Fobj)\testarv.obj \
    Construto
 
 ### Limpar arquivos
@@ -60,30 +60,28 @@ limpa :
 
 ### Dependências de módulos objeto a compilar
 
-$(Fobj)\lista.obj :  {$(Pc)}\lista.c \
-    {$(Ph)}lista.h             
-   cl $(O) $(OPT) /Fo$(Fobj)\ $(Fc)\$(@B).c >> $(Ferr)\$(NOME).err
+$(Fobj)\arvore.obj :  {$(Pc)}\arvore.c \
+    ..\\tabelas\\idtiposespaco.def {$(Ph)}arvore.h             {$(Ph)}cespdin.h            \
+    {$(Ph)}conta.h              {$(Ph)}generico.h           {$(Pdef)}tiposespacosarvore.def \
+    {$(Ph)}tst_espc.h          
+   cl /D_DEBUG $(O) $(OPT) /Fo$(Fobj)\ $(Fc)\$(@B).c >> $(Ferr)\$(NOME).err
 
-$(Fobj)\baralho.obj :  {$(Pc)}\baralho.c \
-    {$(Ph)}baralho.h            {$(Ph)}lista.h             
-   cl $(O) $(OPT) /Fo$(Fobj)\ $(Fc)\$(@B).c >> $(Ferr)\$(NOME).err
-
-$(Fobj)\testbar.obj :  {$(Pc)}\testbar.c \
-    {$(Ph)}baralho.h            {$(Ph)}generico.h           {$(Ph)}lerparm.h            \
-    {$(Ph)}lista.h              {$(Ph)}tst_espc.h          
-   cl $(O) $(OPT) /Fo$(Fobj)\ $(Fc)\$(@B).c >> $(Ferr)\$(NOME).err
+$(Fobj)\testarv.obj :  {$(Pc)}\testarv.c \
+    {$(Ph)}arvore.h             {$(Ph)}cespdin.h            {$(Ph)}generico.h           \
+    {$(Ph)}lerparm.h            {$(Ph)}tst_espc.h          
+   cl /D_DEBUG $(O) $(OPT) /Fo$(Fobj)\ $(Fc)\$(@B).c >> $(Ferr)\$(NOME).err
 
 
 ### Terminação
 
 Construto : \
-   $(Fobj)\lista.obj   $(Fobj)\baralho.obj   $(Fobj)\testbar.obj
+   $(Fobj)\arvore.obj   $(Fobj)\testarv.obj
     cd $(Fobj)
     LINK $(L) @$(NOME).build >> $(Ferr)\$(NOME).err
 
 ##################################################
 ###
-### Fim de diretivas MAKE para o construto: TesteBaralho
+### Fim de diretivas MAKE para o construto: TesteArvoreDebug
 ###
 ##################################################
 

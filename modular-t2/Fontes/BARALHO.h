@@ -87,7 +87,7 @@ typedef struct carta * BAR_tppCarta;
 *
 ***********************************************************************/
 
-   LIS_tppLista BAR_CriarNovoBaralhoEmbaralhado();
+   LIS_tppLista BAR_CriaNovoBaralhoEmbaralhado();
 
    /***********************************************************************
 *
@@ -136,7 +136,7 @@ typedef struct carta * BAR_tppCarta;
 *     N�o ser� dada mais informa��o quanto ao problema ocorrido.
 *
 ***********************************************************************/
-   BAR_tpCondRet BAR_DestruirBaralho( LIS_tppLista baralho );
+   BAR_tpCondRet BAR_DestroiBaralho( LIS_tppLista baralho );
 
 /***********************************************************************
 *
@@ -212,6 +212,7 @@ typedef struct carta * BAR_tppCarta;
 ***********************************************************************/
 
    int ObtemValor(BAR_tppCarta carta);
+
    #undef BARALHO_EXT
 
    #else

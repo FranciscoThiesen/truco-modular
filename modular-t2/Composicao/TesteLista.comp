@@ -2,7 +2,7 @@
 
 [Diretorios]
 
-Nome        =  TesteBaralho
+Nome        =  TesteLista
 PathDefault =  ..\Fontes
 err         =  ..\Produto
 obj         =  ..\Objetos
@@ -11,12 +11,11 @@ h           =  ..\Fontes
 def         =  ..\Tabelas
 
 [Modulos]
-Lista
-Baralho
-TestBar
+LISTA
+TESTLIS
 
 [BuildInicio]
-/OUT:..\produto\TesteBaralho.exe
+/OUT:..\produto\TesteLista.exe
 /INCREMENTAL:NO
 /MACHINE:IX86
 
