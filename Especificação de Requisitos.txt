@@ -1,0 +1,28 @@
+	Especificação de Requisitos- Truco
+
+  art - Arthur Cavalcante Gomes Coelho
+
+
+  Requisitos Funcionais:
+
+  1-O jogo devera ter duas equipes de 1, 2 ou 3 Jogadores
+  2-Deve se utilizar um baralho de 40 cartas (2 a 7 de todos os naipes+Rei, Dama, Valete, Ás)
+  3-Cada jogador recebe 3 cartas em cada mão
+  4-Uma mão dura até três rodadas e pode valer 1, 3, 6 ou 12 pontos
+  5-A partida acaba quando uma equipe chegar a 12 pontos
+  6-Todo Jogador tem o direito de pedir Truco em seu turno
+  7-Caso nao seja a primeira rodada, o Jogador tem a opção de jogar uma de suas cartas virada para baixo, a carta passa a não ter valor(peso)
+  8-Manilhas são cartas especiais que tem sua própria hierarquia de pesos e são mais valiosas que as demais cartas.
+  9-Esta versão de truco incorpora a regra de manilha fixa, que são definidas pelas cartas:
+  4 de paus> 7 de copas > A de espada > 7 de ouros
+  10-A ordem de poder(peso) das cartas é (TN=Todos os Naipes):
+  3 TN > 2 TN > A TN exceto espada > K TN > J TN > Q TN > 7 somente paus e espada > 6 TN > 5 TN > 4 TN exceto paus
+  11-A primeira equipe que chegar a 11 pontos na partida tem o direito de inspecionar as cartas de seus companheiros de equipe e tomar a decisão de aceitar ou não a partida. Em caso de aceitação a mão valerá 3 pontos. Em caso de recusa a equipe adversária ganha 1 ponto.
+  12-Ganha a rodada a Equipe do Jogador que tiver jogado a carta mais forte
+  13-Quando as cartas jogadas tem o mesmo valor ocorre o empate. Se ocorrer na primeira rodada a carta mais valiosa dos jogadores envolvidos deve ser jogada, ganha quem tiver a carta mais poderosa. Caso haja empate novamente ambos jogam sua terceira e ultima carta, se for o caso de empate novamente o vencedor é aquele que jogou a primeira carta.
+  14-A cada rodada será mostrado na tela de comando as opções de jogada possíveis do jogador assim como a pontuação atual de cada equipe, suas cartas e a de seus colegas de equipe.
+
+  Requisitos Não-Funcionais:
+  1-  Nao será possível ver as cartas da equipe adversária caso nao seja a rodada da mesma.
+  2-Uso dos conceitos de Programação Modular redigida em Linguagem C.
+  3-Cada módulo deverá ser testado utilizando a biblioteca de teste automatizado Arcabouço

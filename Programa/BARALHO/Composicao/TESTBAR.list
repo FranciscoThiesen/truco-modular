@@ -1,0 +1,153 @@
+GERADOR DE SCRIPT DE DIRETIVAS PARA MAKE
+   LES / Informática / PUC-Rio    Versão 6.00 (c) 2005
+
+Composição do construto: ..\Composicao\TESTBAR.comp
+
+   Nome do Construto:           TESTBAR
+   Diretório base:              C:\Users\tubas\Desktop\T2-TRUCO\git T2 Truco\ProgramacaoModularEntregadoT2\Programa\BARALHO\Composicao
+
+   Arquivo composição:          ..\Composicao\TESTBAR.comp
+   Arquivo plataforma:          gmake.parm
+
+   Arquivo diretivas MAKE:      TESTBAR.make
+   Arquivo diretivas LINK:      TESTBAR.build
+   Arquivo listagem:            TESTBAR.list
+
+Módulos do construto: ..\Composicao\TESTBAR.comp
+
+   testbar.c
+   baralho.c
+   lista.c
+
+Estatísticas do construto
+
+   Estatísticas do arquivo: baralho.c
+      Total linhas:             295
+      Linhas de código:         176
+      Linhas de comentário:      82
+      Linhas em branco:          49
+   Arquivos de inclusão de que necessita
+      baralho.h
+      lista.h
+
+   Estatísticas do arquivo: baralho.h
+      Total linhas:             201
+      Linhas de código:          27
+      Linhas de comentário:     142
+      Linhas em branco:          32
+   Arquivos de inclusão de que necessita
+      lista.h
+   Arquivos em que é incluído
+      baralho.c
+      testbar.c
+
+   Estatísticas do arquivo: generico.h
+      Total linhas:             713
+      Linhas de código:          59
+      Linhas de comentário:     572
+      Linhas em branco:          82
+   Arquivos de inclusão de que necessita
+      tst_espc.h
+   Arquivos em que é incluído
+      testbar.c
+
+   Estatísticas do arquivo: lerparm.h
+      Total linhas:             291
+      Linhas de código:          36
+      Linhas de comentário:     188
+      Linhas em branco:          67
+   Arquivos em que é incluído
+      testbar.c
+
+   Estatísticas do arquivo: lista.c
+      Total linhas:             572
+      Linhas de código:         292
+      Linhas de comentário:     142
+      Linhas em branco:         157
+   Arquivos de inclusão de que necessita
+      lista.h
+
+   Estatísticas do arquivo: lista.h
+      Total linhas:             363
+      Linhas de código:          36
+      Linhas de comentário:     276
+      Linhas em branco:          51
+   Arquivos em que é incluído
+      baralho.c
+      baralho.h
+      lista.c
+      testbar.c
+
+   Estatísticas do arquivo: testbar.c
+      Total linhas:             316
+      Linhas de código:         170
+      Linhas de comentário:      89
+      Linhas em branco:          68
+   Arquivos de inclusão de que necessita
+      baralho.h
+      generico.h
+      lerparm.h
+      lista.h
+      tst_espc.h
+
+   Estatísticas do arquivo: tst_espc.h
+      Total linhas:             228
+      Linhas de código:          23
+      Linhas de comentário:     185
+      Linhas em branco:          20
+   Arquivos em que é incluído
+      generico.h
+      testbar.c
+
+Totais por tipo de arquivo
+
+  Tipo: def      Path: ..\Tabelas
+         Total linhas do tipo:         0
+         Linhas de código:             0
+         Linhas de comentário:         0
+         Linhas em branco:             0
+         Arquivos deste tipo:          0
+
+  Tipo: h        Path: ..\Fontes
+         Total linhas do tipo:      1796
+         Linhas de código:           181
+         Linhas de comentário:      1363
+         Linhas em branco:           252
+         Arquivos deste tipo:          5
+
+  Tipo: obj      Path: ..\Objetos
+         Total linhas do tipo:         0
+         Linhas de código:             0
+         Linhas de comentário:         0
+         Linhas em branco:             0
+         Arquivos deste tipo:          0
+
+  Tipo: err      Path: ..\Produto
+         Total linhas do tipo:         0
+         Linhas de código:             0
+         Linhas de comentário:         0
+         Linhas em branco:             0
+         Arquivos deste tipo:          0
+
+  Tipo: DEFAULT  Path: ..\Fontes
+         Total linhas do tipo:         0
+         Linhas de código:             0
+         Linhas de comentário:         0
+         Linhas em branco:             0
+         Arquivos deste tipo:          0
+
+  Tipo: c        Path: ..\Fontes
+         Total linhas do tipo:      1183
+         Linhas de código:           638
+         Linhas de comentário:       313
+         Linhas em branco:           274
+         Arquivos deste tipo:          3
+
+Totais para todo o construto TESTBAR
+
+   Total linhas:              2979
+   Linhas de código:           819
+   Linhas de comentário:      1676
+   Linhas em branco:           526
+   Arquivos processados:         8
+

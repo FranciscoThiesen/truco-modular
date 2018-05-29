@@ -1,0 +1,6 @@
+/OUT:..\Produto\TESTBAR.exe
+/INCREMENTAL:NO
+/MACHINE:IX86
+testbar.obj  baralho.obj  lista.obj  
+ArcaboucoTeste.lib
+

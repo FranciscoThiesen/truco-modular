@@ -1,0 +1,47 @@
+
+!!! Inicio dos testes
+!!!      Construto sob teste: ..\Produto\TESTLIS
+!!!      Script de teste:     ..\Scripts\TesteLista.script
+
+!!!    0  Linha:     1  // Script:    TESTLIS.script 
+!!!    0  Linha:     2  // Autor:     Arndt von Staa 
+!!!    0  Linha:     3  // Data:      02/abr/2008 
+!!!    0  Linha:     4  // Propósito: Testar superficialmente o módulo lista genérica duplamente encadeada 
+!!!    0  Linha:     5  // 
+    7  == Inicializar valores
+   27  == Criar a lista 0
+   30  == Verificar ObterValor relativo a lista vazia
+   33  == Inserir elemento em lista vazia
+   37  == Inserir elemento após primeiro
+   41  == Inserir elemento antes do último
+   45  == Excluir elemento do meio
+   49  == Excluir elemento do início
+   53  == Excluir elemento final, único
+   57  == Ver se a lista ficou vazia
+   60  == Destruir a lista
+   63  == Criar uma lista com dois elementos
+   68  == Esvaziar a lista e ver se ficou vazia
+   72  == Destruir a lista
+   75  == Criar uma lista com quatro elementos
+   82  == Verificar a lista de trás para diante
+   92  == Verificar a lista de frente para trás
+  102  == Verificar a lista andando demais de trás para diante
+  106  == Verificar a lista andando demais de frente para trás
+  110  == Destruir a lista
+!!!    0  Linha:   114  //Inicio dos Teste do Arthur 
+  115  ==Inicio dos Teste do Arthur
+  118  == Criar a lista 0
+  121  == Inserir primeiro
+  125  ==Insere elemento antes do primeiro
+  135  ==Insere elemento depois do ultimo
+!!!    0  Linha:   146  // fim 
+
+!!! Número de linhas lidas:         146
+!!! Número de casos de teste:        25
+!!! Número comandos corretos:        78
+!!! Número de falhas encontradas:     0
+
+!!! Não foram encontrados problemas
+
+
+!!! Numero de espacos ainda alocados: 0

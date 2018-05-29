@@ -1,0 +1,27 @@
+						Programação Modular, Relatório individual
+Arthur Cavalcante Gomes Coelho - 1313099
+ 
+ DATA	|	HORAS TRABALHADAS	|   	      		  TIPO TAREFA			|   DESCRIÇÃO TAREFA	
+	|				|							|
+04/04/18|		2		|	 		Codificar módulo		| Módulo de definição e implementação de Baralho.
+04/04/18|		2		|	  		Codificar módulo		| Módulos de definição da Baralho.
+14/04/18|		2		|	  	  	Codificar módulo		| Início da implementação da função CriarCarta do módulo BARALHO.c
+16/04/18|		2		|	  	   	Codificar módulo		| Implementação da função CriarCarta do módulo BARALHO.c
+18/04/18|	       2,5		|	  	  	Codificar módulo		| Alteração da função CriarCarta do módulo BARALHO.c, corrigindo erros.
+20/04/18|		3,5		|	  	  	Codificar módulo		| Início da implementação da função CriaVetorCartas do módulo BARALHO.c
+21/04/18|		2		|	  	   	Codificar módulo		| Implementação da função CriaVetorCartas do módulo BARALHO.c
+22/04/18|	       2,5		|	  	  	Codificar módulo		| Alteração da função CriarVetorCartas do módulo BARALHO.c, corrigindo erros.
+24/04/18|		2		|	  	  	Codificar módulo		| Início da implementação da função CriaBaralho do módulo BARALHO.c
+30/04/18|		5,5(muitas)	|	  	   	Codificar módulo		| Implementação da função CriaBaralho do módulo BARALHO.c
+01/05/18|	       2,5		|	  	  	Codificar módulo		| Alteração da função CriarBaralho do módulo BARALHO.c, corrigindo erros.
+02/05/18|		1		|	  	  	Codificar módulo		| Início da implementação da função DestroiBaralho do módulo BARALHO.c
+02/05/18|		1,5		|	  	   	Codificar módulo		| Implementação da função DestroiBaralho do módulo BARALHO.c
+03/05/18|		2		|	  	  	Codificar módulo		| Início da implementação da função Embaralhar do módulo BARALHO.c
+03/05/18|		6(muitas)	|	  	   	Codificar módulo		| Implementação da função Emabaralhar do módulo BARALHO.c
+04/05/18|	       2,5		|	  	  	Codificar módulo		| Alteração da função Embaralhar do módulo BARALHO.c, corrigindo erros.
+04/05/18|	        1		|	  	  	Estudar				| Fui à monitoria do professor Eduardo, tirar dúvidas sobre a implementação do módulo BARALHO
+04/05/18|	        1		|	  	  	Estudar				| Retornei mais tarde a sala do professor para retirar mais duvidas sobre a implementação de algumas funções e marquei atendimento via Hangouts para o dia seguinte
+04/05/18|	       2,5		|	  	  	Codificar módulo		| Alteração da função Embaralhar do módulo BARALHO.c, corrigindo erros.
+05/05/18|	        1		|	  	  	Estudar				| Eu e Pedro participamos do atendimento do professor Eduardo de 14hrs as 15 tirando dúvidas do trabalho
+05/05/18|		2		|	  	  Revisar e codificar módulo		| Módulo de definição e implementação de Baralho.
+05/05/18|		2		|	  	  Revisar e codificar módulo		| Revisão e codificação dos módulos BARALHO.c e BARALHO.h 

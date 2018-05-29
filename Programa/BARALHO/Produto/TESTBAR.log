@@ -1,0 +1,34 @@
+
+!!! Inicio dos testes
+!!!      Construto sob teste: ..\Produto\TESTBAR
+!!!      Script de teste:     ..\Scripts\TESTBAR.script
+
+!!!    0  Linha:     1  // Script:    TESTBAR.script 
+!!!    0  Linha:     2  // Autor:     Arthur Cavalcante Gomes Coelho 
+!!!    0  Linha:     3  // Data:      08/05/2018 
+!!!    0  Linha:     4  // Propï¿½sito: 
+!!!    0  Linha:     5  //            Testa a construcao de uma carta usando parametros literais 
+!!!    0  Linha:     6  //            Nao verifica se as operacoes modificaram corretamente as referencias 
+!!!    0  Linha:     7  // 
+   10  ==Declarando condicoes de retorno
+   15  == Criar Varias Cartas
+   28  ==Faz reset e cria de novo
+   41  ==Destruir cada uma das cartas e recria-las
+   64  ==Cria vetor de cartas do truco
+   68  ==Cria Baralho com as 40 cartas do truco
+   71  ==Cria Varios baralhos
+   82  ==Destroi e cria novamente um baralho
+   86  ==reset vetor baralhos e cria novamente
+  100  ==embaralha um baralho
+  103  ==embaralha o mesmo baralho varias vezes
+  109  ==tenta embaralhar baralho vazio
+
+!!! Número de linhas lidas:         111
+!!! Número de casos de teste:        12
+!!! Número comandos corretos:        74
+!!! Número de falhas encontradas:     0
+
+!!! Não foram encontrados problemas
+
+
+!!! Numero de espacos ainda alocados: 0
