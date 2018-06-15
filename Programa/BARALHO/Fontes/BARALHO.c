@@ -71,10 +71,10 @@ BAR_tpCondRet DestruirValor(void * pValor);
 *
 ***********************************************************************/
 BAR_tpCondRet DestruirValor(void * pValor)
-	{
-		free(pValor);
-		return BAR_CondRetOK;
-	}
+{
+	free(pValor);
+	return BAR_CondRetOK;
+}
 
 /*****  Código das funções exportadas pelo módulo  *****/
 
@@ -82,9 +82,9 @@ BAR_tpCondRet DestruirValor(void * pValor)
 *
 *  Função: BAR  &Criar carta
 *  ****/
-BAR_tpCondRet BAR_CriaCarta(BAR_tppCarta *pCarta,char nome, int peso,char *naipe)
+BAR_tpCondRet BAR_CriaCarta(BAR_tppCarta *pCarta, char nome, int peso, char *naipe)
 {
-	*pCarta=(BAR_tppCarta)malloc(sizeof(BAR_tpCarta));
+	*pCarta = (BAR_tppCarta)malloc(sizeof(BAR_tpCarta));
 	if(*pCarta==NULL)
 	{
 		return BAR_CondRetFaltouMemoria;
@@ -118,12 +118,12 @@ BAR_tpCondRet BAR_CriarBaralho(BAR_tppBaralho *pBaralho)
 
 	//ponteiro para baralho
 	*pBaralho = (BAR_tpBaralho*)malloc(sizeof(BAR_tpBaralho));
-		if ( *pBaralho == NULL )
-      {
-         return  BAR_CondRetFaltouMemoria ;
-      }
+	if ( *pBaralho == NULL )
+	{
+		return  BAR_CondRetFaltouMemoria ;
+	}
 	//cria as 40 cartas e armazena em um vetor
-	retorno=BAR_CriaVetorCartas(&vetor_cartas);
+	retorno = BAR_CriaVetorCartas(&vetor_cartas);
 
 	(*pBaralho)->Cartas = LIS_CriarLista((void (*) (void *pDado))DestruirCarta);
 
@@ -131,6 +131,7 @@ BAR_tpCondRet BAR_CriarBaralho(BAR_tppBaralho *pBaralho)
 	{
 		return BAR_CondRetFaltouMemoria;
 	}
+
 	for(i=0;i<TRUCO;i++)
 	{
 		//insere a carta na lista
@@ -148,12 +149,13 @@ BAR_tpCondRet BAR_CriarBaralho(BAR_tppBaralho *pBaralho)
 BAR_tpCondRet BAR_CriaVetorCartas(BAR_tppCarta *cartas[])
 {
 	BAR_tpCondRet retorno;
-	char *naipe[10][4];
+	char *naipe[10];
 	int i,j,cont=0;
+
 	BAR_tppCarta carta=NULL;
 
-	naipe[0][0]="ouros";naipe[0][1]="copas";
-	naipe[0][2]="paus";naipe[0][3]="espadas";
+	naipe[0]="ouros";naipe[2]="copas";
+	naipe[1]="paus";naipe[3]="espadas";
 
 	*cartas = (BAR_tppCarta *)malloc(40 * sizeof(BAR_tppCarta));
 
@@ -169,35 +171,35 @@ BAR_tpCondRet BAR_CriaVetorCartas(BAR_tppCarta *cartas[])
 			//cria cartas de 2 a 7
 			if(i<6)
 			{
-				retorno=BAR_CriaCarta(&carta,(50+i),0,naipe[0][j]);
+				retorno=BAR_CriaCarta(&carta,(50+i),0,naipe[j]);
 				if (retorno!=BAR_CondRetOK)
 					return retorno;
 			}
 			//cria o J
 			else if(cont>=24&&cont<28)
 			{
-				retorno=BAR_CriaCarta(&carta,'J',0,naipe[0][j]);
+				retorno=BAR_CriaCarta(&carta,'J',0,naipe[j]);
 				if (retorno!=BAR_CondRetOK)
 					return retorno;
 			}
 			//cria o Q
 			else if(cont>=28&&cont<32)
 			{
-				retorno=BAR_CriaCarta(&carta,'Q',0,naipe[0][j]);
+				retorno=BAR_CriaCarta(&carta,'Q',0,naipe[j]);
 				if (retorno!=BAR_CondRetOK)
 					return retorno;
 			}
 			//cria o K
 			else if(cont>=32&&cont<36)
 			{
-				retorno=BAR_CriaCarta(&carta,'K',0,naipe[0][j]);
+				retorno=BAR_CriaCarta(&carta,'K',0,naipe[j]);
 				if (retorno!=BAR_CondRetOK)
 					return retorno;
 			}
 			//cria o A
 			else if(cont>=36&&cont<40)
 			{
-				retorno=BAR_CriaCarta(&carta,'A',0,naipe[0][j]);
+				retorno=BAR_CriaCarta(&carta,'A',0,naipe[j]);
 				if (retorno!=BAR_CondRetOK)
 					return retorno;
 			}
@@ -217,48 +219,55 @@ BAR_tpCondRet BAR_CriaVetorCartas(BAR_tppCarta *cartas[])
    {
 
 	   int i = -1; //tamBaralho = -1;
+	   
 	   LIS_tppLista pListaDestino = NULL;
 
        if( pBaralho == NULL )
 	   {
 		   return BAR_CondRetBaralhoNaoExiste ;
 	   }
+	   
 	   pListaDestino=LIS_CriarLista((void (*) (void *pDado))DestruirCarta);
+	   
 	   if(pListaDestino==NULL)
 	   {
 		   return BAR_CondRetFaltouMemoria;
 	   }
+	   
 	   IrInicioLista( pListaDestino );
 
 	   srand((unsigned) time(NULL));
 
 	   for(i = 40; i > 0; i--)
 	   {
-		   BAR_tppCarta corrente,copia;
-		   LIS_tpCondRet condRetLis;
-		   int inxCarta = rand() % i;							/* Sorteia uma carta */
+			BAR_tppCarta corrente,copia;
+			LIS_tpCondRet condRetLis;
+			int inxCarta = rand() % i;							/* Sorteia uma carta */
 
-		   IrInicioLista( pBaralho->Cartas );					/* Inicio do baralho */
+			IrInicioLista( pBaralho->Cartas );					/* Inicio do baralho */
 
-		   if( LIS_AvancarElementoCorrente( pBaralho->Cartas, inxCarta ) != LIS_CondRetOK )	/* Vai para a carta sorteada */
+			if( LIS_AvancarElementoCorrente( pBaralho->Cartas, inxCarta ) != LIS_CondRetOK )	/* Vai para a carta sorteada */
 			{
 				return BAR_CondRetTamanhoErrado;
 			}
 
-		   corrente =(BAR_tppCarta) retorna_corrente(pBaralho->Cartas);
+			corrente = (BAR_tppCarta) retorna_corrente(pBaralho->Cartas);
 
-		   BAR_CriaCarta(&copia, corrente->nome, corrente->peso, corrente->naipe);
+			
 
-		   condRetLis = LIS_InserirElementoApos(pListaDestino,copia);
+			BAR_CriaCarta(&copia, corrente->nome, corrente->peso, corrente->naipe);
 
-		   if( condRetLis == LIS_CondRetListaVazia )
-		   {
+			condRetLis = LIS_InserirElementoApos(pListaDestino,copia);
+
+			if( condRetLis == LIS_CondRetListaVazia )
+			{
 				return BAR_CondRetListaVazia;
-		   }
-		   else if( condRetLis == LIS_CondRetFaltouMemoria )
-		   {
+			}
+			else if( condRetLis == LIS_CondRetFaltouMemoria )
+			{
 			    return BAR_CondRetFaltouMemoria;
-		   }
+			}
+			if( LIS_ExcluirElemento(pBaralho->Cartas) != LIS_CondRetOK) return BAR_FalhaNoEmbaralhamento;
 	   }
 
 	   LIS_DestruirLista( pBaralho->Cartas );	/* Destrói a lista antiga */
@@ -291,5 +300,67 @@ BAR_tpCondRet BAR_DestruirBaralho( BAR_tppBaralho pBaralho )
 
    } /* Fim função: EMB  &Destruir baralho */
 
+BAR_tpCondRet BAR_RemoveCartaDoBaralho( BAR_tppBaralho pBaralho, BAR_tppCarta pCarta)
+{
+	int res;
+	pCarta = (BAR_tppCarta) malloc(sizeof(BAR_tpCarta) );
+	if(pCarta == NULL)
+	{
+		return BAR_CondRetFaltouMemoria;
+	}
+	pCarta = (BAR_tppCarta) LIS_ObterValor(pBaralho->Cartas);
 
+	res = LIS_ExcluirElemento(pBaralho->Cartas);
+
+	if(res != LIS_CondRetOK) 
+	{
+		return BAR_CondRetListaVazia;
+	}
+
+	return BAR_CondRetOK;
+}
+
+static void imprimeBaralho(BAR_tppBaralho pBaralho)
+{
+	int i;
+	
+	IrInicioLista( (LIS_tppLista) pBaralho->Cartas);
+
+	for(i = 0; i < 40; ++i) 
+	{
+		
+		
+		BAR_tppCarta corrente =  (BAR_tppCarta) LIS_ObterValor(pBaralho->Cartas) ;
+		LIS_AvancarElementoCorrente( (LIS_tppLista) pBaralho->Cartas, 1);
+		printf("%s %d %c\n", corrente->naipe, corrente->peso, corrente->nome);
+		//printf("%d %d %s\n", (BAR_tppCarta)(*pBaralho)->Cartas->pElemCorr->pValor) );
+	}
+}
 /********** Fim do módulo de implementação: BAR  BARALHO **********/
+
+int main()
+{
+	int retorno;
+	BAR_tppCarta *cartas=NULL;
+	BAR_tppBaralho Baralho=(BAR_tppBaralho)malloc(sizeof(BAR_tpBaralho));
+	BAR_tppCarta carta = NULL;
+
+	if(BAR_CriaCarta(&carta,'a',10,"ouros")==BAR_CondRetOK)
+	{
+		printf("sucesso em criar uma carta!\n");
+	}
+	//retorno=DestruirCarta(*carta);
+	retorno=BAR_CriaVetorCartas(&cartas);
+
+	if(retorno==BAR_CondRetOK) printf("sucesso\n");
+	
+	retorno = BAR_CriarBaralho(&Baralho);
+	if(retorno==BAR_CondRetOK) printf("sucesso\n");
+
+	imprimeBaralho(Baralho);
+
+	BAR_Embaralhar(Baralho); 
+
+	imprimeBaralho(Baralho);
+	return 0;
+}

@@ -62,14 +62,15 @@ typedef enum {
       BAR_CondRetFaltouMemoria,
             /* Faltou mem�ria ao tentar criar um elemento de lista */
 
-	  BAR_CondRetCartaNaoCriada,
-			/* Nao foi possivel criar o ponteiro Carta */
+     BAR_CondRetCartaNaoCriada,
+         /* Nao foi possivel criar o ponteiro Carta */
 
-	  BAR_CondRetBaralhoNaoExiste,
-			/* Ponteiro para baralho vazio */
-	  BAR_CondRetTamanhoErrado
-			/* Tamanho da lista de cartas errado */
-
+     BAR_CondRetBaralhoNaoExiste,
+         /* Ponteiro para baralho vazio */
+     BAR_CondRetTamanhoErrado,
+         /* Tamanho da lista de cartas errado */
+      BAR_FalhaNoEmbaralhamento
+            /* Nao conseguimos remover uma carta do baralho antigo durante o processo de embaralhamento */
 } BAR_tpCondRet ;
 
 
@@ -80,19 +81,19 @@ typedef enum {
 *
 *  $ED Descrição da função
 *     Cria uma carta.
-*	  Uma carta é composta por seu nome, peso e naipe
+*    Uma carta é composta por seu nome, peso e naipe
 *
 *  $EP Parâmetros
-*	  pCarta		- endereço que vai receber a carta a ser criada
+*    pCarta    - endereço que vai receber a carta a ser criada
 *
 *
 *  $FV Valor retornado
-*     BAR_CondRetOK				- se tiver criado a carta com sucesso
-*	  BAR_CondRetFaltouMemoria  - se não tiver conseguido alocar memória para a carta
-*	  BAR_CondRetCartaNaoCriada - se houver falha na atribuição *pCarta=aux_carta
+*     BAR_CondRetOK           - se tiver criado a carta com sucesso
+*    BAR_CondRetFaltouMemoria  - se não tiver conseguido alocar memória para a carta
+*    BAR_CondRetCartaNaoCriada - se houver falha na atribuição *pCarta=aux_carta
 *
 ***********************************************************************/
-BAR_tpCondRet BAR_CriaCarta(BAR_tppCarta *pCarta,char nome, int peso,char *naipe);
+BAR_tpCondRet BAR_CriaCarta(BAR_tppCarta *pCarta,char nome, int peso, char *naipe);
 
 
 /***********************************************************************
@@ -118,16 +119,16 @@ BAR_tpCondRet DestruirCarta(BAR_tppCarta pCarta);
 *
 *  $ED Descrição da função
 *     Cria um baralho.
-*	  Um baralho é composto por um ponteiro para uma cabeça de uma lista com as cartas.
-*	  O baralho é criado com todas as 40 cartas que pertencem ao jogo de Truco.
+*    Um baralho é composto por um ponteiro para uma cabeça de uma lista com as cartas.
+*    O baralho é criado com todas as 40 cartas que pertencem ao jogo de Truco.
 *
 *  $EP Parâmetros
-*	  pBaralho		- endereço que vai receber o baralho a ser criado
+*    pBaralho     - endereço que vai receber o baralho a ser criado
 *
 *  $FV Valor retornado
-*     BAR_CondRetOK				- se tiver criado o baralho com sucesso
-*	  BAR_CondRetFaltouMemoria  - se não tiver conseguido alocar memória para o baralho
-*	  BAR_CondRetListaVazia - se (*pBaralho)->pCartas é NULL
+*     BAR_CondRetOK           - se tiver criado o baralho com sucesso
+*    BAR_CondRetFaltouMemoria  - se não tiver conseguido alocar memória para o baralho
+*    BAR_CondRetListaVazia - se (*pBaralho)->pCartas é NULL
 *
 ***********************************************************************/
 BAR_tpCondRet BAR_CriarBaralho(BAR_tppBaralho *pBaralho);
@@ -141,12 +142,12 @@ BAR_tpCondRet BAR_CriarBaralho(BAR_tppBaralho *pBaralho);
 *     Cria vetor de cartas e preenche-o com as cartas usadas no jogo de truco
 *
 *  $EP Parâmetros
-*	  cartas[]		- vetor que será preenchido pelas cartas
+*    cartas[]     - vetor que será preenchido pelas cartas
 *
 *  $FV Valor retornado
-*     BAR_CondRetOK				- se tiver criado o vetor com sucesso
-*	  BAR_CondRetFaltouMemoria  - se não tiver conseguido alocar memória para a carta
-*	  BAR_CondRetCartaNaoCriada - se houver falha na atribuição *pCarta=aux_carta
+*     BAR_CondRetOK           - se tiver criado o vetor com sucesso
+*    BAR_CondRetFaltouMemoria  - se não tiver conseguido alocar memória para a carta
+*    BAR_CondRetCartaNaoCriada - se houver falha na atribuição *pCarta=aux_carta
 *
 ***********************************************************************/
 BAR_tpCondRet BAR_CriaVetorCartas(BAR_tppCarta *cartas[]);
@@ -158,18 +159,18 @@ BAR_tpCondRet BAR_CriaVetorCartas(BAR_tppCarta *cartas[]);
 *
 *  $ED Descrição da função
 *     Embaralha as cartas contidas no baralho em uma ordem aleatória.
-*	  Pega as cartas da lista do baralho e distribui em ordem aleatória
-*	  em uma nova lista. Depois, troca o ponteiro da lista do baralho.
+*    Pega as cartas da lista do baralho e distribui em ordem aleatória
+*    em uma nova lista. Depois, troca o ponteiro da lista do baralho.
 *
 *  $EP Parâmetros
 *     pBaralho - ponteiro para o baralho a ser embaralhado
 *
 *  $FV Valor retornado
-*     BAR_CondRetOK				  - embaralhou sem problemas
-*	  BAR_CondRetTamanhoErrado	  - tamanho do baralho errado
-*	  BAR_CondRetFaltouMemoria	  - faltou memoria para criar a lista nova
-*	  BAR_CondRetBaralhoNaoExiste - pBaralho é NULL
-*	  BAR_CondRetListaVazia		  - Lista vazia de cartas
+*     BAR_CondRetOK             - embaralhou sem problemas
+*    BAR_CondRetTamanhoErrado   - tamanho do baralho errado
+*    BAR_CondRetFaltouMemoria   - faltou memoria para criar a lista nova
+*    BAR_CondRetBaralhoNaoExiste - pBaralho é NULL
+*    BAR_CondRetListaVazia      - Lista vazia de cartas
 *
 ***********************************************************************/
 BAR_tpCondRet BAR_Embaralhar( BAR_tppBaralho pBaralho );
@@ -192,7 +193,12 @@ BAR_tpCondRet BAR_Embaralhar( BAR_tppBaralho pBaralho );
 ***********************************************************************/
 BAR_tpCondRet BAR_DestruirBaralho( BAR_tppBaralho pBaralho );
 
-
+/*
+*
+* ADICIONAR COMENTARIO
+*
+*/
+BAR_tpCondRet BAR_RemoveCartaDoBaralho( BAR_tppBaralho pBaralho, BAR_tppCarta pCarta);
 
 #undef BARALHO_EXT
 

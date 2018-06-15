@@ -4,7 +4,7 @@ GERADOR DE SCRIPT DE DIRETIVAS PARA MAKE
 Composição do construto: ..\Composicao\TESTBAR.comp
 
    Nome do Construto:           TESTBAR
-   Diretório base:              C:\Users\tubas\Desktop\T2-TRUCO\git T2 Truco\ProgramacaoModularEntregadoT2\Programa\BARALHO\Composicao
+   Diretório base:              C:\Users\VTEX\truco-modular\Programa\BARALHO\Composicao
 
    Arquivo composição:          ..\Composicao\TESTBAR.comp
    Arquivo plataforma:          gmake.parm
@@ -22,10 +22,10 @@ Módulos do construto: ..\Composicao\TESTBAR.comp
 Estatísticas do construto
 
    Estatísticas do arquivo: baralho.c
-      Total linhas:             295
+      Total linhas:             296
       Linhas de código:         176
       Linhas de comentário:      82
-      Linhas em branco:          49
+      Linhas em branco:          50
    Arquivos de inclusão de que necessita
       baralho.h
       lista.h
@@ -137,17 +137,17 @@ Totais por tipo de arquivo
          Arquivos deste tipo:          0
 
   Tipo: c        Path: ..\Fontes
-         Total linhas do tipo:      1183
+         Total linhas do tipo:      1184
          Linhas de código:           638
          Linhas de comentário:       313
-         Linhas em branco:           274
+         Linhas em branco:           275
          Arquivos deste tipo:          3
 
 Totais para todo o construto TESTBAR
 
-   Total linhas:              2979
+   Total linhas:              2980
    Linhas de código:           819
    Linhas de comentário:      1676
-   Linhas em branco:           526
+   Linhas em branco:           527
    Arquivos processados:         8
 
