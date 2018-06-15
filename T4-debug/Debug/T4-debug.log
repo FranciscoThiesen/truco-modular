@@ -1,0 +1,12 @@
+﻿Build started 15/06/2018 20:00:55.
+     1>Project "C:\Users\tubas\Desktop\T4 Truco Projeto VisualStudio\T4-debug\T4-debug\T4-debug.vcxproj" on node 2 (ClCompile target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TC /analyze- /errorReport:prompt PARTIDA.c
+         PARTIDA.c
+     1>c:\users\tubas\desktop\t4 truco projeto visualstudio\t4-debug\t4-debug\partida.c(73): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
+     1>Done Building Project "C:\Users\tubas\Desktop\T4 Truco Projeto VisualStudio\T4-debug\T4-debug\T4-debug.vcxproj" (ClCompile target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.14
