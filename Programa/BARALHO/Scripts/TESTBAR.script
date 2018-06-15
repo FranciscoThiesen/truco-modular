@@ -1,0 +1,111 @@
+// Script:    TESTBAR.script
+// Autor:     Arthur Cavalcante Gomes Coelho
+// Data:      08/05/2018
+// Prop�sito:
+//            Testa a construcao de uma carta usando parametros literais
+//            Nao verifica se as operacoes modificaram corretamente as referencias
+//
+
+
+==Declarando condicoes de retorno
+=declararparm CondRetOK int 0
+=declararparm CondRetBaralhoNaoExiste int 4
+
+
+== Criar Varias Cartas
+=criarcarta 0 '2' 0 "ouros" CondRetOK
+=criarcarta 1 '3' 0 "ouros" CondRetOK
+=criarcarta 2 '4' 0 "ouros" CondRetOK
+=criarcarta 3 '5' 0 "ouros" CondRetOK
+=criarcarta 4 '6' 0 "ouros" CondRetOK
+=criarcarta 5 '7' 0 "ouros" CondRetOK
+=criarcarta 6 'A' 0 "ouros" CondRetOK
+=criarcarta 7 'Q' 0 "ouros" CondRetOK
+=criarcarta 8 'K' 0 "ouros" CondRetOK
+=criarcarta 9 'J' 0 "ouros" CondRetOK
+
+
+==Faz reset e cria de novo
+=resetvetorcartas
+=criarcarta 0 '2' 0 "ouros" CondRetOK
+=criarcarta 1 '3' 0 "ouros" CondRetOK
+=criarcarta 2 '4' 0 "ouros" CondRetOK
+=criarcarta 3 '5' 0 "ouros" CondRetOK
+=criarcarta 4 '6' 0 "ouros" CondRetOK
+=criarcarta 5 '7' 0 "ouros" CondRetOK
+=criarcarta 6 'A' 0 "ouros" CondRetOK
+=criarcarta 7 'Q' 0 "ouros" CondRetOK
+=criarcarta 8 'K' 0 "ouros" CondRetOK
+=criarcarta 9 'J' 0 "ouros" CondRetOK
+
+==Destruir cada uma das cartas e recria-las
+=destruircarta 0 CondRetOK
+=destruircarta 1 CondRetOK
+=destruircarta 2 CondRetOK
+=destruircarta 3 CondRetOK
+=destruircarta 4 CondRetOK
+=destruircarta 5 CondRetOK
+=destruircarta 6 CondRetOK
+=destruircarta 7 CondRetOK
+=destruircarta 8 CondRetOK
+=destruircarta 9 CondRetOK
+=criarcarta 0 '2' 0 "ouros" CondRetOK
+=criarcarta 1 '3' 0 "ouros" CondRetOK
+=criarcarta 2 '4' 0 "ouros" CondRetOK
+=criarcarta 3 '5' 0 "ouros" CondRetOK
+=criarcarta 4 '6' 0 "ouros" CondRetOK
+=criarcarta 5 '7' 0 "ouros" CondRetOK
+=criarcarta 6 'A' 0 "ouros" CondRetOK
+=criarcarta 7 'Q' 0 "ouros" CondRetOK
+=criarcarta 8 'K' 0 "ouros" CondRetOK
+=criarcarta 9 'J' 0 "ouros" CondRetOK
+
+
+==Cria vetor de cartas do truco
+=criavetor CondRetOK
+
+
+==Cria Baralho com as 40 cartas do truco
+=criarbaralho 0 CondRetOK
+
+==Cria Varios baralhos
+=criarbaralho 1 CondRetOK
+=criarbaralho 2 CondRetOK
+=criarbaralho 3 CondRetOK
+=criarbaralho 4 CondRetOK
+=criarbaralho 5 CondRetOK
+=criarbaralho 6 CondRetOK
+=criarbaralho 7 CondRetOK
+=criarbaralho 8 CondRetOK
+=criarbaralho 9 CondRetOK
+
+==Destroi e cria novamente um baralho
+=destruirbaralho 0 CondRetOK
+=criarbaralho 0 CondRetOK
+
+==reset vetor baralhos e cria novamente
+=resetvetorbaralhos
+=criarbaralho 0 CondRetOK
+=criarbaralho 1 CondRetOK
+=criarbaralho 2 CondRetOK
+=criarbaralho 3 CondRetOK
+=criarbaralho 4 CondRetOK
+=criarbaralho 5 CondRetOK
+=criarbaralho 6 CondRetOK
+=criarbaralho 7 CondRetOK
+=criarbaralho 8 CondRetOK
+=criarbaralho 9 CondRetOK
+
+
+==embaralha um baralho
+=embaralhar 0 CondRetOK
+
+==embaralha o mesmo baralho varias vezes
+=embaralhar 1 CondRetOK
+=embaralhar 1 CondRetOK
+=embaralhar 1 CondRetOK
+=embaralhar 1 CondRetOK
+
+==tenta embaralhar baralho vazio
+=destruirbaralho 0 CondRetOK
+=embaralhar 0 CondRetBaralhoNaoExiste

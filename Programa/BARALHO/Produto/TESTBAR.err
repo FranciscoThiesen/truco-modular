@@ -1,0 +1,17 @@
+testbar.c
+..\Fontes\testbar.c(106) : warning C4101: 'Ret' : unreferenced local variable
+..\Fontes\testbar.c(101) : warning C4101: 'inxbaralho2' : unreferenced local variable
+..\Fontes\testbar.c(99) : warning C4101: 'auxiliar' : unreferenced local variable
+c:\users\vtex\truco-modular\programa\baralho\fontes\testbar.c(247) : warning C4715: 'TST_EfetuarComando' : not all control paths return a value
+baralho.c
+..\Fontes\baralho.c(173) : warning C4244: 'function' : conversion from 'int' to 'unsigned char', possible loss of data
+c:\users\vtex\truco-modular\programa\baralho\fontes\baralho.c(209) : warning C4701: potentially uninitialized local variable 'retorno' used
+lista.c
+Microsoft (R) Incremental Linker Version 10.00.30319.01
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+/OUT:..\Produto\TESTBAR.exe 
+/INCREMENTAL:NO 
+/MACHINE:IX86 
+testbar.obj baralho.obj lista.obj 
+ArcaboucoTeste.lib 

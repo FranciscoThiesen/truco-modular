@@ -1,0 +1,26 @@
+# Composicao do programa de embaralhamento
+
+[Diretorios]
+
+Nome        =	TESTBAR
+PathDefault =	..\Fontes
+err         =	..\Produto
+obj			=	..\Objetos
+c			=	..\Fontes
+h			=	..\Fontes
+def			=	..\Tabelas
+
+[Modulos]
+TESTBAR
+BARALHO
+Lista
+
+[BuildInicio]
+/OUT:..\Produto\TESTBAR.exe
+/INCREMENTAL:NO
+/MACHINE:IX86
+
+[BuildFim]
+ArcaboucoTeste.lib
+
+[Fim]

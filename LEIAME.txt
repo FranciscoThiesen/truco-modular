@@ -1,0 +1,83 @@
+------ Autor ------
+Arthur Cavalcante Gomes Coelho
+
+
+-------- Arquivos Fonte ----------
+
+
+- Módulos de implementação:
+
+BARALHO.C
+LISTA.C
+TESTLIS.c
+TESTBAR.c
+
+- Módulos de definição:
+
+BARALHO.H
+LISTA.H
+LERPARM.H
+GENERICO.H
+TST_ESPC.H
+CONTA.H
+CESPDIN.H
+
+
+
+- Arcabouço de teste:
+
+ArcaboucoTeste.lib
+
+
+
+- Arquivos de Script:
+
+TESTBAR.script
+TesteLista.script
+
+- Arquivo Executável:
+
+TESTBAR.exe
+
+- Arquivos Bat:
+
+Compila.bat
+CompilaTudo.bat
+CriaLib.bat
+GeraMake.bat
+GeraTudo.bat
+LimpaObj.bat
+LimpaTudo.bat
+Teste.bat
+TestaTudo.bat
+Tudo.bat
+vsvars32.bat
+
+
+- Arquivos de Relatório:
+
+relatorio-arthur.txt
+
+
+- Arquivo Leiame:
+
+LEIAME.TXT
+
+
+-------------  Modo de uso  -------------
+
+Extraia o conteudo do arquivo .zip
+
+Para compilar e em seguida fazer a execução dos testes:
+	1) Entre na pasta "Batches" de cada um dos módulos
+	2) Abra a linha de comando
+	3) Executar vsvars32.bat e tudo.bat
+	4) Executável com o programa será gerado em "Produto"
+
+Para executar através do executável:
+	1) Entre na pasta "Produto" de cada um dos módulos.
+	2) Abra a linha de comando
+	3) Execute o arquivo "TesteModulo.exe" referente ao módulo testado.
+	4) O comando de execução é:
+		<NOME EXECUTAVEL>.exe /s../Scripts/TesteModulo.script
+	5) Para os módulos que não contêm scrips de teste, basta digitar <NOME EXECUTAVEL>.exe.
