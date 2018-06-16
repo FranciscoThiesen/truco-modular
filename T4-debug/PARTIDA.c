@@ -67,26 +67,26 @@ PTD_tpCondRet DestruirJogador(PTD_tppJogador pJogador)
 *
 ***********************************************************************/
 
-PTD_tpCondRet PTD_CriaJogador(PTD_tppJogador* jogador, char nome[30])
+PTD_tpCondRet PTD_CriaJogador(PTD_tppJogador *jogador, char nome[30])
 {
+	*jogador = (PTD_tppJogador)malloc(sizeof(PTD_tpJogador));
 	if( (*jogador) == NULL ) return PTD_CondRetJogadorNaoExiste;
 	strcpy((*jogador)->nome, nome);
 	return PTD_CondRetOK;
 }
 
-PTD_tpCondRet PTD_CriaListaJogadores(int n_jogadores)
+PTD_tpCondRet PTD_CriaListaJogadores(int n_jogadores,LIS_tppLista *pJogadores)
 {
 	int i;
 	LIS_tpCondRet CondRetLista;
 	PTD_tpCondRet CondRetJogador;
 	PTD_tppJogador pJogador;
-	LIS_tppLista jogadores;
-	jogadores = LIS_CriarLista((void (*) (void *pDado))DestruirCarta);
+	*pJogadores = LIS_CriarLista((void (*) (void *pDado))DestruirJogador);
 	
 	for(i=0;i<n_jogadores;i++)
 	{
 		CondRetJogador = PTD_CriaJogador(&pJogador,"default");
-		CondRetLista = LIS_InserirElementoApos(jogadores,pJogador);
+		CondRetLista = LIS_InserirElementoApos(*pJogadores,pJogador);
 	}
 	return PTD_CondRetOK;
 }
@@ -154,6 +154,7 @@ PTD_tpCondRet PTD_CriaPartida(PTD_tppPartida pPartida, int numeroDeJogadores)
 int main()
 {
 	int retorno;
+	LIS_tppLista jogadores;
 	BAR_tppCarta *cartas=NULL;
 	BAR_tppBaralho Baralho=(BAR_tppBaralho)malloc(sizeof(BAR_tppBaralho));
 	BAR_tppCarta carta = NULL;
@@ -173,6 +174,8 @@ int main()
 	BAR_Embaralhar(Baralho);
 
 	BAR_ImprimeBaralho(Baralho);
+
+	retorno = PTD_CriaListaJogadores(6,&jogadores);
 
 	return 0;
 }
