@@ -47,10 +47,10 @@ typedef struct PTD_tagJogador{
 } PTD_tpJogador;
 
 typedef struct PTD_tagPartida {
-	PTD_tppJogador* jogadores;
+	LIS_tppLista Jogadores;
 	int placar[2];
-	BAR_tppBaralho baralho;
-	BAR_tppCarta manilha;
+	BAR_tppBaralho Baralho;
+	BAR_tppCarta manilhas[4];
 } PTD_tpPartida;
 
 
@@ -68,15 +68,19 @@ PTD_tpCondRet DestruirJogador(PTD_tppJogador pJogador)
 ***********************************************************************/
 
 
-void PTD_ImprimeJogadores(int n_jogadores,LIS_tppLista *pJogadores)
-{int i=0;
- PTD_tppJogador jogador;
- IrInicioLista(*pJogadores);
-	for(i=0;i<n_jogadores;i++)
-	{	jogador=(PTD_tppJogador) ( LIS_ObterValor(*pJogadores));
+void PTD_ImprimeJogadores(LIS_tppLista *pJogadores)
+{
+	LIS_tpCondRet retorno;
+	PTD_tppJogador jogador;
+	IrInicioLista(*pJogadores);
+	jogador = (PTD_tppJogador) ( LIS_ObterValor(*pJogadores));
+	retorno = LIS_CondRetListaVazia;
+	while(retorno != LIS_CondRetFimLista)
+	{	
 		printf("%s %d \n",jogador->nome,jogador->idEquipe );
-		LIS_AvancarElementoCorrente(*pJogadores,1);
-
+		retorno = LIS_AvancarElementoCorrente(*pJogadores,1);
+		//assertiva
+		jogador = (PTD_tppJogador) ( LIS_ObterValor(*pJogadores));
 	}
 }
 
@@ -88,20 +92,23 @@ PTD_tpCondRet PTD_CriaJogador(PTD_tppJogador *jogador, char nome[30])
 	return PTD_CondRetOK;
 }
 
-PTD_tpCondRet PTD_CriaListaJogadores(int n_jogadores,LIS_tppLista *pJogadores)
+PTD_tpCondRet PTD_CriaListaJogadores(int n_jogadores,LIS_tppLista *pJogadores, char nomes[10][1][NOMEMAXIMO])
 {
 	int i;
 	LIS_tpCondRet CondRetLista;
 	PTD_tpCondRet CondRetJogador;
 	PTD_tppJogador pJogador;
 	*pJogadores = LIS_CriarLista((void (*) (void *pDado))DestruirJogador);
-	
+	//assertiva	
 	for(i=0;i<n_jogadores;i++)
 	{
-		CondRetJogador = PTD_CriaJogador(&pJogador,"default");
+		CondRetJogador = PTD_CriaJogador(&pJogador,nomes[i][1]);
+		//assertiva
 		CondRetLista = LIS_InserirElementoApos(*pJogadores,pJogador);
+		//assertiva
 	}
 	IrInicioLista(*pJogadores);
+	//assertiva
 	return PTD_CondRetOK;
 }
 
@@ -132,50 +139,52 @@ PTD_tpCondRet PTD_DefineManilha(PTD_tppPartida* pPartida)
 	if( ret != BAR_CondRetOK) return PTD_CondRetBaralhoNaoExiste;
 	return PTD_CondRetOK;
 }
+*/
 
-PTD_tpCondRet PTD_CriaPartida(PTD_tppPartida pPartida, int numeroDeJogadores)
+PTD_tpCondRet PTD_CriaPartida(PTD_tppPartida *pPartida, int n_jogadores)
 {
 	int i, ret;
-	PTD_tppPartida novaPartida = (PTD_tppPartida) malloc(sizeof(PTD_tpPartida));
-	novaPartida->placar[0] = novaPartida->placar[1] = 0;
-	novaPartida->jogadores = (PTD_tppJogador*) malloc(numeroDeJogadores * sizeof(PTD_tppJogador) );
-	char nome[NOMEMAXIMO];
-	for( i = 0; i < numeroDeJogadores; ++i)
+	char nomes[10][1][NOMEMAXIMO]; // char string_matrix[ROWS][COLUMNS][STRING_LENGTH]
+	*pPartida = (PTD_tppPartida) malloc(sizeof(PTD_tpPartida));
+
+
+	(*pPartida)->placar[0] = (*pPartida)->placar[1] = 0;
+	//assertiva
+
+	for( i = 0; i < n_jogadores; ++i)
 	{
 		printf("Digite o nome do %d-esimo jogador\n", i);
-		scanf("%s", nome);
-		if(PTD_CriaJogador(&(novaPartida->jogadores[i]), nome) != PTD_CondRetOK)
-		{
-			return PTD_CondRetJogadorNaoExiste;
-		}
-	}
-	if(PTD_MontaEquipes(&(novaPartida->jogadores), numeroDeJogadores) != PTD_CondRetOK)
-	{
-		return PTD_CondRetJogadorNaoExiste;
+		scanf("%s", nomes[i][1]);
 	}
 
-	// se o if logo abaixo tiver algum problema eu posso ter uma ideia do que eh - Francisco
-	if(BAR_CriarBaralho(&(novaPartida->baralho)) != BAR_CondRetOK)
-	{
-		return PTD_CondRetFaltouMemoria;
-	}
-	if(BAR_Embaralhar(novaPartida->baralho) != BAR_CondRetOK) return PTD_CondRetBaralhoNaoExiste;
+	//Cria Lista de Jogadores
+	ret = PTD_CriaListaJogadores(n_jogadores,&(*pPartida)->Jogadores, nomes);
+	//assert
 
-	if(PTD_DefineManilha(&novaPartida) != PTD_CondRetOK) return PTD_CondRetBaralhoNaoExiste;
+	//Aponta cada jogador a uma equipe
+	ret = PTD_MontaEquipes(&(*pPartida)->Jogadores,3);
+	//assert
 
-	pPartida = novaPartida;
-
+	//Cria o baralho
+	ret = BAR_CriarBaralho(&(*pPartida)->Baralho);
+	//assert
+	
+	/*
+	falta criar as manilhas
+	*/
 	return PTD_CondRetOK;
 }
-*/
+
+
 int main()
 {
-	int retorno;
-	LIS_tppLista jogadores;
-	BAR_tppCarta *cartas=NULL;
-	BAR_tppBaralho Baralho=(BAR_tppBaralho)malloc(sizeof(BAR_tppBaralho));
-	BAR_tppCarta carta = NULL;
+	int retorno,resposta;
+	//BAR_tppCarta *cartas=NULL;
+	//BAR_tppBaralho Baralho;
+	//BAR_tppCarta carta = NULL;
+	PTD_tppPartida novaPartida;
 
+	/*
 	if(BAR_CriaCarta(&carta,'a',10,"ouros")==BAR_CondRetOK)
 	{
 		printf("sucesso em criar uma carta!\n");
@@ -191,14 +200,25 @@ int main()
 	BAR_Embaralhar(Baralho);
 
 	BAR_ImprimeBaralho(Baralho);
-
-	retorno = PTD_CriaListaJogadores(6,&jogadores);
-
-	PTD_MontaEquipes(&jogadores,3);
-
-	PTD_ImprimeJogadores(6,&jogadores);
+	*/
 
 
+	PTD_CriaPartida(&novaPartida, 6);
 
+	printf("\nImprimindo os Jogadores e suas respectiovas equipes:\n");
+	PTD_ImprimeJogadores(&novaPartida->Jogadores);
+
+	printf("Imprimindo Baralho de partida, nao embaralhado:\n");
+	BAR_ImprimeBaralho(novaPartida->Baralho);
+
+	BAR_Embaralhar(novaPartida->Baralho);
+
+	printf("Deseja imprimir o baralho de Partida embaralhado?\n1 = Sim\n0 = Nao\n");
+	scanf("%d",&resposta);
+
+	if(resposta == 1)
+	{
+		BAR_ImprimeBaralho(novaPartida->Baralho);
+	}
 	return 0;
 }

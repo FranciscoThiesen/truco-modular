@@ -80,7 +80,7 @@ typedef enum {
 
 PTD_tpCondRet PTD_CriaJogador(PTD_tppJogador *jogador, char nome[30]); // acho que precisa ser mesmo ponteiro pra ponteiro, porque quero que a mudanca persista
 
-PTD_tpCondRet PTD_MontaEquipes(PTD_tppJogador* jogadores, int jogadoresPorEquipe);
+PTD_tpCondRet PTD_MontaEquipes(LIS_tppLista *pJogadores, int jogadoresPorEquipe);
 
 PTD_tpCondRet PTD_DefineManilha(BAR_tppBaralho pBaralho);
 
