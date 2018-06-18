@@ -67,6 +67,19 @@ PTD_tpCondRet DestruirJogador(PTD_tppJogador pJogador)
 *
 ***********************************************************************/
 
+
+void PTD_ImprimeJogadores(int n_jogadores,LIS_tppLista *pJogadores)
+{int i=0;
+ PTD_tppJogador jogador;
+ IrInicioLista(*pJogadores);
+	for(i=0;i<n_jogadores;i++)
+	{	jogador=(PTD_tppJogador) ( LIS_ObterValor(*pJogadores));
+		printf("%s %d \n",jogador->nome,jogador->idEquipe );
+		LIS_AvancarElementoCorrente(*pJogadores,1);
+
+	}
+}
+
 PTD_tpCondRet PTD_CriaJogador(PTD_tppJogador *jogador, char nome[30])
 {
 	*jogador = (PTD_tppJogador)malloc(sizeof(PTD_tpJogador));
@@ -88,22 +101,26 @@ PTD_tpCondRet PTD_CriaListaJogadores(int n_jogadores,LIS_tppLista *pJogadores)
 		CondRetJogador = PTD_CriaJogador(&pJogador,"default");
 		CondRetLista = LIS_InserirElementoApos(*pJogadores,pJogador);
 	}
+	IrInicioLista(*pJogadores);
 	return PTD_CondRetOK;
 }
 
-/*
-PTD_tpCondRet PTD_MontaEquipes(LIS_tppLista jogadores, int jogadoresPorEquipe)
+
+PTD_tpCondRet PTD_MontaEquipes(LIS_tppLista *pJogadores, int jogadoresPorEquipe)
 {
 	// vou colocar uma assertiva so pra lembrarmos disso
 	// assert(jogadoresPorEquipe == 1 || jogadoresPorEquipe == 2 || jogadoresPorEquipe == 3)
 	int i;
-
+	PTD_tppJogador jogador;
 	// os jogadores pares vao ser da equipe 0, e os impares vao ser da equipe 1
 	// o parametro teve que ser ponteiro de ponteiro, porque minha funcao altera um campo de um ponteiro ja criado.
+	if(pJogadores == NULL)  PTD_CondRetListaVazia; //se lista == NULL
+	IrInicioLista(*pJogadores);
 	for(i = 0; i < 2 * jogadoresPorEquipe; ++i)
 	{
-		if(jogadores == NULL)  PTD_CondRetListaVazia; //se lista == NULL
-		(PTD_tppJogador) LIS_ObterValor(jogadores);				//(*jogadores[i])->idEquipe = i % 2;
+		jogador=(PTD_tppJogador) LIS_ObterValor(*pJogadores);				
+		jogador->idEquipe = i % 2;
+		LIS_AvancarElementoCorrente(*pJogadores,1);
 
 	}
 	return PTD_CondRetOK;
@@ -115,7 +132,7 @@ PTD_tpCondRet PTD_DefineManilha(PTD_tppPartida* pPartida)
 	if( ret != BAR_CondRetOK) return PTD_CondRetBaralhoNaoExiste;
 	return PTD_CondRetOK;
 }
-/*
+
 PTD_tpCondRet PTD_CriaPartida(PTD_tppPartida pPartida, int numeroDeJogadores)
 {
 	int i, ret;
@@ -176,6 +193,12 @@ int main()
 	BAR_ImprimeBaralho(Baralho);
 
 	retorno = PTD_CriaListaJogadores(6,&jogadores);
+
+	PTD_MontaEquipes(&jogadores,3);
+
+	PTD_ImprimeJogadores(6,&jogadores);
+
+
 
 	return 0;
 }
