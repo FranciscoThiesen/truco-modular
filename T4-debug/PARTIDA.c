@@ -176,20 +176,119 @@ PTD_tpCondRet PTD_CriaPartida(PTD_tppPartida *pPartida, int n_jogadores)
 }
 
 
+static void print_funcoes(PTD_tppPartida pPartida)
+{
+	int control = 1;
+
+	while(control)
+	{
+		printf("1-Imprimir Jogadores\t2-Imprimir Baralho\t0-Sair\n\n");
+		scanf("%d",&control);
+
+		switch(control)
+		{
+		case 1:
+			printf("\nImprimindo os Jogadores e suas respectiovas equipes:\n");
+			PTD_ImprimeJogadores(&pPartida->Jogadores);
+			break;
+		case 2:
+			printf("Imprimindo Baralho de partida, nao embaralhado:\n");
+			BAR_ImprimeBaralho(pPartida->Baralho);
+			break;
+		}
+	}
+}
+
+
+PTD_tpCondRet PTD_DistribuiCartas(PTD_tppPartida *pPartida, int numJogadores) //assume que o baralho esteja embaralhado
+{
+	int i, j, contadorBucetudo = 0;
+	BAR_tppCarta pCarta[40];
+	PTD_tppJogador pJogador;
+	IrInicioLista((*pPartida)->Jogadores);
+	for(j = 0; j < numJogadores; ++j)
+	{
+		for(i=0;i<3;i++)
+		{
+			BAR_CriaCarta(&pCarta[contadorBucetudo],'a',0,"default");
+			BAR_RemoveCartaDoBaralho((*pPartida)->Baralho, &pCarta[contadorBucetudo]);
+			pJogador = (PTD_tppJogador) LIS_ObterValor( (*pPartida)->Jogadores );
+			pJogador->mao[i] = pCarta[contadorBucetudo++];
+		}
+		LIS_AvancarElementoCorrente((*pPartida)->Jogadores,1);
+	}
+	
+	//assert(LIS_AvancarElementoCorrente((*pPartida)->Jogadores,1) == LIS_CondRetFimLista)
+	
+	IrInicioLista((*pPartida)->Jogadores);
+	return PTD_CondRetOK;
+}
+
+void PTD_ImprimeMaos(PTD_tppPartida* pPartida, int numJogadores)
+{
+	int i, j;
+	PTD_tppJogador pJogador;
+	for(j = 0; j < numJogadores; ++j)
+	{
+		pJogador = (PTD_tppJogador) LIS_ObterValor( (*pPartida)->Jogadores );
+		printf("Cartas do jogador:\t%s\t\n",pJogador->nome);
+		for(i=0;i<3;i++)
+		{
+			BAR_ImprimeCarta(pJogador->mao[i]);
+		}
+		puts("\n\n");
+		LIS_AvancarElementoCorrente((*pPartida)->Jogadores,1);
+	}
+}
+
+int PTD_InterfacePartida()
+{
+	PTD_tppPartida pPartida;
+	int control = 1;
+	int resposta, nrodada, nmao;
+	
+	nmao, nrodada = 0;
+	
+	while(control)
+	{
+		printf("Iniciar partida?\t1-Sim\t2-Nao\n");
+		scanf("%d",&resposta);
+		if(resposta==1)
+		{
+			printf("Iniciar partida para quantos jogadores?(Máximo de 10 jogadores)\n");
+			scanf("%d",&resposta);
+			//assert
+			PTD_CriaPartida(&pPartida, resposta);
+			//assert
+			BAR_Embaralhar(pPartida->Baralho);
+			//assert
+			printf("Equipes e Jogadores criados, baralho devidamente embaralhado!\n");
+			PTD_DistribuiCartas(&pPartida, resposta);
+			
+			PTD_ImprimeMaos(&pPartida, resposta);
+			control = 0;
+		}
+	}
+	//BAR_ImprimeBaralho(pPartida->Baralho, resposta);
+	return 0;
+}
+
+
 int main()
 {
-	int retorno,resposta;
+	//int retorno,resposta;
 	//BAR_tppCarta *cartas=NULL;
 	//BAR_tppBaralho Baralho;
-	//BAR_tppCarta carta = NULL;
+	BAR_tppCarta carta = NULL;
 	PTD_tppPartida novaPartida;
 
-	/*
+	
 	if(BAR_CriaCarta(&carta,'a',10,"ouros")==BAR_CondRetOK)
 	{
 		printf("sucesso em criar uma carta!\n");
 	}
 	//retorno=DestruirCarta(*carta);
+		/*
 	retorno=BAR_CriaVetorCartas(&cartas);
 
 	if(retorno==BAR_CondRetOK) printf("sucesso\n");
@@ -203,8 +302,14 @@ int main()
 	*/
 
 
-	PTD_CriaPartida(&novaPartida, 6);
+	// PTD_CriaPartida(&novaPartida, 6);
 
+	PTD_InterfacePartida();
+
+	
+
+	// print_funcoes(novaPartida);
+	/*
 	printf("\nImprimindo os Jogadores e suas respectiovas equipes:\n");
 	PTD_ImprimeJogadores(&novaPartida->Jogadores);
 
@@ -215,10 +320,11 @@ int main()
 
 	printf("Deseja imprimir o baralho de Partida embaralhado?\n1 = Sim\n0 = Nao\n");
 	scanf("%d",&resposta);
-
+	
 	if(resposta == 1)
 	{
 		BAR_ImprimeBaralho(novaPartida->Baralho);
 	}
+	*/
 	return 0;
 }

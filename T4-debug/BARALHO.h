@@ -203,7 +203,15 @@ BAR_tpCondRet BAR_DestruirBaralho( BAR_tppBaralho pBaralho );
 
 void BAR_ImprimeBaralho(BAR_tppBaralho pBaralho);
 
-BAR_tpCondRet BAR_RemoveCartaDoBaralho( BAR_tppBaralho pBaralho, BAR_tppCarta pCarta);
+BAR_tpCondRet BAR_RemoveCartaDoBaralho( BAR_tppBaralho pBaralho, BAR_tppCarta* pCarta);
+
+char *GetNaipe(BAR_tppCarta carta);
+
+int GetPeso(BAR_tppCarta carta);
+
+char GetNome(BAR_tppCarta carta);
+
+void BAR_ImprimeCarta(BAR_tppCarta carta);
 
 #undef BARALHO_EXT
 

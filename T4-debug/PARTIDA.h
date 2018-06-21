@@ -88,7 +88,9 @@ PTD_tpCondRet PTD_PedeCarta(PTD_tppJogador* jogador); // pede que o jogador sele
 
 PTD_tpCondRet PTD_DistribuiAsCartas(PTD_tppJogador** jogadores);
 
+void PTD_ImprimeMaos(PTD_tppPartida* pPartida, int numJogadores);
 
+int PTD_InterfacePartida();
 
 
 

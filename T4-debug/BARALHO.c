@@ -272,6 +272,8 @@ BAR_tpCondRet BAR_CriaVetorCartas(BAR_tppCarta *cartas[])
 
 	   LIS_DestruirLista( pBaralho->Cartas );	/* Destrói a lista antiga */
 
+	   IrInicioLista( pListaDestino );
+
 	   pBaralho->Cartas = pListaDestino;		/* Baralho agora é composto pela lista embaralhada */
 
 	   return BAR_CondRetOK;
@@ -300,15 +302,20 @@ BAR_tpCondRet BAR_DestruirBaralho( BAR_tppBaralho pBaralho )
 
    } /* Fim função: EMB  &Destruir baralho */
 
-BAR_tpCondRet BAR_RemoveCartaDoBaralho( BAR_tppBaralho pBaralho, BAR_tppCarta pCarta)
+BAR_tpCondRet BAR_RemoveCartaDoBaralho( BAR_tppBaralho pBaralho, BAR_tppCarta* pCarta)
 {
 	int res;
-	pCarta = (BAR_tppCarta) malloc(sizeof(BAR_tpCarta) );
-	if(pCarta == NULL)
+	BAR_tppCarta auxiliar;
+	//*pCarta = (BAR_tppCarta)malloc(sizeof(BAR_tpCarta));
+	if(*pCarta == NULL)
 	{
 		return BAR_CondRetFaltouMemoria;
 	}
-	pCarta = (BAR_tppCarta) LIS_ObterValor(pBaralho->Cartas);
+	auxiliar = (BAR_tppCarta) LIS_ObterValor(pBaralho->Cartas);
+
+	(*pCarta)->nome = auxiliar->nome;
+	strcpy((*pCarta)->naipe,auxiliar->naipe);
+	(*pCarta)->peso = auxiliar->peso;
 
 	res = LIS_ExcluirElemento(pBaralho->Cartas);
 
@@ -355,6 +362,10 @@ char GetNome(BAR_tppCarta carta)
 	return carta->nome;
 }
 
+void BAR_ImprimeCarta(BAR_tppCarta carta)
+{
+	printf("naipe=%s , peso=%d,   nome=%c\n", carta->naipe, carta->peso, carta->nome);
+}
 
 
 /********** Fim do módulo de implementação: BAR  BARALHO **********/
