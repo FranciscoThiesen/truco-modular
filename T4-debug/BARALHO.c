@@ -150,7 +150,8 @@ BAR_tpCondRet BAR_CriaVetorCartas(BAR_tppCarta *cartas[])
 {
 	BAR_tpCondRet retorno;
 	char *naipe[10];
-	int i,j,cont=0;
+	char valores[] = "A234567JQK";
+	int i,j, peso;
 
 	BAR_tppCarta carta=NULL;
 
@@ -164,48 +165,27 @@ BAR_tpCondRet BAR_CriaVetorCartas(BAR_tppCarta *cartas[])
 		return BAR_CondRetFaltouMemoria;
 	}
 
-	for(cont=0,i=0;i<10;i++)
+	for(i = 0; i < 40; ++i)
 	{
-		for(j=0;j<4;j++)
-		{
-			//cria cartas de 2 a 7
-			if(i<6)
-			{
-				retorno=BAR_CriaCarta(&carta,(50+i),0,naipe[j]);
-				if (retorno!=BAR_CondRetOK)
-					return retorno;
-			}
-			//cria o J
-			else if(cont>=24&&cont<28)
-			{
-				retorno=BAR_CriaCarta(&carta,'J',0,naipe[j]);
-				if (retorno!=BAR_CondRetOK)
-					return retorno;
-			}
-			//cria o Q
-			else if(cont>=28&&cont<32)
-			{
-				retorno=BAR_CriaCarta(&carta,'Q',0,naipe[j]);
-				if (retorno!=BAR_CondRetOK)
-					return retorno;
-			}
-			//cria o K
-			else if(cont>=32&&cont<36)
-			{
-				retorno=BAR_CriaCarta(&carta,'K',0,naipe[j]);
-				if (retorno!=BAR_CondRetOK)
-					return retorno;
-			}
-			//cria o A
-			else if(cont>=36&&cont<40)
-			{
-				retorno=BAR_CriaCarta(&carta,'A',0,naipe[j]);
-				if (retorno!=BAR_CondRetOK)
-					return retorno;
-			}
-			(*cartas)[cont]=carta;
-			cont++;
-		}
+		//printf(" valor = %c, naipe = %s \n\n", valores[i/4], naipe[i%4]);
+		if(valores[i/4] == '4' && strcmp(naipe[i%4], "paus") == 0) peso = 14;
+		else if(valores[i/4]== '7' && strcmp(naipe[i%4], "copas") == 0) peso = 13;
+		else if(valores[i/4] == 'A' && strcmp(naipe[i%4], "espadas") == 0) peso = 12;
+		else if(valores[i/4] == '7' && strcmp(naipe[i%4], "ouros") == 0) peso = 11;
+		else if(valores[i/4] == '3') peso = 10;
+		else if(valores[i/4] == '2') peso = 9;
+		else if(valores[i/4] == 'A') peso = 8;
+		else if(valores[i/4] == 'K') peso = 7;
+		else if(valores[i/4] == 'J') peso = 6;
+		else if(valores[i/4] == 'Q') peso = 5;
+		else if(valores[i/4] == '7') peso = 4;
+		else if(valores[i/4] == '6') peso = 3;
+		else if(valores[i/4] == '5') peso = 2;
+		else if(valores[i/4] == '4') peso = 1;
+		retorno = BAR_CriaCarta(&carta, valores[i/4], peso, naipe[i%4]);
+		if(retorno != BAR_CondRetOK) return retorno;
+
+		(*cartas)[i] = carta;
 	}
 	return retorno;
 }/* Fim função: BAR  &Cria vetor cartas */
@@ -364,9 +344,8 @@ char GetNome(BAR_tppCarta carta)
 
 void BAR_ImprimeCarta(BAR_tppCarta carta)
 {
-	printf("naipe=%s , peso=%d,   nome=%c\n", carta->naipe, carta->peso, carta->nome);
+	printf("naipe=%s\tpeso=%d\tnome=%c\n", carta->naipe, carta->peso, carta->nome);
 }
 
 
 /********** Fim do módulo de implementação: BAR  BARALHO **********/
-

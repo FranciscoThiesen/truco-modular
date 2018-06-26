@@ -202,7 +202,7 @@ static void print_funcoes(PTD_tppPartida pPartida)
 
 PTD_tpCondRet PTD_DistribuiCartas(PTD_tppPartida *pPartida, int numJogadores) //assume que o baralho esteja embaralhado
 {
-	int i, j, contadorBucetudo = 0;
+	int i, j, contador = 0;
 	BAR_tppCarta pCarta[40];
 	PTD_tppJogador pJogador;
 	IrInicioLista((*pPartida)->Jogadores);
@@ -210,10 +210,10 @@ PTD_tpCondRet PTD_DistribuiCartas(PTD_tppPartida *pPartida, int numJogadores) //
 	{
 		for(i=0;i<3;i++)
 		{
-			BAR_CriaCarta(&pCarta[contadorBucetudo],'a',0,"default");
-			BAR_RemoveCartaDoBaralho((*pPartida)->Baralho, &pCarta[contadorBucetudo]);
+			BAR_CriaCarta(&pCarta[contador],'a',0,"default");
+			BAR_RemoveCartaDoBaralho((*pPartida)->Baralho, &pCarta[contador]);
 			pJogador = (PTD_tppJogador) LIS_ObterValor( (*pPartida)->Jogadores );
-			pJogador->mao[i] = pCarta[contadorBucetudo++];
+			pJogador->mao[i] = pCarta[contador++];
 		}
 		LIS_AvancarElementoCorrente((*pPartida)->Jogadores,1);
 	}
@@ -224,6 +224,60 @@ PTD_tpCondRet PTD_DistribuiCartas(PTD_tppPartida *pPartida, int numJogadores) //
 	return PTD_CondRetOK;
 }
 
+int PTD_RespondeTruco(int pontuacaoDesejada, int equipe)
+{
+	int resposta;
+	if(pontuacaoDesejada < 12)
+	{
+		// tem a opcao de pedir truco ^ 2
+		printf("Digite 1 para aceitar o pedido truco, 2 para recusar o truco ou 3 para dobrar o pedido de truco\n");
+		scanf("%d", &resposta);
+	}
+	else
+	{
+		printf("Digite 1 para aceitar o pedido de truco ou digite 2 para recusar o pedido de truco");
+		scanf("%d", &resposta);
+	}
+	return resposta;
+}
+
+PTD_tpCondRet PTD_PegaJogada(PTD_tppJogador* pJogador, BAR_tppCarta* pCartasJogadas, int indiceCartaJogada)
+{
+	BAR_tppCarta pCarta;
+	BAR_tppCarta pCartaDummy;
+
+	int i, peso, cartasDisponiveis = 0, escolha;
+	printf("Esta na vez do jogador %s\nSuas opcoes de cartas serao exibidas abaixo\n", (*pJogador)->nome);
+	for(i = 0; i < 3; ++i)
+	{
+		pCarta = (BAR_tppCarta) (*pJogador)->mao[i];
+		if( GetPeso(pCarta) != -1)
+		{
+			cartasDisponiveis++;
+			printf("Digite %d para jogar essa carta -> ", cartasDisponiveis);
+			BAR_ImprimeCarta(pCarta);
+		}
+	}
+	scanf("Digite o numero da carta escolhida %d", &escolha);
+	// assert( escolha > 0 && escolha <= cartasDisponiveis);
+	cartasDisponiveis = 0;
+	for(i = 0; i < 3; ++i)
+	{
+		pCarta = (BAR_tppCarta) (*pJogador)->mao[i];
+		if( GetPeso(pCarta) != -1)
+		{
+			cartasDisponiveis++;
+			if(cartasDisponiveis == escolha)
+			{
+				BAR_CriaCarta(&pCarta,GetNome(pCarta),GetPeso(pCarta),GetNaipe(pCarta));
+				pCartasJogadas[indiceCartaJogada] = pCarta;
+				BAR_CriaCarta(&pCartaDummy, GetNome(pCarta), -1, GetNaipe(pCarta));
+				(*pJogador)->mao[i] = pCartaDummy;
+			}
+		}
+	}
+	
+}
 void PTD_ImprimeMaos(PTD_tppPartida* pPartida, int numJogadores)
 {
 	int i, j;
@@ -245,7 +299,7 @@ int PTD_InterfacePartida()
 {
 	PTD_tppPartida pPartida;
 	int control = 1;
-	int resposta, nrodada, nmao;
+	int resposta, nrodada, nmao,numjogadores,i;
 	
 	nmao, nrodada = 0;
 	
@@ -256,20 +310,26 @@ int PTD_InterfacePartida()
 		if(resposta==1)
 		{
 			printf("Iniciar partida para quantos jogadores?(Máximo de 10 jogadores)\n");
-			scanf("%d",&resposta);
+			scanf("%d",&numjogadores);
 			//assert
-			PTD_CriaPartida(&pPartida, resposta);
+			PTD_CriaPartida(&pPartida, numjogadores);
 			//assert
 			BAR_Embaralhar(pPartida->Baralho);
 			//assert
 			printf("Equipes e Jogadores criados, baralho devidamente embaralhado!\n");
-			PTD_DistribuiCartas(&pPartida, resposta);
+			BAR_ImprimeBaralho(pPartida->Baralho);
+
+			PTD_DistribuiCartas(&pPartida, numjogadores);
 			
-			PTD_ImprimeMaos(&pPartida, resposta);
+			PTD_ImprimeMaos(&pPartida, numjogadores);
 			control = 0;
+			for(i=0;i<numjogadores;i++)
+			{
+				PTD_PegaJogada(&(*pPartida)->Jogadores, , 
+			}
 		}
 	}
-	//BAR_ImprimeBaralho(pPartida->Baralho, resposta);
+	//BAR_ImprimeBaralho(pPartida->Baralho);
 	return 0;
 }
 
@@ -287,7 +347,15 @@ int main()
 	{
 		printf("sucesso em criar uma carta!\n");
 	}
-	//retorno=DestruirCarta(*carta);
+
+
+	PTD_InterfacePartida();
+
+		return 0;
+}
+
+
+		//retorno=DestruirCarta(*carta);
 		/*
 	retorno=BAR_CriaVetorCartas(&cartas);
 
@@ -303,10 +371,6 @@ int main()
 
 
 	// PTD_CriaPartida(&novaPartida, 6);
-
-	PTD_InterfacePartida();
-
-	
 
 	// print_funcoes(novaPartida);
 	/*
@@ -326,5 +390,3 @@ int main()
 		BAR_ImprimeBaralho(novaPartida->Baralho);
 	}
 	*/
-	return 0;
-}
