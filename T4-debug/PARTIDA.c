@@ -382,6 +382,7 @@ PTD_tpCondRet PTD_PegaJogada(LIS_tppLista Jogadores, int* pesoCartas, int numJog
 void PTD_ImprimeMaos(PTD_tppPartida* pPartida, int numJogadores)
 {
 	int i, j;
+	char msg;
 	PTD_tppJogador pJogador;
 	for(j = 0; j < numJogadores; ++j)
 	{
@@ -389,10 +390,18 @@ void PTD_ImprimeMaos(PTD_tppPartida* pPartida, int numJogadores)
 		printf("Cartas do jogador: %s\n",pJogador->nome);
 		for(i=0;i<3;i++)
 		{
-			
 			BAR_ImprimeCarta(pJogador->mao[i]);
 		}
-		puts("\n\n");
+		if(j == numJogadores - 1) 
+		{
+			printf("Digite 0 para continuar a partida\n");
+			scanf(" %c", &msg);
+			break;
+		}
+		printf("Digite 0 para ver a mao do jogador seguinte:\n");
+		scanf(" %c",&msg);
+		for(i=0;i<10;i++) printf("\n");
+		printf("\n\n");
 		LIS_AvancarElementoCorrente((*pPartida)->Jogadores,1);
 	}
 }
@@ -447,24 +456,26 @@ int PTD_InterfacePartida()
 				if(flagImprime) BAR_ImprimeBaralho(pPartida->Baralho);
 				
 				PTD_DistribuiCartas(&pPartida, numJogadores);
-								
+				
+				PTD_ImprimeMaos(&pPartida,numJogadores);
+
 				while(pontosEquipeRodada[0] < 2 && pontosEquipeRodada[1] < 2)
 				{
 					desistente = -1;
 					valorRodada = 1;
 					pediramTrucoNessaRodada = 0;
-					PTD_PegaJogada(pPartida->Jogadores, cartasJogadas, numJogadores, &valorRodada, &desistente, &pediramTrucoNessaRodada);
+					PTD_PegaJogada(pPartida->Jogadores, cartasJogadas, numJogadores, &valorRodada, &desistente);
 					
 					if(desistente != -1)
 					{
 						winner = desistente ^ 1;
-						pontosEquipeRodada[winner]++;
+						pontosEquipeRodada[winner] += valorRodada;
 						break;
 					}
 					else
 					{
 						winner = CalculaVencedorRodada(cartasJogadas, numJogadores);
-						pontosEquipeRodada[winner]++;
+						pontosEquipeRodada[winner] += valorRodada;
 					}
 					printf("O ganhador dessa rodada foi %d\n\n" , winner);
 					/*

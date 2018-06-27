@@ -1,4 +1,4 @@
-﻿Build started 26/06/2018 22:59:47.
+﻿Build started 27/06/2018 00:10:45.
      1>Project "C:\Users\tubas\Desktop\debug grupo\truco-modular\T4-debug\T4-debug.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\T4-debug.unsuccessfulbuild" because "AlwaysCreate" was specified.
@@ -35,15 +35,18 @@
      1>c:\users\tubas\desktop\debug grupo\truco-modular\t4-debug\partida.c(268): warning C4101: 'peso' : unreferenced local variable
      1>c:\users\tubas\desktop\debug grupo\truco-modular\t4-debug\partida.c(265): warning C4101: 'pCarta' : unreferenced local variable
      1>c:\users\tubas\desktop\debug grupo\truco-modular\t4-debug\partida.c(266): warning C4101: 'pCartaDummy' : unreferenced local variable
-     1>c:\users\tubas\desktop\debug grupo\truco-modular\t4-debug\partida.c(411): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>c:\users\tubas\desktop\debug grupo\truco-modular\t4-debug\partida.c(398): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(304) : see declaration of 'scanf'
+     1>c:\users\tubas\desktop\debug grupo\truco-modular\t4-debug\partida.c(402): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(304) : see declaration of 'scanf'
      1>c:\users\tubas\desktop\debug grupo\truco-modular\t4-debug\partida.c(420): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(304) : see declaration of 'scanf'
-     1>c:\users\tubas\desktop\debug grupo\truco-modular\t4-debug\partida.c(445): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>c:\users\tubas\desktop\debug grupo\truco-modular\t4-debug\partida.c(429): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(304) : see declaration of 'scanf'
-     1>c:\users\tubas\desktop\debug grupo\truco-modular\t4-debug\partida.c(456): warning C4020: 'PTD_PegaJogada' : too many actual parameters
-     1>c:\users\tubas\desktop\debug grupo\truco-modular\t4-debug\partida.c(404): warning C4101: 'i' : unreferenced local variable
-     1>c:\users\tubas\desktop\debug grupo\truco-modular\t4-debug\partida.c(498): warning C4101: 'novaPartida' : unreferenced local variable
+     1>c:\users\tubas\desktop\debug grupo\truco-modular\t4-debug\partida.c(454): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(304) : see declaration of 'scanf'
+     1>c:\users\tubas\desktop\debug grupo\truco-modular\t4-debug\partida.c(413): warning C4101: 'i' : unreferenced local variable
+     1>c:\users\tubas\desktop\debug grupo\truco-modular\t4-debug\partida.c(509): warning C4101: 'novaPartida' : unreferenced local variable
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\tubas\Desktop\debug grupo\truco-modular\Debug\T4-debug.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\T4-debug.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\tubas\Desktop\debug grupo\truco-modular\Debug\T4-debug.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\tubas\Desktop\debug grupo\truco-modular\Debug\T4-debug.lib" /MACHINE:X86 Debug\BARALHO.obj
          Debug\LISTA.obj
@@ -59,4 +62,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:02.38
+Time Elapsed 00:00:01.42
