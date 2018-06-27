@@ -166,7 +166,7 @@ PTD_tpCondRet PTD_CriaPartida(PTD_tppPartida *pPartida, int n_jogadores)
 	//assert
 
 	//Cria o baralho
-	ret = BAR_CriarBaralho(&(*pPartida)->Baralho);
+	// ret = BAR_CriarBaralho(&(*pPartida)->Baralho);
 	//assert
 	
 	/*
@@ -241,42 +241,75 @@ int PTD_RespondeTruco(int pontuacaoDesejada, int equipe)
 	return resposta;
 }
 
-PTD_tpCondRet PTD_PegaJogada(PTD_tppJogador* pJogador, BAR_tppCarta* pCartasJogadas, int indiceCartaJogada)
+
+int CalculaVencedorRodada(int *cartas, int numJogadores)
+{
+	int i;
+	int melhorCarta[2] = {0, 0}, posicaoMelhorCarta[2] = {0,0};
+	for(i = 0; i < numJogadores; ++i)
+	{
+		if(cartas[i%2] > melhorCarta[i%2]) 
+		{
+			melhorCarta[i%2] = cartas[i%2];
+			posicaoMelhorCarta[i%2] = i;
+		}
+	}
+	if(melhorCarta[0] != melhorCarta[1]) return ( ( melhorCarta[0] > melhorCarta[1] ) ? 0 : 1);
+	return ( (posicaoMelhorCarta[0] < posicaoMelhorCarta[1]) ? 0 : 1 );
+}
+
+
+// nao precisamos armazenas as cartas jogadas, somente os pesos delas para decidir quem ganhou determinada mao
+PTD_tpCondRet PTD_PegaJogada(LIS_tppLista Jogadores, int* pesoCartas, int numJogadores)
 {
 	BAR_tppCarta pCarta;
 	BAR_tppCarta pCartaDummy;
-
-	int i, peso, cartasDisponiveis = 0, escolha;
-	printf("Esta na vez do jogador %s\nSuas opcoes de cartas serao exibidas abaixo\n", (*pJogador)->nome);
-	for(i = 0; i < 3; ++i)
+	PTD_tppJogador pJogador;	
+	int i, peso, cartasDisponiveis = 0, escolha, j;
+	printf("Esta na vez do jogador %s\nSuas opcoes de cartas serao exibidas abaixo\n", (PTD_tppJogador)LIS_ObterValor(Jogadores));
+	printf("Vamos realizar uma jogada\n");
+	IrInicioLista(Jogadores);
+	for(i = 0; i < numJogadores; ++i)
 	{
-		pCarta = (BAR_tppCarta) (*pJogador)->mao[i];
-		if( GetPeso(pCarta) != -1)
+		pJogador = (PTD_tppJogador) LIS_ObterValor( Jogadores );
+		printf("Vamos exibir as cartas do jogador %s\n" , pJogador->nome);
+		cartasDisponiveis = 0;
+		for(j = 0; j < 3; ++j) 
 		{
-			cartasDisponiveis++;
-			printf("Digite %d para jogar essa carta -> ", cartasDisponiveis);
-			BAR_ImprimeCarta(pCarta);
-		}
-	}
-	scanf("Digite o numero da carta escolhida %d", &escolha);
-	// assert( escolha > 0 && escolha <= cartasDisponiveis);
-	cartasDisponiveis = 0;
-	for(i = 0; i < 3; ++i)
-	{
-		pCarta = (BAR_tppCarta) (*pJogador)->mao[i];
-		if( GetPeso(pCarta) != -1)
-		{
-			cartasDisponiveis++;
-			if(cartasDisponiveis == escolha)
+			if( pJogador->mao[j] != NULL ) // quer dizer que o jogador ainda nao jogou essa carta da mao
 			{
-				BAR_CriaCarta(&pCarta,GetNome(pCarta),GetPeso(pCarta),GetNaipe(pCarta));
-				pCartasJogadas[indiceCartaJogada] = pCarta;
-				BAR_CriaCarta(&pCartaDummy, GetNome(pCarta), -1, GetNaipe(pCarta));
-				(*pJogador)->mao[i] = pCartaDummy;
+				cartasDisponiveis++;
+				printf("Digite %d para jogar essa carta -> ", cartasDisponiveis);
+				BAR_ImprimeCarta(pJogador->mao[j]);
 			}
 		}
+		printf("Digite o numero da carta escolhida");
+		scanf("%d",&escolha);
+		while( escolha < 1 || escolha > cartasDisponiveis ) 
+		{
+			printf("Digite uma carta com valor permitido por favor\n");
+			scanf("%d", &escolha);
+		}
+		cartasDisponiveis = 1;
+		for(j = 0; j < 3; ++j)
+		{
+			if(pJogador->mao[j] != NULL)
+			{
+				if(cartasDisponiveis == escolha)
+				{
+					pesoCartas[i] = GetPeso(pJogador->mao[j]);
+					pJogador->mao[j] = NULL;
+					break;
+				}
+				else cartasDisponiveis++;
+			}
+		}
+		if(LIS_AvancarElementoCorrente(Jogadores,1) != LIS_CondRetOK)
+		{
+			return PTD_CondRetListaVazia;
+		}
 	}
-	
+	return PTD_CondRetOK;
 }
 void PTD_ImprimeMaos(PTD_tppPartida* pPartida, int numJogadores)
 {
@@ -288,6 +321,7 @@ void PTD_ImprimeMaos(PTD_tppPartida* pPartida, int numJogadores)
 		printf("Cartas do jogador:\t%s\t\n",pJogador->nome);
 		for(i=0;i<3;i++)
 		{
+			
 			BAR_ImprimeCarta(pJogador->mao[i]);
 		}
 		puts("\n\n");
@@ -298,35 +332,73 @@ void PTD_ImprimeMaos(PTD_tppPartida* pPartida, int numJogadores)
 int PTD_InterfacePartida()
 {
 	PTD_tppPartida pPartida;
-	int control = 1;
-	int resposta, nrodada, nmao,numjogadores,i;
+	int control = 1, pontosEquipePartida[2] = {0, 0}, pontosEquipeRodada[2] = {0, 0};
+	int resposta, nrodada, nmao,numJogadores,i, *cartasJogadas, valorRodada = 1, winner, flagImprime;
 	
 	nmao, nrodada = 0;
-	
+
 	while(control)
 	{
 		printf("Iniciar partida?\t1-Sim\t2-Nao\n");
 		scanf("%d",&resposta);
+
+		// inicializando o placar das equipes
+		pontosEquipePartida[0] = pontosEquipePartida[1] = 0;
+
 		if(resposta==1)
 		{
+			
 			printf("Iniciar partida para quantos jogadores?(Máximo de 10 jogadores)\n");
-			scanf("%d",&numjogadores);
+			scanf("%d",&numJogadores);
 			//assert
-			PTD_CriaPartida(&pPartida, numjogadores);
+			cartasJogadas = (int* ) malloc( sizeof(int) * numJogadores);
+			PTD_CriaPartida(&pPartida, numJogadores);
 			//assert
-			BAR_Embaralhar(pPartida->Baralho);
+			//BAR_Embaralhar(pPartida->Baralho);
 			//assert
 			printf("Equipes e Jogadores criados, baralho devidamente embaralhado!\n");
-			BAR_ImprimeBaralho(pPartida->Baralho);
+			//BAR_ImprimeBaralho(pPartida->Baralho);
 
-			PTD_DistribuiCartas(&pPartida, numjogadores);
+			//PTD_DistribuiCartas(&pPartida, numJogadores);
 			
-			PTD_ImprimeMaos(&pPartida, numjogadores);
+			//PTD_ImprimeMaos(&pPartida, numJogadores);
 			control = 0;
-			for(i=0;i<numjogadores;i++)
+
+			while( pontosEquipePartida[0] < 3 && pontosEquipePartida[1] < 3) 
 			{
-				PTD_PegaJogada(&(*pPartida)->Jogadores, , 
+				/* Enquanto nenhuma equipe tem 12 pontos, vamos realizar uma nova rodada */
+				pontosEquipeRodada[0] = pontosEquipeRodada[1] = 0;
+				valorRodada = 1;
+				BAR_CriarBaralho( &(pPartida->Baralho) );
+				BAR_Embaralhar(pPartida->Baralho);
+				
+
+				printf("Digite 0 para continuar 1 para imprimir o baralho recem criado\n");
+				scanf("%d", &flagImprime);
+
+				if(flagImprime) BAR_ImprimeBaralho(pPartida->Baralho);
+				
+				PTD_DistribuiCartas(&pPartida, numJogadores);
+								
+				while(pontosEquipeRodada[0] < 2 && pontosEquipeRodada[1] < 2)
+				{
+					PTD_PegaJogada(pPartida->Jogadores, cartasJogadas, numJogadores);
+					
+					winner = CalculaVencedorRodada(cartasJogadas, numJogadores);
+
+					pontosEquipeRodada[winner]++;
+
+					printf("Vamos imprimir os pesos das cartas jogadas, respectivamente");
+					for(i = 0; i < numJogadores; ++i) printf("%d ", cartasJogadas[i]);
+					puts("");
+				}
+				if(pontosEquipeRodada[0] > pontosEquipeRodada[1]) pontosEquipePartida[0] += valorRodada;
+				else pontosEquipePartida[1] += valorRodada;
+				printf("Equipe1 %d : %d Equipe2\n", pontosEquipePartida[0], pontosEquipePartida[1]);
 			}
+			// Aqui ja temos alguma equipe com pelo menos 12 pontos, vamos imprimir o campeao
+			if( pontosEquipePartida[0] == 12 ) printf("Equipe 0 ganhou \n");
+			else printf("Equipe 1 ganhou \n");
 		}
 	}
 	//BAR_ImprimeBaralho(pPartida->Baralho);
