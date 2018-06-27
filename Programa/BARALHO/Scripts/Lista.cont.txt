@@ -1,0 +1,119 @@
+//////////////////////////
+// Arquivo de declaração de contadores
+// Conta módulo Lista	 marcado
+//
+//////////////////////////
+
+LIS_CriarLista
+LIS_CriarLista: Faltou memoria	
+LIS_CriarLista: Nao faltou memoria
+LIS_CriarLista: Definiu tipo do espaco
+LIS_DestruirLista
+LIS_DestruirLista: Lista e NULL
+LIS_DestruirLista: Lista nao e NULL
+LIS_EsvaziarLista
+LIS_EsvaziarLista: Lista e NULL
+LIS_EsvaziarLista: Lista nao e NULL
+LIS_EsvaziarLista: Liberar elemento
+LIS_EsvaziarLista: Limpar cabeca
+LIS_InserirElementoAntes
+LIS_InserirElementoAntes: Lista e NULL
+LIS_InserirElementoAntes: Lista nao e NULL
+LIS_InserirElementoAntes: Entrou no tratador \= -1
+LIS_InserirElementoAntes: Faltou memoria ao criar elemento
+LIS_InserirElementoAntes: Nao faltou memoria ao criar elemento
+LIS_InserirElementoAntes: Inserir elemento em lista vazia
+LIS_InserirElementoAntes: Inserir elemento em lista nao vazia
+LIS_InserirElementoAntes: Elemento corrente nao e o inicial
+LIS_InserirElementoAntes: Elemento corrente e o inicial
+LIS_InserirElementoApos
+LIS_InserirElementoApos: Lista e NULL
+LIS_InserirElementoApos: Lista nao e NULL
+LIS_InserirElementoApos: Entrou no tratador \= -1
+LIS_InserirElementoApos: Faltou memoria ao criar elemento
+LIS_InserirElementoApos: Nao faltou memoria ao criar elemento
+LIS_InserirElementoApos: Inserir elemento em lista vazia
+LIS_InserirElementoApos: Inserir elemento em lista nao vazia
+LIS_InserirElementoApos: Elemento corrente nao e final
+LIS_InserirElementoApos: Elemento corrente e final
+LIS_ExcluirElemento
+LIS_ExcluirElemento: Lista e NULL
+LIS_ExcluirElemento: Lista nao e NULL
+LIS_ExcluirElemento: Lista vazia
+LIS_ExcluirElemento: Entrou no tratador \= -1
+LIS_ExcluirElemento: Lista nao esta vazia
+LIS_ExcluirElemento: Elemento corrente nao e o inicial
+LIS_ExcluirElemento: Elemento corrente e o inicial
+LIS_ExcluirElemento: Elemento corrente nao e o final
+LIS_ExcluirElemento: Elemento corrente e o final
+LIS_RemoverElemento
+LIS_RemoverElemento: Lista e NULL
+LIS_RemoverElemento: Lista nao e NULL
+LIS_RemoverElemento: Lista vazia
+LIS_RemoverElemento: Entrou no tratador \= -1
+LIS_RemoverElemento: Lista nao esta vazia
+LIS_RemoverElemento: Elemento corrente nao e o inicial
+LIS_RemoverElemento: Elemento corrente e o inicial
+LIS_RemoverElemento: Elemento corrente nao e o final
+LIS_RemoverElemento: Elemento corrente e o final
+LIS_ObterValor
+LIS_ObterValor: Corrente e NULL
+LIS_ObterValor: Corrente nao e NULL
+LIS_IrInicioLista
+LIS_IrInicioLista: Lista e NULL
+LIS_IrInicioLista: Lista nao e NULL
+LIS_IrInicioLista: Entrou no tratador \= -1
+LIS_IrFinalLista
+LIS_IrFinalLista: Lista e NULL
+LIS_IrFinalLista: Lista nao e NULL
+LIS_IrFinalLista: Entrou no tratador \= -1
+LIS_AvancarElementoCorrente
+LIS_AvancarElementoCorrente: Lista e NULL
+LIS_AvancarElementoCorrente: Lista nao e NULL
+LIS_AvancarElementoCorrente: Lista esta vazia
+LIS_AvancarElementoCorrente: Entrou no tratador \= -1
+LIS_AvancarElementoCorrente: Lista nao esta vazia
+LIS_AvancarElementoCorrente: Avancar para frente
+LIS_AvancarElementoCorrente: Avancou elemento
+LIS_AvancarElementoCorrente: Chegou no final da lista
+LIS_AvancarElementoCorrente: Terminou de avancar elemento
+LIS_AvancarElementoCorrente: Nao chegou no final da lista
+LIS_AvancarElementoCorrente: Elemento final vira o corrente
+LIS_AvancarElementoCorrente: Avancar para tras
+LIS_AvancarElementoCorrente: Voltou elemento
+LIS_AvancarElementoCorrente: Chegou no inicio da lista
+LIS_AvancarElementoCorrente: Terminou de voltar elemento
+LIS_AvancarElementoCorrente: Nao chegou no inicio da lista
+LIS_AvancarElementoCorrente: Elemento inicial vira o corrente
+LIS_AvancarElementoCorrente: Nao avanca elemento
+LIS_ProcurarValor
+LIS_ProcurarValor: Lista e NULL
+LIS_ProcurarValor: Lista nao e NULL
+LIS_ProcurarValor: Lista esta vazia
+LIS_ProcurarValor: Entrou no tratador \= -1
+LIS_ProcurarValor: Lista nao esta vazia
+LIS_ProcurarValor: Procurar no elemento
+LIS_ProcurarValor: Achou valor
+LIS_ProcurarValor: Procurar no proximo
+LIS_ProcurarValor: Nao achou
+LIS_DeturparLista	\= -1
+LIS_DeturparLista: Lista e NULL	\= -1
+LIS_DeturparLista: Lista nao e NULL	\= -1
+LIS_DeturparLista: Deturpou tipo cabeca	\= -1
+LIS_DeturparLista: Deturpou elemento origem	\= -1
+LIS_DeturparLista: Deturpou elemento corrente	\= -1
+LiberarElemento
+LiberarElemento: Excluiu valor
+LiberarElemento: Liberou elemento
+CriarElemento
+CriarElemento: Entrou no tratador \= -1
+CriarElemento: Faltou memoria ao criar elemento
+CriarElemento: Criou elemento com sucesso
+LimparCabeca
+TratadorNaoApontaParaCabeca	\= -1
+VerificarElem	\= -1
+VerificarElem: Elemento verificado e NULL	\= -1
+VerificarElem: Elemento verificado nao e NULL	\= -1
+VerificarElem: Elemento correto. Verifica proximo.	\= -1
+VerificarElem: Elemento incorreto	\= -1
+Retorna corrente

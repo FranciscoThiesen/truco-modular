@@ -200,6 +200,8 @@ BAR_tpCondRet BAR_DestruirBaralho( BAR_tppBaralho pBaralho );
 */
 BAR_tpCondRet BAR_RemoveCartaDoBaralho( BAR_tppBaralho pBaralho, BAR_tppCarta pCarta);
 
+
+
 #undef BARALHO_EXT
 
 /********** Fim do módulo de definição: BAR  BARALHO **********/

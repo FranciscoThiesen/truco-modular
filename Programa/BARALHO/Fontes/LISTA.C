@@ -96,14 +96,23 @@
    LIS_tppLista LIS_CriarLista(
              void   ( * ExcluirValor ) ( void * pDado ) )
    {
+	   #ifdef _DEBUG
+         CNT_CONTAR( "LIS_CriarLista" ) ;
+      #endif
 
       LIS_tpLista * pLista = NULL ;
 
       pLista = ( LIS_tpLista * ) malloc( sizeof( LIS_tpLista )) ;
       if ( pLista == NULL )
       {
+		   #ifdef _DEBUG
+			CNT_CONTAR( "LIS_CriarLista: Faltou memoria" ) ;
+		 #endif
          return NULL ;
       } /* if */
+	  #ifdef _DEBUG
+         CNT_CONTAR( "LIS_CriarLista: Nao faltou memoria" ) ;
+      #endif
 
       LimparCabeca( pLista ) ;
 
@@ -120,6 +129,9 @@
 
    void LIS_DestruirLista( LIS_tppLista pLista )
    {
+	   #ifdef _DEBUG
+         CNT_CONTAR( "LIS_DestruirLista" ) ;
+      #endif
 
       #ifdef _DEBUG
          assert( pLista != NULL ) ;
@@ -138,6 +150,9 @@
 
    void LIS_EsvaziarLista( LIS_tppLista pLista )
    {
+	   #ifdef _DEBUG
+         CNT_CONTAR( "LIS_EsvaziarLista" ) ;
+      #endif
 
       tpElemLista * pElem ;
       tpElemLista * pProx ;
@@ -149,10 +164,16 @@
       pElem = pLista->pOrigemLista ;
       while ( pElem != NULL )
       {
+		  #ifdef _DEBUG
+			CNT_CONTAR( "LIS_EsvaziarLista: Liberar elemento") ;
+		 #endif
          pProx = pElem->pProx ;
          LiberarElemento( pLista , pElem ) ;
          pElem = pProx ;
       } /* while */
+	  #ifdef _DEBUG
+         CNT_CONTAR( "LIS_EsvaziarLista: Limpar cabeca" ) ;
+      #endif
 
       LimparCabeca( pLista ) ;
 
@@ -166,6 +187,9 @@
    LIS_tpCondRet LIS_InserirElementoAntes( LIS_tppLista pLista ,
                                            void * pValor        )
    {
+	    #ifdef _DEBUG
+         CNT_CONTAR( "LIS_InserirElementoAntes" ) ;
+      #endif
 
       tpElemLista * pElem ;
 
@@ -178,23 +202,41 @@
          pElem = CriarElemento( pLista , pValor ) ;
          if ( pElem == NULL )
          {
+			 #ifdef _DEBUG
+				CNT_CONTAR( "LIS_InserirElementoAntes: Lista e NULL" ) ;
+		  #endif
             return LIS_CondRetFaltouMemoria ;
          } /* if */
+		  #ifdef _DEBUG
+         CNT_CONTAR( "LIS_InserirElementoAntes: Lista nao e NULL" ) ;
+      #endif
 
       /* Encadear o elemento antes do elemento corrente */
 
          if ( pLista->pElemCorr == NULL )
          {
+			 #ifdef _DEBUG
+				CNT_CONTAR( "LIS_InserirElementoAntes: Inserir elemento em lista vazia" ) ;
+			#endif
             pLista->pOrigemLista = pElem ;
             pLista->pFimLista = pElem ;
          } else
          {
+			 #ifdef _DEBUG
+				CNT_CONTAR( "LIS_InserirElementoAntes: Inserir elemento em lista nao vazia" ) ;
+			#endif
             if ( pLista->pElemCorr->pAnt != NULL )
             {
+				#ifdef _DEBUG
+					CNT_CONTAR( "LIS_InserirElementoAntes: Elemento corrente nao e o inicial" ) ;
+			   #endif
                pElem->pAnt  = pLista->pElemCorr->pAnt ;
                pLista->pElemCorr->pAnt->pProx = pElem ;
             } else
             {
+				#ifdef _DEBUG
+					CNT_CONTAR( "LIS_InserirElementoAntes: Elemento corrente e o inicial" ) ;
+			   #endif
                pLista->pOrigemLista = pElem ;
             } /* if */
 
@@ -217,6 +259,9 @@
                                           void * pValor        )
       
    {
+	   #ifdef _DEBUG
+			CNT_CONTAR( "LIS_InserirElementoApos" ) ;
+	  #endif
 
       tpElemLista * pElem ;
 
@@ -229,23 +274,42 @@
          pElem = CriarElemento( pLista , pValor ) ;
          if ( pElem == NULL )
          {
+			 #ifdef _DEBUG
+				CNT_CONTAR( "LIS_InserirElementoApos: Faltou memoria ao criar elemento" ) ;
+			#endif
             return LIS_CondRetFaltouMemoria ;
          } /* if */
+		 #ifdef _DEBUG
+			CNT_CONTAR( "LIS_InserirElementoApos: Nao faltou memoria ao criar elemento" ) ;
+	 	 #endif
 
       /* Encadear o elemento após o elemento */
 
          if ( pLista->pElemCorr == NULL )
          {
+			 #ifdef _DEBUG
+				CNT_CONTAR( "LIS_InserirElementoApos: Inserir elemento em lista vazia" ) ;
+			#endif
             pLista->pOrigemLista = pElem ;
             pLista->pFimLista = pElem ;
          } else
          {
+			 #ifdef _DEBUG
+				CNT_CONTAR( "LIS_InserirElementoApos: Inserir elemento em lista nao vazia" ) ;
+			#endif
+			 
             if ( pLista->pElemCorr->pProx != NULL )
             {
+				#ifdef _DEBUG
+					CNT_CONTAR( "LIS_InserirElementoApos: Elemento corrente nao e final" ) ;
+				#endif
                pElem->pProx  = pLista->pElemCorr->pProx ;
                pLista->pElemCorr->pProx->pAnt = pElem ;
             } else
             {
+				#ifdef _DEBUG
+					CNT_CONTAR( "LIS_InserirElementoApos: Elemento corrente e final" ) ;
+				#endif
                pLista->pFimLista = pElem ;
             } /* if */
 
@@ -267,6 +331,9 @@
 
    LIS_tpCondRet LIS_ExcluirElemento( LIS_tppLista pLista )
    {
+	   #ifdef _DEBUG
+			CNT_CONTAR( "LIS_ExcluirElemento" ) ;
+	  #endif
 
       tpElemLista * pElem ;
 
@@ -276,6 +343,7 @@
 
       if ( pLista->pElemCorr == NULL )
       {
+		  
          return LIS_CondRetListaVazia ;
       } /* if */
 
@@ -285,9 +353,15 @@
 
          if ( pElem->pAnt != NULL )
          {
+			 #ifdef _DEBUG
+				CNT_CONTAR( "LIS_ExcluirElemento: Elemento corrente nao e o inicial" ) ;
+			#endif
             pElem->pAnt->pProx   = pElem->pProx ;
             pLista->pElemCorr    = pElem->pAnt ;
          } else {
+			 #ifdef _DEBUG
+				CNT_CONTAR( "LIS_ExcluirElemento: Elemento corrente e o inicial" ) ;
+			#endif
             pLista->pElemCorr    = pElem->pProx ;
             pLista->pOrigemLista = pLista->pElemCorr ;
          } /* if */
@@ -296,9 +370,15 @@
 
          if ( pElem->pProx != NULL )
          {
+			 #ifdef _DEBUG
+				CNT_CONTAR( "LIS_ExcluirElemento: Elemento corrente nao e o final" ) ;
+			#endif
             pElem->pProx->pAnt = pElem->pAnt ;
          } else
          {
+			 #ifdef _DEBUG
+				CNT_CONTAR( "LIS_ExcluirElemento: Elemento corrente e o final" ) ;
+			#endif
             pLista->pFimLista = pElem->pAnt ;
          } /* if */
 
@@ -315,6 +395,9 @@
 
    void * LIS_ObterValor( LIS_tppLista pLista )
    {
+	    #ifdef _DEBUG
+		  CNT_CONTAR( "LIS_ObterValor" ) ;
+	    #endif
 
       #ifdef _DEBUG
          assert( pLista != NULL ) ;
@@ -322,8 +405,14 @@
 
       if ( pLista->pElemCorr == NULL )
       {
+		#ifdef _DEBUG
+		 CNT_CONTAR( "LIS_ObterValor: Corrente e NULL" ) ;
+	    #endif
         return NULL ;
       } /* if */
+	  #ifdef _DEBUG
+		 CNT_CONTAR( "LIS_ObterValor: Corrente nao e NULL" ) ;
+	    #endif
 
       return pLista->pElemCorr->pValor ;
 
@@ -336,6 +425,9 @@
 
    void IrInicioLista( LIS_tppLista pLista )
    {
+	    #ifdef _DEBUG
+		  CNT_CONTAR( "LIS_IrInicioLista" ) ;
+	    #endif
 
       #ifdef _DEBUG
          assert( pLista != NULL ) ;
@@ -352,6 +444,9 @@
 
    void IrFinalLista( LIS_tppLista pLista )
    {
+	   #ifdef _DEBUG
+		CNT_CONTAR( "LIS_IrFinalLista" ) ;
+	  #endif
 
       #ifdef _DEBUG
          assert( pLista != NULL ) ;
@@ -369,6 +464,9 @@
    LIS_tpCondRet LIS_AvancarElementoCorrente( LIS_tppLista pLista ,
                                               int numElem )
    {
+	   #ifdef _DEBUG
+		CNT_CONTAR( "LIS_AvancarElementoCorrente" ) ;
+	  #endif
 
       int i ;
 
@@ -391,22 +489,42 @@
 
          if ( numElem > 0 )
          {
+			 #ifdef _DEBUG
+				CNT_CONTAR( "LIS_AvancarElementoCorrente: Avancar para frente" ) ;
+			#endif
 
             pElem = pLista->pElemCorr ;
             for( i = numElem ; i > 0 ; i-- )
             {
+				 #ifdef _DEBUG
+					CNT_CONTAR( "LIS_AvancarElementoCorrente: Avancou elemento" ) ;
+			   #endif
                if ( pElem == NULL )
                {
+				    #ifdef _DEBUG
+						CNT_CONTAR( "LIS_AvancarElementoCorrente: Chegou no final da lista" ) ;
+				  #endif
                   break ;
                } /* if */
                pElem    = pElem->pProx ;
             } /* for */
+			#ifdef _DEBUG
+				CNT_CONTAR( "LIS_AvancarElementoCorrente: Terminou de avancar elemento" ) ;
+			#endif
 
             if ( pElem != NULL )
             {
+				#ifdef _DEBUG
+					CNT_CONTAR( "LIS_AvancarElementoCorrente: Nao chegou no final da lista" ) ;
+			   #endif
+			   
                pLista->pElemCorr = pElem ;
                return LIS_CondRetOK ;
             } /* if */
+			
+			#ifdef _DEBUG
+				CNT_CONTAR( "LIS_AvancarElementoCorrente: Elemento final vira o corrente" ) ;
+			#endif
 
             pLista->pElemCorr = pLista->pFimLista ;
             return LIS_CondRetFimLista ;
@@ -417,27 +535,51 @@
 
          else if ( numElem < 0 )
          {
+			 #ifdef _DEBUG
+				CNT_CONTAR( "LIS_AvancarElementoCorrente: Avancar para tras" ) ;
+			#endif
 
             pElem = pLista->pElemCorr ;
             for( i = numElem ; i < 0 ; i++ )
             {
+				 #ifdef _DEBUG
+					CNT_CONTAR( "LIS_AvancarElementoCorrente: Voltou elemento" ) ;
+			   #endif
                if ( pElem == NULL )
                {
+				   #ifdef _DEBUG
+						CNT_CONTAR( "LIS_AvancarElementoCorrente: Chegou no inicio da lista" ) ;
+				  #endif
                   break ;
                } /* if */
                pElem    = pElem->pAnt ;
             } /* for */
+			
+			#ifdef _DEBUG
+				CNT_CONTAR( "LIS_AvancarElementoCorrente: Terminou de voltar elemento" ) ;
+			#endif
 
             if ( pElem != NULL )
             {
+				#ifdef _DEBUG
+					CNT_CONTAR( "LIS_AvancarElementoCorrente: Nao chegou no inicio da lista" ) ;
+			   #endif
                pLista->pElemCorr = pElem ;
                return LIS_CondRetOK ;
             } /* if */
+			
+			#ifdef _DEBUG
+				CNT_CONTAR( "LIS_AvancarElementoCorrente: Elemento inicial vira o corrente" ) ;
+			#endif
 
             pLista->pElemCorr = pLista->pOrigemLista ;
             return LIS_CondRetFimLista ;
 
          } /* fim ativa: Tratar avançar para trás */
+		 
+		 #ifdef _DEBUG
+				CNT_CONTAR( "LIS_AvancarElementoCorrente: Nao avanca elemento" ) ;
+		 #endif
 
       /* Tratar não avançar */
 
@@ -453,6 +595,9 @@
    LIS_tpCondRet LIS_ProcurarValor( LIS_tppLista pLista ,
                                     void * pValor        )
    {
+	    #ifdef _DEBUG
+		CNT_CONTAR( "LIS_ProcurarValor" ) ;
+	  #endif
 
       tpElemLista * pElem ;
 
@@ -462,19 +607,33 @@
 
       if ( pLista->pElemCorr == NULL )
       {
+		  #ifdef _DEBUG
+		   CNT_CONTAR( "LIS_ProcurarValor: Lista esta vazia" ) ;
+	      #endif
          return LIS_CondRetListaVazia ;
       } /* if */
+	  
+	  IrInicioLista(pLista);
 
       for ( pElem  = pLista->pElemCorr ;
             pElem != NULL ;
             pElem  = pElem->pProx )
       {
+		  #ifdef _DEBUG
+			CNT_CONTAR( "LIS_ProcurarValor: Procurar no elemento" ) ;
+		  #endif
          if ( pElem->pValor == pValor )
          {
+			#ifdef _DEBUG
+			  CNT_CONTAR( "LIS_ProcurarValor: Achou valor" ) ;
+		    #endif
             pLista->pElemCorr = pElem ;
             return LIS_CondRetOK ;
          } /* if */
       } /* for */
+	   #ifdef _DEBUG
+		CNT_CONTAR( "LIS_ProcurarValor: Nao achou" ) ;
+	  #endif
 
       return LIS_CondRetNaoAchou ;
 
@@ -497,12 +656,22 @@
    void LiberarElemento( LIS_tppLista   pLista ,
                          tpElemLista  * pElem   )
    {
+	   #ifdef _DEBUG
+		 CNT_CONTAR( "LiberarElemento" ) ;
+	  #endif
 
       if ( ( pLista->ExcluirValor != NULL )
         && ( pElem->pValor != NULL        ))
       {
+		  #ifdef _DEBUG
+			CNT_CONTAR( "LiberarElemento: Excluiu valor" ) ;
+		 #endif
          pLista->ExcluirValor( pElem->pValor ) ;
       } /* if */
+	  #ifdef _DEBUG
+		 CNT_CONTAR( "LiberarElemento: Liberou elemento" ) ;
+	  #endif
+	  
 
       free( pElem ) ;
 
@@ -520,12 +689,18 @@
    tpElemLista * CriarElemento( LIS_tppLista pLista ,
                                 void *       pValor  )
    {
+	   #ifdef _DEBUG
+		 CNT_CONTAR( "CriarElemento" ) ;
+	  #endif
 
       tpElemLista * pElem ;
 
       pElem = ( tpElemLista * ) malloc( sizeof( tpElemLista )) ;
       if ( pElem == NULL )
       {
+		  #ifdef _DEBUG
+				CNT_CONTAR( "CriarElemento: Faltou memoria ao criar elemento" ) ;
+		 #endif
          return NULL ;
       } /* if */
 
@@ -534,6 +709,10 @@
       pElem->pProx  = NULL  ;
 
       pLista->numElem ++ ;
+	  
+	   #ifdef _DEBUG
+			CNT_CONTAR( "CriarElemento: Criou elemento com sucesso" ) ;
+	  #endif
 
       return pElem ;
 
@@ -548,6 +727,9 @@
 
    void LimparCabeca( LIS_tppLista pLista )
    {
+	    #ifdef _DEBUG
+		CNT_CONTAR( "LimparCabeca" ) ;
+	  #endif
 
       pLista->pOrigemLista = NULL ;
       pLista->pFimLista = NULL ;

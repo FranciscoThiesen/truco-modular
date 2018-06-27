@@ -67,36 +67,38 @@ PTD_tpCondRet PTD_CriaJogador(PTD_tppJogador* jogador, char nome[30])
 	return PTD_CondRetOK;
 }
 
-PTD_tpCondRet PTD_MontaEquipes(PTD_tppJogador** jogadores, int jogadoresPorEquipe)
-{
-	// vou colocar uma assertiva so pra lembrarmos disso
-	// assert(jogadoresPorEquipe == 1 || jogadoresPorEquipe == 2 || jogadoresPorEquipe == 3)
-	int i;
-	
-	// os jogadores pares vao ser da equipe 0, e os impares vao ser da equipe 1
-	// o parametro teve que ser ponteiro de ponteiro, porque minha funcao altera um campo de um ponteiro ja criado.
-	for(i = 0; i < 2 * jogadoresPorEquipe; ++i)
-	{
-		if(*(jogadores[i]) == NULL) return PTD_CondRetFaltouMemoria;
-		(*jogadores[i])->idEquipe = i % 2;
-	}
-	return PTD_CondRetOK;
-}
+//PTD_tpCondRet PTD_MontaEquipes(PTD_tppJogador** jogadores, int jogadoresPorEquipe)
+//{
+//	// vou colocar uma assertiva so pra lembrarmos disso
+//	// assert(jogadoresPorEquipe == 1 || jogadoresPorEquipe == 2 || jogadoresPorEquipe == 3)
+//	int i;
+//	
+//	// os jogadores pares vao ser da equipe 0, e os impares vao ser da equipe 1
+//	// o parametro teve que ser ponteiro de ponteiro, porque minha funcao altera um campo de um ponteiro ja criado.
+//	for(i = 0; i < 2 * jogadoresPorEquipe; ++i)
+//	{
+//		if(*(jogadores[i]) == NULL) return PTD_CondRetFaltouMemoria;
+//		(*jogadores[i])->idEquipe = i % 2;
+//	}
+//	return PTD_CondRetOK;
+//}
 
 PTD_tpCondRet PTD_DefineManilha(PTD_tppPartida* pPartida)
 {
 	int ret = BAR_RemoveCartaDoBaralho( (*pPartida)->baralho, (*pPartida)->manilha);
-	if( ret != BAR_CondRetOK) return PTD_CondRetBaralhoNaoExiste;
+	if( ret != BAR_CondRetOK) 
+		return PTD_CondRetBaralhoNaoExiste;
 	return PTD_CondRetOK;
 }
 
 PTD_tpCondRet PTD_CriaPartida(PTD_tppPartida pPartida, int numeroDeJogadores)
 {
 	int i, ret;
+	char nome[NOMEMAXIMO];
 	PTD_tppPartida novaPartida = (PTD_tppPartida) malloc(sizeof(PTD_tpPartida));
 	novaPartida->placar[0] = novaPartida->placar[1] = 0;
 	novaPartida->jogadores = (PTD_tppJogador*) malloc(numeroDeJogadores * sizeof(PTD_tppJogador) ); 
-	char nome[NOMEMAXIMO];
+	//char nome[NOMEMAXIMO];
 	for( i = 0; i < numeroDeJogadores; ++i) 
 	{
 		printf("Digite o nome do %d-esimo jogador\n", i);
@@ -125,27 +127,3 @@ PTD_tpCondRet PTD_CriaPartida(PTD_tppPartida pPartida, int numeroDeJogadores)
 	return PTD_CondRetOK;
 }
 
-int main()
-{
-	int retorno;
-	BAR_tppCarta *cartas=NULL;
-	BAR_tppBaralho Baralho=(BAR_tppBaralho)malloc(sizeof(BAR_tppBaralho));
-	BAR_tppCarta carta = NULL;
-
-	if(BAR_CriaCarta(&carta,'a',10,"ouros")==BAR_CondRetOK)
-	{
-		printf("sucesso em criar uma carta!\n");
-	}
-	//retorno=DestruirCarta(*carta);
-	retorno=BAR_CriaVetorCartas(&cartas);
-
-	if(retorno==BAR_CondRetOK) printf("sucesso\n");
-	
-	retorno = BAR_CriarBaralho(&Baralho);
-	if(retorno==BAR_CondRetOK) printf("sucesso\n");
-
-	BAR_Embaralhar(Baralho); 
-
-	imprimeBaralho(Baralho);
-	return 0;
-}
