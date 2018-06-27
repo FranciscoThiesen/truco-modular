@@ -344,7 +344,7 @@ char GetNome(BAR_tppCarta carta)
 
 void BAR_ImprimeCarta(BAR_tppCarta carta)
 {
-	printf("naipe=%s\tpeso=%d\tnome=%c\n", carta->naipe, carta->peso, carta->nome);
+	printf("naipe=%s  peso=%d  nome=%c\n", carta->naipe, carta->peso, carta->nome);
 }
 
 
