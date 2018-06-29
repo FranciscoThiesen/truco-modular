@@ -568,5 +568,18 @@
 	   return pLista->pElemCorr->pValor;
    }/* Fim função: LIS  -Retorna corrente */
 
+
+
+/***********************************************************************
+*
+*  $FC Função: LIS  -Retorna numero de elementos da lista
+*
+***********************************************************************/
+
+   int LIS_numElem(LIS_tppLista pLista)
+   {
+	   return pLista->numElem;
+   }
+
 /********** Fim do módulo de implementação: LIS  Lista duplamente encadeada **********/
 
