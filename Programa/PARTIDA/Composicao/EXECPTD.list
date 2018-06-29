@@ -1,0 +1,137 @@
+GERADOR DE SCRIPT DE DIRETIVAS PARA MAKE
+   LES / Informática / PUC-Rio    Versão 6.00 (c) 2005
+
+Composição do construto: ..\Composicao\EXECPTD.comp
+
+   Nome do Construto:           EXECPTD
+   Diretório base:              C:\Users\tubas\Desktop\git master grupo\truco-modular\Programa\PARTIDA\Composicao
+
+   Arquivo composição:          ..\Composicao\EXECPTD.comp
+   Arquivo plataforma:          gmake.parm
+
+   Arquivo diretivas MAKE:      EXECPTD.make
+   Arquivo diretivas LINK:      EXECPTD.build
+   Arquivo listagem:            EXECPTD.list
+
+Módulos do construto: ..\Composicao\EXECPTD.comp
+
+   partida.c
+   baralho.c
+   lista.c
+
+Estatísticas do construto
+
+   Estatísticas do arquivo: baralho.c
+      Total linhas:             351
+      Linhas de código:         212
+      Linhas de comentário:      79
+      Linhas em branco:          72
+   Arquivos de inclusão de que necessita
+      baralho.h
+      lista.h
+
+   Estatísticas do arquivo: baralho.h
+      Total linhas:             220
+      Linhas de código:          34
+      Linhas de comentário:     148
+      Linhas em branco:          38
+   Arquivos de inclusão de que necessita
+      lista.h
+   Arquivos em que é incluído
+      baralho.c
+      partida.c
+      partida.h
+
+   Estatísticas do arquivo: lista.c
+      Total linhas:             585
+      Linhas de código:         296
+      Linhas de comentário:     147
+      Linhas em branco:         161
+   Arquivos de inclusão de que necessita
+      lista.h
+
+   Estatísticas do arquivo: lista.h
+      Total linhas:             377
+      Linhas de código:          37
+      Linhas de comentário:     288
+      Linhas em branco:          52
+   Arquivos em que é incluído
+      baralho.c
+      baralho.h
+      lista.c
+      partida.c
+      partida.h
+
+   Estatísticas do arquivo: partida.c
+      Total linhas:             548
+      Linhas de código:         371
+      Linhas de comentário:     111
+      Linhas em branco:          67
+   Arquivos de inclusão de que necessita
+      baralho.h
+      lista.h
+      partida.h
+
+   Estatísticas do arquivo: partida.h
+      Total linhas:             101
+      Linhas de código:          31
+      Linhas de comentário:      47
+      Linhas em branco:          25
+   Arquivos de inclusão de que necessita
+      baralho.h
+      lista.h
+   Arquivos em que é incluído
+      partida.c
+
+Totais por tipo de arquivo
+
+  Tipo: def      Path: ..\Tabelas
+         Total linhas do tipo:         0
+         Linhas de código:             0
+         Linhas de comentário:         0
+         Linhas em branco:             0
+         Arquivos deste tipo:          0
+
+  Tipo: h        Path: ..\Fontes
+         Total linhas do tipo:       698
+         Linhas de código:           102
+         Linhas de comentário:       483
+         Linhas em branco:           115
+         Arquivos deste tipo:          3
+
+  Tipo: obj      Path: ..\Objetos
+         Total linhas do tipo:         0
+         Linhas de código:             0
+         Linhas de comentário:         0
+         Linhas em branco:             0
+         Arquivos deste tipo:          0
+
+  Tipo: err      Path: ..\Produto
+         Total linhas do tipo:         0
+         Linhas de código:             0
+         Linhas de comentário:         0
+         Linhas em branco:             0
+         Arquivos deste tipo:          0
+
+  Tipo: DEFAULT  Path: ..\Fontes
+         Total linhas do tipo:         0
+         Linhas de código:             0
+         Linhas de comentário:         0
+         Linhas em branco:             0
+         Arquivos deste tipo:          0
+
+  Tipo: c        Path: ..\Fontes
+         Total linhas do tipo:      1484
+         Linhas de código:           879
+         Linhas de comentário:       337
+         Linhas em branco:           300
+         Arquivos deste tipo:          3
+
+Totais para todo o construto EXECPTD
+
+   Total linhas:              2182
+   Linhas de código:           981
+   Linhas de comentário:       820
+   Linhas em branco:           415
+   Arquivos processados:         6
+

@@ -1,5 +1,5 @@
 /***************************************************************************
-*  $MCI M�dulo de implementa��o: BAR  BARALHO
+*  $MCI Módulo de implementação: BAR  BARALHO
 *
 *  Arquivo gerado:              BARALHO.c
 *  Letras identificadoras:      BAR
@@ -8,9 +8,9 @@
 *  Gestor:  DI/PUC-Rio
 *  Autores: Arthur Cavalcante Gomes Coelho(acgc)
 *
-*  $HA Hist�rico de evolu��o:
-*     Vers�o  Autor    Data     Observa��es
-*     1       acgc   30/04/2018 in�cio desenvolvimento
+*  $HA Histórico de evolução:
+*     Versão  Autor    Data     Observações
+*     1       acgc   30/04/2018 início desenvolvimento
 *
 ***************************************************************************/
 
@@ -59,15 +59,15 @@ typedef struct BAR_tagBaralho
 	LIS_tppLista Cartas;
 }	BAR_tpBaralho;
 
-/***** Prot�tipos das fun��es encapuladas no m�dulo *****/
+/***** Protótipos das funções encapuladas no módulo *****/
 BAR_tpCondRet DestruirValor(void * pValor);
 
 /***********************************************************************
 *
-*  $FC Fun��o: BAR  -Destruir elemento
+*  $FC Função: BAR  -Destruir elemento
 *
-*  $ED Descri��o da fun��o
-*     Elimina os espa�os apontados pelo ponteiro passado
+*  $ED Descrição da função
+*     Elimina os espaços apontados pelo ponteiro passado
 *
 ***********************************************************************/
 BAR_tpCondRet DestruirValor(void * pValor)
@@ -76,11 +76,11 @@ BAR_tpCondRet DestruirValor(void * pValor)
 	return BAR_CondRetOK;
 }
 
-/*****  C�digo das fun��es exportadas pelo m�dulo  *****/
+/*****  Código das funções exportadas pelo módulo  *****/
 
 /***************************************************************************
 *
-*  Fun��o: BAR  &Criar carta
+*  Função: BAR  &Criar carta
 *  ****/
 BAR_tpCondRet BAR_CriaCarta(BAR_tppCarta *pCarta, char nome, int peso, char *naipe)
 {
@@ -93,21 +93,21 @@ BAR_tpCondRet BAR_CriaCarta(BAR_tppCarta *pCarta, char nome, int peso, char *nai
 	strcpy((*pCarta)->naipe,naipe);
 	(*pCarta)->peso=peso;
 	return BAR_CondRetOK;
-}/* Fim fun��o: BAR  &Criar carta */
+}/* Fim função: BAR  &Criar carta */
 
 /***************************************************************************
 *
-*  Fun��o: BAR  &Destruir carta
+*  Função: BAR  &Destruir carta
 *  ****/
 BAR_tpCondRet DestruirCarta(BAR_tppCarta pCarta)
 {
 	free(pCarta);
 	return BAR_CondRetOK;
-}/* Fim fun��o: BAR  &Destruir carta */
+}/* Fim função: BAR  &Destruir carta */
 
 /***************************************************************************
 *
-*  $FC Fun��o: BAR  &Criar Baralho
+*  $FC Função: BAR  &Criar Baralho
 *  ****/
 BAR_tpCondRet BAR_CriarBaralho(BAR_tppBaralho *pBaralho)
 {
@@ -139,18 +139,19 @@ BAR_tpCondRet BAR_CriarBaralho(BAR_tppBaralho *pBaralho)
 		LIS_InserirElementoApos((*pBaralho)->Cartas,pcarta);
 	}
 	return BAR_CondRetOK;
-}/* Fim fun��o: BAR  &Criar baralho */
+}/* Fim função: BAR  &Criar baralho */
 
 
 /***************************************************************************
 *
-*  $FC Fun��o: BAR  &Cria vetor cartas
+*  $FC Função: BAR  &Cria vetor cartas
 *  ****/
 BAR_tpCondRet BAR_CriaVetorCartas(BAR_tppCarta *cartas[])
 {
 	BAR_tpCondRet retorno;
 	char *naipe[10];
-	int i,j,cont=0;
+	char valores[] = "A234567JQK";
+	int i,j, peso;
 
 	BAR_tppCarta carta=NULL;
 
@@ -164,76 +165,55 @@ BAR_tpCondRet BAR_CriaVetorCartas(BAR_tppCarta *cartas[])
 		return BAR_CondRetFaltouMemoria;
 	}
 
-	for(cont=0,i=0;i<10;i++)
+	for(i = 0; i < 40; ++i)
 	{
-		for(j=0;j<4;j++)
-		{
-			//cria cartas de 2 a 7
-			if(i<6)
-			{
-				retorno=BAR_CriaCarta(&carta,(50+i),0,naipe[j]);
-				if (retorno!=BAR_CondRetOK)
-					return retorno;
-			}
-			//cria o J
-			else if(cont>=24&&cont<28)
-			{
-				retorno=BAR_CriaCarta(&carta,'J',0,naipe[j]);
-				if (retorno!=BAR_CondRetOK)
-					return retorno;
-			}
-			//cria o Q
-			else if(cont>=28&&cont<32)
-			{
-				retorno=BAR_CriaCarta(&carta,'Q',0,naipe[j]);
-				if (retorno!=BAR_CondRetOK)
-					return retorno;
-			}
-			//cria o K
-			else if(cont>=32&&cont<36)
-			{
-				retorno=BAR_CriaCarta(&carta,'K',0,naipe[j]);
-				if (retorno!=BAR_CondRetOK)
-					return retorno;
-			}
-			//cria o A
-			else if(cont>=36&&cont<40)
-			{
-				retorno=BAR_CriaCarta(&carta,'A',0,naipe[j]);
-				if (retorno!=BAR_CondRetOK)
-					return retorno;
-			}
-			(*cartas)[cont]=carta;
-			cont++;
-		}
+		//printf(" valor = %c, naipe = %s \n\n", valores[i/4], naipe[i%4]);
+		if(valores[i/4] == '4' && strcmp(naipe[i%4], "paus") == 0) peso = 14;
+		else if(valores[i/4]== '7' && strcmp(naipe[i%4], "copas") == 0) peso = 13;
+		else if(valores[i/4] == 'A' && strcmp(naipe[i%4], "espadas") == 0) peso = 12;
+		else if(valores[i/4] == '7' && strcmp(naipe[i%4], "ouros") == 0) peso = 11;
+		else if(valores[i/4] == '3') peso = 10;
+		else if(valores[i/4] == '2') peso = 9;
+		else if(valores[i/4] == 'A') peso = 8;
+		else if(valores[i/4] == 'K') peso = 7;
+		else if(valores[i/4] == 'J') peso = 6;
+		else if(valores[i/4] == 'Q') peso = 5;
+		else if(valores[i/4] == '7') peso = 4;
+		else if(valores[i/4] == '6') peso = 3;
+		else if(valores[i/4] == '5') peso = 2;
+		else if(valores[i/4] == '4') peso = 1;
+		retorno = BAR_CriaCarta(&carta, valores[i/4], peso, naipe[i%4]);
+		if(retorno != BAR_CondRetOK) return retorno;
+
+		(*cartas)[i] = carta;
 	}
 	return retorno;
-}/* Fim fun��o: BAR  &Cria vetor cartas */
+}/* Fim função: BAR  &Cria vetor cartas */
 
 
 /***************************************************************************
 *
-*  $FC Fun��o: BAR  &Embaralhar
+*  $FC Função: BAR  &Embaralhar
 *  ****/
  BAR_tpCondRet BAR_Embaralhar( BAR_tppBaralho pBaralho )
    {
 
 	   int i = -1; //tamBaralho = -1;
-
+	   
 	   LIS_tppLista pListaDestino = NULL;
 
        if( pBaralho == NULL )
 	   {
 		   return BAR_CondRetBaralhoNaoExiste ;
 	   }
-
+	   
 	   pListaDestino=LIS_CriarLista((void (*) (void *pDado))DestruirCarta);
-
+	   
 	   if(pListaDestino==NULL)
 	   {
 		   return BAR_CondRetFaltouMemoria;
 	   }
-
+	   
 	   IrInicioLista( pListaDestino );
 
 	   srand((unsigned) time(NULL));
@@ -253,7 +233,7 @@ BAR_tpCondRet BAR_CriaVetorCartas(BAR_tppCarta *cartas[])
 
 			corrente = (BAR_tppCarta) retorna_corrente(pBaralho->Cartas);
 
-
+			
 
 			BAR_CriaCarta(&copia, corrente->nome, corrente->peso, corrente->naipe);
 
@@ -270,17 +250,19 @@ BAR_tpCondRet BAR_CriaVetorCartas(BAR_tppCarta *cartas[])
 			if( LIS_ExcluirElemento(pBaralho->Cartas) != LIS_CondRetOK) return BAR_FalhaNoEmbaralhamento;
 	   }
 
-	   LIS_DestruirLista( pBaralho->Cartas );	/* Destr�i a lista antiga */
+	   LIS_DestruirLista( pBaralho->Cartas );	/* Destrói a lista antiga */
 
-	   pBaralho->Cartas = pListaDestino;		/* Baralho agora � composto pela lista embaralhada */
+	   IrInicioLista( pListaDestino );
+
+	   pBaralho->Cartas = pListaDestino;		/* Baralho agora é composto pela lista embaralhada */
 
 	   return BAR_CondRetOK;
 
-   } /* Fim fun��o: BAR  &Embaralhar */
+   } /* Fim função: BAR  &Embaralhar */
 
  /***************************************************************************
 *
-*  $FC Fun��o: BAR  &Destruir baralho
+*  $FC Função: BAR  &Destruir baralho
 *  ****/
 BAR_tpCondRet BAR_DestruirBaralho( BAR_tppBaralho pBaralho )
    {
@@ -298,21 +280,26 @@ BAR_tpCondRet BAR_DestruirBaralho( BAR_tppBaralho pBaralho )
 
 	  return BAR_CondRetOK;
 
-   } /* Fim fun��o: EMB  &Destruir baralho */
+   } /* Fim função: EMB  &Destruir baralho */
 
-BAR_tpCondRet BAR_RemoveCartaDoBaralho( BAR_tppBaralho pBaralho, BAR_tppCarta pCarta)
+BAR_tpCondRet BAR_RemoveCartaDoBaralho( BAR_tppBaralho pBaralho, BAR_tppCarta* pCarta)
 {
 	int res;
-	pCarta = (BAR_tppCarta) malloc(sizeof(BAR_tpCarta) );
-	if(pCarta == NULL)
+	BAR_tppCarta auxiliar;
+	//*pCarta = (BAR_tppCarta)malloc(sizeof(BAR_tpCarta));
+	if(*pCarta == NULL)
 	{
 		return BAR_CondRetFaltouMemoria;
 	}
-	pCarta = (BAR_tppCarta) LIS_ObterValor(pBaralho->Cartas);
+	auxiliar = (BAR_tppCarta) LIS_ObterValor(pBaralho->Cartas);
+
+	(*pCarta)->nome = auxiliar->nome;
+	strcpy((*pCarta)->naipe,auxiliar->naipe);
+	(*pCarta)->peso = auxiliar->peso;
 
 	res = LIS_ExcluirElemento(pBaralho->Cartas);
 
-	if(res != LIS_CondRetOK)
+	if(res != LIS_CondRetOK) 
 	{
 		return BAR_CondRetListaVazia;
 	}
@@ -320,20 +307,45 @@ BAR_tpCondRet BAR_RemoveCartaDoBaralho( BAR_tppBaralho pBaralho, BAR_tppCarta pC
 	return BAR_CondRetOK;
 }
 
-static void imprimeBaralho(BAR_tppBaralho pBaralho)
+char *GetNaipe(BAR_tppCarta carta);
+int GetPeso(BAR_tppCarta carta);
+char GetNome(BAR_tppCarta carta);
+
+void BAR_ImprimeBaralho(BAR_tppBaralho pBaralho)
 {
 	int i;
-
+	
 	IrInicioLista( (LIS_tppLista) pBaralho->Cartas);
 
-	for(i = 0; i < 40; ++i)
+	for(i = 0; i < 40; ++i) 
 	{
-
-
 		BAR_tppCarta corrente =  (BAR_tppCarta) LIS_ObterValor(pBaralho->Cartas) ;
 		LIS_AvancarElementoCorrente( (LIS_tppLista) pBaralho->Cartas, 1);
-		printf("%s %d %c\n", corrente->naipe, corrente->peso, corrente->nome);
-		//printf("%d %d %s\n", (BAR_tppCarta)(*pBaralho)->Cartas->pElemCorr->pValor) );
+		printf("%c	-	%s	-	%d\n",GetNome(corrente) ,GetNaipe(corrente), GetPeso(corrente));
 	}
 }
-/********** Fim do m�dulo de implementa��o: BAR  BARALHO **********/
+
+char *GetNaipe(BAR_tppCarta carta)
+{
+	char *naipe = (char*)malloc(sizeof(20*sizeof(char)));
+	strcpy(naipe,carta->naipe);
+	return naipe;
+}
+
+int GetPeso(BAR_tppCarta carta)
+{
+	return carta->peso;
+}
+
+char GetNome(BAR_tppCarta carta)
+{
+	return carta->nome;
+}
+
+void BAR_ImprimeCarta(BAR_tppCarta carta)
+{
+	printf("naipe=%s  peso=%d  nome=%c\n", carta->naipe, carta->peso, carta->nome);
+}
+
+
+/********** Fim do módulo de implementação: BAR  BARALHO **********/

@@ -1,7 +1,7 @@
 ##################################################
 ###
-### Diretivas de MAKE para o construto: TESTBAR
-### Gerado a partir de: ..\Composicao\TESTBAR.comp
+### Diretivas de MAKE para o construto: EXECPTD
+### Gerado a partir de: ..\Composicao\EXECPTD.comp
 ###
 ### ----- Arquivo gerado, NÃO EDITE!!! -----
 ###
@@ -9,7 +9,7 @@
 
 ### Nomes globais
 
-NOME            = TESTBAR
+NOME            = EXECPTD
 
 
 ### Nomes de paths
@@ -49,7 +49,7 @@ INCLUDE = $(INCLUDE);$(PDEFAULT)
 ### Regras de geração
 
 all : limpa \
-   $(Fobj)\testbar.obj   $(Fobj)\baralho.obj   $(Fobj)\lista.obj \
+   $(Fobj)\partida.obj   $(Fobj)\baralho.obj   $(Fobj)\lista.obj \
    Construto
 
 ### Limpar arquivos
@@ -60,9 +60,8 @@ limpa :
 
 ### Dependências de módulos objeto a compilar
 
-$(Fobj)\testbar.obj :  {$(Pc)}\testbar.c \
-    {$(Ph)}baralho.h            {$(Ph)}generico.h           {$(Ph)}lerparm.h            \
-    {$(Ph)}lista.h              {$(Ph)}tst_espc.h          
+$(Fobj)\partida.obj :  {$(Pc)}\partida.c \
+    {$(Ph)}baralho.h            {$(Ph)}lista.h              {$(Ph)}partida.h           
    cl $(O) $(OPT) /Fo$(Fobj)\ $(Fc)\$(@B).c >> $(Ferr)\$(NOME).err
 
 $(Fobj)\baralho.obj :  {$(Pc)}\baralho.c \
@@ -77,13 +76,13 @@ $(Fobj)\lista.obj :  {$(Pc)}\lista.c \
 ### Terminação
 
 Construto : \
-   $(Fobj)\testbar.obj   $(Fobj)\baralho.obj   $(Fobj)\lista.obj
+   $(Fobj)\partida.obj   $(Fobj)\baralho.obj   $(Fobj)\lista.obj
     cd $(Fobj)
     LINK $(L) @$(NOME).build >> $(Ferr)\$(NOME).err
 
 ##################################################
 ###
-### Fim de diretivas MAKE para o construto: TESTBAR
+### Fim de diretivas MAKE para o construto: EXECPTD
 ###
 ##################################################
 

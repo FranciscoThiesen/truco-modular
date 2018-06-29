@@ -1,0 +1,21 @@
+partida.c
+..\Fontes\partida.c(227) : warning C4100: 'equipe' : unreferenced formal parameter
+..\Fontes\partida.c(268) : warning C4101: 'flagPediuTruco' : unreferenced local variable
+..\Fontes\partida.c(268) : warning C4101: 'peso' : unreferenced local variable
+..\Fontes\partida.c(265) : warning C4101: 'pCarta' : unreferenced local variable
+..\Fontes\partida.c(266) : warning C4101: 'pCartaDummy' : unreferenced local variable
+..\Fontes\partida.c(413) : warning C4101: 'i' : unreferenced local variable
+c:\users\tubas\desktop\git master grupo\truco-modular\programa\partida\fontes\partida.c(490) : warning C4701: potentially uninitialized local variable 'winner' used
+baralho.c
+..\Fontes\baralho.c(154) : warning C4101: 'j' : unreferenced local variable
+c:\users\tubas\desktop\git master grupo\truco-modular\programa\partida\fontes\baralho.c(185) : warning C4701: potentially uninitialized local variable 'peso' used
+c:\users\tubas\desktop\git master grupo\truco-modular\programa\partida\fontes\baralho.c(190) : warning C4701: potentially uninitialized local variable 'retorno' used
+lista.c
+Microsoft (R) Incremental Linker Version 10.00.30319.01
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+/OUT:..\Produto\EXECPTD.exe 
+/INCREMENTAL:NO 
+/MACHINE:IX86 
+partida.obj baralho.obj lista.obj 
+ArcaboucoTeste.lib 

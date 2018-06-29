@@ -1,0 +1,6 @@
+/OUT:..\Produto\EXECPTD.exe
+/INCREMENTAL:NO
+/MACHINE:IX86
+partida.obj  baralho.obj  lista.obj  
+ArcaboucoTeste.lib
+
