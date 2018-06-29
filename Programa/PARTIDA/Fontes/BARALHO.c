@@ -280,8 +280,12 @@ BAR_tpCondRet BAR_DestruirBaralho( BAR_tppBaralho pBaralho )
 
 	  return BAR_CondRetOK;
 
-   } /* Fim função: EMB  &Destruir baralho */
+   } /* Fim função: BAR  &Destruir baralho */
 
+ /***************************************************************************
+*
+*  $FC Função: BAR  &Remove Carta do Baralho
+*  ****/
 BAR_tpCondRet BAR_RemoveCartaDoBaralho( BAR_tppBaralho pBaralho, BAR_tppCarta* pCarta)
 {
 	int res;
@@ -292,6 +296,10 @@ BAR_tpCondRet BAR_RemoveCartaDoBaralho( BAR_tppBaralho pBaralho, BAR_tppCarta* p
 		return BAR_CondRetFaltouMemoria;
 	}
 	auxiliar = (BAR_tppCarta) LIS_ObterValor(pBaralho->Cartas);
+	if(auxiliar == NULL)
+	{
+		return BAR_CondRetCartaNaoCriada;
+	}
 
 	(*pCarta)->nome = auxiliar->nome;
 	strcpy((*pCarta)->naipe,auxiliar->naipe);
@@ -305,12 +313,42 @@ BAR_tpCondRet BAR_RemoveCartaDoBaralho( BAR_tppBaralho pBaralho, BAR_tppCarta* p
 	}
 
 	return BAR_CondRetOK;
-}
+}/* Fim função: BAR  &Remove Carta do Baralho */
 
-char *GetNaipe(BAR_tppCarta carta);
-int GetPeso(BAR_tppCarta carta);
-char GetNome(BAR_tppCarta carta);
+ /***************************************************************************
+*
+*  $FC Função: BAR  &Get Naipe
+*  ****/
+char *BAR_GetNaipe(BAR_tppCarta carta)
+{
+	char *naipe = (char*)malloc(sizeof(20*sizeof(char)));
+	strcpy(naipe,carta->naipe);
+	return naipe;
+}/* Fim função: BAR  &Get Naipe */
 
+ /***************************************************************************
+*
+*  $FC Função: BAR  &Get Peso
+*  ****/
+int BAR_GetPeso(BAR_tppCarta carta)
+{
+	return carta->peso;
+}/* Fim função: BAR  &Get Peso */
+
+ /***************************************************************************
+*
+*  $FC Função: BAR  &Get Nome
+*  ****/
+char BAR_GetNome(BAR_tppCarta carta)
+{
+	return carta->nome;
+}/* Fim função: BAR  &Get Peso */
+
+
+ /***************************************************************************
+*
+*  $FC Função: BAR  &Imprime Baralho
+*  ****/
 void BAR_ImprimeBaralho(BAR_tppBaralho pBaralho)
 {
 	int i;
@@ -321,31 +359,19 @@ void BAR_ImprimeBaralho(BAR_tppBaralho pBaralho)
 	{
 		BAR_tppCarta corrente =  (BAR_tppCarta) LIS_ObterValor(pBaralho->Cartas) ;
 		LIS_AvancarElementoCorrente( (LIS_tppLista) pBaralho->Cartas, 1);
-		printf("%c	-	%s	-	%d\n",GetNome(corrente) ,GetNaipe(corrente), GetPeso(corrente));
+		printf("%c	-	%s	-	%d\n",BAR_GetNome(corrente) ,BAR_GetNaipe(corrente), BAR_GetPeso(corrente));
 	}
-}
+}/* Fim função: BAR  &Imprime Baralho */
 
-char *GetNaipe(BAR_tppCarta carta)
-{
-	char *naipe = (char*)malloc(sizeof(20*sizeof(char)));
-	strcpy(naipe,carta->naipe);
-	return naipe;
-}
 
-int GetPeso(BAR_tppCarta carta)
-{
-	return carta->peso;
-}
-
-char GetNome(BAR_tppCarta carta)
-{
-	return carta->nome;
-}
-
+ /***************************************************************************
+*
+*  $FC Função: BAR  &Imprime Carta
+*  ****/
 void BAR_ImprimeCarta(BAR_tppCarta carta)
 {
 	printf("naipe=%s  peso=%d  nome=%c\n", carta->naipe, carta->peso, carta->nome);
-}
+}/* Fim função: BAR  &Imprime Carta */
 
 
 /********** Fim do módulo de implementação: BAR  BARALHO **********/

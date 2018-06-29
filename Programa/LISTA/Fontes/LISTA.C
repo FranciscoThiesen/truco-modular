@@ -27,7 +27,7 @@
 #include   <assert.h>
 
 #define LISTA_OWN
-#include "LISTA.h"
+#include "LISTA.H"
 #undef LISTA_OWN
 
 /***********************************************************************
@@ -555,6 +555,31 @@
       pLista->numElem   = 0 ;
 
    } /* Fim função: LIS  -Limpar a cabeça da lista */
+
+
+
+/***********************************************************************
+*
+*  $FC Função: LIS  -Retorna ponteiro corrente da lista
+*
+***********************************************************************/
+   void *retorna_corrente(LIS_tppLista pLista)
+   {
+	   return pLista->pElemCorr->pValor;
+   }/* Fim função: LIS  -Retorna corrente */
+
+
+
+/***********************************************************************
+*
+*  $FC Função: LIS  -Retorna numero de elementos da lista
+*
+***********************************************************************/
+
+   int LIS_numElem(LIS_tppLista pLista)
+   {
+	   return pLista->numElem;
+   }
 
 /********** Fim do módulo de implementação: LIS  Lista duplamente encadeada **********/
 

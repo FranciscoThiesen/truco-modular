@@ -338,6 +338,37 @@ typedef struct LIS_tagLista * LIS_tppLista ;
    LIS_tpCondRet LIS_ProcurarValor( LIS_tppLista pLista ,
                                     void * pValor        ) ;
 
+
+   /***********************************************************************
+*
+*  $FC Função: LIS  &Retorna corrente
+*
+*  $ED Descrição da função
+*     Retorna o ponteiro para o elemento corrente da lista
+*
+*  $EP Parâmetros
+*     pLista - ponteiro para a lista a manipular
+*  $FV Valor retornado
+*     não NULL - elemento corrente
+*     NULL     - se a lista estiver vazia
+*                Pode retornar NULL se o valor inserido no elemento for NULL.
+***********************************************************************/
+   void *retorna_corrente(LIS_tppLista pLista);
+
+      /***********************************************************************
+*
+*  $FC Função: LIS  &numElem
+*
+*  $ED Descrição da função
+*     Retorna a quantidade de elementos na lista
+*
+*  $EP Parâmetros
+*     pLista - ponteiro para a lista a manipular
+*  $FV Valor retornado
+*   numero inteiro de elementos na lista.
+***********************************************************************/
+   int LIS_numElem(LIS_tppLista pLista);
+
 #undef LISTA_EXT
 
 /********** Fim do módulo de definição: LIS  Lista duplamente encadeada **********/

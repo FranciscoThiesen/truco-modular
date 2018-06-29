@@ -200,17 +200,73 @@ BAR_tpCondRet BAR_DestruirBaralho( BAR_tppBaralho pBaralho );
 */
 
 
-
+/***********************************************************************
+*
+*  $FC Função: BAR  &Imprime Baralho
+*
+*  $ED Descrição da função
+*     Imprime o baralho passado como parametro no console
+*
+***********************************************************************/
 void BAR_ImprimeBaralho(BAR_tppBaralho pBaralho);
 
+
+/***********************************************************************
+*
+*  $FC Função: BAR  &Remove Carta do Baralho
+*
+*  $ED Descrição da função
+*     Recebe um ponteiro para baralho e um ponteiro de ponteiro para
+*	  carta e a remove do Baralho
+*
+***********************************************************************/
 BAR_tpCondRet BAR_RemoveCartaDoBaralho( BAR_tppBaralho pBaralho, BAR_tppCarta* pCarta);
 
-char *GetNaipe(BAR_tppCarta carta);
 
-int GetPeso(BAR_tppCarta carta);
+/***********************************************************************
+*
+*  $FC Função: BAR  &Get Naipe
+*
+*  $ED Descrição da função
+*     Recebe um ponteiro carta e retorna uma string referente ao seu naipe
+*  $FV Valor retornado
+*     char*    - string referente ao naipe da carta
+*
+***********************************************************************/
+char *BAR_GetNaipe(BAR_tppCarta carta);
 
-char GetNome(BAR_tppCarta carta);
+/***********************************************************************
+*
+*  $FC Função: BAR  &Get Peso
+*
+*  $ED Descrição da função
+*     Recebe um ponteiro carta e retorna um int referente ao seu peso
+*  $FV Valor retornado
+*     int    - valor referente ao peso da carta
+*
+***********************************************************************/
+int BAR_GetPeso(BAR_tppCarta carta);
 
+/***********************************************************************
+*
+*  $FC Função: BAR  &Get Nome
+*
+*  $ED Descrição da função
+*     Recebe um ponteiro carta e retorna um caractere referente ao seu nome
+*  $FV Valor retornado
+*     char    - caractere referente ao nome da carta
+*
+***********************************************************************/
+char BAR_GetNome(BAR_tppCarta carta);
+
+/***********************************************************************
+*
+*  $FC Função: BAR  &Imprime Carta
+*
+*  $ED Descrição da função
+*     Recebe um ponteiro para carta e a imprime no console
+*
+***********************************************************************/
 void BAR_ImprimeCarta(BAR_tppCarta carta);
 
 #undef BARALHO_EXT
