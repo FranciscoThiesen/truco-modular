@@ -59,7 +59,6 @@ typedef struct PTD_tagPartida {
 	LIS_tppLista Jogadores;
 	int placar[2];
 	BAR_tppBaralho Baralho;
-	BAR_tppCarta manilhas[4];
 } PTD_tpPartida;
 
 
