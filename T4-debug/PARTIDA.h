@@ -114,9 +114,7 @@ PTD_tpCondRet PTD_CriaPartida(PTD_tppPartida *pPartida, int n_jogadores);
 PTD_tpCondRet PTD_PedeCarta(PTD_tppJogador* jogador); // pede que o jogador selecione uma das suas cartas e remove ela de sua mao
 
 
-void PTD_ImprimeMaos(PTD_tppPartida* pPartida, int numJogadores);
-
-int PTD_InterfacePartida();
+PTD_tpCondRet PTD_InterfacePartida();
 
 
 

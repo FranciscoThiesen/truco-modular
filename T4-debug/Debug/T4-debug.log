@@ -1,4 +1,4 @@
-﻿Build started 29/06/2018 22:12:32.
+﻿Build started 29/06/2018 21:49:57.
      1>Project "C:\Users\tubas\Desktop\debug grupo\truco-modular\T4-debug\T4-debug.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\T4-debug.unsuccessfulbuild" because "AlwaysCreate" was specified.
@@ -61,4 +61,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.44
+Time Elapsed 00:00:01.88
