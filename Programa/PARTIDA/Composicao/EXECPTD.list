@@ -22,19 +22,19 @@ Módulos do construto: ..\Composicao\EXECPTD.comp
 Estatísticas do construto
 
    Estatísticas do arquivo: baralho.c
-      Total linhas:             351
-      Linhas de código:         212
-      Linhas de comentário:      79
-      Linhas em branco:          72
+      Total linhas:             377
+      Linhas de código:         213
+      Linhas de comentário:     109
+      Linhas em branco:          73
    Arquivos de inclusão de que necessita
       baralho.h
       lista.h
 
    Estatísticas do arquivo: baralho.h
-      Total linhas:             220
+      Total linhas:             276
       Linhas de código:          34
-      Linhas de comentário:     148
-      Linhas em branco:          38
+      Linhas de comentário:     203
+      Linhas em branco:          39
    Arquivos de inclusão de que necessita
       lista.h
    Arquivos em que é incluído
@@ -63,20 +63,20 @@ Estatísticas do construto
       partida.h
 
    Estatísticas do arquivo: partida.c
-      Total linhas:             548
-      Linhas de código:         371
-      Linhas de comentário:     111
-      Linhas em branco:          67
+      Total linhas:             529
+      Linhas de código:         398
+      Linhas de comentário:     106
+      Linhas em branco:          45
    Arquivos de inclusão de que necessita
       baralho.h
       lista.h
       partida.h
 
    Estatísticas do arquivo: partida.h
-      Total linhas:             101
-      Linhas de código:          31
-      Linhas de comentário:      47
-      Linhas em branco:          25
+      Total linhas:             146
+      Linhas de código:          28
+      Linhas de comentário:      92
+      Linhas em branco:          26
    Arquivos de inclusão de que necessita
       baralho.h
       lista.h
@@ -93,10 +93,10 @@ Totais por tipo de arquivo
          Arquivos deste tipo:          0
 
   Tipo: h        Path: ..\Fontes
-         Total linhas do tipo:       698
-         Linhas de código:           102
-         Linhas de comentário:       483
-         Linhas em branco:           115
+         Total linhas do tipo:       799
+         Linhas de código:            99
+         Linhas de comentário:       583
+         Linhas em branco:           117
          Arquivos deste tipo:          3
 
   Tipo: obj      Path: ..\Objetos
@@ -121,17 +121,17 @@ Totais por tipo de arquivo
          Arquivos deste tipo:          0
 
   Tipo: c        Path: ..\Fontes
-         Total linhas do tipo:      1484
-         Linhas de código:           879
-         Linhas de comentário:       337
-         Linhas em branco:           300
+         Total linhas do tipo:      1491
+         Linhas de código:           907
+         Linhas de comentário:       362
+         Linhas em branco:           279
          Arquivos deste tipo:          3
 
 Totais para todo o construto EXECPTD
 
-   Total linhas:              2182
-   Linhas de código:           981
-   Linhas de comentário:       820
-   Linhas em branco:           415
+   Total linhas:              2290
+   Linhas de código:          1006
+   Linhas de comentário:       945
+   Linhas em branco:           396
    Arquivos processados:         6
 

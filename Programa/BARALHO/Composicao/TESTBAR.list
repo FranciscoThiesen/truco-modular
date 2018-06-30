@@ -22,19 +22,19 @@ Módulos do construto: ..\Composicao\TESTBAR.comp
 Estatísticas do construto
 
    Estatísticas do arquivo: baralho.c
-      Total linhas:             339
-      Linhas de código:         204
-      Linhas de comentário:      83
-      Linhas em branco:          64
+      Total linhas:             377
+      Linhas de código:         213
+      Linhas de comentário:     109
+      Linhas em branco:          73
    Arquivos de inclusão de que necessita
       baralho.h
       lista.h
 
    Estatísticas do arquivo: baralho.h
-      Total linhas:             207
-      Linhas de código:          29
-      Linhas de comentário:     148
-      Linhas em branco:          30
+      Total linhas:             276
+      Linhas de código:          34
+      Linhas de comentário:     203
+      Linhas em branco:          39
    Arquivos de inclusão de que necessita
       lista.h
    Arquivos em que é incluído
@@ -60,18 +60,18 @@ Estatísticas do construto
       testbar.c
 
    Estatísticas do arquivo: lista.c
-      Total linhas:             572
-      Linhas de código:         292
-      Linhas de comentário:     142
-      Linhas em branco:         157
+      Total linhas:             585
+      Linhas de código:         296
+      Linhas de comentário:     147
+      Linhas em branco:         161
    Arquivos de inclusão de que necessita
       lista.h
 
    Estatísticas do arquivo: lista.h
-      Total linhas:             363
-      Linhas de código:          36
-      Linhas de comentário:     276
-      Linhas em branco:          51
+      Total linhas:             377
+      Linhas de código:          37
+      Linhas de comentário:     288
+      Linhas em branco:          52
    Arquivos em que é incluído
       baralho.c
       baralho.h
@@ -109,10 +109,10 @@ Totais por tipo de arquivo
          Arquivos deste tipo:          0
 
   Tipo: h        Path: ..\Fontes
-         Total linhas do tipo:      1802
-         Linhas de código:           183
-         Linhas de comentário:      1369
-         Linhas em branco:           250
+         Total linhas do tipo:      1885
+         Linhas de código:           189
+         Linhas de comentário:      1436
+         Linhas em branco:           260
          Arquivos deste tipo:          5
 
   Tipo: obj      Path: ..\Objetos
@@ -137,17 +137,17 @@ Totais por tipo de arquivo
          Arquivos deste tipo:          0
 
   Tipo: c        Path: ..\Fontes
-         Total linhas do tipo:      1227
-         Linhas de código:           666
-         Linhas de comentário:       314
-         Linhas em branco:           289
+         Total linhas do tipo:      1278
+         Linhas de código:           679
+         Linhas de comentário:       345
+         Linhas em branco:           302
          Arquivos deste tipo:          3
 
 Totais para todo o construto TESTBAR
 
-   Total linhas:              3029
-   Linhas de código:           849
-   Linhas de comentário:      1683
-   Linhas em branco:           539
+   Total linhas:              3163
+   Linhas de código:           868
+   Linhas de comentário:      1781
+   Linhas em branco:           562
    Arquivos processados:         8
 

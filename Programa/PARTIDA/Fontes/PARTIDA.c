@@ -7,11 +7,11 @@
 *  Projeto: INF 1301 / Truco
 *  Gestor:  DI/PUC-Rio
 *  Autores: Arthur Cavalcante Gomes Coelho(acgc)
-*
+* 	        Francisco Geiman Thiese       (fgt)
 *  $HA Histórico de evolução:
 *     Versão  Autor    Data     Observações
 *     1       acgc   30/04/2018 início desenvolvimento
-*
+*  	  2       fgt    25/05/2018 implementacao da logica de partida
 ***************************************************************************/
 
 #include <stdio.h>
@@ -59,7 +59,6 @@ typedef struct PTD_tagPartida {
 	LIS_tppLista Jogadores;
 	int placar[2];
 	BAR_tppBaralho Baralho;
-	BAR_tppCarta manilhas[4];
 } PTD_tpPartida;
 
 
@@ -274,12 +273,12 @@ int PTD_CalculaVencedorRodada(int *cartas, int numJogadores)
 *
 *  Função: PTD  &Pega jogada
 *  ****/
-PTD_tpCondRet PTD_PegaJogada(LIS_tppLista Jogadores, int* pesoCartas, int numJogadores, int* valorPartida, int* equipeDesistente)
+PTD_tpCondRet PTD_PegaJogada(LIS_tppLista Jogadores, int* pesoCartas, int numJogadores, int* valorPartida, int* equipeDesistente, int* pediramTrucoNaRodada)
 {
 	BAR_tppCarta pCarta;
 	BAR_tppCarta pCartaDummy;
 	PTD_tppJogador pJogador;	
-	int k,i, peso, cartasDisponiveis = 0, escolha, j, flagPediuTruco, equipeAtual, pedidosTruco[5] = {1,3,6,9,12}, indiceAtual = 0, pediramTrucoNaJogada = 0;
+	int k,i, peso, cartasDisponiveis = 0, escolha, j, flagPediuTruco, equipeAtual, pedidosTruco[5] = {1,3,6,9,12}, indiceAtual = 0;
 	IrInicioLista(Jogadores);
 	for(i = 0; i < numJogadores; ++i)
 	{
@@ -290,7 +289,7 @@ PTD_tpCondRet PTD_PegaJogada(LIS_tppLista Jogadores, int* pesoCartas, int numJog
 		}
 		if(i != 0)
 			printf("Peso da ultima carta jogada pela equipe adversária: %d\n",pesoCartas[(sizeof(pesoCartas)/4) - (i)]); // vetor de int, bytes =4, sizeof pega o numero total de ints salvos, divindo por 4 temos o indice do final
-		printf("A rodada atualmente esta valendo %d pontos.\n", pedidosTruco[indiceAtual]);
+		printf("A rodada atualmente esta valendo %d pontos.\n", *valorPartida);
 		printf("Vamos exibir as cartas do jogador %s\n" , pJogador->nome);
 		cartasDisponiveis = 0;
 		for(j = 0; j < 3; ++j) 
@@ -302,7 +301,7 @@ PTD_tpCondRet PTD_PegaJogada(LIS_tppLista Jogadores, int* pesoCartas, int numJog
 				BAR_ImprimeCarta(pJogador->mao[j]);
 			}
 		}
-		if( indiceAtual < 4 && !pediramTrucoNaJogada) 
+		if( indiceAtual < 4 && (*pediramTrucoNaRodada) == 0)
 		{
 			printf("Pedir truco?\n1-Sim\n2-Nao\n");
 			scanf("%d",&escolha);
@@ -313,7 +312,7 @@ PTD_tpCondRet PTD_PegaJogada(LIS_tppLista Jogadores, int* pesoCartas, int numJog
 			}
 			if(escolha == 1) // Pedido de truco da equipe i%2 
 			{
-				pediramTrucoNaJogada = 1;
+				*(pediramTrucoNaRodada) = 1;
 				indiceAtual = 1;
 				equipeAtual = i % 2;
 				while(indiceAtual < 5)
@@ -425,7 +424,7 @@ void PTD_ImprimeMaos(PTD_tppPartida* pPartida, int numJogadores)
 	for(i=0;i<100;i++) printf("\n");
 }/* Fim função: PTD  &Pega jogada */
 
-int PTD_InterfacePartida()
+PTD_tpCondRet PTD_InterfacePartida()
 {
 	PTD_tppPartida pPartida;
 	int control = 1, pontosEquipePartida[2] = {0, 0}, pontosEquipeRodada[2] = {0, 0};
@@ -483,12 +482,14 @@ int PTD_InterfacePartida()
 					return retorno;
 				}
 				PTD_ImprimeMaos(&pPartida,numJogadores);
+
+				desistente = -1; 
+				valorRodada = 1; 
+				pediramTrucoNessaRodada = 0;
+
 				while(pontosEquipeRodada[0] < 2 && pontosEquipeRodada[1] < 2)
 				{
-					desistente = -1;
-					valorRodada = 1;
-					pediramTrucoNessaRodada = 0;
-					retorno = PTD_PegaJogada(pPartida->Jogadores, cartasJogadas, numJogadores, &valorRodada, &desistente);
+					retorno = PTD_PegaJogada(pPartida->Jogadores, cartasJogadas, numJogadores, &valorRodada, &desistente, &pediramTrucoNessaRodada);
 					if(retorno != PTD_CondRetOK)
 					{
 						return retorno;
@@ -496,13 +497,13 @@ int PTD_InterfacePartida()
 					if(desistente != -1)
 					{
 						winner = desistente ^ 1;
-						pontosEquipeRodada[winner] += valorRodada;
+						pontosEquipeRodada[winner] += 2;
 						break;
 					}
 					else
 					{
 						winner = PTD_CalculaVencedorRodada(cartasJogadas, numJogadores);
-						pontosEquipeRodada[winner] += valorRodada;
+						pontosEquipeRodada[winner] += 1;
 					}
 					printf("A equipe ganhadora dessa jogada foi a equipe %d\n\n" , winner);
 				}
@@ -513,11 +514,11 @@ int PTD_InterfacePartida()
 				printf("Equipe0 %d : %d Equipe1\n", pontosEquipePartida[0], pontosEquipePartida[1]);
 			}
 			// Aqui ja temos alguma equipe com pelo menos 12 pontos, vamos imprimir o campeao
-			if( pontosEquipePartida[0] == 12 ) printf("Equipe 0 ganhou \n");
+			if( pontosEquipePartida[0] >= 12 ) printf("Equipe 0 ganhou \n");
 			else printf("Equipe 1 ganhou \n");
 		}
 	}
-	return 0;
+	return PTD_CondRetOK;
 }/* Fim função: PTD  &Imprime maos */
 
 

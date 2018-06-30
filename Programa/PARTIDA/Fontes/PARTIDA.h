@@ -10,16 +10,15 @@
 *  Projeto: INF 1301 / Truco
 *  Gestor:  DI/PUC-Rio
 *  Autores: Arthur Cavalcante Gomes Coelho(acgc)
-*
+*           Francisco Geiman Thiesen (fgt)
 *  $HA Histórico de evolução:
-*     Versão  Autor    Data     Observações
-*     1       acgc   30/04/2018 início desenvolvimento
+*     Versão  Autores    Data       Observações
+*     1       acgc,fgt   30/04/2018 início desenvolvimento
 *
 *  $ED Descrição do módulo
 *	  Módulo principal encarregado de:
 *     Criacao dos jogadores
 *     Divisao das Equipes
-*     Definicao da manilha fixa
 *     Definicao da pontuacao das Cartas
 *     Inicializacao de partida
 *     Execucao de Rodada
@@ -48,7 +47,6 @@ typedef struct PTD_tagPartida * PTD_tppPartida;
 typedef struct PTD_tagJogador * PTD_tppJogador;
 
 
-
 /***********************************************************************
 *
 *  $TC Tipo de dados: PTD Condições de retorno
@@ -61,27 +59,33 @@ typedef struct PTD_tagJogador * PTD_tppJogador;
 
 typedef enum {
 
-      PTD_CondRetOK ,
-            /* Concluiu corretamente */
+    PTD_CondRetOK ,
+    /* Concluiu corretamente */
 
-      PTD_CondRetListaVazia ,
-            /* A lista n�o cont�m elementos */
+    PTD_CondRetListaVazia ,
+    /* A lista n�o cont�m elementos */
 
-      PTD_CondRetFaltouMemoria,
-            /* Faltou mem�ria ao tentar criar um elemento de lista */
+    PTD_CondRetFaltouMemoria,
+    /* Faltou mem�ria ao tentar criar um elemento de lista */
 
-     PTD_CondRetCartaNaoCriada,
-         /* Nao foi possivel criar o ponteiro Carta */
-     PTD_CondRetBaralhoNaoExiste,
-         /* Ponteiro para baralho vazio */
-     PTD_CondRetTamanhoErrado,
-         /* Tamanho da lista de cartas errado */
-      PTD_FalhaNoEmbaralhamento,
-            /* Nao conseguimos remover uma carta do baralho antigo durante o processo de embaralhamento */
-     PTD_CondRetJogadorNaoExiste,
-	 /* Nao conseguimos acessar o ponteiro referente ao jogador desejado, este deve ser NULL ou lixo */
-	 PTD_CondRetPartidaNaoCriada,
-	 /* Nao foi possivel criar uma partida */
+    PTD_CondRetCartaNaoCriada,
+    /* Nao foi possivel criar o ponteiro Carta */
+    
+    PTD_CondRetBaralhoNaoExiste,
+    /* Ponteiro para baralho vazio */
+   
+    PTD_CondRetTamanhoErrado,
+    /* Tamanho da lista de cartas errado */
+   
+    PTD_FalhaNoEmbaralhamento,
+    /* Nao conseguimos remover uma carta do baralho antigo durante o processo de embaralhamento */
+   
+    PTD_CondRetJogadorNaoExiste,
+	/* Nao conseguimos acessar o ponteiro referente ao jogador desejado, este deve ser NULL ou lixo */
+
+    PTD_CondRetPartidaNaoCriada,
+	/* Nao foi possivel criar uma partida */
+
 } PTD_tpCondRet ;
 
 
@@ -110,14 +114,29 @@ typedef enum {
 ***********************************************************************/
 PTD_tpCondRet PTD_CriaPartida(PTD_tppPartida *pPartida, int n_jogadores);
 
-
-PTD_tpCondRet PTD_PedeCarta(PTD_tppJogador* jogador); // pede que o jogador selecione uma das suas cartas e remove ela de sua mao
-
-
-void PTD_ImprimeMaos(PTD_tppPartida* pPartida, int numJogadores);
-
-int PTD_InterfacePartida();
-
+/***********************************************************************
+*
+*  $FC Função: PTD & Interface Partida
+*  
+*  $ED Descrição da função
+*    Essa funcao é responsável por orquestrar a realização de uma partida de
+*    truco.
+*
+*  $EP Parâmetros
+*    - Não possui
+*
+*  $FV Valor retornado
+*    PTD_CondRetOK               - A partida foi realizada com sucesso
+*    PTD_CondRetListaVazia       - Se a lista de jogadores ou o baralho se encontram vazios
+*    PTD_CondRetJogadorNaoExiste - Se algum dos jogadores não existe durante a partida
+*    PTD_CondRetFaltouMemoria    - Se não foi possível alocar a memória necessária para a execução da partida
+*    PTD_CondRetCartaNaoCriada   - Erro na criação de alguma carta do baralho
+*    PTD_CondRetTamanhoErrado    - Alguma das listas essenciais para a execução da partida não possui o tamanho correto
+*    PTD_FalhaNoEmbaralhamento   - Erro na hora de embaralhar o baralho em algum momento da partida.
+*    PTD_CondRetPartidaNaoCriada - Falha na criacao da partida
+*
+**********************************************************************/
+PTD_tpCondRet PTD_InterfacePartida();
 
 
 #undef PARTIDA_EXT
