@@ -116,6 +116,9 @@
 == Destruir a lista
 =destruirlista   lista2
 
+//Inicio dos Testes do Gabriel
+==Inicio dos testes
+
 
 //Inicio dos Teste do Arthur
 ==Inicio dos Teste do Arthur
@@ -123,6 +126,7 @@
 
 == Criar a lista 0 e procura valor não existente nela
 =criarlista      lista0
+=avancarelem     lista0   1      ListaVazia  
 =procuravalor    lista0   str0   ListaVazia
 
 == Inserir primeiro
@@ -143,6 +147,7 @@
 ==Insere elemento antes do primeiro
 =inselemantes   lista0    strneg  OK
 =irinicio       lista0
+=avancarelem    lista0    0       OK
 =avancarelem    lista0    1       OK
 =avancarelem    lista0    1        FimLista
 =obtervalorelem  lista0   str1   pNaoNULL
