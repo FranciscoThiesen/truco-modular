@@ -288,6 +288,8 @@ PTD_tpCondRet PTD_PegaJogada(LIS_tppLista Jogadores, int* pesoCartas, int numJog
 		{
 			return PTD_CondRetListaVazia;
 		}
+		if(i != 0)
+			printf("Peso da ultima carta jogada pela equipe adversária: %d\n",pesoCartas[(sizeof(pesoCartas)/4) - (i)]); // vetor de int, bytes =4, sizeof pega o numero total de ints salvos, divindo por 4 temos o indice do final
 		printf("A rodada atualmente esta valendo %d pontos.\n", pedidosTruco[indiceAtual]);
 		printf("Vamos exibir as cartas do jogador %s\n" , pJogador->nome);
 		cartasDisponiveis = 0;

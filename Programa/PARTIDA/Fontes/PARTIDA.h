@@ -37,6 +37,8 @@
    #define PARTIDA_EXT extern
 #endif
 
+#define NOMEMAXIMO 30
+
 /***** Declarações exportadas pelo módulo *****/
 
 /* Tipo referência para um baralho */
@@ -85,50 +87,32 @@ typedef enum {
 
 /***********************************************************************
 *
-*  $FC Função: PTD  &Cria jogador
+*  $FC Função: PTD  &Cria partida
 *
 *  $ED Descrição da função
-*     Cria um jogador.
-*	  Um jogador é composto por seu nome, por um vetor de cartas inicialmente vazio
-*     e um identificador de Equipe
+*     Recebe um ponteiro para a partida que será alocado na função
+*	  e o numero de jogadores que irão participar do jogo,
+*	  chama as funções: PTD_CriaListaJogadores e PTD_MontaEquipes
+*	  já documentadas anteriormente. retorna PTD_CondRetOK se conseguiu
+*	  criar uma partida inicial.
 *
 *  $EP Parâmetros
-*    pJogador    - endereço que vai receber o jogador a ser criado
-*
-*
-*  $FV Valor retornado
-*    PTD_CondRetOK           - se tiver criado o jogador com sucesso
-*    PTD_CondRetJogadorNaoExiste  - se não tiver conseguido alocar memória para o jogador
-*
-***********************************************************************/
-PTD_tpCondRet PTD_CriaJogador(PTD_tppJogador *jogador, char nome[30]);
-
-/***********************************************************************
-*
-*  $FC Função: PTD  &Monta equipes
-*
-*  $ED Descrição da função
-*     Aponta um jogador para cada equipe jogador[0]->equipe1 jogador[1]-> equipe2.
-*	  Os jogadores pares vao ser da equipe 0, e os impares vao ser da equipe 1
-*	  Recebe uma lista de Jogadores e altera sua IdEquipe
-*
-*  $EP Parâmetros
-*    pJogadores    - ponteiro para lista de Jogadores
-*	 jogadoresPorEquipe - quantidade de jogadores por equipe
-*
+*    n_jogadores    - numero de jogadores
+*	 pPartida - ponteiro para a Partida a ser criada
 *
 *  $FV Valor retornado
-*    PTD_CondRetOK           - se tiver apontado as equipes corretamente
-*    PTD_CondRetListaVazia  - se pJogadores for vazia
+*    PTD_CondRetOK           - criou a partida sem problemas
+*    PTD_CondRetListaVazia  - se se nao foi possivel inserir um jogador
+*	 PTD_CondRetJogadorNaoExiste - se nao foi possivel criar um Jogador
+*	 PTD_CondRetFaltouMemoria  - se nao foi possivel alocar memoria para
+*	 a lista ou para a criacao de um jogador
 *
 ***********************************************************************/
-PTD_tpCondRet PTD_MontaEquipes(LIS_tppLista *pJogadores, int jogadoresPorEquipe);
+PTD_tpCondRet PTD_CriaPartida(PTD_tppPartida *pPartida, int n_jogadores);
 
-//PTD_tpCondRet PTD_DefineManilha(BAR_tppBaralho pBaralho);
 
 PTD_tpCondRet PTD_PedeCarta(PTD_tppJogador* jogador); // pede que o jogador selecione uma das suas cartas e remove ela de sua mao
 
-PTD_tpCondRet PTD_DistribuiAsCartas(PTD_tppJogador** jogadores);
 
 void PTD_ImprimeMaos(PTD_tppPartida* pPartida, int numJogadores);
 
