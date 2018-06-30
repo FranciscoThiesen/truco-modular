@@ -1,52 +1,51 @@
-﻿Build started 27/06/2018 00:10:45.
+﻿Build started 29/06/2018 22:12:32.
      1>Project "C:\Users\tubas\Desktop\debug grupo\truco-modular\T4-debug\T4-debug.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\T4-debug.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TC /analyze- /errorReport:prompt PARTIDA.c
          PARTIDA.c
-     1>c:\users\tubas\desktop\debug grupo\truco-modular\t4-debug\partida.c(91): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>c:\users\tubas\desktop\debug grupo\truco-modular\t4-debug\partida.c(112): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
-     1>c:\users\tubas\desktop\debug grupo\truco-modular\t4-debug\partida.c(157): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>c:\users\tubas\desktop\debug grupo\truco-modular\t4-debug\partida.c(187): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(304) : see declaration of 'scanf'
-     1>c:\users\tubas\desktop\debug grupo\truco-modular\t4-debug\partida.c(186): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>c:\users\tubas\desktop\debug grupo\truco-modular\t4-debug\partida.c(242): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(304) : see declaration of 'scanf'
-     1>c:\users\tubas\desktop\debug grupo\truco-modular\t4-debug\partida.c(234): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>c:\users\tubas\desktop\debug grupo\truco-modular\t4-debug\partida.c(247): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(304) : see declaration of 'scanf'
-     1>c:\users\tubas\desktop\debug grupo\truco-modular\t4-debug\partida.c(239): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>c:\users\tubas\desktop\debug grupo\truco-modular\t4-debug\partida.c(308): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(304) : see declaration of 'scanf'
-     1>c:\users\tubas\desktop\debug grupo\truco-modular\t4-debug\partida.c(290): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>c:\users\tubas\desktop\debug grupo\truco-modular\t4-debug\partida.c(312): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(304) : see declaration of 'scanf'
-     1>c:\users\tubas\desktop\debug grupo\truco-modular\t4-debug\partida.c(294): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>c:\users\tubas\desktop\debug grupo\truco-modular\t4-debug\partida.c(326): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(304) : see declaration of 'scanf'
-     1>c:\users\tubas\desktop\debug grupo\truco-modular\t4-debug\partida.c(310): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>c:\users\tubas\desktop\debug grupo\truco-modular\t4-debug\partida.c(330): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(304) : see declaration of 'scanf'
-     1>c:\users\tubas\desktop\debug grupo\truco-modular\t4-debug\partida.c(314): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>c:\users\tubas\desktop\debug grupo\truco-modular\t4-debug\partida.c(348): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(304) : see declaration of 'scanf'
-     1>c:\users\tubas\desktop\debug grupo\truco-modular\t4-debug\partida.c(332): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>c:\users\tubas\desktop\debug grupo\truco-modular\t4-debug\partida.c(352): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(304) : see declaration of 'scanf'
-     1>c:\users\tubas\desktop\debug grupo\truco-modular\t4-debug\partida.c(336): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>c:\users\tubas\desktop\debug grupo\truco-modular\t4-debug\partida.c(371): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(304) : see declaration of 'scanf'
-     1>c:\users\tubas\desktop\debug grupo\truco-modular\t4-debug\partida.c(355): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>c:\users\tubas\desktop\debug grupo\truco-modular\t4-debug\partida.c(375): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(304) : see declaration of 'scanf'
-     1>c:\users\tubas\desktop\debug grupo\truco-modular\t4-debug\partida.c(359): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>c:\users\tubas\desktop\debug grupo\truco-modular\t4-debug\partida.c(282): warning C4101: 'flagPediuTruco' : unreferenced local variable
+     1>c:\users\tubas\desktop\debug grupo\truco-modular\t4-debug\partida.c(282): warning C4101: 'peso' : unreferenced local variable
+     1>c:\users\tubas\desktop\debug grupo\truco-modular\t4-debug\partida.c(279): warning C4101: 'pCarta' : unreferenced local variable
+     1>c:\users\tubas\desktop\debug grupo\truco-modular\t4-debug\partida.c(280): warning C4101: 'pCartaDummy' : unreferenced local variable
+     1>c:\users\tubas\desktop\debug grupo\truco-modular\t4-debug\partida.c(417): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(304) : see declaration of 'scanf'
-     1>c:\users\tubas\desktop\debug grupo\truco-modular\t4-debug\partida.c(268): warning C4101: 'flagPediuTruco' : unreferenced local variable
-     1>c:\users\tubas\desktop\debug grupo\truco-modular\t4-debug\partida.c(268): warning C4101: 'peso' : unreferenced local variable
-     1>c:\users\tubas\desktop\debug grupo\truco-modular\t4-debug\partida.c(265): warning C4101: 'pCarta' : unreferenced local variable
-     1>c:\users\tubas\desktop\debug grupo\truco-modular\t4-debug\partida.c(266): warning C4101: 'pCartaDummy' : unreferenced local variable
-     1>c:\users\tubas\desktop\debug grupo\truco-modular\t4-debug\partida.c(398): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>c:\users\tubas\desktop\debug grupo\truco-modular\t4-debug\partida.c(421): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(304) : see declaration of 'scanf'
-     1>c:\users\tubas\desktop\debug grupo\truco-modular\t4-debug\partida.c(402): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>c:\users\tubas\desktop\debug grupo\truco-modular\t4-debug\partida.c(440): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(304) : see declaration of 'scanf'
-     1>c:\users\tubas\desktop\debug grupo\truco-modular\t4-debug\partida.c(420): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>c:\users\tubas\desktop\debug grupo\truco-modular\t4-debug\partida.c(448): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(304) : see declaration of 'scanf'
-     1>c:\users\tubas\desktop\debug grupo\truco-modular\t4-debug\partida.c(429): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>c:\users\tubas\desktop\debug grupo\truco-modular\t4-debug\partida.c(452): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(304) : see declaration of 'scanf'
-     1>c:\users\tubas\desktop\debug grupo\truco-modular\t4-debug\partida.c(454): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>c:\users\tubas\desktop\debug grupo\truco-modular\t4-debug\partida.c(476): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(304) : see declaration of 'scanf'
-     1>c:\users\tubas\desktop\debug grupo\truco-modular\t4-debug\partida.c(413): warning C4101: 'i' : unreferenced local variable
-     1>c:\users\tubas\desktop\debug grupo\truco-modular\t4-debug\partida.c(509): warning C4101: 'novaPartida' : unreferenced local variable
+     1>c:\users\tubas\desktop\debug grupo\truco-modular\t4-debug\partida.c(432): warning C4101: 'i' : unreferenced local variable
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\tubas\Desktop\debug grupo\truco-modular\Debug\T4-debug.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\T4-debug.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\tubas\Desktop\debug grupo\truco-modular\Debug\T4-debug.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\tubas\Desktop\debug grupo\truco-modular\Debug\T4-debug.lib" /MACHINE:X86 Debug\BARALHO.obj
          Debug\LISTA.obj
@@ -62,4 +61,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.42
+Time Elapsed 00:00:01.44

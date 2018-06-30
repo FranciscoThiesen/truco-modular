@@ -16,6 +16,7 @@
 *     1       acgc   30/04/2018 início desenvolvimento
 *
 *  $ED Descrição do módulo
+*	  Módulo principal encarregado de:
 *     Criacao dos jogadores
 *     Divisao das Equipes
 *     Definicao da manilha fixa
@@ -35,6 +36,8 @@
 #else
    #define PARTIDA_EXT extern
 #endif
+
+#define NOMEMAXIMO 30
 
 /***** Declarações exportadas pelo módulo *****/
 
@@ -75,18 +78,41 @@ typedef enum {
          /* Tamanho da lista de cartas errado */
       PTD_FalhaNoEmbaralhamento,
             /* Nao conseguimos remover uma carta do baralho antigo durante o processo de embaralhamento */
-     PTD_CondRetJogadorNaoExiste
+     PTD_CondRetJogadorNaoExiste,
+	 /* Nao conseguimos acessar o ponteiro referente ao jogador desejado, este deve ser NULL ou lixo */
+	 PTD_CondRetPartidaNaoCriada,
+	 /* Nao foi possivel criar uma partida */
 } PTD_tpCondRet ;
 
-PTD_tpCondRet PTD_CriaJogador(PTD_tppJogador *jogador, char nome[30]); // acho que precisa ser mesmo ponteiro pra ponteiro, porque quero que a mudanca persista
 
-PTD_tpCondRet PTD_MontaEquipes(LIS_tppLista *pJogadores, int jogadoresPorEquipe);
+/***********************************************************************
+*
+*  $FC Função: PTD  &Cria partida
+*
+*  $ED Descrição da função
+*     Recebe um ponteiro para a partida que será alocado na função
+*	  e o numero de jogadores que irão participar do jogo,
+*	  chama as funções: PTD_CriaListaJogadores e PTD_MontaEquipes
+*	  já documentadas anteriormente. retorna PTD_CondRetOK se conseguiu
+*	  criar uma partida inicial.
+*
+*  $EP Parâmetros
+*    n_jogadores    - numero de jogadores
+*	 pPartida - ponteiro para a Partida a ser criada
+*
+*  $FV Valor retornado
+*    PTD_CondRetOK           - criou a partida sem problemas
+*    PTD_CondRetListaVazia  - se se nao foi possivel inserir um jogador
+*	 PTD_CondRetJogadorNaoExiste - se nao foi possivel criar um Jogador
+*	 PTD_CondRetFaltouMemoria  - se nao foi possivel alocar memoria para
+*	 a lista ou para a criacao de um jogador
+*
+***********************************************************************/
+PTD_tpCondRet PTD_CriaPartida(PTD_tppPartida *pPartida, int n_jogadores);
 
-PTD_tpCondRet PTD_DefineManilha(BAR_tppBaralho pBaralho);
 
 PTD_tpCondRet PTD_PedeCarta(PTD_tppJogador* jogador); // pede que o jogador selecione uma das suas cartas e remove ela de sua mao
 
-PTD_tpCondRet PTD_DistribuiAsCartas(PTD_tppJogador** jogadores);
 
 void PTD_ImprimeMaos(PTD_tppPartida* pPartida, int numJogadores);
 
