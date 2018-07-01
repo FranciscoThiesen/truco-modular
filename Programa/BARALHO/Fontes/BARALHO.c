@@ -250,147 +250,72 @@ BAR_tpCondRet BAR_CriaVetorCartas(BAR_tppCarta *cartas[])
 
 	for(i = 0; i < 40; ++i)
 	{
-
-		#ifdef _DEBUG
-				CNT_CONTAR( "BAR_CriaVetorCartas:Atribuicao de peso" ) ;
-			#endif
-
 		//printf(" valor = %c, naipe = %s \n\n", valores[i/4], naipe[i%4]);
 		if(valores[i/4] == '4' && strcmp(naipe[i%4], "paus") == 0)
 		{
-			#ifdef _DEBUG
-				CNT_CONTAR( "BAR_CriarBaralho:4 Paus" ) ;
-			#endif
-
-
 			peso = 14;
 		}
 		else if(valores[i/4]== '7' && strcmp(naipe[i%4], "copas") == 0)
 		{
-
-			#ifdef _DEBUG
-				CNT_CONTAR( "BAR_CriarBaralho:7 Copas" ) ;
-			#endif
-
 			peso = 13;
 		}
 		else if(valores[i/4] == 'A' && strcmp(naipe[i%4], "espadas") == 0)
 		{
-			#ifdef _DEBUG
-				CNT_CONTAR("BAR_CriarBaralho:A Espadas") ;
-			#endif
-
 			peso = 12;
 		}
 		else if(valores[i/4] == '7' && strcmp(naipe[i%4], "ouros") == 0)
 		{
-			#ifdef _DEBUG
-				CNT_CONTAR( "BAR_CriarBaralho:7 Ouros" ) ;
-			#endif
-
 			peso = 11;
 		}
 		else if(valores[i/4] == '3')
 		{
-			#ifdef _DEBUG
-				CNT_CONTAR( "BAR_CriarBaralho:Valor 3" ) ;
-			#endif
-
 			peso = 10;
 		}
 		else if(valores[i/4] == '2')
 		{
-				#ifdef _DEBUG
-				CNT_CONTAR( "BAR_CriarBaralho:Valor 2" ) ;
-			#endif
-
 			peso = 9;
 		}
 		else if(valores[i/4] == 'A')
 		{
-
-			#ifdef _DEBUG
-				CNT_CONTAR( "BAR_CriarBaralho:Valor A" ) ;
-			#endif
-
 			peso = 8;
 		}
 		else if(valores[i/4] == 'K')
 		{
-
-			#ifdef _DEBUG
-				CNT_CONTAR( "BAR_CriarBaralho:Valor K" ) ;
-			#endif
 			peso = 7;
 		}
 		else if(valores[i/4] == 'J')
 		{
-
-			#ifdef _DEBUG
-				CNT_CONTAR( "BAR_CriarBaralho:Valor J" ) ;
-			#endif
-
 			peso = 6;
 		}
 		else if(valores[i/4] == 'Q')
 		{
-
-			#ifdef _DEBUG
-				CNT_CONTAR( "BAR_CriarBaralho:Valor Q" ) ;
-			#endif
-
 			peso = 5;
 		}
 		else if(valores[i/4] == '7')
 		{
-
-			#ifdef _DEBUG
-				CNT_CONTAR( "BAR_CriarBaralho:Valor 7" ) ;
-			#endif
-
 			peso = 4;
 		}
 		else if(valores[i/4] == '6')
 		{
-
-			#ifdef _DEBUG
-				CNT_CONTAR( "BAR_CriarBaralho:Valor 6" ) ;
-			#endif
-
 			peso = 3;
 		}
 		else if(valores[i/4] == '5')
 		{
-
-			#ifdef _DEBUG
-				CNT_CONTAR( "BAR_CriarBaralho:Valor 5" ) ;
-			#endif
-
 			peso = 2;
 		}
 		else if(valores[i/4] == '4')
 		{
-
-			#ifdef _DEBUG
-				CNT_CONTAR( "BAR_CriarBaralho:Valor 4" ) ;
-			#endif
-
 			peso = 1;
 		}
 		retorno = BAR_CriaCarta(&carta, valores[i/4], peso, naipe[i%4]);
 		if(retorno != BAR_CondRetOK)
 		{
-
-			#ifdef _DEBUG
-				CNT_CONTAR( "BAR_CriarBaralho:Retorno nao OK" ) ;
-			#endif
-
 			return retorno;
 		}
 
 		#ifdef _DEBUG
-				CNT_CONTAR( "BAR_CriarBaralho:Retorno igual a CondRetOK" ) ;
-			#endif
+				CNT_CONTAR( "BAR_CriaVetor:Retorno igual a CondRetOK" ) ;
+		#endif
 
 		(*cartas)[i] = carta;
 	}
@@ -534,6 +459,10 @@ BAR_tpCondRet BAR_CriaVetorCartas(BAR_tppCarta *cartas[])
 	   IrInicioLista( pListaDestino );
 
 	   pBaralho->Cartas = pListaDestino;		/* Baralho agora é composto pela lista embaralhada */
+
+		 #ifdef _DEBUG
+		 	CNT_CONTAR( "BAR_Embaralhar:CondRetOK" ) ;
+		 #endif
 
 	   return BAR_CondRetOK;
 

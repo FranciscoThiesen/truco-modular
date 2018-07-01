@@ -66,7 +66,53 @@
 =criarcarta 8 'K' 0 "ouros" CondRetOK
 =criarcarta 9 'J' 0 "ouros" CondRetOK
 
+==Cria vetor de cartas do truco
+=criavetor CondRetOK
 
+
+==Cria Baralho com as 40 cartas do truco
+=criarbaralho 0 CondRetOK
+
+==Cria Varios baralhos
+=criarbaralho 1 CondRetOK
+=criarbaralho 2 CondRetOK
+=criarbaralho 3 CondRetOK
+=criarbaralho 4 CondRetOK
+=criarbaralho 5 CondRetOK
+=criarbaralho 6 CondRetOK
+=criarbaralho 7 CondRetOK
+=criarbaralho 8 CondRetOK
+=criarbaralho 9 CondRetOK
+
+==Destroi e cria novamente um baralho
+=destruirbaralho 0 CondRetOK
+=criarbaralho 0 CondRetOK
+
+==reset vetor baralhos e cria novamente
+=resetvetorbaralhos
+=criarbaralho 0 CondRetOK
+=criarbaralho 1 CondRetOK
+=criarbaralho 2 CondRetOK
+=criarbaralho 3 CondRetOK
+=criarbaralho 4 CondRetOK
+=criarbaralho 5 CondRetOK
+=criarbaralho 6 CondRetOK
+=criarbaralho 7 CondRetOK
+=criarbaralho 8 CondRetOK
+=criarbaralho 9 CondRetOK
+
+==embaralha um baralho
+=embaralhar 0 CondRetOK
+
+==embaralha o mesmo baralho varias vezes
+=embaralhar 1 CondRetOK
+=embaralhar 1 CondRetOK
+=embaralhar 1 CondRetOK
+=embaralhar 1 CondRetOK
+
+==tenta embaralhar baralho vazio
+=destruirbaralho 0 CondRetOK
+=embaralhar 0 CondRetBaralhoNaoExiste
 
 == Terminar contagem
 =pararcontagem

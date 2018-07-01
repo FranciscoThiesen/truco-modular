@@ -15,15 +15,23 @@
    22  == Criar Varias Cartas
    34  ==Faz reset e cria de novo
    47  ==Destruir cada uma das cartas e recria-las
-   71  == Terminar contagem
-   75  == Finalizar
+   69  ==Cria vetor de cartas do truco
+   73  ==Cria Baralho com as 40 cartas do truco
+   76  ==Cria Varios baralhos
+   87  ==Destroi e cria novamente um baralho
+   91  ==reset vetor baralhos e cria novamente
+  104  ==embaralha um baralho
+  107  ==embaralha o mesmo baralho varias vezes
+  113  ==tenta embaralhar baralho vazio
+  117  == Terminar contagem
+  121  == Finalizar
 
-!!! Número de linhas lidas:          76
-!!! Número de casos de teste:         7
-!!! Número comandos corretos:        49
+!!! Número de linhas lidas:         122
+!!! Número de casos de teste:        15
+!!! Número comandos corretos:        80
 !!! Número de falhas encontradas:     0
 
 !!! Não foram encontrados problemas
 
 
-!!! Numero de espacos ainda alocados: 20
+!!! Numero de espacos ainda alocados: 2480

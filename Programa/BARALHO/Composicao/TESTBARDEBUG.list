@@ -4,7 +4,7 @@ GERADOR DE SCRIPT DE DIRETIVAS PARA MAKE
 Composição do construto: ..\Composicao\TESTBARDEBUG.comp
 
    Nome do Construto:           TESTBARDEBUG
-   Diretório base:              D:\Documents\Graduação\Modulae\TestandoConta\BARALHO\Composicao
+   Diretório base:              C:\Users\tubas\Desktop\git master grupo\truco-modular\Programa\BARALHO\Composicao
 
    Arquivo composição:          ..\Composicao\TESTBARDEBUG.comp
    Arquivo plataforma:          gmake.parm
@@ -22,10 +22,10 @@ Módulos do construto: ..\Composicao\TESTBARDEBUG.comp
 Estatísticas do construto
 
    Estatísticas do arquivo: baralho.c
-      Total linhas:             717
-      Linhas de código:         451
+      Total linhas:             646
+      Linhas de código:         406
       Linhas de comentário:      95
-      Linhas em branco:         186
+      Linhas em branco:         160
    Arquivos de inclusão de que necessita
       baralho.h
       cespdin.h
@@ -167,17 +167,17 @@ Totais por tipo de arquivo
          Arquivos deste tipo:          0
 
   Tipo: c        Path: ..\Fontes
-         Total linhas do tipo:      1627
-         Linhas de código:           927
+         Total linhas do tipo:      1556
+         Linhas de código:           882
          Linhas de comentário:       331
-         Linhas em branco:           414
+         Linhas em branco:           388
          Arquivos deste tipo:          3
 
 Totais para todo o construto TESTBARDEBUG
 
-   Total linhas:              4825
-   Linhas de código:          1227
+   Total linhas:              4754
+   Linhas de código:          1182
    Linhas de comentário:      2778
-   Linhas em branco:           865
+   Linhas em branco:           839
    Arquivos processados:        10
 
