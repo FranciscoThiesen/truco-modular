@@ -1,7 +1,7 @@
 ##################################################
 ###
-### Diretivas de MAKE para o construto: TESTLIS
-### Gerado a partir de: ..\Composicao\TESTLIS.comp
+### Diretivas de MAKE para o construto: TESTLISDEBUGCONT
+### Gerado a partir de: ..\Composicao\TESTLISDEBUGCONT.comp
 ###
 ### ----- Arquivo gerado, NÃO EDITE!!! -----
 ###
@@ -9,7 +9,7 @@
 
 ### Nomes globais
 
-NOME            = TESTLIS
+NOME            = TESTLISDEBUGCONT
 
 
 ### Nomes de paths
@@ -63,12 +63,12 @@ limpa :
 $(Fobj)\testlis.obj :  {$(Pc)}\testlis.c \
     {$(Ph)}cespdin.h            {$(Ph)}generico.h           {$(Ph)}lerparm.h            \
     {$(Ph)}lista.h              {$(Ph)}tst_espc.h          
-   cl $(O) $(OPT) /Fo$(Fobj)\ $(Fc)\$(@B).c >> $(Ferr)\$(NOME).err
+   cl /D_DEBUG $(O) $(OPT) /Fo$(Fobj)\ $(Fc)\$(@B).c >> $(Ferr)\$(NOME).err
 
 $(Fobj)\lista.obj :  {$(Pc)}\lista.c \
     {$(Ph)}cespdin.h            {$(Ph)}conta.h              {$(Ph)}generico.h           \
     {$(Ph)}lista.h              {$(Ph)}tst_espc.h          
-   cl $(O) $(OPT) /Fo$(Fobj)\ $(Fc)\$(@B).c >> $(Ferr)\$(NOME).err
+   cl /D_DEBUG $(O) $(OPT) /Fo$(Fobj)\ $(Fc)\$(@B).c >> $(Ferr)\$(NOME).err
 
 
 ### Terminação
@@ -80,7 +80,7 @@ Construto : \
 
 ##################################################
 ###
-### Fim de diretivas MAKE para o construto: TESTLIS
+### Fim de diretivas MAKE para o construto: TESTLISDEBUGCONT
 ###
 ##################################################
 

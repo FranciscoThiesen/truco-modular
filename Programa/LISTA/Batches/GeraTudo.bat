@@ -7,5 +7,5 @@ pushd  .
 
 cd ..\Ferramentas
 gmake /b..\Composicao /c..\Composicao\TESTLIS
-
+gmake /b..\Composicao /c..\Composicao\TESTLISDEBUGCONT
 popd

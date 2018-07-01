@@ -13,6 +13,13 @@ cd ../Ferramentas
 nmake /F..\Composicao\TESTLIS.make 
 popd
 
+
+REM compila para producao sem otimizacoes
+del ..\Objetos\*.obj
+pushd .
+cd ../Ferramentas
+nmake /F..\Composicao\TESTLISDEBUGCONT.make 
+popd
 copy ..\Produto\*.err ..\Produto\tudo.err
 
 notepad ..\Produto\tudo.err

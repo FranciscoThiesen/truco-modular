@@ -1,19 +1,19 @@
 GERADOR DE SCRIPT DE DIRETIVAS PARA MAKE
    LES / Informática / PUC-Rio    Versão 6.00 (c) 2005
 
-Composição do construto: ..\Composicao\TESTLIS.comp
+Composição do construto: ..\Composicao\TESTLISDEBUGCONT.comp
 
-   Nome do Construto:           TESTLIS
+   Nome do Construto:           TESTLISDEBUGCONT
    Diretório base:              C:\Users\tubas\Desktop\git master grupo\truco-modular\Programa\LISTA\Composicao
 
-   Arquivo composição:          ..\Composicao\TESTLIS.comp
+   Arquivo composição:          ..\Composicao\TESTLISDEBUGCONT.comp
    Arquivo plataforma:          gmake.parm
 
-   Arquivo diretivas MAKE:      TESTLIS.make
-   Arquivo diretivas LINK:      TESTLIS.build
-   Arquivo listagem:            TESTLIS.list
+   Arquivo diretivas MAKE:      TESTLISDEBUGCONT.make
+   Arquivo diretivas LINK:      TESTLISDEBUGCONT.build
+   Arquivo listagem:            TESTLISDEBUGCONT.list
 
-Módulos do construto: ..\Composicao\TESTLIS.comp
+Módulos do construto: ..\Composicao\TESTLISDEBUGCONT.comp
 
    testlis.c
    lista.c
@@ -143,7 +143,7 @@ Totais por tipo de arquivo
          Linhas em branco:           276
          Arquivos deste tipo:          2
 
-Totais para todo o construto TESTLIS
+Totais para todo o construto TESTLISDEBUGCONT
 
    Total linhas:              4171
    Linhas de código:          1040

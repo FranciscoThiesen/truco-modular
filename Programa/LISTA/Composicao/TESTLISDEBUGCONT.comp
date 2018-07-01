@@ -1,0 +1,25 @@
+# Composicao do programa de teste de uma lista genérica duplamente encadeada
+
+[Diretorios]
+
+Nome        =	TESTLISDEBUGCONT
+PathDefault =	..\Fontes
+err         =	..\Produto
+obj			=	..\Objetos
+c			=	..\Fontes
+h			=	..\Fontes
+def			=	..\Tabelas
+
+[Modulos]
+TESTLIS	/D_DEBUG
+LISTA		/D_DEBUG
+
+[BuildInicio]
+/OUT:..\Produto\TESTLISDEBUGCONT.exe
+/INCREMENTAL:NO
+/MACHINE:IX86
+
+[BuildFim]
+ArcaboucoTeste.lib
+
+[Fim]
