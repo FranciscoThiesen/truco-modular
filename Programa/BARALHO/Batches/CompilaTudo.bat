@@ -13,6 +13,16 @@ cd ../Ferramentas
 nmake /F..\Composicao\TESTBAR.make 
 popd
 
+
+REM compila para producao sem otimizacoes
+del ..\Objetos\*.obj
+pushd .
+cd ../Ferramentas
+nmake /F..\Composicao\TESTBARDEBUG.make 
+popd
+
+
+
 copy ..\Produto\*.err ..\Produto\tudo.err
 
 notepad ..\Produto\tudo.err

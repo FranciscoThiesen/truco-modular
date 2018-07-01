@@ -1,4 +1,4 @@
-/OUT:..\Produto\TESTBAR.exe
+/OUT:..\Produto\TESTBARDEBUG.exe
 /INCREMENTAL:NO
 /MACHINE:IX86
 baralho.obj  lista.obj  testbar.obj  

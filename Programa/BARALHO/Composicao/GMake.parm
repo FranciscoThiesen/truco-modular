@@ -6,13 +6,13 @@ c  =>  obj
 
 [MacrosGerais]
 
-O       = /D_CRT_SECURE_NO_DEPRECATE
-OD      = /Zi /Od /D_CRT_SECURE_NO_DEPRECATE
-L       = 
+O       =
+OD      = /Zi /Od
+L       =
 LD      = /DEBUG /DEBUGTYPE:CV
 
 !IFDEF PRD
-O       = /Ox /D_CRT_SECURE_NO_DEPRECATE
+O       = /Ox
 !ENDIF
 
 OPT     = /c /J /W4 /nologo
@@ -20,7 +20,8 @@ INCLUDE = $(INCLUDE);$(PDEFAULT)
 
 [Limpa]
    if exist $(Ferr)\$(NOME).err  del $(Ferr)\$(NOME).err
-
+   CompileBanner /c$(NOME)
+   CompileBanner /c$(NOME) >$(Ferr)\$(NOME).err
 [DefaultLink]
     cd $(Fobj)
     LINK $(L) @$(NOME).build >> $(Ferr)\$(NOME).err

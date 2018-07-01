@@ -1,6 +1,6 @@
 
 
-#################### Compilacao do construto: TESTBAR
+#################### Compilacao do construto: TESTBARDEBUG
 
 baralho.c
 ..\Fontes\baralho.c(127) : warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
@@ -22,7 +22,7 @@ d:\documents\gradua‡Æo\modulae\testandoconta\baralho\fontes\testbar.c(247) : war
 Microsoft (R) Incremental Linker Version 10.00.30319.01
 Copyright (C) Microsoft Corporation.  All rights reserved.
 
-/OUT:..\Produto\TESTBAR.exe 
+/OUT:..\Produto\TESTBARDEBUG.exe 
 /INCREMENTAL:NO 
 /MACHINE:IX86 
 baralho.obj lista.obj testbar.obj 

@@ -50,15 +50,15 @@
 #include "TST_ESPC.H"
 
 /* Tabela dos nomes dos comandos de teste específicos */
-#define CRIAR_BAR_CMD "=criarbaralho"
-#define CRIAR_CAR_CMD "=criarcarta"
-#define CRIA_VEC_CMD "=criavetor"
-#define EMBARALHA_CMD "=embaralhar"
-#define DESTRUIR_BAR_CMD "=destruirbaralho"
-#define DESTROI_CAR_CMD "=destruircarta"
-#define RESET_CARTA_CMD	"=resetvetorcartas"
-#define RESET_BAR_CMD	"=resetvetorbaralhos"
-#define	CHECA_BARALHOS_CMD "=checabaralhos"
+#define CRIAR_BAR_CMD 		"=criarbaralho"
+#define CRIAR_CAR_CMD 		"=criarcarta"
+#define CRIA_VEC_CMD 		"=criavetor"
+#define EMBARALHA_CMD 		"=embaralhar"
+#define DESTRUIR_BAR_CMD 	"=destruirbaralho"
+#define DESTROI_CAR_CMD 	"=destruircarta"
+#define RESET_CARTA_CMD		"=resetvetorcartas"
+#define RESET_BAR_CMD		"=resetvetorbaralhos"
+#define	CHECA_BARALHOS_CMD  "=checabaralhos"
 
 
 #define DIM_VT_CARTA 10
@@ -163,7 +163,7 @@ TST_tpCondRet TST_EfetuarComando( char * ComandoTeste )
 			return TST_CondRetParm ;
 		} /* if */
 
-		CondRetObtido=DestruirCarta(vCartas[inxcarta]);
+		CondRetObtido=BAR_DestruirCarta(vCartas[inxcarta]);
 		vCartas[inxcarta] = NULL;
 
 		return TST_CompararInt( CondRetEsperada , CondRetObtido ,

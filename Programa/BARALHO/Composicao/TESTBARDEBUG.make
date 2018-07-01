@@ -1,7 +1,7 @@
 ##################################################
 ###
-### Diretivas de MAKE para o construto: TESTBAR
-### Gerado a partir de: ..\Composicao\TESTBAR.comp
+### Diretivas de MAKE para o construto: TESTBARDEBUG
+### Gerado a partir de: ..\Composicao\TESTBARDEBUG.comp
 ###
 ### ----- Arquivo gerado, NÃO EDITE!!! -----
 ###
@@ -9,7 +9,7 @@
 
 ### Nomes globais
 
-NOME            = TESTBAR
+NOME            = TESTBARDEBUG
 
 
 ### Nomes de paths
@@ -65,17 +65,17 @@ limpa :
 $(Fobj)\baralho.obj :  {$(Pc)}\baralho.c \
     {$(Ph)}baralho.h            {$(Ph)}cespdin.h            {$(Ph)}conta.h              \
     {$(Ph)}generico.h           {$(Ph)}lista.h              {$(Ph)}tst_espc.h          
-   cl $(O) $(OPT) /Fo$(Fobj)\ $(Fc)\$(@B).c >> $(Ferr)\$(NOME).err
+   cl /D_DEBUG $(O) $(OPT) /Fo$(Fobj)\ $(Fc)\$(@B).c >> $(Ferr)\$(NOME).err
 
 $(Fobj)\lista.obj :  {$(Pc)}\lista.c \
     {$(Ph)}cespdin.h            {$(Ph)}conta.h              {$(Ph)}generico.h           \
     {$(Ph)}lista.h              {$(Ph)}tst_espc.h          
-   cl $(O) $(OPT) /Fo$(Fobj)\ $(Fc)\$(@B).c >> $(Ferr)\$(NOME).err
+   cl /D_DEBUG $(O) $(OPT) /Fo$(Fobj)\ $(Fc)\$(@B).c >> $(Ferr)\$(NOME).err
 
 $(Fobj)\testbar.obj :  {$(Pc)}\testbar.c \
     {$(Ph)}baralho.h            {$(Ph)}generico.h           {$(Ph)}lerparm.h            \
     {$(Ph)}lista.h              {$(Ph)}tst_espc.h          
-   cl $(O) $(OPT) /Fo$(Fobj)\ $(Fc)\$(@B).c >> $(Ferr)\$(NOME).err
+   cl /D_DEBUG $(O) $(OPT) /Fo$(Fobj)\ $(Fc)\$(@B).c >> $(Ferr)\$(NOME).err
 
 
 ### Terminação
@@ -87,7 +87,7 @@ Construto : \
 
 ##################################################
 ###
-### Fim de diretivas MAKE para o construto: TESTBAR
+### Fim de diretivas MAKE para o construto: TESTBARDEBUG
 ###
 ##################################################
 

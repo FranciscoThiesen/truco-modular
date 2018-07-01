@@ -1,0 +1,66 @@
+//////////////////////////
+// Arquivo de declaração de contadores
+// Conta módulo Lista	 marcado
+//
+//////////////////////////
+
+LIS_CriarLista
+LIS_CriarLista: Faltou memoria
+LIS_CriarLista: Nao faltou memoria
+LIS_DestruirLista
+LIS_EsvaziarLista
+LIS_EsvaziarLista: Liberar elemento
+LIS_EsvaziarLista: Limpar cabeca
+LIS_InserirElementoAntes
+LIS_InserirElementoAntes: Lista e NULL
+LIS_InserirElementoAntes: Lista nao e NULL
+LIS_InserirElementoAntes: Inserir elemento em lista vazia
+LIS_InserirElementoAntes: Inserir elemento em lista nao vazia
+LIS_InserirElementoAntes: Elemento corrente nao e o inicial
+LIS_InserirElementoAntes: Elemento corrente e o inicial
+LIS_InserirElementoApos
+LIS_InserirElementoApos: Faltou memoria ao criar elemento
+LIS_InserirElementoApos: Nao faltou memoria ao criar elemento
+LIS_InserirElementoApos: Inserir elemento em lista vazia
+LIS_InserirElementoApos: Inserir elemento em lista nao vazia
+LIS_InserirElementoApos: Elemento corrente nao e final
+LIS_InserirElementoApos: Elemento corrente e final
+LIS_ExcluirElemento
+LIS_ExcluirElemento: Elemento corrente nao e o inicial
+LIS_ExcluirElemento: Elemento corrente e o inicial
+LIS_ExcluirElemento: Elemento corrente nao e o final
+LIS_ExcluirElemento: Elemento corrente e o final
+LIS_ObterValor
+LIS_ObterValor: Corrente e NULL
+LIS_ObterValor: Corrente nao e NULL
+LIS_IrInicioLista
+LIS_IrFinalLista
+LIS_AvancarElementoCorrente
+LIS_AvancarElementoCorrente: Avancar para frente
+LIS_AvancarElementoCorrente: Avancou elemento
+LIS_AvancarElementoCorrente: Chegou no final da lista
+LIS_AvancarElementoCorrente: Terminou de avancar elemento
+LIS_AvancarElementoCorrente: Nao chegou no final da lista
+LIS_AvancarElementoCorrente: Elemento final vira o corrente
+LIS_AvancarElementoCorrente: Lista esta vazia
+LIS_AvancarElementoCorrente: Lista nao esta vazia
+LIS_AvancarElementoCorrente: Avancar para tras
+LIS_AvancarElementoCorrente: Voltou elemento
+LIS_AvancarElementoCorrente: Chegou no inicio da lista
+LIS_AvancarElementoCorrente: Terminou de voltar elemento
+LIS_AvancarElementoCorrente: Nao chegou no inicio da lista
+LIS_AvancarElementoCorrente: Elemento inicial vira o corrente
+LIS_AvancarElementoCorrente: Nao avanca elemento
+LIS_ProcurarValor
+LIS_ProcurarValor: Lista esta vazia
+LIS_ProcurarValor: Procurar no elemento
+LIS_ProcurarValor: Achou valor
+LIS_ProcurarValor: Nao achou
+LiberarElemento
+LiberarElemento: Excluiu valor
+LiberarElemento: Liberou elemento
+CriarElemento
+CriarElemento: Faltou memoria ao criar elemento
+CriarElemento: Criou elemento com sucesso
+LimparCabeca
+Retorna corrente

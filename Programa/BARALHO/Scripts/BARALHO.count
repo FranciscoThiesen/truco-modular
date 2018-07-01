@@ -1,0 +1,10 @@
+////////////////////////////////////////////////
+//
+// Arquivo de declaração de contadores
+// Conta módulo Lista	 marcado
+//
+///////////////////////////////////////////////
+
+BAR_CriaCarta
+BAR_CriaCarta:Nao faltou memoria
+BAR_DestruirCarta:

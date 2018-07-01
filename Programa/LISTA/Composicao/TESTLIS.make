@@ -61,8 +61,8 @@ limpa :
 ### Dependências de módulos objeto a compilar
 
 $(Fobj)\testlis.obj :  {$(Pc)}\testlis.c \
-    {$(Ph)}generico.h           {$(Ph)}lerparm.h            {$(Ph)}lista.h              \
-    {$(Ph)}tst_espc.h          
+    {$(Ph)}cespdin.h            {$(Ph)}generico.h           {$(Ph)}lerparm.h            \
+    {$(Ph)}lista.h              {$(Ph)}tst_espc.h          
    cl $(O) $(OPT) /Fo$(Fobj)\ $(Fc)\$(@B).c >> $(Ferr)\$(NOME).err
 
 $(Fobj)\lista.obj :  {$(Pc)}\lista.c \

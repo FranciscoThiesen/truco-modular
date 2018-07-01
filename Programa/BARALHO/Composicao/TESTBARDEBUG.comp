@@ -1,8 +1,8 @@
-# Composicao do programa de embaralhamento
+# Composicao do programa de teste de uma lista gen�rica duplamente encadeada
 
 [Diretorios]
 
-Nome        =	TESTBAR
+Nome        =	TESTBARDEBUG
 PathDefault =	..\Fontes
 err         =	..\Produto
 obj			=	..\Objetos
@@ -11,12 +11,13 @@ h			=	..\Fontes
 def			=	..\Tabelas
 
 [Modulos]
-BARALHO
-Lista
-TESTBAR
+BARALHO		/D_DEBUG
+LISTA     /D_DEBUG
+TESTBAR   /D_DEBUG
+
 
 [BuildInicio]
-/OUT:..\Produto\TESTBAR.exe
+/OUT:..\Produto\TESTBARDEBUG.exe
 /INCREMENTAL:NO
 /MACHINE:IX86
 

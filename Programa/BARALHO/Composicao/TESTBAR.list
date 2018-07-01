@@ -4,7 +4,7 @@ GERADOR DE SCRIPT DE DIRETIVAS PARA MAKE
 Composição do construto: ..\Composicao\TESTBAR.comp
 
    Nome do Construto:           TESTBAR
-   Diretório base:              C:\Users\tubas\Desktop\git master grupo\truco-modular\Programa\BARALHO\Composicao
+   Diretório base:              D:\Documents\Graduação\Modulae\TestandoConta\BARALHO\Composicao
 
    Arquivo composição:          ..\Composicao\TESTBAR.comp
    Arquivo plataforma:          gmake.parm
@@ -15,20 +15,24 @@ Composição do construto: ..\Composicao\TESTBAR.comp
 
 Módulos do construto: ..\Composicao\TESTBAR.comp
 
-   testbar.c
    baralho.c
    lista.c
+   testbar.c
 
 Estatísticas do construto
 
    Estatísticas do arquivo: baralho.c
-      Total linhas:             377
-      Linhas de código:         213
-      Linhas de comentário:     109
-      Linhas em branco:          73
+      Total linhas:             717
+      Linhas de código:         451
+      Linhas de comentário:      95
+      Linhas em branco:         186
    Arquivos de inclusão de que necessita
       baralho.h
+      cespdin.h
+      conta.h
+      generico.h
       lista.h
+      tst_espc.h
 
    Estatísticas do arquivo: baralho.h
       Total linhas:             276
@@ -41,6 +45,24 @@ Estatísticas do construto
       baralho.c
       testbar.c
 
+   Estatísticas do arquivo: cespdin.h
+      Total linhas:             818
+      Linhas de código:          67
+      Linhas de comentário:     639
+      Linhas em branco:         112
+   Arquivos em que é incluído
+      baralho.c
+      lista.c
+
+   Estatísticas do arquivo: conta.h
+      Total linhas:             495
+      Linhas de código:          44
+      Linhas de comentário:     372
+      Linhas em branco:          79
+   Arquivos em que é incluído
+      baralho.c
+      lista.c
+
    Estatísticas do arquivo: generico.h
       Total linhas:             713
       Linhas de código:          59
@@ -49,6 +71,8 @@ Estatísticas do construto
    Arquivos de inclusão de que necessita
       tst_espc.h
    Arquivos em que é incluído
+      baralho.c
+      lista.c
       testbar.c
 
    Estatísticas do arquivo: lerparm.h
@@ -60,12 +84,16 @@ Estatísticas do construto
       testbar.c
 
    Estatísticas do arquivo: lista.c
-      Total linhas:             585
-      Linhas de código:         296
+      Total linhas:             594
+      Linhas de código:         306
       Linhas de comentário:     147
-      Linhas em branco:         161
+      Linhas em branco:         160
    Arquivos de inclusão de que necessita
+      cespdin.h
+      conta.h
+      generico.h
       lista.h
+      tst_espc.h
 
    Estatísticas do arquivo: lista.h
       Total linhas:             377
@@ -96,7 +124,9 @@ Estatísticas do construto
       Linhas de comentário:     185
       Linhas em branco:          20
    Arquivos em que é incluído
+      baralho.c
       generico.h
+      lista.c
       testbar.c
 
 Totais por tipo de arquivo
@@ -109,11 +139,11 @@ Totais por tipo de arquivo
          Arquivos deste tipo:          0
 
   Tipo: h        Path: ..\Fontes
-         Total linhas do tipo:      1885
-         Linhas de código:           189
-         Linhas de comentário:      1436
-         Linhas em branco:           260
-         Arquivos deste tipo:          5
+         Total linhas do tipo:      3198
+         Linhas de código:           300
+         Linhas de comentário:      2447
+         Linhas em branco:           451
+         Arquivos deste tipo:          7
 
   Tipo: obj      Path: ..\Objetos
          Total linhas do tipo:         0
@@ -137,17 +167,17 @@ Totais por tipo de arquivo
          Arquivos deste tipo:          0
 
   Tipo: c        Path: ..\Fontes
-         Total linhas do tipo:      1278
-         Linhas de código:           679
-         Linhas de comentário:       345
-         Linhas em branco:           302
+         Total linhas do tipo:      1627
+         Linhas de código:           927
+         Linhas de comentário:       331
+         Linhas em branco:           414
          Arquivos deste tipo:          3
 
 Totais para todo o construto TESTBAR
 
-   Total linhas:              3163
-   Linhas de código:           868
-   Linhas de comentário:      1781
-   Linhas em branco:           562
-   Arquivos processados:         8
+   Total linhas:              4825
+   Linhas de código:          1227
+   Linhas de comentário:      2778
+   Linhas em branco:           865
+   Arquivos processados:        10
 

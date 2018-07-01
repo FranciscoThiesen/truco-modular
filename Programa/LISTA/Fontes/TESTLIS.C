@@ -27,6 +27,7 @@
 #include    "TST_Espc.h"
 
 #include    "Generico.h"
+#include    "CESPDIN.H"
 #include    "LerParm.h"
 
 #include    "Lista.h"
@@ -43,6 +44,7 @@ static const char EXC_ELEM_CMD            [ ] = "=excluirelem"    ;
 static const char IR_INICIO_CMD           [ ] = "=irinicio"       ;
 static const char IR_FIM_CMD              [ ] = "=irfinal"        ;
 static const char AVANCAR_ELEM_CMD        [ ] = "=avancarelem"    ;
+static const char PROCURAR_VALOR_CMD      [ ] = "=procurarvalor"  ;
 
 
 #define TRUE  1
@@ -366,6 +368,36 @@ LIS_tppLista   vtListas[ DIM_VT_LISTA ] ;
                       "Condicao de retorno errada ao avancar" ) ;
 
          } /* fim ativa: LIS  &Avançar elemento */
+		 
+		 /* LIS &ProcurarValor */
+		 else if (strcmp(ComandoTeste, PROCURAR_VALOR_CMD) == 0 )
+		 {
+			 numLidos = LER_LerParametros("isi",&inxLista,StringDado,&CondRetEsp );
+			 
+			 if( (numLidos!= 3 ) || (! ValidarInxLista( inxLista , NAO_VAZIO )) )
+			 {
+				 return TST_CondRetParm ;
+			 }
+			 
+			 pDado = ( char * ) malloc( strlen( StringDado ) + 1 ) ;
+            if ( pDado == NULL )
+            {
+               return TST_CondRetMemoria ;
+            } /* if */
+
+            strcpy( pDado , StringDado ) ;
+			
+			CondRet = LIS_ProcurarValor( vtListas[ inxLista ] , pDado ) ;
+
+            if ( CondRet != LIS_CondRetOK )
+            {
+               free( pDado ) ;
+            } /* if */
+
+            return TST_CompararInt( CondRetEsp , CondRet ,
+                     "Condicao de retorno errada ao procurar valor."                   ) ;
+			 
+		 }/* fim ativa: LIS Procurar valor  */
 
       return TST_CondRetNaoConhec ;
 
