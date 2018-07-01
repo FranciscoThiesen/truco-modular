@@ -8,222 +8,107 @@
 !!!    0  Linha:     3  // Data:      22/jun/2017 
 !!!    0  Linha:     4  // Proposito: Testar o modulo lista generica duplamente encadeada 
     6  == Inicializar valores
-   33  == Iniciar contagem
-   42  == Criar a lista 0
-   45  == Verificar ObterValor relativo a lista vazia
-ll>    1  Linha:    46  Tipo do parâmetro incorreto.  ListaVazia
->>>    2  Linha:    46  Erro nos parâmetros do comando:  =obtervalorelem   lista0  ListaVazia
-   48  == Procurar valor em lista vazia
-   51  == Inserir elemento em lista vazia
->>>    3  Linha:    53  Valor não deveria existir. Deveria ser: NULL  É: 00C5EEBA
-   55  == Inserir elemento apos primeiro
->>>    4  Linha:    57  Valor não deveria existir. Deveria ser: NULL  É: 00913D22
->>>    5  Linha:    58  Não é comando recuperar:  =obtertam		  lista0   2	  OK
-   60  == Inserir elemento antes do ultimo
->>>    6  Linha:    62  Valor não deveria existir. Deveria ser: NULL  É: 00913E42
->>>    7  Linha:    63  Não é comando recuperar:  =obtertam		  lista0   3	  OK
-   65  == Procurar valor inexistente na lista
-   68  == Procurar str 1
->>>    8  Linha:    69  Condicao de retorno errada ao procurar valor. Deveria ser: 0  É: 3
->>>    9  Linha:    70  Não é comando recuperar:  =obtervalorelem   lista0   str1   OK
-   72  == Procurar str 2
->>>   10  Linha:    73  Condicao de retorno errada ao procurar valor. Deveria ser: 0  É: 3
-   75  == Excluir elemento do meio
->>>   11  Linha:    76  Valor não deveria existir. Deveria ser: NULL  É: 00913E42
->>>   12  Linha:    77  Não é comando recuperar:  =excluirelem      lista0   OK
->>>   13  Linha:    78  Comando de teste ignorado:  =obtertam		  lista0   2	  OK
-   80  == Excluir elemento do inicio
->>>   14  Linha:    81  Valor não deveria existir. Deveria ser: NULL  É: 00913E42
->>>   15  Linha:    82  Não é comando recuperar:  =excluirelem      lista0   OK
->>>   16  Linha:    83  Comando de teste ignorado:  =obtertam		  lista0	1 	  OK
-   85  == Excluir elemento final
->>>   17  Linha:    86  Valor não deveria existir. Deveria ser: NULL  É: 00913E42
->>>   18  Linha:    87  Não é comando recuperar:  =excluirelem      lista0   OK
-   89  == Ver se a lista ficou vazia
->>>   19  Linha:    90  Valor do elemento errado. Deveria ser: >???<  É: >xxx<
-   92  == Tentar excluir elemento em lista vazia
->>>   20  Linha:    93  Condição de retorno errada ao excluir. Deveria ser: 1  É: 0
-   95  == Destruir a lista
-   98  == Criar uma lista com dois elementos
-  103  == Esvaziar a lista e ver se ficou vazia
->>>   21  Linha:   105  Dado tipo um deveria existir. Deveria ser: não NULL  É: NULL
->>>   22  Linha:   106  Não é comando recuperar:  =obtertam		  lista1   0      OK
-  108  == Destruir a lista
-  111  == Criar uma lista com quatro elementos
-  118  == Ir para o final da lista
-  121  == Verificar a lista de tras para diante
->>>   23  Linha:   122  Valor não deveria existir. Deveria ser: NULL  É: 00C5AD22
->>>   24  Linha:   123  Não é comando recuperar:  =avancarelem      lista2   -1     OK
->>>   25  Linha:   124  Comando de teste ignorado:  =obtervalorelem   lista2   str2   OK
->>>   26  Linha:   125  Comando de teste ignorado:  =avancarelem      lista2   -1     OK
->>>   27  Linha:   126  Comando de teste ignorado:  =obtervalorelem   lista2   str1   OK
->>>   28  Linha:   127  Comando de teste ignorado:  =avancarelem      lista2   -1     OK
->>>   29  Linha:   128  Comando de teste ignorado:  =obtervalorelem   lista2   str0   OK
->>>   30  Linha:   129  Comando de teste ignorado:  =avancarelem      lista2   -1     FimLista
-  131  == Verificar a lista de frente para tras
->>>   31  Linha:   132  Valor não deveria existir. Deveria ser: NULL  É: 00C5AD22
->>>   32  Linha:   133  Não é comando recuperar:  =avancarelem      lista2   1      OK
->>>   33  Linha:   134  Comando de teste ignorado:  =obtervalorelem   lista2   str1   OK
->>>   34  Linha:   135  Comando de teste ignorado:  =avancarelem      lista2   1      OK
->>>   35  Linha:   136  Comando de teste ignorado:  =obtervalorelem   lista2   str2   OK
->>>   36  Linha:   137  Comando de teste ignorado:  =avancarelem      lista2   1      OK
->>>   37  Linha:   138  Comando de teste ignorado:  =obtervalorelem   lista2   str3   OK
->>>   38  Linha:   139  Comando de teste ignorado:  =avancarelem      lista2   1      FimLista
-  141  == Avancar 0 elemento
-  144  == Verificar a lista andando demais de tras para diante
->>>   39  Linha:   146  Valor não deveria existir. Deveria ser: NULL  É: 00C5AA82
-  148  == Verificar a lista andando demais de frente para tras
->>>   40  Linha:   150  Valor não deveria existir. Deveria ser: NULL  É: 00C5AD22
-  152  == Destruir a lista
-  155  == Criar uma lista com 5 elementos
-  163  == Verificar inicio
->>>   41  Linha:   165  Valor não deveria existir. Deveria ser: NULL  É: 00C5AD22
-  167  == Verificar final
->>>   42  Linha:   169  Valor não deveria existir. Deveria ser: NULL  É: 00914FAA
-  171  == Criar a lista 4
->>>   43  Linha:   173  Comando não conhecido:  =obtertam		  lista4   0      OK
-  175  == Verificar remover elemento de lista vazia
->>>   44  Linha:   176  Comando não conhecido:  =removerelem	  lista4   lista3 ListaVazia
-  178  == Verificar remover elemento 2 da lista 3 para a lista 4
->>>   45  Linha:   180  Comando não conhecido:  =removerelem	  lista3   lista4 OK
->>>   46  Linha:   181  Comando de teste ignorado:  =obtertam		  lista4   1      OK
->>>   47  Linha:   182  Comando de teste ignorado:  =obtervalorelem   lista4   str1   OK
->>>   48  Linha:   183  Comando de teste ignorado:  =obtertam		  lista3   4	  OK
-  185  == Criar lista com 3 elementos
-  191  == Destruir lista 4
-  194  == Verificar lista 3
->>>   49  Linha:   197  Valor não deveria existir. Deveria ser: NULL  É: 00C5AD22
->>>   50  Linha:   198  Não é comando recuperar:  =avancarelem      lista3   1      OK
->>>   51  Linha:   199  Comando de teste ignorado:  =obtervalorelem   lista3   str2   OK
->>>   52  Linha:   200  Comando de teste ignorado:  =avancarelem      lista3   1      OK
->>>   53  Linha:   201  Comando de teste ignorado:  =obtervalorelem   lista3   str3   OK
->>>   54  Linha:   202  Comando de teste ignorado:  =avancarelem      lista3   1      OK
->>>   55  Linha:   203  Comando de teste ignorado:  =obtervalorelem   lista3   str4   OK
->>>   56  Linha:   204  Comando de teste ignorado:  =avancarelem      lista3   1      FimLista
-  206  == Verificar lista 3 de tras pra frente
->>>   57  Linha:   207  Valor não deveria existir. Deveria ser: NULL  É: 00C5AD22
->>>   58  Linha:   208  Não é comando recuperar:  =avancarelem      lista3   -1     OK
->>>   59  Linha:   209  Comando de teste ignorado:  =obtervalorelem   lista3   str3   OK
->>>   60  Linha:   210  Comando de teste ignorado:  =avancarelem      lista3   -1     OK
->>>   61  Linha:   211  Comando de teste ignorado:  =obtervalorelem   lista3   str2   OK
->>>   62  Linha:   212  Comando de teste ignorado:  =avancarelem      lista3   -1     OK
->>>   63  Linha:   213  Comando de teste ignorado:  =obtervalorelem   lista3   str0   OK
->>>   64  Linha:   214  Comando de teste ignorado:  =avancarelem      lista3   -1     FimLista
-  216  == Verificar lista 5
->>>   65  Linha:   219  Valor não deveria existir. Deveria ser: NULL  É: 00914D0A
->>>   66  Linha:   220  Não é comando recuperar:  =avancarelem      lista5   1      OK
->>>   67  Linha:   221  Comando de teste ignorado:  =obtervalorelem   lista5   str6   OK
->>>   68  Linha:   222  Comando de teste ignorado:  =avancarelem      lista5   1      OK
->>>   69  Linha:   223  Comando de teste ignorado:  =obtervalorelem   lista5   str7   OK
->>>   70  Linha:   224  Comando de teste ignorado:  =avancarelem      lista5   1      FimLista
-  226  == Verificar lista 5 de tras pra frente
->>>   71  Linha:   227  Valor não deveria existir. Deveria ser: NULL  É: 00914D0A
->>>   72  Linha:   228  Não é comando recuperar:  =avancarelem      lista5   -1     OK
->>>   73  Linha:   229  Comando de teste ignorado:  =obtervalorelem   lista5   str6   OK
->>>   74  Linha:   230  Comando de teste ignorado:  =avancarelem      lista5   -1     OK
->>>   75  Linha:   231  Comando de teste ignorado:  =obtervalorelem   lista5   str5   OK
->>>   76  Linha:   232  Comando de teste ignorado:  =avancarelem      lista5   -1     FimLista
-  234  == Verificar lista 5
->>>   77  Linha:   236  Condicao de retorno errada ao avancar Deveria ser: 1  É: 2
->>>   78  Linha:   237  Não é comando recuperar:  =avancarelem      lista5   1      ListaVazia
-  239  == Verificar lista 6
->>>   79  Linha:   240  Erro nos parâmetros do comando:  =irinicio	      lista6   OK
->>>   80  Linha:   242  Comando de teste ignorado:  =obtervalorelem   lista6   str5   OK
->>>   81  Linha:   243  Comando de teste ignorado:  =avancarelem      lista6   1      OK
->>>   82  Linha:   244  Comando de teste ignorado:  =obtervalorelem   lista6   str6   OK
->>>   83  Linha:   245  Comando de teste ignorado:  =avancarelem      lista6   1      OK
->>>   84  Linha:   246  Comando de teste ignorado:  =obtervalorelem   lista6   str7   OK
->>>   85  Linha:   247  Comando de teste ignorado:  =avancarelem      lista6   1      FimLista
-  249  == Verificar lista 6 de tras pra frente
->>>   86  Linha:   250  Erro nos parâmetros do comando:  =obtervalorelem   lista6   str7   OK
->>>   87  Linha:   252  Comando de teste ignorado:  =obtervalorelem   lista6   str6   OK
->>>   88  Linha:   253  Comando de teste ignorado:  =avancarelem      lista6   -1     OK
->>>   89  Linha:   254  Comando de teste ignorado:  =obtervalorelem   lista6   str5   OK
->>>   90  Linha:   255  Comando de teste ignorado:  =avancarelem      lista6   -1     FimLista
-  257  == Remover elementos final e inicial de uma lista
->>>   91  Linha:   260  Comando não conhecido:  =removerelem	  lista5   lista7  OK
->>>   92  Linha:   261  Comando de teste ignorado:  =irfinal		  lista5   OK
->>>   93  Linha:   262  Comando de teste ignorado:  =removerelem	  lista5   lista7  OK
-  264  == Destruir listas 3, 5 e 7
-  270  == Verificar falta de memoria
-!!!   93  Linha:   275  Limita numero de espacos alocados. 
->>>   94  Linha:   275  Erro em ponteiro de nova lista. Deveria ser: não NULL  É: NULL
->>>   95  Linha:   276  Não é comando recuperar:  =eliminarlimitesespaco
->>>   96  Linha:   278  Comando de teste ignorado:  =limitarnumeroespacos 5
->>>   97  Linha:   279  Comando de teste ignorado:  =inselemantes 		lista0 str1 FaltouMemoria
->>>   98  Linha:   280  Comando de teste ignorado:  =eliminarlimitesespaco
->>>   99  Linha:   282  Comando de teste ignorado:  =limitarnumeroespacos 5
->>>  100  Linha:   283  Comando de teste ignorado:  =inselemapos 		lista0 str2 FaltouMemoria
->>>  101  Linha:   284  Comando de teste ignorado:  =eliminarlimitesespaco
-  286  == Destruir lista0 e lista 1
-!!!  101  Linha:   290  // fim da massa de testes 
-  292  == Obter numero de espacos alocados
-  295  == Terminar contagem
-cc>  102  Linha:   297   Contagem em "CriarElemento: Faltou memoria ao criar elemento" é zero.
-cc>  103  Linha:   297   Contagem em "LIS_AvancarElementoCorrente: Lista e NULL" é zero.
-cc>  104  Linha:   297   Contagem em "LIS_AvancarElementoCorrente: Lista esta vazia" é zero.
-cc>  105  Linha:   297   Contagem em "LIS_AvancarElementoCorrente: Lista nao esta vazia" é zero.
-cc>  106  Linha:   297   Contagem em "LIS_AvancarElementoCorrente: Nao chegou no final da lista" é zero.
-cc>  107  Linha:   297   Contagem em "LIS_ConcatenarLista" é zero.
-cc>  108  Linha:   297   Contagem em "LIS_ConcatenarLista: Atualiza lista principal e libera a concatenada" é zero.
-cc>  109  Linha:   297   Contagem em "LIS_ConcatenarLista: Lista concatenada esta vazia" é zero.
-cc>  110  Linha:   297   Contagem em "LIS_ConcatenarLista: Lista concatenada nao esta vazia" é zero.
-cc>  111  Linha:   297   Contagem em "LIS_ConcatenarLista: Lista principal esta vazia" é zero.
-cc>  112  Linha:   297   Contagem em "LIS_ConcatenarLista: Lista principal nao esta vazia" é zero.
-cc>  113  Linha:   297   Contagem em "LIS_ConcatenarLista: Mudou cabeca do elemento" é zero.
-cc>  114  Linha:   297   Contagem em "LIS_ConcatenarLista: Nenhuma das listas e NULL" é zero.
-cc>  115  Linha:   297   Contagem em "LIS_ConcatenarLista: Terminou de mudar as cabecas dos elementos concatenados" é zero.
-cc>  116  Linha:   297   Contagem em "LIS_ConcatenarLista: Uma das listas e NULL" é zero.
-cc>  117  Linha:   297   Contagem em "LIS_CriarLista: Definiu tipo do espaco" é zero.
-cc>  118  Linha:   297   Contagem em "LIS_DestruirLista: Lista e NULL" é zero.
-cc>  119  Linha:   297   Contagem em "LIS_EsvaziarLista: Lista e NULL" é zero.
-cc>  120  Linha:   297   Contagem em "LIS_ExcluirElemento: Elemento corrente e o final" é zero.
-cc>  121  Linha:   297   Contagem em "LIS_ExcluirElemento: Elemento corrente e o inicial" é zero.
-cc>  122  Linha:   297   Contagem em "LIS_ExcluirElemento: Lista e NULL" é zero.
-cc>  123  Linha:   297   Contagem em "LIS_ExcluirElemento: Lista nao esta vazia" é zero.
-cc>  124  Linha:   297   Contagem em "LIS_ExcluirElemento: Lista vazia" é zero.
-cc>  125  Linha:   297   Contagem em "LIS_InserirElementoAntes: Faltou memoria ao criar elemento" é zero.
-cc>  126  Linha:   297   Contagem em "LIS_InserirElementoAntes: Lista e NULL" é zero.
-cc>  127  Linha:   297   Contagem em "LIS_InserirElementoApos: Faltou memoria ao criar elemento" é zero.
-cc>  128  Linha:   297   Contagem em "LIS_InserirElementoApos: Lista e NULL" é zero.
-cc>  129  Linha:   297   Contagem em "LIS_IrFinalLista: Lista e NULL" é zero.
-cc>  130  Linha:   297   Contagem em "LIS_IrInicioLista: Lista e NULL" é zero.
-cc>  131  Linha:   297   Contagem em "LIS_ObterTam" é zero.
-cc>  132  Linha:   297   Contagem em "LIS_ObterTam: Lista e NULL" é zero.
-cc>  133  Linha:   297   Contagem em "LIS_ObterTam: Lista nao e NULL" é zero.
-cc>  134  Linha:   297   Contagem em "LIS_ObterValor: Lista e NULL" é zero.
-cc>  135  Linha:   297   Contagem em "LIS_ProcurarValor: Achou" é zero.
-cc>  136  Linha:   297   Contagem em "LIS_ProcurarValor: Lista e NULL" é zero.
-cc>  137  Linha:   297   Contagem em "LIS_RemoverElemento" é zero.
-cc>  138  Linha:   297   Contagem em "LIS_RemoverElemento: Elemento corrente e o final" é zero.
-cc>  139  Linha:   297   Contagem em "LIS_RemoverElemento: Elemento corrente e o inicial" é zero.
-cc>  140  Linha:   297   Contagem em "LIS_RemoverElemento: Elemento corrente nao e o final" é zero.
-cc>  141  Linha:   297   Contagem em "LIS_RemoverElemento: Elemento corrente nao e o inicial" é zero.
-cc>  142  Linha:   297   Contagem em "LIS_RemoverElemento: Lista e NULL" é zero.
-cc>  143  Linha:   297   Contagem em "LIS_RemoverElemento: Lista nao e NULL" é zero.
-cc>  144  Linha:   297   Contagem em "LIS_RemoverElemento: Lista nao esta vazia" é zero.
-cc>  145  Linha:   297   Contagem em "LIS_RemoverElemento: Lista vazia" é zero.
-cc>  146  Linha:   297   Contagem em "LIS_RetirarListaElem" é zero.
-cc>  147  Linha:   297   Contagem em "LIS_RetirarListaElem: Contou elemento depois do que sera retirado" é zero.
-cc>  148  Linha:   297   Contagem em "LIS_RetirarListaElem: Desencadeia a esquerda" é zero.
-cc>  149  Linha:   297   Contagem em "LIS_RetirarListaElem: Elemento retirado e o inicial" é zero.
-cc>  150  Linha:   297   Contagem em "LIS_RetirarListaElem: Elemento retirado nao e o inicial" é zero.
-cc>  151  Linha:   297   Contagem em "LIS_RetirarListaElem: Faltou memoria ao criar lista" é zero.
-cc>  152  Linha:   297   Contagem em "LIS_RetirarListaElem: Lista e NULL" é zero.
-cc>  153  Linha:   297   Contagem em "LIS_RetirarListaElem: Lista esta vazia" é zero.
-cc>  154  Linha:   297   Contagem em "LIS_RetirarListaElem: Lista nao e NULL" é zero.
-cc>  155  Linha:   297   Contagem em "LIS_RetirarListaElem: Lista nao esta vazia" é zero.
-cc>  156  Linha:   297   Contagem em "LIS_RetirarListaElem: Nao faltou memoria ao criar lista" é zero.
-cc>  157  Linha:   297   Contagem em "LIS_RetirarListaElem: Terminou de contar" é zero.
->>>  158  Linha:   297  Número de contadores zero errado. Deveria ser: 0  É: 56
-  299  == Finalizar
+   26  == Iniciar contagem
+   34  == Criar a lista 0
+   37  == Verificar ObterValor relativo a lista vazia
+   40  == Inserir elemento em lista vazia
+   44  == Inserir elemento apï¿½s primeiro
+   48  == Inserir elemento antes do ï¿½ltimo
+   52  == Excluir elemento do meio
+   56  == Excluir elemento do inï¿½cio
+   60  == Excluir elemento final, ï¿½nico
+   64  == Ver se a lista ficou vazia
+   67  == Destruir a lista
+   70  == Criar uma lista com dois elementos
+   75  == Esvaziar a lista e ver se ficou vazia
+   79  == Destruir a lista
+   82  == Criar uma lista com quatro elementos
+   89  == Verificar a lista de trï¿½s para diante
+   99  == Verificar a lista de frente para trï¿½s
+  109  == Verificar a lista andando demais de trï¿½s para diante
+  113  == Verificar a lista andando demais de frente para trï¿½s
+  117  == Destruir a lista
+  120  ==Inicio dos Teste do Arthur
+  123  == Criar a lista 0
+  126  == Inserir primeiro
+  130  ==Insere elemento antes do primeiro
+  140  ==Insere elemento depois do ultimo
+!!!    0  Linha:   147  // fim da massa de testes 
+  149  == Obter numero de espacos alocados
+>>>    1  Linha:   150  Número de espaços alocados errado. Deveria ser: 0  É: 7
+  152  == Terminar contagem
+cc>    2  Linha:   154   Contagem em "CriarElemento: Faltou memoria ao criar elemento" é zero.
+cc>    3  Linha:   154   Contagem em "LIS_AvancarElementoCorrente: Lista e NULL" é zero.
+cc>    4  Linha:   154   Contagem em "LIS_AvancarElementoCorrente: Lista esta vazia" é zero.
+cc>    5  Linha:   154   Contagem em "LIS_AvancarElementoCorrente: Lista nao esta vazia" é zero.
+cc>    6  Linha:   154   Contagem em "LIS_AvancarElementoCorrente: Nao avanca elemento" é zero.
+cc>    7  Linha:   154   Contagem em "LIS_ConcatenarLista" é zero.
+cc>    8  Linha:   154   Contagem em "LIS_ConcatenarLista: Atualiza lista principal e libera a concatenada" é zero.
+cc>    9  Linha:   154   Contagem em "LIS_ConcatenarLista: Lista concatenada esta vazia" é zero.
+cc>   10  Linha:   154   Contagem em "LIS_ConcatenarLista: Lista concatenada nao esta vazia" é zero.
+cc>   11  Linha:   154   Contagem em "LIS_ConcatenarLista: Lista principal esta vazia" é zero.
+cc>   12  Linha:   154   Contagem em "LIS_ConcatenarLista: Lista principal nao esta vazia" é zero.
+cc>   13  Linha:   154   Contagem em "LIS_ConcatenarLista: Mudou cabeca do elemento" é zero.
+cc>   14  Linha:   154   Contagem em "LIS_ConcatenarLista: Nenhuma das listas e NULL" é zero.
+cc>   15  Linha:   154   Contagem em "LIS_ConcatenarLista: Terminou de mudar as cabecas dos elementos concatenados" é zero.
+cc>   16  Linha:   154   Contagem em "LIS_ConcatenarLista: Uma das listas e NULL" é zero.
+cc>   17  Linha:   154   Contagem em "LIS_CriarLista: Definiu tipo do espaco" é zero.
+cc>   18  Linha:   154   Contagem em "LIS_CriarLista: Faltou memoria" é zero.
+cc>   19  Linha:   154   Contagem em "LIS_DestruirLista: Lista e NULL" é zero.
+cc>   20  Linha:   154   Contagem em "LIS_EsvaziarLista: Lista e NULL" é zero.
+cc>   21  Linha:   154   Contagem em "LIS_ExcluirElemento: Lista e NULL" é zero.
+cc>   22  Linha:   154   Contagem em "LIS_ExcluirElemento: Lista nao esta vazia" é zero.
+cc>   23  Linha:   154   Contagem em "LIS_ExcluirElemento: Lista vazia" é zero.
+cc>   24  Linha:   154   Contagem em "LIS_InserirElementoAntes: Faltou memoria ao criar elemento" é zero.
+cc>   25  Linha:   154   Contagem em "LIS_InserirElementoAntes: Lista e NULL" é zero.
+cc>   26  Linha:   154   Contagem em "LIS_InserirElementoApos: Elemento corrente nao e final" é zero.
+cc>   27  Linha:   154   Contagem em "LIS_InserirElementoApos: Faltou memoria ao criar elemento" é zero.
+cc>   28  Linha:   154   Contagem em "LIS_InserirElementoApos: Lista e NULL" é zero.
+cc>   29  Linha:   154   Contagem em "LIS_IrFinalLista: Lista e NULL" é zero.
+cc>   30  Linha:   154   Contagem em "LIS_IrInicioLista: Lista e NULL" é zero.
+cc>   31  Linha:   154   Contagem em "LIS_ObterTam" é zero.
+cc>   32  Linha:   154   Contagem em "LIS_ObterTam: Lista e NULL" é zero.
+cc>   33  Linha:   154   Contagem em "LIS_ObterTam: Lista nao e NULL" é zero.
+cc>   34  Linha:   154   Contagem em "LIS_ObterValor: Lista e NULL" é zero.
+cc>   35  Linha:   154   Contagem em "LIS_ProcurarValor" é zero.
+cc>   36  Linha:   154   Contagem em "LIS_ProcurarValor: Achou" é zero.
+cc>   37  Linha:   154   Contagem em "LIS_ProcurarValor: Lista e NULL" é zero.
+cc>   38  Linha:   154   Contagem em "LIS_ProcurarValor: Lista esta vazia" é zero.
+cc>   39  Linha:   154   Contagem em "LIS_ProcurarValor: Lista nao e NULL" é zero.
+cc>   40  Linha:   154   Contagem em "LIS_ProcurarValor: Lista nao esta vazia" é zero.
+cc>   41  Linha:   154   Contagem em "LIS_ProcurarValor: Nao achou" é zero.
+cc>   42  Linha:   154   Contagem em "LIS_ProcurarValor: Procurar no elemento" é zero.
+cc>   43  Linha:   154   Contagem em "LIS_ProcurarValor: Procurar no proximo" é zero.
+cc>   44  Linha:   154   Contagem em "LIS_RemoverElemento" é zero.
+cc>   45  Linha:   154   Contagem em "LIS_RemoverElemento: Elemento corrente e o final" é zero.
+cc>   46  Linha:   154   Contagem em "LIS_RemoverElemento: Elemento corrente e o inicial" é zero.
+cc>   47  Linha:   154   Contagem em "LIS_RemoverElemento: Elemento corrente nao e o final" é zero.
+cc>   48  Linha:   154   Contagem em "LIS_RemoverElemento: Elemento corrente nao e o inicial" é zero.
+cc>   49  Linha:   154   Contagem em "LIS_RemoverElemento: Lista e NULL" é zero.
+cc>   50  Linha:   154   Contagem em "LIS_RemoverElemento: Lista nao e NULL" é zero.
+cc>   51  Linha:   154   Contagem em "LIS_RemoverElemento: Lista nao esta vazia" é zero.
+cc>   52  Linha:   154   Contagem em "LIS_RemoverElemento: Lista vazia" é zero.
+cc>   53  Linha:   154   Contagem em "LIS_RetirarListaElem" é zero.
+cc>   54  Linha:   154   Contagem em "LIS_RetirarListaElem: Contou elemento depois do que sera retirado" é zero.
+cc>   55  Linha:   154   Contagem em "LIS_RetirarListaElem: Desencadeia a esquerda" é zero.
+cc>   56  Linha:   154   Contagem em "LIS_RetirarListaElem: Elemento retirado e o inicial" é zero.
+cc>   57  Linha:   154   Contagem em "LIS_RetirarListaElem: Elemento retirado nao e o inicial" é zero.
+cc>   58  Linha:   154   Contagem em "LIS_RetirarListaElem: Faltou memoria ao criar lista" é zero.
+cc>   59  Linha:   154   Contagem em "LIS_RetirarListaElem: Lista e NULL" é zero.
+cc>   60  Linha:   154   Contagem em "LIS_RetirarListaElem: Lista esta vazia" é zero.
+cc>   61  Linha:   154   Contagem em "LIS_RetirarListaElem: Lista nao e NULL" é zero.
+cc>   62  Linha:   154   Contagem em "LIS_RetirarListaElem: Lista nao esta vazia" é zero.
+cc>   63  Linha:   154   Contagem em "LIS_RetirarListaElem: Nao faltou memoria ao criar lista" é zero.
+cc>   64  Linha:   154   Contagem em "LIS_RetirarListaElem: Terminou de contar" é zero.
+>>>   65  Linha:   154  Número de contadores zero errado. Deveria ser: 0  É: 63
+  156  == Finalizar
 
-!!! Número de linhas lidas:         300
-!!! Número de casos de teste:        50
-!!! Número comandos corretos:        83
-!!! Número de falhas encontradas:   158
+!!! Número de linhas lidas:         157
+!!! Número de casos de teste:        29
+!!! Número comandos corretos:        84
+!!! Número de falhas encontradas:    65
 
 !!! Foram encontrados problemas
 
 
-!!! Numero de espacos ainda alocados: 0
+!!! Numero de espacos ainda alocados: 7
