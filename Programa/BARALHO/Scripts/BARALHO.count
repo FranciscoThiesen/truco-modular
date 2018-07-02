@@ -28,3 +28,14 @@ BAR_Embaralhar:Nao eh vazia nem faltou memoria
 BAR_Embaralhar:Embaralhamento nao falhou
 BAR_Embaralhar:Baralho nao existe
 BAR_Embaralhar:CondRetOK
+DestruirValor \=-1
+BAR_CriaCarta: Faltou memoria \=-1
+BAR_CriarBaralho:faltou memoria \=-1
+BAR_CriarBaralho:Faltou memoria para as cartras \=-1
+BAR_CriaVetorCartas:Faltou memoria \=-1
+BAR_Embaralhar:Baralho nao existe \=-1
+BAR_Embaralhar:Faltou memoria \=-1
+BAR_Embaralhar:Tamanho errado \=-1
+BAR_Embaralhar:Lista vazia \=-1
+BAR_Embaralhar:Falha no embaralhamento \=-1
+BAR_DestruirBaralho:Baralho nulo \=-1

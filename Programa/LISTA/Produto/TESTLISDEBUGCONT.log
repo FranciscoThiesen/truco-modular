@@ -4,8 +4,8 @@
 !!!      Script de teste:     ..\Scripts\TesteListaCont.script
 
 !!!    0  Linha:     1  // Script:    TesteLista.script 
-!!!    0  Linha:     2  // Autores:     Arthur Cavalcante Gomes Coelho e Francisco Thiesen 
-!!!    0  Linha:     3  // Data:      30/jun/2018 
+!!!    0  Linha:     2  // Autor:     Arthur Cavalcante Gomes Coelho e Francisco Thiesen 
+!!!    0  Linha:     3  // Data:      22/jun/2017 
 !!!    0  Linha:     4  // Proposito: Testar o modulo lista generica duplamente encadeada 
     6  == Inicializar valores
    27  == Iniciar contagem
@@ -36,16 +36,14 @@
 !!!    0  Linha:   153  // fim da massa de testes 
   155  == Obter numero de espacos alocados
   158  == Terminar contagem
-cc>    1  Linha:   160   Contagem em "CriarElemento: Faltou memoria ao criar elemento" é zero.
-cc>    2  Linha:   160   Contagem em "LIS_CriarLista: Definiu tipo do espaco" é zero.
-cc>    3  Linha:   160   Contagem em "LIS_CriarLista: Faltou memoria" é zero.
->>>    4  Linha:   160  Número de contadores zero errado. Deveria ser: 0  É: 3
+cc>    1  Linha:   160   Contagem em "LIS_CriarLista: Faltou memoria" é zero.
+>>>    2  Linha:   160  Número de contadores zero errado. Deveria ser: 0  É: 1
   162  == Finalizar
 
 !!! Número de linhas lidas:         163
 !!! Número de casos de teste:        29
 !!! Número comandos corretos:        92
-!!! Número de falhas encontradas:     4
+!!! Número de falhas encontradas:     2
 
 !!! Foram encontrados problemas
 

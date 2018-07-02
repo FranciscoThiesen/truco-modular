@@ -26,9 +26,9 @@
 #include   "LISTA.H"
 
 #if defined( BARALHO_OWN )
-   #define BARALHO_EXT
+#define BARALHO_EXT
 #else
-   #define BARALHO_EXT extern
+#define BARALHO_EXT extern
 #endif
 
 /***** Declarações exportadas pelo módulo *****/
@@ -53,24 +53,24 @@ typedef struct BAR_tagCarta * BAR_tppCarta ;
 
 typedef enum {
 
-      BAR_CondRetOK ,
-            /* Concluiu corretamente */
+	BAR_CondRetOK ,
+	/* Concluiu corretamente */
 
-      BAR_CondRetListaVazia ,
-            /* A lista n�o cont�m elementos */
+	BAR_CondRetListaVazia ,
+	/* A lista n�o cont�m elementos */
 
-      BAR_CondRetFaltouMemoria,
-            /* Faltou mem�ria ao tentar criar um elemento de lista */
+	BAR_CondRetFaltouMemoria,
+	/* Faltou mem�ria ao tentar criar um elemento de lista */
 
-     BAR_CondRetCartaNaoCriada,
-         /* Nao foi possivel criar o ponteiro Carta */
+	BAR_CondRetCartaNaoCriada,
+	/* Nao foi possivel criar o ponteiro Carta */
 
-     BAR_CondRetBaralhoNaoExiste,
-         /* Ponteiro para baralho vazio */
-     BAR_CondRetTamanhoErrado,
-         /* Tamanho da lista de cartas errado */
-      BAR_FalhaNoEmbaralhamento
-            /* Nao conseguimos remover uma carta do baralho antigo durante o processo de embaralhamento */
+	BAR_CondRetBaralhoNaoExiste,
+	/* Ponteiro para baralho vazio */
+	BAR_CondRetTamanhoErrado,
+	/* Tamanho da lista de cartas errado */
+	BAR_FalhaNoEmbaralhamento
+	/* Nao conseguimos remover uma carta do baralho antigo durante o processo de embaralhamento */
 } BAR_tpCondRet ;
 
 

@@ -26,16 +26,16 @@
 
 
 #ifdef _DEBUG
-	#include   "GENERICO.h"
-	#include   "CONTA.h"
-	#include "BARALHO.h"
-	#include "LISTA.H"
-	//#include   "..\\Tabelas\\IdTiposEspaco.def"
+#include   "GENERICO.h"
+#include   "CONTA.h"
+#include "BARALHO.h"
+#include "LISTA.H"
+//#include   "..\\Tabelas\\IdTiposEspaco.def"
 #endif
 
 
 #define BARALHO_OWN
-	#include "BARALHO.h"
+#include "BARALHO.h"
 #undef BARALHO_OWN
 
 #define	TRUCO 40
@@ -81,9 +81,9 @@ BAR_tpCondRet DestruirValor(void * pValor);
 ***********************************************************************/
 BAR_tpCondRet DestruirValor(void * pValor)
 {
-	#ifdef _DEBUG
-				CNT_CONTAR( "DestruirValor" ) ;
-			#endif
+#ifdef _DEBUG
+	CNT_CONTAR( "DestruirValor" ) ;
+#endif
 
 
 	free(pValor);
@@ -98,22 +98,22 @@ BAR_tpCondRet DestruirValor(void * pValor)
 *  ****/
 BAR_tpCondRet BAR_CriaCarta(BAR_tppCarta *pCarta, char nome, int peso, char *naipe)
 {
-			#ifdef _DEBUG
-				CNT_CONTAR( "BAR_CriaCarta" ) ;
-			#endif
+#ifdef _DEBUG
+	CNT_CONTAR( "BAR_CriaCarta" ) ;
+#endif
 
 	*pCarta = (BAR_tppCarta)malloc(sizeof(BAR_tpCarta));
 	if(*pCarta == NULL)
 	{
-			#ifdef _DEBUG
-				CNT_CONTAR( "BAR_CriaCarta: Faltou memoria" ) ;
-			#endif
+#ifdef _DEBUG
+		CNT_CONTAR( "BAR_CriaCarta: Faltou memoria" ) ;
+#endif
 
 		return BAR_CondRetFaltouMemoria;
 	}
-			#ifdef _DEBUG
-				CNT_CONTAR( "BAR_CriaCarta:Nao faltou memoria" ) ;
-			#endif
+#ifdef _DEBUG
+	CNT_CONTAR( "BAR_CriaCarta:Nao faltou memoria" ) ;
+#endif
 
 	(*pCarta)->nome=nome;
 	strcpy((*pCarta)->naipe,naipe);
@@ -128,9 +128,9 @@ BAR_tpCondRet BAR_CriaCarta(BAR_tppCarta *pCarta, char nome, int peso, char *nai
 *  ****/
 BAR_tpCondRet BAR_DestruirCarta(BAR_tppCarta pCarta)
 {
-			#ifdef _DEBUG
-				CNT_CONTAR( "BAR_DestruirCarta:" ) ;
-			#endif
+#ifdef _DEBUG
+	CNT_CONTAR( "BAR_DestruirCarta:" ) ;
+#endif
 
 	free(pCarta);
 	return BAR_CondRetOK;
@@ -149,24 +149,24 @@ BAR_tpCondRet BAR_CriarBaralho(BAR_tppBaralho *pBaralho)
 	BAR_tpCondRet retorno;
 
 
-	#ifdef _DEBUG
-				CNT_CONTAR( "BAR_CriarBaralho:" ) ;
-	#endif
+#ifdef _DEBUG
+	CNT_CONTAR( "BAR_CriarBaralho:" ) ;
+#endif
 
 	//ponteiro para baralho
 	*pBaralho = (BAR_tpBaralho*)malloc(sizeof(BAR_tpBaralho));
 	if ( *pBaralho == NULL )
 	{
-			#ifdef _DEBUG
-				CNT_CONTAR( "BAR_CriarBaralho:faltou memoria" ) ;
-			#endif
+#ifdef _DEBUG
+		CNT_CONTAR( "BAR_CriarBaralho:faltou memoria" ) ;
+#endif
 
 		return  BAR_CondRetFaltouMemoria ;
 	}
 
-	#ifdef _DEBUG
-				CNT_CONTAR( "BAR_CriarBaralho:Nao faltou memoria" ) ;
-	#endif
+#ifdef _DEBUG
+	CNT_CONTAR( "BAR_CriarBaralho:Nao faltou memoria" ) ;
+#endif
 
 
 	//cria as 40 cartas e armazena em um vetor
@@ -176,25 +176,25 @@ BAR_tpCondRet BAR_CriarBaralho(BAR_tppBaralho *pBaralho)
 
 	if((*pBaralho)->Cartas==NULL)
 	{
-			#ifdef _DEBUG
-				CNT_CONTAR( "BAR_CriarBaralho:Faltou memoria para as cartras" ) ;
-			#endif
+#ifdef _DEBUG
+		CNT_CONTAR( "BAR_CriarBaralho:Faltou memoria para as cartras" ) ;
+#endif
 
 		return BAR_CondRetFaltouMemoria;
 	}
 
 
-	#ifdef _DEBUG
-				CNT_CONTAR( "BAR_CriarBaralho:Nao faltou memoria para as cartras" ) ;
-	#endif
+#ifdef _DEBUG
+	CNT_CONTAR( "BAR_CriarBaralho:Nao faltou memoria para as cartras" ) ;
+#endif
 
 
 
 	for(i=0;i<TRUCO;i++)
 	{
-		#ifdef _DEBUG
-				CNT_CONTAR( "BAR_CriarBaralho:Cartas inseridas no baralho" ) ;
-			#endif
+#ifdef _DEBUG
+		CNT_CONTAR( "BAR_CriarBaralho:Cartas inseridas no baralho" ) ;
+#endif
 
 		//insere a carta na lista
 		BAR_CriaCarta(&pcarta,vetor_cartas[i]->nome,vetor_cartas[i]->peso,vetor_cartas[i]->naipe);
@@ -222,22 +222,22 @@ BAR_tpCondRet BAR_CriaVetorCartas(BAR_tppCarta *cartas[])
 
 	*cartas = (BAR_tppCarta *)malloc(40 * sizeof(BAR_tppCarta));
 
-	#ifdef _DEBUG
-				CNT_CONTAR( "BAR_CriaVetorCartas:" ) ;
-	#endif
+#ifdef _DEBUG
+	CNT_CONTAR( "BAR_CriaVetorCartas:" ) ;
+#endif
 
 	if(*cartas==NULL)
 	{
-		#ifdef _DEBUG
-				CNT_CONTAR( "BAR_CriaVetorCartas:Faltou memoria" ) ;
-			#endif
+#ifdef _DEBUG
+		CNT_CONTAR( "BAR_CriaVetorCartas:Faltou memoria" ) ;
+#endif
 
 		return BAR_CondRetFaltouMemoria;
 	}
 
-	#ifdef _DEBUG
-				CNT_CONTAR( "BAR_CriaVetorCartas:Nao falotu memoria" ) ;
-			#endif
+#ifdef _DEBUG
+	CNT_CONTAR( "BAR_CriaVetorCartas:Nao falotu memoria" ) ;
+#endif
 
 
 	for(i = 0; i < 40; ++i)
@@ -305,9 +305,9 @@ BAR_tpCondRet BAR_CriaVetorCartas(BAR_tppCarta *cartas[])
 			return retorno;
 		}
 
-		#ifdef _DEBUG
-				CNT_CONTAR( "BAR_CriaVetor:Retorno igual a CondRetOK" ) ;
-		#endif
+#ifdef _DEBUG
+		CNT_CONTAR( "BAR_CriaVetor:Retorno igual a CondRetOK" ) ;
+#endif
 
 		(*cartas)[i] = carta;
 	}
@@ -319,197 +319,197 @@ BAR_tpCondRet BAR_CriaVetorCartas(BAR_tppCarta *cartas[])
 *
 *  $FC Função: BAR  &Embaralhar
 *  ****/
- BAR_tpCondRet BAR_Embaralhar( BAR_tppBaralho pBaralho )
-   {
+BAR_tpCondRet BAR_Embaralhar( BAR_tppBaralho pBaralho )
+{
 
 
-	   int i = -1; //tamBaralho = -1;
+	int i = -1; //tamBaralho = -1;
 
-	   LIS_tppLista pListaDestino = NULL;
+	LIS_tppLista pListaDestino = NULL;
 
-		 	   #ifdef _DEBUG
-		 				CNT_CONTAR( "BAR_Embaralhar:" ) ;
-		 			#endif
-       if( pBaralho == NULL )
-	   {
+#ifdef _DEBUG
+	CNT_CONTAR( "BAR_Embaralhar:" ) ;
+#endif
+	if( pBaralho == NULL )
+	{
 
-		   #ifdef _DEBUG
-				CNT_CONTAR( "BAR_Embaralhar:Baralho nao existe") ;
-			#endif
+#ifdef _DEBUG
+		CNT_CONTAR( "BAR_Embaralhar:Baralho nao existe") ;
+#endif
 
-		   return BAR_CondRetBaralhoNaoExiste ;
-	   }
+		return BAR_CondRetBaralhoNaoExiste ;
+	}
 
-	   #ifdef _DEBUG
-				CNT_CONTAR( "BAR_Embaralhar:Baralho existe" ) ;
-			#endif
-
-
-	   pListaDestino=LIS_CriarLista((void (*) (void *pDado))BAR_DestruirCarta);
-
-	   if(pListaDestino==NULL)
-	   {
-		   #ifdef _DEBUG
-				CNT_CONTAR( "BAR_Embaralhar:Faltou memoria" ) ;
-			#endif
-
-		   return BAR_CondRetFaltouMemoria;
-	   }
+#ifdef _DEBUG
+	CNT_CONTAR( "BAR_Embaralhar:Baralho existe" ) ;
+#endif
 
 
-	   #ifdef _DEBUG
-				CNT_CONTAR( "BAR_Embaralhar:Nao faltou memoria" ) ;
-			#endif
+	pListaDestino=LIS_CriarLista((void (*) (void *pDado))BAR_DestruirCarta);
 
-	   IrInicioLista( pListaDestino );
+	if(pListaDestino==NULL)
+	{
+#ifdef _DEBUG
+		CNT_CONTAR( "BAR_Embaralhar:Faltou memoria" ) ;
+#endif
 
-	   srand((unsigned) time(NULL));
-
-	   for(i = 40; i > 0; i--)
-	   {
-
-			BAR_tppCarta corrente,copia;
-			LIS_tpCondRet condRetLis;
-			int inxCarta = rand() % i;							/* Sorteia uma carta */
-
-			#ifdef _DEBUG
-			 CNT_CONTAR( "BAR_Embaralhar:Sorteio para embaralhamento" ) ;
-		 #endif
-			IrInicioLista( pBaralho->Cartas );					/* Inicio do baralho */
-
-			if( LIS_AvancarElementoCorrente( pBaralho->Cartas, inxCarta ) != LIS_CondRetOK )	/* Vai para a carta sorteada */
-			{
-
-				#ifdef _DEBUG
-				CNT_CONTAR( "BAR_Embaralhar:Tamanho errado" ) ;
-			#endif
+		return BAR_CondRetFaltouMemoria;
+	}
 
 
-				return BAR_CondRetTamanhoErrado;
-			}
+#ifdef _DEBUG
+	CNT_CONTAR( "BAR_Embaralhar:Nao faltou memoria" ) ;
+#endif
+
+	IrInicioLista( pListaDestino );
+
+	srand((unsigned) time(NULL));
+
+	for(i = 40; i > 0; i--)
+	{
+
+		BAR_tppCarta corrente,copia;
+		LIS_tpCondRet condRetLis;
+		int inxCarta = rand() % i;							/* Sorteia uma carta */
+
+#ifdef _DEBUG
+		CNT_CONTAR( "BAR_Embaralhar:Sorteio para embaralhamento" ) ;
+#endif
+		IrInicioLista( pBaralho->Cartas );					/* Inicio do baralho */
+
+		if( LIS_AvancarElementoCorrente( pBaralho->Cartas, inxCarta ) != LIS_CondRetOK )	/* Vai para a carta sorteada */
+		{
+
+#ifdef _DEBUG
+			CNT_CONTAR( "BAR_Embaralhar:Tamanho errado" ) ;
+#endif
 
 
-			#ifdef _DEBUG
-				CNT_CONTAR( "BAR_Embaralhar:Tamanho certo" ) ;
-			#endif
+			return BAR_CondRetTamanhoErrado;
+		}
 
 
-			corrente = (BAR_tppCarta) retorna_corrente(pBaralho->Cartas);
+#ifdef _DEBUG
+		CNT_CONTAR( "BAR_Embaralhar:Tamanho certo" ) ;
+#endif
+
+
+		corrente = (BAR_tppCarta) retorna_corrente(pBaralho->Cartas);
 
 
 
-			BAR_CriaCarta(&copia, corrente->nome, corrente->peso, corrente->naipe);
+		BAR_CriaCarta(&copia, corrente->nome, corrente->peso, corrente->naipe);
 
-			condRetLis = LIS_InserirElementoApos(pListaDestino,copia);
+		condRetLis = LIS_InserirElementoApos(pListaDestino,copia);
 
-			if( condRetLis == LIS_CondRetListaVazia )
-			{
-
-
-				#ifdef _DEBUG
-				CNT_CONTAR( "BAR_Embaralhar:Lista vazia" ) ;
-			#endif
+		if( condRetLis == LIS_CondRetListaVazia )
+		{
 
 
-				return BAR_CondRetListaVazia;
-			}
-			else if( condRetLis == LIS_CondRetFaltouMemoria )
-			{
-
-				#ifdef _DEBUG
-				CNT_CONTAR( "BAR_Embaralhar:Faltou memoria" ) ;
-			#endif
+#ifdef _DEBUG
+			CNT_CONTAR( "BAR_Embaralhar:Lista vazia" ) ;
+#endif
 
 
-			    return BAR_CondRetFaltouMemoria;
-			}
+			return BAR_CondRetListaVazia;
+		}
+		else if( condRetLis == LIS_CondRetFaltouMemoria )
+		{
 
-			#ifdef _DEBUG
-				CNT_CONTAR( "BAR_Embaralhar:Nao eh vazia nem faltou memoria" ) ;
-			#endif
-
-
-			if( LIS_ExcluirElemento(pBaralho->Cartas) != LIS_CondRetOK)
-			{
-
-				#ifdef _DEBUG
-				CNT_CONTAR( "BAR_Embaralhar:Falha no embaralhamento" ) ;
-			#endif
-
-				return BAR_FalhaNoEmbaralhamento;
-			}
+#ifdef _DEBUG
+			CNT_CONTAR( "BAR_Embaralhar:Faltou memoria" ) ;
+#endif
 
 
-			#ifdef _DEBUG
-				CNT_CONTAR( "BAR_Embaralhar:Embaralhamento nao falhou" ) ;
-			#endif
+			return BAR_CondRetFaltouMemoria;
+		}
 
-	   }
+#ifdef _DEBUG
+		CNT_CONTAR( "BAR_Embaralhar:Nao eh vazia nem faltou memoria" ) ;
+#endif
 
-	   LIS_DestruirLista( pBaralho->Cartas );	/*Destrói a lista antiga*/
 
-	   IrInicioLista( pListaDestino );
+		if( LIS_ExcluirElemento(pBaralho->Cartas) != LIS_CondRetOK)
+		{
 
-	   pBaralho->Cartas = pListaDestino;		/* Baralho agora é composto pela lista embaralhada */
+#ifdef _DEBUG
+			CNT_CONTAR( "BAR_Embaralhar:Falha no embaralhamento" ) ;
+#endif
 
-		 #ifdef _DEBUG
-		 	CNT_CONTAR( "BAR_Embaralhar:CondRetOK" ) ;
-		 #endif
+			return BAR_FalhaNoEmbaralhamento;
+		}
 
-	   return BAR_CondRetOK;
 
-   } /* Fim função: BAR  &Embaralhar */
+#ifdef _DEBUG
+		CNT_CONTAR( "BAR_Embaralhar:Embaralhamento nao falhou" ) ;
+#endif
 
- /***************************************************************************
+	}
+
+	LIS_DestruirLista( pBaralho->Cartas );	/*Destrói a lista antiga*/
+
+	IrInicioLista( pListaDestino );
+
+	pBaralho->Cartas = pListaDestino;		/* Baralho agora é composto pela lista embaralhada */
+
+#ifdef _DEBUG
+	CNT_CONTAR( "BAR_Embaralhar:CondRetOK" ) ;
+#endif
+
+	return BAR_CondRetOK;
+
+} /* Fim função: BAR  &Embaralhar */
+
+/***************************************************************************
 *
 *  $FC Função: BAR  &Destruir baralho
 *  ****/
 BAR_tpCondRet BAR_DestruirBaralho( BAR_tppBaralho pBaralho )
-   {
+{
 
 
-	   #ifdef _DEBUG
-				CNT_CONTAR( "BAR_DestruirBaralho:" ) ;
-			#endif
+#ifdef _DEBUG
+	CNT_CONTAR( "BAR_DestruirBaralho:" ) ;
+#endif
 
 
-      if( pBaralho == NULL )
-	  {
+	if( pBaralho == NULL )
+	{
 
-		    #ifdef _DEBUG
-				CNT_CONTAR( "BAR_DestruirBaralho:Baralho nulo" ) ;
-			#endif
+#ifdef _DEBUG
+		CNT_CONTAR( "BAR_DestruirBaralho:Baralho nulo" ) ;
+#endif
 
-		  free(pBaralho) ;
-		  return BAR_CondRetOK ;
+		free(pBaralho) ;
+		return BAR_CondRetOK ;
 
-	  }
+	}
 
-	        #ifdef _DEBUG
-				CNT_CONTAR( "BAR_DestruirBaralho:Baralho nao nulo" ) ;
-			#endif
-
-
-      if(pBaralho->Cartas != NULL)
-	  {
-
-		    #ifdef _DEBUG
-				CNT_CONTAR("BAR_DestruirBaralho:Cartas do baralho nao nulo") ;
-			#endif
+#ifdef _DEBUG
+	CNT_CONTAR( "BAR_DestruirBaralho:Baralho nao nulo" ) ;
+#endif
 
 
-		  LIS_DestruirLista( pBaralho->Cartas ) ;
-	  }
+	if(pBaralho->Cartas != NULL)
+	{
 
-	  #ifdef _DEBUG
-				CNT_CONTAR( "BAR_DestruirBaralho:Cartas nulas" ) ;
-			#endif
+#ifdef _DEBUG
+		CNT_CONTAR("BAR_DestruirBaralho:Cartas do baralho nao nulo") ;
+#endif
 
-      free( pBaralho ) ;
 
-	  return BAR_CondRetOK;
+		LIS_DestruirLista( pBaralho->Cartas ) ;
+	}
 
-   } /* Fim função: EMB  &Destruir baralho */
+#ifdef _DEBUG
+	CNT_CONTAR( "BAR_DestruirBaralho:Cartas nulas" ) ;
+#endif
+
+	free( pBaralho ) ;
+
+	return BAR_CondRetOK;
+
+} /* Fim função: EMB  &Destruir baralho */
 
 BAR_tpCondRet BAR_RemoveCartaDoBaralho( BAR_tppBaralho pBaralho, BAR_tppCarta* pCarta)
 {
@@ -517,31 +517,31 @@ BAR_tpCondRet BAR_RemoveCartaDoBaralho( BAR_tppBaralho pBaralho, BAR_tppCarta* p
 	BAR_tppCarta auxiliar;
 	//*pCarta = (BAR_tppCarta)malloc(sizeof(BAR_tpCarta));
 
-		#ifdef _DEBUG
-					CNT_CONTAR( "BAR_RemoveCartaDoBaralho:" ) ;
-		#endif
+#ifdef _DEBUG
+	CNT_CONTAR( "BAR_RemoveCartaDoBaralho:" ) ;
+#endif
 
 	if(*pCarta == NULL)
 	{
 
-		#ifdef _DEBUG
-				CNT_CONTAR( "BAR_RemoveCartaDoBaralho:Faltou memoria" ) ;
-			#endif
+#ifdef _DEBUG
+		CNT_CONTAR( "BAR_RemoveCartaDoBaralho:Faltou memoria" ) ;
+#endif
 
 
 		return BAR_CondRetFaltouMemoria;
 	}
-	#ifdef _DEBUG
-				CNT_CONTAR( "BAR_RemoveCartaDoBaralho:Nao faltou memoria" ) ;
-			#endif
+#ifdef _DEBUG
+	CNT_CONTAR( "BAR_RemoveCartaDoBaralho:Nao faltou memoria" ) ;
+#endif
 
 	auxiliar = (BAR_tppCarta) LIS_ObterValor(pBaralho->Cartas);
 
 
-		if(auxiliar == NULL)
-		{
-			return BAR_CondRetCartaNaoCriada;
-		}
+	if(auxiliar == NULL)
+	{
+		return BAR_CondRetCartaNaoCriada;
+	}
 
 
 	(*pCarta)->nome = auxiliar->nome;
@@ -553,17 +553,17 @@ BAR_tpCondRet BAR_RemoveCartaDoBaralho( BAR_tppBaralho pBaralho, BAR_tppCarta* p
 	if(res != LIS_CondRetOK)
 	{
 
-		#ifdef _DEBUG
-				CNT_CONTAR( "BAR_RemoveCartaDoBaralho:Lista vazia" ) ;
-			#endif
+#ifdef _DEBUG
+		CNT_CONTAR( "BAR_RemoveCartaDoBaralho:Lista vazia" ) ;
+#endif
 
 
 		return BAR_CondRetListaVazia;
 	}
 
-	#ifdef _DEBUG
-				CNT_CONTAR( "BAR_RemoveCartaDoBaralho:Lista nao vazia" ) ;
-			#endif
+#ifdef _DEBUG
+	CNT_CONTAR( "BAR_RemoveCartaDoBaralho:Lista nao vazia" ) ;
+#endif
 
 
 
@@ -578,17 +578,17 @@ void BAR_ImprimeBaralho(BAR_tppBaralho pBaralho)
 	IrInicioLista( (LIS_tppLista) pBaralho->Cartas);
 
 
-		#ifdef _DEBUG
-					CNT_CONTAR( "BAR_ImprimeBaralho:" ) ;
-				#endif
+#ifdef _DEBUG
+	CNT_CONTAR( "BAR_ImprimeBaralho:" ) ;
+#endif
 	for(i = 0; i < 40; ++i)
 	{
 		BAR_tppCarta corrente =  (BAR_tppCarta) LIS_ObterValor(pBaralho->Cartas) ;
 		LIS_AvancarElementoCorrente( (LIS_tppLista) pBaralho->Cartas, 1);
 		printf("%c	-	%s	-	%d\n",BAR_GetNome(corrente) ,BAR_GetNaipe(corrente), BAR_GetPeso(corrente));
-				#ifdef _DEBUG
-						CNT_CONTAR( "BAR_ImprimeBaralho:Cartas impresas" ) ;
-					#endif
+#ifdef _DEBUG
+		CNT_CONTAR( "BAR_ImprimeBaralho:Cartas impresas" ) ;
+#endif
 	}
 }
 /***************************************************************************
@@ -599,13 +599,13 @@ char *BAR_GetNaipe(BAR_tppCarta carta)
 	char *naipe = (char*)malloc(sizeof(20*sizeof(char)));
 	strcpy(naipe,carta->naipe);
 
-		#ifdef _DEBUG
-					CNT_CONTAR( "GetNaipe:" ) ;
-				#endif
+#ifdef _DEBUG
+	CNT_CONTAR( "GetNaipe:" ) ;
+#endif
 	return naipe;
 }/* Fim função: BAR  &Get Naipe */
 
- /***************************************************************************
+/***************************************************************************
 *
 *  $FC Função: BAR  &Get Peso
 *  ****/
@@ -614,7 +614,7 @@ int BAR_GetPeso(BAR_tppCarta carta)
 	return carta->peso;
 }/* Fim função: BAR  &Get Peso */
 
- /***************************************************************************
+/***************************************************************************
 *
 *  $FC Função: BAR  &Get Nome
 *  ****/
@@ -626,9 +626,9 @@ char BAR_GetNome(BAR_tppCarta carta)
 void BAR_ImprimeCarta(BAR_tppCarta carta)
 {
 
-	#ifdef _DEBUG
-				CNT_CONTAR( "BAR_ImprimeCarta:" ) ;
-			#endif
+#ifdef _DEBUG
+	CNT_CONTAR( "BAR_ImprimeCarta:" ) ;
+#endif
 
 
 	printf("naipe=%s  peso=%d  nome=%c\n", carta->naipe, carta->peso, carta->nome);

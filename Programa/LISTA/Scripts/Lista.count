@@ -132,7 +132,6 @@ LiberarElemento: Excluiu valor
 LiberarElemento: Liberou elemento
 CriarElemento
 CriarElemento: Entrou no tratador \= -1
-CriarElemento: Faltou memoria ao criar elemento
 CriarElemento: Criou elemento com sucesso
 LimparCabeca
 TratadorNaoApontaParaCabeca	\= -1

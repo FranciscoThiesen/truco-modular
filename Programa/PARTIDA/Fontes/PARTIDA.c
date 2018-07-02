@@ -27,7 +27,7 @@
 
 
 #define PARTIDA_OWN
-	#include "PARTIDA.h"
+#include "PARTIDA.h"
 #undef PARTIDA_OWN
 
 #define	TRUCO 40
@@ -340,7 +340,7 @@ PTD_tpCondRet PTD_PegaJogada(LIS_tppLista Jogadores, int* pesoCartas, int numJog
 							return PTD_CondRetOK;
 						}
 					}
-				
+
 					else
 					{
 						printf("A equipe %d deseja:\n1 - Aceitar o truco\n2 - Recusar o truco\n3 - Aumentar o truco\n", equipeAtual);
@@ -429,7 +429,7 @@ PTD_tpCondRet PTD_InterfacePartida()
 	PTD_tppPartida pPartida;
 	int control = 1, pontosEquipePartida[2] = {0, 0}, pontosEquipeRodada[2] = {0, 0};
 	int resposta, nrodada, nmao,numJogadores,i, *cartasJogadas, valorRodada = 1, winner, flagImprime, desistente = -1, pediramTrucoNessaRodada;
-	
+
 	nmao, nrodada = 0;
 
 	while(control)
@@ -475,7 +475,7 @@ PTD_tpCondRet PTD_InterfacePartida()
 				scanf("%d", &flagImprime);
 
 				if(flagImprime) BAR_ImprimeBaralho(pPartida->Baralho);
-				
+
 				retorno = PTD_DistribuiCartas(&pPartida, numJogadores);
 				if(retorno != PTD_CondRetOK)
 				{

@@ -1,6 +1,5 @@
 // Script:    TESTBAR.script
-// Autores:     Arthur Cavalcante Gomes Coelho
-                Roberto Mario Lemos Teran Luna
+// Autor:     Arthur Cavalcante Gomes Coelho
 // Data:      08/05/2018
 // Prop�sito:
 //            Testa a construcao de uma carta usando parametros literais
@@ -114,27 +113,6 @@
 ==tenta embaralhar baralho vazio
 =destruirbaralho 0 CondRetOK
 =embaralhar 0 CondRetBaralhoNaoExiste
-
-==Destruindo Baralhos e Cartas Criados
-=destruirbaralho 1 CondRetOK
-=destruirbaralho 2 CondRetOK
-=destruirbaralho 3 CondRetOK
-=destruirbaralho 4 CondRetOK
-=destruirbaralho 5 CondRetOK
-=destruirbaralho 6 CondRetOK
-=destruirbaralho 7 CondRetOK
-=destruirbaralho 8 CondRetOK
-=destruirbaralho 9 CondRetOK
-=destruircarta 0 CondRetOK
-=destruircarta 1 CondRetOK
-=destruircarta 2 CondRetOK
-=destruircarta 3 CondRetOK
-=destruircarta 4 CondRetOK
-=destruircarta 5 CondRetOK
-=destruircarta 6 CondRetOK
-=destruircarta 7 CondRetOK
-=destruircarta 8 CondRetOK
-=destruircarta 9 CondRetOK
 
 == Terminar contagem
 =pararcontagem

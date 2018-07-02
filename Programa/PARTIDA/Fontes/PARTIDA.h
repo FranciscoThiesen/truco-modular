@@ -31,9 +31,9 @@
 #include   "BARALHO.h"
 
 #if defined( PARTIDA_OWN )
-   #define PARTIDA_EXT
+#define PARTIDA_EXT
 #else
-   #define PARTIDA_EXT extern
+#define PARTIDA_EXT extern
 #endif
 
 #define NOMEMAXIMO 30
@@ -59,31 +59,31 @@ typedef struct PTD_tagJogador * PTD_tppJogador;
 
 typedef enum {
 
-    PTD_CondRetOK ,
-    /* Concluiu corretamente */
+	PTD_CondRetOK ,
+	/* Concluiu corretamente */
 
-    PTD_CondRetListaVazia ,
-    /* A lista n�o cont�m elementos */
+	PTD_CondRetListaVazia ,
+	/* A lista n�o cont�m elementos */
 
-    PTD_CondRetFaltouMemoria,
-    /* Faltou mem�ria ao tentar criar um elemento de lista */
+	PTD_CondRetFaltouMemoria,
+	/* Faltou mem�ria ao tentar criar um elemento de lista */
 
-    PTD_CondRetCartaNaoCriada,
-    /* Nao foi possivel criar o ponteiro Carta */
-    
-    PTD_CondRetBaralhoNaoExiste,
-    /* Ponteiro para baralho vazio */
-   
-    PTD_CondRetTamanhoErrado,
-    /* Tamanho da lista de cartas errado */
-   
-    PTD_FalhaNoEmbaralhamento,
-    /* Nao conseguimos remover uma carta do baralho antigo durante o processo de embaralhamento */
-   
-    PTD_CondRetJogadorNaoExiste,
+	PTD_CondRetCartaNaoCriada,
+	/* Nao foi possivel criar o ponteiro Carta */
+
+	PTD_CondRetBaralhoNaoExiste,
+	/* Ponteiro para baralho vazio */
+
+	PTD_CondRetTamanhoErrado,
+	/* Tamanho da lista de cartas errado */
+
+	PTD_FalhaNoEmbaralhamento,
+	/* Nao conseguimos remover uma carta do baralho antigo durante o processo de embaralhamento */
+
+	PTD_CondRetJogadorNaoExiste,
 	/* Nao conseguimos acessar o ponteiro referente ao jogador desejado, este deve ser NULL ou lixo */
 
-    PTD_CondRetPartidaNaoCriada,
+	PTD_CondRetPartidaNaoCriada,
 	/* Nao foi possivel criar uma partida */
 
 } PTD_tpCondRet ;
