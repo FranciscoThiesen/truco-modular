@@ -63,8 +63,8 @@ limpa :
 ### Dependências de módulos objeto a compilar
 
 $(Fobj)\baralho.obj :  {$(Pc)}\baralho.c \
-    {$(Ph)}baralho.h            {$(Ph)}cespdin.h            {$(Ph)}conta.h              \
-    {$(Ph)}generico.h           {$(Ph)}lista.h              {$(Ph)}tst_espc.h          
+    {$(Ph)}baralho.h            {$(Ph)}conta.h              {$(Ph)}generico.h           \
+    {$(Ph)}lista.h              {$(Ph)}tst_espc.h          
    cl /D_DEBUG $(O) $(OPT) /Fo$(Fobj)\ $(Fc)\$(@B).c >> $(Ferr)\$(NOME).err
 
 $(Fobj)\lista.obj :  {$(Pc)}\lista.c \

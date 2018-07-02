@@ -26,14 +26,6 @@
 
 
 #ifdef _DEBUG
-	#include   <stdio.h>
-	#include   <string.h>
-	#include   <memory.h>
-	#include   <malloc.h>
-	#include   <assert.h>
-	#include   <stdlib.h>
-	#include   <time.h>
-	#include   "CESPDIN.H"
 	#include   "GENERICO.h"
 	#include   "CONTA.h"
 	#include "BARALHO.h"

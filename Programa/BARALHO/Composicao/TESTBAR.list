@@ -22,13 +22,12 @@ Módulos do construto: ..\Composicao\TESTBAR.comp
 Estatísticas do construto
 
    Estatísticas do arquivo: baralho.c
-      Total linhas:             646
-      Linhas de código:         406
+      Total linhas:             638
+      Linhas de código:         398
       Linhas de comentário:      95
       Linhas em branco:         160
    Arquivos de inclusão de que necessita
       baralho.h
-      cespdin.h
       conta.h
       generico.h
       lista.h
@@ -51,7 +50,6 @@ Estatísticas do construto
       Linhas de comentário:     639
       Linhas em branco:         112
    Arquivos em que é incluído
-      baralho.c
       lista.c
 
    Estatísticas do arquivo: conta.h
@@ -167,16 +165,16 @@ Totais por tipo de arquivo
          Arquivos deste tipo:          0
 
   Tipo: c        Path: ..\Fontes
-         Total linhas do tipo:      1556
-         Linhas de código:           882
+         Total linhas do tipo:      1548
+         Linhas de código:           874
          Linhas de comentário:       331
          Linhas em branco:           388
          Arquivos deste tipo:          3
 
 Totais para todo o construto TESTBAR
 
-   Total linhas:              4754
-   Linhas de código:          1182
+   Total linhas:              4746
+   Linhas de código:          1174
    Linhas de comentário:      2778
    Linhas em branco:           839
    Arquivos processados:        10

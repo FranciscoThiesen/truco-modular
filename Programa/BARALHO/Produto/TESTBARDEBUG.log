@@ -25,17 +25,15 @@
   108  ==embaralha o mesmo baralho varias vezes
   114  ==tenta embaralhar baralho vazio
   118  ==Destruindo Baralhos e Cartas Criados
-cc>    2  Linha:   119    Linha:   488  Contador "BAR_DestruirBaralho:Baralho nulo" não existe.
-!!!    2  Linha:   119  Desalocar espaco recebeu ponteiro nulo 
-  140  == Terminar contagem
-  144  == Finalizar
+  139  == Terminar contagem
+  143  == Finalizar
 
-!!! Número de linhas lidas:         145
+!!! Número de linhas lidas:         144
 !!! Número de casos de teste:        16
-!!! Número comandos corretos:       100
-!!! Número de falhas encontradas:     2
+!!! Número comandos corretos:        99
+!!! Número de falhas encontradas:     1
 
 !!! Foram encontrados problemas
 
 
-!!! Numero de espacos ainda alocados: 1732
+!!! Numero de espacos ainda alocados: 410

@@ -3,15 +3,15 @@
 #################### Compilacao do construto: TESTBAR
 
 baralho.c
-..\Fontes\baralho.c(127) : warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+..\Fontes\baralho.c(119) : warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\INCLUDE\string.h(105) : see declaration of 'strcpy'
-..\Fontes\baralho.c(224) : warning C4101: 'j' : unreferenced local variable
-..\Fontes\baralho.c(556) : warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+..\Fontes\baralho.c(216) : warning C4101: 'j' : unreferenced local variable
+..\Fontes\baralho.c(548) : warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\INCLUDE\string.h(105) : see declaration of 'strcpy'
-..\Fontes\baralho.c(608) : warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+..\Fontes\baralho.c(600) : warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\INCLUDE\string.h(105) : see declaration of 'strcpy'
-c:\users\tubas\desktop\git master grupo\truco-modular\programa\baralho\fontes\baralho.c(310) : warning C4701: potentially uninitialized local variable 'peso' used
-c:\users\tubas\desktop\git master grupo\truco-modular\programa\baralho\fontes\baralho.c(322) : warning C4701: potentially uninitialized local variable 'retorno' used
+c:\users\tubas\desktop\git master grupo\truco-modular\programa\baralho\fontes\baralho.c(302) : warning C4701: potentially uninitialized local variable 'peso' used
+c:\users\tubas\desktop\git master grupo\truco-modular\programa\baralho\fontes\baralho.c(314) : warning C4701: potentially uninitialized local variable 'retorno' used
 lista.c
 testbar.c
 ..\Fontes\testbar.c(166) : warning C4013: 'BAR_DestruirCarta' undefined; assuming extern returning int

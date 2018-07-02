@@ -4,8 +4,8 @@
 !!!      Script de teste:     ..\Scripts\TesteListaCont.script
 
 !!!    0  Linha:     1  // Script:    TesteLista.script 
-!!!    0  Linha:     2  // Autor:     Pedro Sousa Meireles 
-!!!    0  Linha:     3  // Data:      22/jun/2017 
+!!!    0  Linha:     2  // Autores:     Arthur Cavalcante Gomes Coelho e Francisco Thiesen 
+!!!    0  Linha:     3  // Data:      30/jun/2018 
 !!!    0  Linha:     4  // Proposito: Testar o modulo lista generica duplamente encadeada 
     6  == Inicializar valores
    27  == Iniciar contagem
