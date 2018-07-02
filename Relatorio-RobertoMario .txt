@@ -1,0 +1,43 @@
+Relatório individual para a Disciplina de Programação Modular - INF 1301
+
+Autor: Roberto Mario Lemos Teran Luna (RMLTL)
+Matrícula: 1711384
+
+20/3/2018 | 2:21  |  estudar 										 | Foi realizado um estudo sobre modularidade e suas aplicações e vantagens e desvantagens.
+21/3/2018 | 1:40  |  estudar 										 | Continuou-se um estudo sobre modularidade e as necessidades de estabelecer padrões, encapsulamento, coesão e acoplamento.
+24/3/2018 | 1:05  |  estudar 										 | Foi feito um estudo sobre formas de garantir uma semântica e sintaxe corretas
+27/3/2018 | 3:40  |  estudar 										 | Compreender os conceitualmente a determinação de problemas relacionados a erros, falhas e  defeitos  
+29/3/2018 | 0:50  |  estudar 										 | Compreender mecanismos de testes em geral e a utilização do módulo de teste arcabouço ,e suas implicações
+2/4/2018  | 1:00  |  estudar 										 | Foi feito um estudo sobre a utilização de ferramentas de desenvolvimento e sua implementação
+5/4/2018  | 2:10  |  estudar 										 | Estudo sobre testes e como e módulos de testes, pensar e testes como  casos
+10/4/2018 | 1:10  |  estudar 										 | Definir a importância e formas de garantir e atender requisitos de um sistema modularizado
+11/4/2018 | 2:00  |  especificar os módulos 						 | Debater em grupo formas de representar abstrações do trabalho2
+13/4/2018 | 0:50  |  especificar os módulos 						 | Realizou-se um esboço sobre as ideias inicias de módulos, e suas interações por meio de interfaces
+15/4/2018 | 1:40  |  projetar 										 | Definir com mais precisão o funcionamento de um jogo de truco
+16/4/2018 | 1:30  |  especificar as funções 						 | Especificar funções relacionadas ao modelo de arquitetura escolhido, analisar a interação de dados e tentar simplificar
+18/4/2018 | 2:40  |  especificar as funções 						 | Obtivemos uma definição mais clara de como podemos definir as funções e as chamadas de funções
+21/4/2018 | 1:00  |  revisar especificações 						 | Ajustes de das especificações das funções a serem implementadas no jogo de truco
+23/4/2018 | 1:20  |  revisar especificações 						 | Escolhas decisivas de funções a serem utilizadas mediante conselhos do professor
+24/4/2018 | 2:00  |   projetar  								 	 | Escolhas das estruturas de dados base a serem utilizadas para atenderem as especificações
+25/4/2018 | 1:40  |  revisar projetos 								 | Simplificar formas de interação dos módulos, incluindo por exemplo módulos menos independentes em outros com mais controle
+27/4/2018 | 3:20  |  revisar projetos 								 | definição da utilização de estrutura de dados apropriada para representar baralho e cartas 
+28/4/2018 | 2:20  |  codificar módulo 								 | Implementação do módulo baralho, com o objetivo de desenvolver a função criar baralhos utilizando o módulo lista
+29/4/2018 | 1:50  |  codificar módulo 							 	 | continuar a implementação da função criar baralho, pensando na possibilidade de simplificar a função embaralhar
+1/5/2018  | 3:40  |  codificar módulo 								 | concluir função criar baralho, ajudar em função embaralhar
+2/5/2018  | 4:20  |  codificar módulo 								 | implementar função de destruir bralho 
+4/5/2018  | 4:00  |  revisar código do módulo 						 | Refazer a implementação da função cria baralho, por haver uma concordância no grupo em utilizar um função que cria um baralho embaralhado
+4/5/2018  | 2:40  |  revisar código do módulo					   	 | refinar e procurar possíveis falta de teste necessários ao módulo lista
+5/5/2018  | 0:40  |  redigir script de teste						 | implementar casos de testes mais abrangentes e completos do módulo lista
+7/5/2018  | 3:10  |  revisar script de teste						 | iniciar o script de teste do módulo baralho
+7/5/2018  | 2:30  |  realizar os testes								 | realizar testes mais específicos do módulo lista
+8/5/2018  | 3:50  |  diagnosticar e corrigir os problemas encontrados| Ajustes da compilação e geração de arquivos dos testes do módulo baralho
+7/5/2018  | 1:10  |  revisar especificações   						 | revisar a estrutura do projeto, dos módulos em relação as especificações
+2/6/2018  | 1:00  |  revisar especificações   						 | definir as especificações que será utilizado no projeto, mediante a aprovação do professor
+7/6/2018  | 0:50  |  revisar projetos								 | rearrumação do projeto para a integração de todos os módulos redefinidos
+12/6/2018  | 3:10  |  codificar módulo								 | impelemetação da função getnaip, getpeso no módulo partida
+16/6/2018  | 2:40  |  diagnosticar e corrigir						 | Corrigir bugs no módulo generalizado partida
+20/6/2018  | 1:20  |  codificar módulo								 | melhorar o arquivo de testes de baralhos, testbar.c
+23/6/2018  | 1:00  |  estudar								 		 | rever conceitos apresentados em aula de testes
+28/6/2018  | 1:40  |  estudar								 		 | rever conceitos apresentados em  aula de instrumentação
+29/6/2018  | 3:20  |  realizar os testes								 | desenvolvimento dos testes automatizados do módulo Baralho.c
+1/7/2018  | 2:00  |  realizar os testes								 | realizar testes que incluem a utilização do módulo conta

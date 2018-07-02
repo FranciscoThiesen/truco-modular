@@ -1,0 +1,54 @@
+Documentação dos comandos de teste:
+
+
+------ Baralho ------
+
+*     =criarcarta                  inxCarta   nome  peso  naipe     CondRetEsp
+Cria uma carta
+
+*     =destruircarta               inxCarta   CondRetEsp
+Destrói a carta
+
+*     =criavetor                CondRetEsp
+Cria vetor de 40 cartas
+
+*     =criarbaralho                 inxBaralho  CondRetEsp
+Cria um baralho
+
+*     =destruirbaralho              inxBaralho  CondRetEsp
+Destrói um baralho
+
+*     =embaralhar		    inxBaralho  CondRetEsp
+Embaralha um baralho
+
+------ Lista ------
+
+*     =criarlista                   inxLista
+Cria uma lista
+
+*     =destruirlista                inxLista
+Destrói uma lista
+
+*     =esvaziarlista                inxLista
+Apaga todos os elementos de uma lista
+
+*     =inselemantes                 inxLista  string    CondRetEsp
+Insere um elemento antes do elemento corrente da lista
+
+*     =inselemapos                  inxLista  string    CondRetEsp
+Insere um elemento depois do elemento corrente da lista
+
+*     =obtervalorelem               inxLista  string    CondRetEsp
+Obtém o valor do elemento corrente da lista
+
+*     =excluirelem                  inxLista  CondRetEsp
+Exclui o elemento corrente da lista
+
+*     =irinicio                     inxLista
+Elemento corrente passa a ser o inicial
+
+*     =irfinal                      inxLista
+Elemento corrente passa a ser o final
+
+*     =avancarelem                  inxLista  numElem   CondRetEsp
+Avança o elemento corrente em numElem unidades

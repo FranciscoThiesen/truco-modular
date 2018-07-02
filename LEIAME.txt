@@ -11,6 +11,8 @@ BARALHO.C
 LISTA.C
 TESTLIS.c
 TESTBAR.c
+PARTIDA.c
+
 
 - Módulos de definição:
 
@@ -21,6 +23,7 @@ GENERICO.H
 TST_ESPC.H
 CONTA.H
 CESPDIN.H
+PARTIDA.h
 
 
 
@@ -28,16 +31,39 @@ CESPDIN.H
 
 ArcaboucoTeste.lib
 
+- Arquivo de declaração dos contadores:
 
+Lista.count
+BARALHO.count
 
 - Arquivos de Script:
 
+TESTBARCont.script
 TESTBAR.script
+TesteListaCont.script
 TesteLista.script
 
-- Arquivo Executável:
 
+
+- Arquivos de Log:
+
+TESTLISDEBUGCONT.log
+TESTBAR.log
+TESTLIS.log
+TESTLISDEBUGCONT.log
+
+- Arquivo Executável:
+TESTLIS.exe
+TESTLISDEBUGCONT.exe
 TESTBAR.exe
+EXECPTD.exe
+TESTBARDEBUG.exe
+
+
+- Arquivos de Definições:
+
+IdTiposEspaco.def
+TiposEspacosLista.def
 
 - Arquivos Bat:
 
@@ -57,6 +83,7 @@ vsvars32.bat
 - Arquivos de Relatório:
 
 relatorio-arthur.txt
+relatorio-francisco.txt
 
 
 - Arquivo Leiame:
@@ -79,5 +106,12 @@ Para executar através do executável:
 	2) Abra a linha de comando
 	3) Execute o arquivo "TesteModulo.exe" referente ao módulo testado.
 	4) O comando de execução é:
-		<NOME EXECUTAVEL>.exe /s../Scripts/TesteModulo.script
-	5) Para os módulos que não contêm scrips de teste, basta digitar <NOME EXECUTAVEL>.exe.
+		TRAB4-*.exe /s../Scripts/TesteModulo.script
+	  onde * é o número correspondente ao módulo.
+	5) Para os módulos que não contêm scrips de teste, basta digitar TRAB4-*.exe.
+
+Para executar o jogo basta seguir um dos itens anteriores para o módulo PARTIDA.
+
+
+O módulo Partida não possui arquivos de script porque não é possível fazer teste automatizado nele, uma vez que este interage diretamente com o usuário.
+Todos os módulos e a arquitetura tiveram consideráveis mudanças do T2 para o T4.

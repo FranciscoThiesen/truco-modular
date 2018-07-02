@@ -1,0 +1,59 @@
+Relatório individual para a Disciplina de Programação Modular - INF 1301
+
+Autor: Gabriel Hering (GH)
+Matrícula: 1320790
+
+Data      | Tempo | Atividade                | Descrição da Atividade
+          |       |                          |
+19/3/2018 | 2:21  |  estudar                 | Aula de conceitos sobre modularidade.
+21/3/2018 | 1:20  | estudar                  | Aula de modularidade, continuação
+22/3/2018 | 1:05  |  estudar                 | Aula sobre semântica e sintaxe, tanto para fins de código quanto comentários de código
+28/3/2018 | 1:00  |  estudar                 |Aula sobre erros, falhas e  defeitos  
+29/3/2018 | 0:50  |  estudar                 |desenvolver sistemas com utilização do módulo de teste arcabouço
+3/4/2018  | 1:00  |  estudar                 |ferramentas de desenvolvimento gerados no projeto
+9/4/2018  | 2:10  |  estudar                 |como  aplicar módulos de testes e testes como  casos
+10/4/2018 | 1:10  |  estudar                 |Saber Como Atender a requisitos modularizados
+11/4/2018 | 2:00  | especificar os módulos   |abstrações de todos os módulos do t2
+11/4/2018 | 1:40  | especificar os módulos   | Atividade em grupo de idealização dos módulos, e  interfaces
+15/4/2018 | 2:21  | projetar                 |Definir  funcionamento de um jogo de truco
+15/4/2018 | 1:40  | projetar                 |Definir  requisitos específicos de truco, o utilizado será paulista
+15/4/2018 | 1:40  | projetar                 |Definir  erros comuns em projetos de outros desenvolvedores
+16/4/2018 | 2:10  | especificar as funções   |Verificar a necessidade de cada módulo em relação a suas funções
+18/4/2018 | 2:00  | especificar as funções   |Entender a ligação entre o módulo lista e baralho, no que diz respeito a funções
+22/4/2018 | 1:00  | revisar especificações   |definir como será a criação da lista baralho de cartas
+23/4/2018 | 3:10  |  revisar especificações  |Confirmar a não necessidade de separar mão e baralho
+24/4/2018 | 2:20  |  projetar                |Escolher a estruturas de dados
+25/4/2018 | 1:40  | revisar projetos         |projetar os diagramas de "classes"
+25/4/2018 | 1:40  | revisar projetos         |projetar o diagrama de estrutura de dados por meio de listas encadeadas 
+25/4/2018 | 1:00  | revisar projetos         |desenvolver modelo físico para a interação de módulos
+25/4/2018 | 1:40  | revisar projetos         |Diagrama de funções de módulos
+27/4/2018 | 2:20  | revisar projetos         |Diagrama de comunicação de interfaces
+28/4/2018 | 2:20  | codificar módulo         |Ajudar o desenvolvimento, com o objetivo de desenvolver a função criar embaralhar 
+29/4/2018 | 1:50  | codificar módulo         |continuar a implementação da função embaralhar com a intenção de juntar embaralhar a função criar baralho
+1/5/2018  | 3:10  | codificar módulo         | Fazer função esvaziar baralho
+3/5/2018  | 4:20  | codificar módulo         | Implementação de baralho.c 
+3/5/2018  | 4:00  | revisar código do módulo |Refazer a implementação da função verifica se a função cria baralho embaralhado retorna um baralho embaralhado
+4/5/2018  | 2:40  | revisar código do módulo |Definir teste necessários ao módulo baralho
+5/5/2018  | 3:10  | redigir script de teste  |Implementar casos de testes mais abrangentes  do módulo baralho
+22/5/2018 | 2:30  | estudar                  |Notas de aula de padrões de programação
+7/6/2018  | 1:50  | estudar                  |Notas de aula de Testes 1 a 3 
+9/6/2018  | 
+15/6/2018 | 2:30  | projetar                 |Trabalho em grupo na projeção dos módulos Partida e Jogador
+15/6/2018 | 3:00  | revisar código de módulo |Revisão em grupo do código do módulo Baralho
+15/6/2018 | 2:00  | codificar módulo         |Atividade em grupo na codificação do protótipo do módulo Partida
+18/6/2018 | 3:10  | estudar                  |Estudo dos módulos Conta e Cespdin
+22/6/2018 | 3:20  | revisar código de módulo |Revisão em grupo do módulo Partida 
+25/6/2018 | 3:30  | codificar módulo         |Implementação de contadores no módulo Lista.c e a escrita do Lista.count
+26/6/2018 | 2:10  | estudar                  |Mais estudo dos módulos Cespdin e Conta 
+26/6/2018 | 3:00  | codificar módulo         |Adicionei casos de contadores cobrindo a maioria das arestas no módulo Lista.c
+28/6/2018 | 1:50  | redigir script de teste  |Modifiquei o script de teste do Lista para tentar cobrir mais arestas
+29/6/2018 | 3:20  | redigir scripts de teste |Adicionados mais alguns casos de teste no TesteListaCont
+29/6/2018 | 2:30  | revisar projeto          |Modelo físico  foi refeito
+29/6/2018 | 1:00  | revisar projeto          |Refeito estrutura dos módulos 
+29/6/2018 | 0:40  | revisar projeto          |Refeito modelo da Arquitetura_truco
+30/6/2018 | 4:10  | revisar código módulo    |Leitura do código do Lista.c e dos módulos relacionados a Conta.c
+30/6/2018   3:20  |  revisar código          |  Revendo os casos de contador no Lista.c
+1/7/2018  | 3:20  |  realizar os testes		 | desenvolvimento dos testes automatizados do módulo Lista.c
+1/7/2018  | 2:10  | revisar código           |Tentar solucionar problemas na função Procurar Valor
+1/7/2018  | 1:30  | revisar testes           |Diminuindo o número de contadores não alcançados
+1/7/2018  | 4:10  | revisar código           |Revendo com o Roberto os casos de contador no Baralho.c

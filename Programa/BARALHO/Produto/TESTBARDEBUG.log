@@ -4,34 +4,38 @@
 !!!      Script de teste:     ..\Scripts\TESTBARCont.script
 
 !!!    0  Linha:     1  // Script:    TESTBAR.script 
-!!!    0  Linha:     2  // Autor:     Roberto Mario Lemos Teran Luna 
-!!!    0  Linha:     3  // Data:      08/05/2018 
-!!!    0  Linha:     4  // Propï¿½sito: 
-!!!    0  Linha:     5  //            Testa a construcao de uma carta usando parametros literais 
-!!!    0  Linha:     6  //            Nao verifica se as operacoes modificaram corretamente as referencias 
-!!!    0  Linha:     7  // 
-   10  ==Declarando condicoes de retorno
-   14  == Iniciar contagem
-   22  == Criar Varias Cartas
-   34  ==Faz reset e cria de novo
-   47  ==Destruir cada uma das cartas e recria-las
-   69  ==Cria vetor de cartas do truco
-   73  ==Cria Baralho com as 40 cartas do truco
-   76  ==Cria Varios baralhos
-   87  ==Destroi e cria novamente um baralho
-   91  ==reset vetor baralhos e cria novamente
-  104  ==embaralha um baralho
-  107  ==embaralha o mesmo baralho varias vezes
-  113  ==tenta embaralhar baralho vazio
-  117  == Terminar contagem
-  121  == Finalizar
+!!!    0  Linha:     2  // Autores:     Arthur Cavalcante Gomes Coelho 
+>>>    1  Linha:     3  Comando de teste ignorado:                  Roberto Mario Lemos Teran Luna
+!!!    1  Linha:     4  // Data:      08/05/2018 
+!!!    1  Linha:     5  // Propï¿½sito: 
+!!!    1  Linha:     6  //            Testa a construcao de uma carta usando parametros literais 
+!!!    1  Linha:     7  //            Nao verifica se as operacoes modificaram corretamente as referencias 
+!!!    1  Linha:     8  // 
+   11  ==Declarando condicoes de retorno
+   15  == Iniciar contagem
+   23  == Criar Varias Cartas
+   35  ==Faz reset e cria de novo
+   48  ==Destruir cada uma das cartas e recria-las
+   70  ==Cria vetor de cartas do truco
+   74  ==Cria Baralho com as 40 cartas do truco
+   77  ==Cria Varios baralhos
+   88  ==Destroi e cria novamente um baralho
+   92  ==reset vetor baralhos e cria novamente
+  105  ==embaralha um baralho
+  108  ==embaralha o mesmo baralho varias vezes
+  114  ==tenta embaralhar baralho vazio
+  118  ==Destruindo Baralhos e Cartas Criados
+cc>    2  Linha:   119    Linha:   488  Contador "BAR_DestruirBaralho:Baralho nulo" não existe.
+!!!    2  Linha:   119  Desalocar espaco recebeu ponteiro nulo 
+  140  == Terminar contagem
+  144  == Finalizar
 
-!!! Número de linhas lidas:         122
-!!! Número de casos de teste:        15
-!!! Número comandos corretos:        80
-!!! Número de falhas encontradas:     0
+!!! Número de linhas lidas:         145
+!!! Número de casos de teste:        16
+!!! Número comandos corretos:       100
+!!! Número de falhas encontradas:     2
 
-!!! Não foram encontrados problemas
+!!! Foram encontrados problemas
 
 
-!!! Numero de espacos ainda alocados: 2480
+!!! Numero de espacos ainda alocados: 1732

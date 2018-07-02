@@ -1,6 +1,6 @@
 // Script:    TesteLista.script
-// Autor:     Pedro Sousa Meireles
-// Data:      22/jun/2017
+// Autores:     Arthur Cavalcante Gomes Coelho e Francisco Thiesen
+// Data:      30/jun/2018
 // Proposito: Testar o modulo lista generica duplamente encadeada
 
 == Inicializar valores
@@ -121,7 +121,7 @@
 ==Criar lista 2
 =criarlista      lista2
 =inselemapos     lista2   str0   OK
-=irinicio        lista2 
+=irinicio        lista2
 =destruirlista   lista2
 
 == Criar lista vazia e tentar avancar elemento corrente
