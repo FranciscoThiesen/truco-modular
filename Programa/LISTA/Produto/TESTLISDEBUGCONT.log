@@ -8,107 +8,46 @@
 !!!    0  Linha:     3  // Data:      22/jun/2017 
 !!!    0  Linha:     4  // Proposito: Testar o modulo lista generica duplamente encadeada 
     6  == Inicializar valores
-   26  == Iniciar contagem
-   34  == Criar a lista 0
-   37  == Verificar ObterValor relativo a lista vazia
-   40  == Inserir elemento em lista vazia
-   44  == Inserir elemento apï¿½s primeiro
-   48  == Inserir elemento antes do ï¿½ltimo
-   52  == Excluir elemento do meio
-   56  == Excluir elemento do inï¿½cio
-   60  == Excluir elemento final, ï¿½nico
-   64  == Ver se a lista ficou vazia
-   67  == Destruir a lista
-   70  == Criar uma lista com dois elementos
-   75  == Esvaziar a lista e ver se ficou vazia
-   79  == Destruir a lista
-   82  == Criar uma lista com quatro elementos
-   89  == Verificar a lista de trï¿½s para diante
-   99  == Verificar a lista de frente para trï¿½s
-  109  == Verificar a lista andando demais de trï¿½s para diante
-  113  == Verificar a lista andando demais de frente para trï¿½s
-  117  == Destruir a lista
-  120  ==Inicio dos Teste do Arthur
-  123  == Criar a lista 0
-  126  == Inserir primeiro
-  130  ==Insere elemento antes do primeiro
-  140  ==Insere elemento depois do ultimo
-!!!    0  Linha:   147  // fim da massa de testes 
-  149  == Obter numero de espacos alocados
->>>    1  Linha:   150  Número de espaços alocados errado. Deveria ser: 0  É: 7
-  152  == Terminar contagem
-cc>    2  Linha:   154   Contagem em "CriarElemento: Faltou memoria ao criar elemento" é zero.
-cc>    3  Linha:   154   Contagem em "LIS_AvancarElementoCorrente: Lista e NULL" é zero.
-cc>    4  Linha:   154   Contagem em "LIS_AvancarElementoCorrente: Lista esta vazia" é zero.
-cc>    5  Linha:   154   Contagem em "LIS_AvancarElementoCorrente: Lista nao esta vazia" é zero.
-cc>    6  Linha:   154   Contagem em "LIS_AvancarElementoCorrente: Nao avanca elemento" é zero.
-cc>    7  Linha:   154   Contagem em "LIS_ConcatenarLista" é zero.
-cc>    8  Linha:   154   Contagem em "LIS_ConcatenarLista: Atualiza lista principal e libera a concatenada" é zero.
-cc>    9  Linha:   154   Contagem em "LIS_ConcatenarLista: Lista concatenada esta vazia" é zero.
-cc>   10  Linha:   154   Contagem em "LIS_ConcatenarLista: Lista concatenada nao esta vazia" é zero.
-cc>   11  Linha:   154   Contagem em "LIS_ConcatenarLista: Lista principal esta vazia" é zero.
-cc>   12  Linha:   154   Contagem em "LIS_ConcatenarLista: Lista principal nao esta vazia" é zero.
-cc>   13  Linha:   154   Contagem em "LIS_ConcatenarLista: Mudou cabeca do elemento" é zero.
-cc>   14  Linha:   154   Contagem em "LIS_ConcatenarLista: Nenhuma das listas e NULL" é zero.
-cc>   15  Linha:   154   Contagem em "LIS_ConcatenarLista: Terminou de mudar as cabecas dos elementos concatenados" é zero.
-cc>   16  Linha:   154   Contagem em "LIS_ConcatenarLista: Uma das listas e NULL" é zero.
-cc>   17  Linha:   154   Contagem em "LIS_CriarLista: Definiu tipo do espaco" é zero.
-cc>   18  Linha:   154   Contagem em "LIS_CriarLista: Faltou memoria" é zero.
-cc>   19  Linha:   154   Contagem em "LIS_DestruirLista: Lista e NULL" é zero.
-cc>   20  Linha:   154   Contagem em "LIS_EsvaziarLista: Lista e NULL" é zero.
-cc>   21  Linha:   154   Contagem em "LIS_ExcluirElemento: Lista e NULL" é zero.
-cc>   22  Linha:   154   Contagem em "LIS_ExcluirElemento: Lista nao esta vazia" é zero.
-cc>   23  Linha:   154   Contagem em "LIS_ExcluirElemento: Lista vazia" é zero.
-cc>   24  Linha:   154   Contagem em "LIS_InserirElementoAntes: Faltou memoria ao criar elemento" é zero.
-cc>   25  Linha:   154   Contagem em "LIS_InserirElementoAntes: Lista e NULL" é zero.
-cc>   26  Linha:   154   Contagem em "LIS_InserirElementoApos: Elemento corrente nao e final" é zero.
-cc>   27  Linha:   154   Contagem em "LIS_InserirElementoApos: Faltou memoria ao criar elemento" é zero.
-cc>   28  Linha:   154   Contagem em "LIS_InserirElementoApos: Lista e NULL" é zero.
-cc>   29  Linha:   154   Contagem em "LIS_IrFinalLista: Lista e NULL" é zero.
-cc>   30  Linha:   154   Contagem em "LIS_IrInicioLista: Lista e NULL" é zero.
-cc>   31  Linha:   154   Contagem em "LIS_ObterTam" é zero.
-cc>   32  Linha:   154   Contagem em "LIS_ObterTam: Lista e NULL" é zero.
-cc>   33  Linha:   154   Contagem em "LIS_ObterTam: Lista nao e NULL" é zero.
-cc>   34  Linha:   154   Contagem em "LIS_ObterValor: Lista e NULL" é zero.
-cc>   35  Linha:   154   Contagem em "LIS_ProcurarValor" é zero.
-cc>   36  Linha:   154   Contagem em "LIS_ProcurarValor: Achou" é zero.
-cc>   37  Linha:   154   Contagem em "LIS_ProcurarValor: Lista e NULL" é zero.
-cc>   38  Linha:   154   Contagem em "LIS_ProcurarValor: Lista esta vazia" é zero.
-cc>   39  Linha:   154   Contagem em "LIS_ProcurarValor: Lista nao e NULL" é zero.
-cc>   40  Linha:   154   Contagem em "LIS_ProcurarValor: Lista nao esta vazia" é zero.
-cc>   41  Linha:   154   Contagem em "LIS_ProcurarValor: Nao achou" é zero.
-cc>   42  Linha:   154   Contagem em "LIS_ProcurarValor: Procurar no elemento" é zero.
-cc>   43  Linha:   154   Contagem em "LIS_ProcurarValor: Procurar no proximo" é zero.
-cc>   44  Linha:   154   Contagem em "LIS_RemoverElemento" é zero.
-cc>   45  Linha:   154   Contagem em "LIS_RemoverElemento: Elemento corrente e o final" é zero.
-cc>   46  Linha:   154   Contagem em "LIS_RemoverElemento: Elemento corrente e o inicial" é zero.
-cc>   47  Linha:   154   Contagem em "LIS_RemoverElemento: Elemento corrente nao e o final" é zero.
-cc>   48  Linha:   154   Contagem em "LIS_RemoverElemento: Elemento corrente nao e o inicial" é zero.
-cc>   49  Linha:   154   Contagem em "LIS_RemoverElemento: Lista e NULL" é zero.
-cc>   50  Linha:   154   Contagem em "LIS_RemoverElemento: Lista nao e NULL" é zero.
-cc>   51  Linha:   154   Contagem em "LIS_RemoverElemento: Lista nao esta vazia" é zero.
-cc>   52  Linha:   154   Contagem em "LIS_RemoverElemento: Lista vazia" é zero.
-cc>   53  Linha:   154   Contagem em "LIS_RetirarListaElem" é zero.
-cc>   54  Linha:   154   Contagem em "LIS_RetirarListaElem: Contou elemento depois do que sera retirado" é zero.
-cc>   55  Linha:   154   Contagem em "LIS_RetirarListaElem: Desencadeia a esquerda" é zero.
-cc>   56  Linha:   154   Contagem em "LIS_RetirarListaElem: Elemento retirado e o inicial" é zero.
-cc>   57  Linha:   154   Contagem em "LIS_RetirarListaElem: Elemento retirado nao e o inicial" é zero.
-cc>   58  Linha:   154   Contagem em "LIS_RetirarListaElem: Faltou memoria ao criar lista" é zero.
-cc>   59  Linha:   154   Contagem em "LIS_RetirarListaElem: Lista e NULL" é zero.
-cc>   60  Linha:   154   Contagem em "LIS_RetirarListaElem: Lista esta vazia" é zero.
-cc>   61  Linha:   154   Contagem em "LIS_RetirarListaElem: Lista nao e NULL" é zero.
-cc>   62  Linha:   154   Contagem em "LIS_RetirarListaElem: Lista nao esta vazia" é zero.
-cc>   63  Linha:   154   Contagem em "LIS_RetirarListaElem: Nao faltou memoria ao criar lista" é zero.
-cc>   64  Linha:   154   Contagem em "LIS_RetirarListaElem: Terminou de contar" é zero.
->>>   65  Linha:   154  Número de contadores zero errado. Deveria ser: 0  É: 63
-  156  == Finalizar
+   27  == Iniciar contagem
+   35  == Criar a lista 0
+   38  == Verificar ObterValor relativo a lista vazia
+   41  == Inserir elemento em lista vazia
+   45  == Inserir elemento apï¿½s primeiro
+   49  == Inserir elemento antes do ï¿½ltimo
+   53  == Excluir elemento do meio
+   57  == Excluir elemento do inï¿½cio
+   61  == Excluir elemento final, ï¿½nico
+   65  == Ver se a lista ficou vazia
+   68  == Destruir a lista
+   71  == Criar uma lista com dois elementos
+   76  == Esvaziar a lista e ver se ficou vazia
+   80  == Destruir a lista
+   83  == Criar uma lista com quatro elementos
+   90  == Verificar a lista de trï¿½s para diante
+  100  == Verificar a lista de frente para trï¿½s
+  110  == Verificar a lista andando demais de trï¿½s para diante
+  114  == Verificar a lista andando demais de frente para trï¿½s
+  118  == Destruir a lista
+  121  ==Criar lista 2
+  127  == Criar lista vazia e tentar avancar elemento corrente
+  133  == Avancar 0 elementos
+  139  == Excluir elemento da lista vazia
+  144  == Inserir apos de um elemento que nao eh final
+!!!    0  Linha:   153  // fim da massa de testes 
+  155  == Obter numero de espacos alocados
+  158  == Terminar contagem
+cc>    1  Linha:   160   Contagem em "CriarElemento: Faltou memoria ao criar elemento" é zero.
+cc>    2  Linha:   160   Contagem em "LIS_CriarLista: Definiu tipo do espaco" é zero.
+cc>    3  Linha:   160   Contagem em "LIS_CriarLista: Faltou memoria" é zero.
+>>>    4  Linha:   160  Número de contadores zero errado. Deveria ser: 0  É: 3
+  162  == Finalizar
 
-!!! Número de linhas lidas:         157
+!!! Número de linhas lidas:         163
 !!! Número de casos de teste:        29
-!!! Número comandos corretos:        84
-!!! Número de falhas encontradas:    65
+!!! Número comandos corretos:        92
+!!! Número de falhas encontradas:     4
 
 !!! Foram encontrados problemas
 
 
-!!! Numero de espacos ainda alocados: 7
+!!! Numero de espacos ainda alocados: 0

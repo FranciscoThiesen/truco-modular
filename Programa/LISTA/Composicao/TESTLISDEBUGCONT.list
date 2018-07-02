@@ -57,10 +57,10 @@ Estatísticas do construto
       testlis.c
 
    Estatísticas do arquivo: lista.c
-      Total linhas:             791
-      Linhas de código:         520
+      Total linhas:             806
+      Linhas de código:         530
       Linhas de comentário:     148
-      Linhas em branco:         142
+      Linhas em branco:         147
    Arquivos de inclusão de que necessita
       cespdin.h
       conta.h
@@ -137,17 +137,17 @@ Totais por tipo de arquivo
          Arquivos deste tipo:          0
 
   Tipo: c        Path: ..\Fontes
-         Total linhas do tipo:      1249
-         Linhas de código:           774
+         Total linhas do tipo:      1264
+         Linhas de código:           784
          Linhas de comentário:       233
-         Linhas em branco:           276
+         Linhas em branco:           281
          Arquivos deste tipo:          2
 
 Totais para todo o construto TESTLISDEBUGCONT
 
-   Total linhas:              4171
-   Linhas de código:          1040
+   Total linhas:              4186
+   Linhas de código:          1050
    Linhas de comentário:      2477
-   Linhas em branco:           688
+   Linhas em branco:           693
    Arquivos processados:         8
 

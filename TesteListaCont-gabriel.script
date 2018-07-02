@@ -25,7 +25,7 @@
 =declararparm   pNaoNULL       int  1
 
 == Iniciar contagem
-=inicializarcontadores ""
+=inicializarcontadores "..\\Produto\\"
 =lercontadores "..\\scripts\\Lista"
 =iniciarcontagem
 
@@ -118,37 +118,76 @@
 == Destruir a lista
 =destruirlista   lista2
 
-==Criar lista 2
-=criarlista      lista2
-=inselemapos     lista2   str0   OK
-=irinicio        lista2 
-=destruirlista   lista2
+==Inicio dos Teste do Arthur
+=resetteste
 
-== Criar lista vazia e tentar avancar elemento corrente
-=criarlista      lista3
-=avancarelem     lista3   1		ListaVazia
-=destruirlista   lista3
+== Criar a lista 0
+=criarlista      lista0
+
+== Inserir primeiro
+=inselemapos     lista0   str1   OK
+=obtervalorelem  lista0   str1   pNaoNULL
+
+==Insere elemento antes do primeiro
+=inselemantes   lista0    strneg  OK
+=irinicio       lista0
+=avancarelem    lista0    1       OK
+=avancarelem    lista0    1        FimLista
+=obtervalorelem  lista0   str1   pNaoNULL
+=irinicio       lista0
+=irfinal        lista0
+=obtervalorelem lista0    str1	pNaoNULL
+
+==Insere elemento depois do ultimo
+=irfinal        lista0
+=inselemapos    lista0    str3  OK
+=avancarelem    lista0    1        FimLista
+
+==Destroi lista0
+=destruirlista  lista0
 
 
-== Avancar 0 elementos
-=criarlista      lista3
-=inselemapos     lista3	  str0  OK
-=avancarelem     lista3   0		OK
-=destruirlista   lista3
 
-== Excluir elemento da lista vazia
-=criarlista		lista3
-=excluirelem    lista3          1
-=destruirlista  lista3
-
-== Inserir apos de um elemento que nao eh final
+==Criar lista 3
 =criarlista     lista3
-=inselemapos    lista3   str0  OK
-=inselemapos    lista3   str1  OK
-=avancarelem    lista3   -1    OK
-=inselemapos    lista3   str2  OK
-=irfinal        lista3
+
+==Excluir elemento em lista vazia
+=excluirelem    lista3    ListaVazia
+
+==Avancar elemento em lista vazia 
+=avancarelem    lista3    1    ListaVazia   
+
+
+
+
+==Adicionar 3 elementos a lista 3 
+=inselemapos    lista3    str0   OK
+=inselemapos    lista3    str1   OK
+=inselemapos    lista3    str2   OK
+
+==Avanca 1 unidade para frente
+=avancarelem    lista3     1     FimLista
+
+==Avanca 2 unidade para tras , e depois avanca 1 unidade pra frente
+=avancarelem    lista3    -1     OK
+=avancarelem    lista3    -1     OK
+=avancarelem    lista3     1     OK
+
+
+
+
+
+==Avanca zero passos
+=avancarelem    lista3    0      OK
+
+
+
+==Destroi lista3
 =destruirlista  lista3
+
+
+
+
 
 // fim da massa de testes
 

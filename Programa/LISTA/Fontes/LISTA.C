@@ -141,14 +141,18 @@
      #ifdef _DEBUG
         CNT_CONTAR( "LIS_DestruirLista" ) ;
      #endif
+	 
+     #ifdef _DEBUG
+		if(pLista==NULL)
+		{
+			CNT_CONTAR("LIS_DestruirLista: Lista e NULL");
+			assert( pLista != NULL ) ;
+	    }
+     #endif
 
       #ifdef _DEBUG
-         assert( pLista != NULL ) ;
+           CNT_CONTAR( "LIS_DestruirLista: Lista nao e NULL" ) ;
       #endif
-
-      #ifdef _DEBUG
-             CNT_CONTAR( "LIS_DestruirLista: Lista nao e NULL" ) ;
-          #endif
       LIS_EsvaziarLista( pLista ) ;
 
       free( pLista ) ;
@@ -207,7 +211,7 @@
       tpElemLista * pElem ;
       #ifdef _DEBUG
        CNT_CONTAR( "LIS_InserirElementoAntes" ) ;
-    #endif
+      #endif
 
       #ifdef _DEBUG
          assert( pLista != NULL ) ;
@@ -373,6 +377,11 @@
     #endif
          return LIS_CondRetListaVazia ;
       } /* if */
+	  
+	  #ifdef _DEBUG
+        CNT_CONTAR( "LIS_ExcluirElemento: Lista nao esta vazia" ) ;
+      #endif
+	  
 
       pElem = pLista->pElemCorr ;
 
@@ -518,6 +527,10 @@ CNT_CONTAR( "LIS_IrFinalLista: Lista nao e NULL" ) ;
             return LIS_CondRetListaVazia ;
 
          } /* fim ativa: Tratar lista vazia */
+		 
+		 #ifdef _DEBUG
+           	CNT_CONTAR( "LIS_AvancarElementoCorrente: Lista nao esta vazia" ) ;
+         #endif
 
       /* Tratar avan�ar para frente */
 
@@ -615,7 +628,7 @@ CNT_CONTAR( "LIS_IrFinalLista: Lista nao e NULL" ) ;
 *  Fun��o: LIS  &Procurar elemento contendo valor
 *  ****/
 
-   LIS_tpCondRet LIS_ProcurarValor( LIS_tppLista pLista ,
+LIS_tpCondRet LIS_ProcurarValor( LIS_tppLista pLista ,
                                     void * pValor        )
    {
 
@@ -787,5 +800,7 @@ CNT_CONTAR( "LIS_IrFinalLista: Lista nao e NULL" ) ;
      	  #endif
 	   return pLista->numElem;
    }
+   
+
 
 /********** Fim do m�dulo de implementa��o: LIS  Lista duplamente encadeada **********/

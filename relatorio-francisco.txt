@@ -1,0 +1,48 @@
+Relatório individual para a Disciplina de Programação Modular - INF 1301
+
+Autor: Francisco Geiman Thiesen (fgt)
+Matrícula: 1611854
+
+Data      | Tempo | Atividade                | Descrição da Atividade
+          |       |                          |      
+19/3/2018 | 2:21  | estudar                  | Estudar modularidade e vantagens e desvantagens
+21/3/2018 | 1:20  | estudar                  | Estudo de modularidade suas formas seguras de desenvolvimento
+22/3/2018 | 1:05  | estudar                  | Estudo de semântica e sintaxe, tanto para fins de código quanto comentários de código
+28/3/2018 | 1:00  | estudar                  | Compreender erros, falhas e defeitos  
+29/3/2018 | 0:50  | estudar                  | Aprender sobre desenvolvimento de sistemas com utilização do módulo de teste arcabouço
+03/4/2018 | 1:00  | estudar                  | Ferramentas de desenvolvimento e sua implementação
+09/4/2018 | 2:10  | estudar                  | Estudo sobre testes e módulos de testes
+10/4/2018 | 1:10  | estudar                  | Necessidade de garantir e atender requisitos modularizados
+11/4/2018 | 2:00  | especificar os módulos   | Pensar em formas de representar abstrações do t2
+11/4/2018 | 4:20  | especificar os módulos   | Foi feito esboço sobre as ideias de módulos, e interfaces
+15/4/2018 | 1:40  | projetar                 | Definir funcionamento de um jogo de truco
+16/4/2018 | 2:10  | especificar as funções   | Realizar funções da arquitetura escolhida
+18/4/2018 | 2:40  | especificar as funções   | Primeiras abordagens de como fazer a função embaralhar
+28/4/2018 | 1:00  | revisar especificações   | Especificar funções de interação e dependência do módulo baralho em relação ao módulo como retirar carta e retornar valores de cartas dentro do baralho
+23/4/2018 | 1:20  | revisar especificações   | Ver se há a possibilidade de unir os módulos Mão e partida
+24/4/2018 | 0:50  | projetar                 | Fazer a escolha da estruturas de dados base 
+25/4/2018 | 1:40  | revisar projetos         | Especular interação dos módulos
+27/4/2018 | 3:20  | revisar projetos         | Utilizar struct como estrutura de dados apropriado para representar baralho e cartas 
+28/4/2018 | 2:20  | codificar módulo         | Implementação do módulo baralho, com o objetivo de desenvolver a função criar embaralhar e retirar carta do topo
+29/4/2018 | 1:50  | codificar módulo         | Continuar a implementação da função embaralhar com a intenção de juntar embaralhar a função criar baralho
+01/5/2018 | 3:40  | codificar módulo         | Concluir função criar baralho embaralhado, ajudar em função para obter valor e naipe da carta
+03/5/2018 | 4:20  | codificar módulo         | Implementação do módulo Baralho 
+03/5/2018 | 4:00  | revisar código do módulo | Refazer a implementação da função verifica se a função cria baralho embaralhado retorna um baralho embaralhado
+04/5/2018 | 2:40  | revisar código do módulo | Definir teste necessários ao módulo baralho
+05/5/2018 | 3:10  | redigir script de teste  | Implementar casos de testes mais abrangentes  do módulo baralho
+07/5/2018 | 3:10  | revisar script de teste  | Finalizar o script de teste do módulo baralho
+08/5/2018 | 2:40  | diagnosticar e corrigir  | Compilação e geração de arquivos dos testes do módulo baralho
+10/5/2018 | 3:00  | revisar especificações   | Revisão da estruturação do projeto
+11/5/2018 | 1:00  | projetar                 | Definição juntamente com o grupo de como estruturar os módulos
+15/5/2018 | 4|00  | diagnosticar e corrigir  | Revisão de algumas funções do módulo baralho
+22/5/2018 | 5:00  | codificar módulo         | Atualização do módulo baralho
+24/5/2018 | 3:00  | codificar módulo         | Merge do projeto com o projeto realizado pelo Arthur que passou a integrar o grupo após o T2
+28/5/2018 | 5:00  | diagnosticar e corrigir  | Investigação de comportamentos indesejados do projeto após o merge feito anteriormente
+29/5/2018 | 12:00 | codificar módulo         | Codificação do módulo partida
+30/5/2018 | 6:00  | codificar módulo         | Codificação do módulo partida 
+06/6/2018 | 3:00  | estudar                  | Estudo sobre testes caixa-branca e caixa-preta e suas possíveis integrações ao projeto
+08/6/2018 | 5:00  | diagnosticar e corrigir  | Diagnóstico de erros do módulo partida
+18/6/2018 | 2:00  | estudar                  | Verificaçã do comportamento do módulo Partida
+25/6/2018 | 4:00  | revisar projetos         | Revisão final do projeto
+
+
